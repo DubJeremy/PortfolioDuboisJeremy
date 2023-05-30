@@ -17,7 +17,11 @@ export const en: { [key: string]: string } = {
 		'Website for the KBDev web development firm. I worked on this project as part of my work-study apprenticeship at the same company. I was involved in the project from the outset, which enabled me to work on site design, development and production.',
 	PETSHINE:
 		'Website recommending products for pets. Project carried out from A to Z by myself, with the primary aim of practicing and improving my Front-End skills.',
-	TCG: 'Mobile application for Pokémon card collectors. A personal project whose main aim is to manage and track your card collection. Eventually, it will be presented as a social network enabling users not only to manage their own collection, but also to keep track of their friends' collections, and propose exchanges with them.',
+	TCG: 'Mobile application for Pokémon card collectors. Personal project whose main purpose is to manage and monitor his card collection. At therme, it will present itself as a social network allowing the user, in addition to managing his collection, to be able to follow that of his friends as well as to propose exchanges with them.',
+	BY: ' de',
+	NEXT: 'Next Project',
+	// CONTACT --------------------------------
+	NAME: 'Name',
 	// FOOTER --------------------------------
-	INSPIRED_BY: 'Inspiré par',
+	INSPIRED_BY: 'Inspired by',
 };

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 
 import useMediaQuery from '@/tools/useMediaQuery';
+import useTranslation from '@/translations/hooks';
 
 import styles from './navbar.module.scss';
 
@@ -9,6 +10,7 @@ const Navbar = () => {
 	const [targetReached] = useMediaQuery(`(min-width: 500px)`);
 	const [isToggled, setToggle] = useState(false);
 	const [activeSection, setActiveSection] = useState('');
+	const { t } = useTranslation();
 
 	const handleClick = (
 		event: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
@@ -42,7 +44,7 @@ const Navbar = () => {
 					<div className={styles.nav}>
 						<ul>
 							<li>Profil</li>
-							<li>Works</li>
+							<li>{t('PROJECT')}</li>
 							<li>Contact</li>
 						</ul>
 					</div>
