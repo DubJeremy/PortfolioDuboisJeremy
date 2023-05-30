@@ -69,6 +69,7 @@ const Navbar = () => {
 					</button>
 				)}
 			</div>
+			<div className={styles.languageToggle}></div>
 			{isToggled && (
 				<div className={styles.menuToggled}>
 					<div className={styles.navContainer}>
@@ -118,6 +119,7 @@ const Navbar = () => {
 								></div>
 							</li>
 						</ul>
+						<div className={styles.languageToggle}></div>
 					</div>
 				</div>
 			)}
