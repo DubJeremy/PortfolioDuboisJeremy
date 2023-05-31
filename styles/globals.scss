@@ -1,4 +1,16 @@
 @import './variables.scss';
+@import './mixins.scss';
+
+@font-face {
+	font-family: 'JosefinS';
+	src: url('/fonts/JosefinSans.ttf') format('truetype');
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Flaviotte';
+	src: url('/fonts/Flaviotte.ttf') format('truetype');
+	font-display: swap;
+}
 
 * {
 	margin: 0;
@@ -14,12 +26,59 @@ body * {
 	color: inherit;
 	background-color: inherit;
 }
+*,
+:after,
+:before {
+	-webkit-box-sizing: inherit;
+	box-sizing: inherit;
+	color: inherit;
+}
 
 body {
 	overflow-x: hidden;
-	width: 100%;
-	height: 100%;
+	width: 100vw;
+	height: 100vh;
+	max-width: 100vw;
+	max-height: 100vh;
 	padding: auto;
+	@include flex;
+}
+body:before {
+	position: fixed;
+	left: 0;
+	top: 0;
+	background: url(/img/background.webp) 0 0;
+	background-size: 500px 500px;
+	content: '';
+	width: 100%;
+	height: calc(100% + 100px);
+	z-index: -2;
+	// z-index: 0;
+}
+body:after {
+	position: fixed;
+	left: 0;
+	top: 0;
+	background-image: url(/img/noise.png);
+	pointer-events: none !important;
+	background-size: 250px 250px;
+	-webkit-animation: noiseTextureAnim 0.55s steps(1) infinite;
+	animation: noiseTextureAnim 0.55s steps(1) infinite;
+	will-change: background-position;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	-webkit-transform: translateZ(0);
+	transform: translateZ(0);
+	content: '';
+	width: 100%;
+	height: calc(100% + 100px);
+	// z-index: 60;
+	z-index: -1;
+}
+main {
+	width: calc(100vw - 30px);
+	height: calc(100vh - 30px);
+	border: 2px solid $blue;
 }
 
 li {
@@ -45,3 +104,41 @@ button:focus {
 button:focus {
 	outline: none;
 }
+
+@keyframes noiseTextureAnim {
+	0% {
+		background-position: 0 0;
+	}
+	10% {
+		background-position: 10px 10px;
+	}
+	20% {
+		background-position: 150px 20px;
+	}
+	30% {
+		background-position: 125px 125px;
+	}
+	40% {
+		background-position: 40px 170px;
+	}
+	50% {
+		background-position: 125px 125px;
+	}
+	60% {
+		background-position: 90px 10px;
+	}
+	70% {
+		background-position: 60px 100px;
+	}
+	80% {
+		background-position: 20px 70px;
+	}
+	90% {
+		background-position: 120px 80px;
+	}
+	to {
+		background-position: 0 250px;
+	}
+}
+
+// transition: background-color 0.4s linear;
