@@ -69,6 +69,43 @@
 		}
 	}
 }
+.menuToggled {
+	height: calc(100% - 80px);
+	@include flex;
+	position: relative;
+	// background-color: red;
+	.navContainer {
+		width: 70%;
+		height: 50%;
+		margin-bottom: 80px;
+		color: $blue;
+
+		> ul {
+			> li {
+				@include flex;
+				margin-bottom: 2.5vh;
+				> a {
+					font-family: 'Flaviotte';
+					font-size: 3em;
+					opacity: 0.5;
+					transition: all;
+					transition: all 0.2s ease-in-out;
+				}
+				.active {
+					opacity: 1;
+					font-size: 5em;
+				}
+			}
+		}
+		.languageToggle {
+			position: absolute;
+			bottom: 10px;
+			right: 15px;
+			font-family: 'JosefinS';
+			font-size: 4vh;
+		}
+	}
+}
 
 @media screen and (max-width: $extra-small) {
 }

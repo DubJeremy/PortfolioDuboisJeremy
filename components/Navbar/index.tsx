@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 
 import useMediaQuery from '@/tools/useMediaQuery';
@@ -9,7 +9,7 @@ import styles from './navbar.module.scss';
 const Navbar = () => {
 	const [targetReached] = useMediaQuery(`(min-width: 500px)`);
 	const [isToggled, setToggle] = useState(false);
-	const [activeSection, setActiveSection] = useState('');
+	const [activeSection, setActiveSection] = useState('profil');
 	const { t } = useTranslation();
 
 	const handleClick = (
@@ -29,6 +29,14 @@ const Navbar = () => {
 	const toggleMenu = () => {
 		setToggle(!isToggled);
 	};
+
+	useEffect(() => {
+		if (isToggled) {
+			document.body.style.overflow = 'hidden';
+		} else {
+			document.body.style.overflow = 'visible';
+		}
+	}, [isToggled]);
 
 	return (
 		<>
@@ -85,46 +93,29 @@ const Navbar = () => {
 							<li>
 								<a
 									href='#profil'
-									className={activeSection === 'profilNav' ? styles.active : ''}
+									className={activeSection === 'profil' ? styles.active : ''}
 									onClick={(e) => handleClick(e, 'profil')}
 								>
-									Bien-être
+									Profil
 								</a>
-								<div
-									className={`${styles.activeIndicator} ${
-										activeSection === 'profil' ? styles.activeIndicatorOn : ''
-									}`}
-								></div>
 							</li>
 							<li>
 								<a
-									href='#works'
-									className={activeSection === 'worksNav' ? styles.active : ''}
-									onClick={(e) => handleClick(e, 'works')}
+									href='#projects'
+									className={activeSection === 'projects' ? styles.active : ''}
+									onClick={(e) => handleClick(e, 'projects')}
 								>
-									Bien-être
+									{t('PROJECT')}
 								</a>
-								<div
-									className={`${styles.activeIndicator} ${
-										activeSection === 'works' ? styles.activeIndicatorOn : ''
-									}`}
-								></div>
 							</li>
 							<li>
 								<a
 									href='#contact'
-									className={
-										activeSection === 'contactNav' ? styles.active : ''
-									}
+									className={activeSection === 'contact' ? styles.active : ''}
 									onClick={(e) => handleClick(e, 'contact')}
 								>
-									Bien-être
+									Contact
 								</a>
-								<div
-									className={`${styles.activeIndicator} ${
-										activeSection === 'contact' ? styles.activeIndicatorOn : ''
-									}`}
-								></div>
 							</li>
 						</ul>
 						<div className={styles.languageToggle}>FR</div>
