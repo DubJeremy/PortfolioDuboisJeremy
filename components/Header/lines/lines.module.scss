@@ -12,12 +12,40 @@
 		background-color: white;
 	}
 	.lineXL {
-		height: 100%;
+		height: 0%;
+		animation: linesXLAppear 3s ease-in-out;
+		animation-fill-mode: forwards;
 	}
 	.lineS {
+		height: 0%;
+		animation: linesSAppear 3s ease-in-out;
+		animation-fill-mode: forwards;
+	}
+}
+
+@keyframes linesXLAppear {
+	0% {
+		height: 0;
+	}
+	50% {
+		height: 100%;
+	}
+	100% {
+		height: 100%;
+	}
+}
+@keyframes linesSAppear {
+	0% {
+		height: 0;
+	}
+	50% {
+		height: 100%;
+	}
+	100% {
 		height: 25%;
 	}
 }
+
 @media screen and (max-width: $extra-small) {
 }
 @media screen and (max-width: $extra-small) and (min-height: $small) {
