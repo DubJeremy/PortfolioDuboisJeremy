@@ -12,6 +12,10 @@ const Navbar = () => {
 	const [activeSection, setActiveSection] = useState('profil');
 	const { t } = useTranslation();
 
+	const toggleMenu = () => {
+		setToggle(!isToggled);
+	};
+
 	const handleClick = (
 		event: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
 		sectionId: string
@@ -23,11 +27,9 @@ const Navbar = () => {
 			const sectionTop = section.offsetTop - window.innerHeight * 0.1;
 			window.scrollTo({ top: sectionTop, behavior: 'smooth' });
 		}
-		setToggle(false);
-	};
-
-	const toggleMenu = () => {
-		setToggle(!isToggled);
+		setActiveSection(sectionId);
+		// setToggle(false);
+		toggleMenu();
 	};
 
 	useEffect(() => {
@@ -63,9 +65,7 @@ const Navbar = () => {
 					</div>
 				) : (
 					<button
-						// className={styles.menuBurger}
-						className={`${styles.menuBurger} ${isToggled ? styles.opened : ''}`}
-						// onclick="this.classList.toggle('opened');this.setAttribute('aria-expanded', this.classList.contains('opened'))"
+						className={`${styles.menuBurger} ${isToggled ? '' : styles.opened}`}
 						onClick={toggleMenu}
 						aria-label='Main Menu'
 					>
@@ -86,11 +86,10 @@ const Navbar = () => {
 					</button>
 				)}
 			</div>
-			{/* {isToggled && ( */}
 			<div
 				className={`${styles.menuToggled} ${
 					isToggled
-						? `${styles.expanded} ${styles['slide-up']}`
+						? `${styles.expanded} ${styles['slide-down']}`
 						: `${styles.expanded} ${styles['fade-out']}`
 				}`}
 			>
@@ -127,7 +126,6 @@ const Navbar = () => {
 					<div className={styles.languageToggle}>FR</div>
 				</div>
 			</div>
-			{/* )} */}
 		</>
 	);
 };

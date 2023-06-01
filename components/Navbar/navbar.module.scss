@@ -73,7 +73,6 @@
 	}
 }
 .menuToggled {
-	// background-color: red;
 	width: 0%;
 	height: 0%;
 	@include flex;
@@ -114,14 +113,14 @@
 .expanded {
 	transition: all 0.3s ease, box-shadow 0.3s ease;
 	transform: translateY(100%);
-	height: calc(100% - 112px);
+	height: calc(100vh - 113px);
 	width: calc(100% - 30px);
 	z-index: 1000;
 	position: fixed;
 	top: 95;
 	left: 15;
 	border-bottom: 2px solid $blue;
-	&.slide-up {
+	&.slide-down {
 		transition: transform 0.3s ease, opacity 0.3s ease;
 		transform: translateY(-100%);
 		opacity: 0;
