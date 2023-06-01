@@ -1,6 +1,22 @@
 @import '../../styles/variables.scss';
 @import 'styles/mixins.scss';
 
+.header {
+	// background-color: red;
+	position: relative;
+	height: calc(120vh - 113px);
+	width: 100%;
+	@include flex;
+	.name {
+		.lastName {
+		}
+		.firstName {
+		}
+	}
+	.circle {
+	}
+}
+
 @media screen and (max-width: $extra-small) {
 }
 @media screen and (max-width: $extra-small) and (min-height: $small) {
