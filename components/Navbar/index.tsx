@@ -86,42 +86,48 @@ const Navbar = () => {
 					</button>
 				)}
 			</div>
-			{isToggled && (
-				<div className={styles.menuToggled}>
-					<div className={styles.navContainer}>
-						<ul>
-							<li>
-								<a
-									href='#profil'
-									className={activeSection === 'profil' ? styles.active : ''}
-									onClick={(e) => handleClick(e, 'profil')}
-								>
-									Profil
-								</a>
-							</li>
-							<li>
-								<a
-									href='#projects'
-									className={activeSection === 'projects' ? styles.active : ''}
-									onClick={(e) => handleClick(e, 'projects')}
-								>
-									{t('PROJECT')}
-								</a>
-							</li>
-							<li>
-								<a
-									href='#contact'
-									className={activeSection === 'contact' ? styles.active : ''}
-									onClick={(e) => handleClick(e, 'contact')}
-								>
-									Contact
-								</a>
-							</li>
-						</ul>
-						<div className={styles.languageToggle}>FR</div>
-					</div>
+			{/* {isToggled && ( */}
+			<div
+				className={`${styles.menuToggled} ${
+					isToggled
+						? `${styles.expanded} ${styles['slide-up']}`
+						: `${styles.expanded} ${styles['fade-out']}`
+				}`}
+			>
+				<div className={styles.navContainer}>
+					<ul>
+						<li>
+							<a
+								href='#profil'
+								className={activeSection === 'profil' ? styles.active : ''}
+								onClick={(e) => handleClick(e, 'profil')}
+							>
+								Profil
+							</a>
+						</li>
+						<li>
+							<a
+								href='#projects'
+								className={activeSection === 'projects' ? styles.active : ''}
+								onClick={(e) => handleClick(e, 'projects')}
+							>
+								{t('PROJECT')}
+							</a>
+						</li>
+						<li>
+							<a
+								href='#contact'
+								className={activeSection === 'contact' ? styles.active : ''}
+								onClick={(e) => handleClick(e, 'contact')}
+							>
+								Contact
+							</a>
+						</li>
+					</ul>
+					<div className={styles.languageToggle}>FR</div>
 				</div>
-			)}
+			</div>
+			{/* )} */}
 		</>
 	);
 };
