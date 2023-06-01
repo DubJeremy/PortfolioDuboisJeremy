@@ -2,11 +2,11 @@ import React from 'react';
 
 import Lines from './lines';
 
-import styles from './blank.module.scss';
+import styles from './header.module.scss';
 
-const Home = () => {
+const Header = () => {
 	return (
-		<section className={styles.home} id='profil'>
+		<section className={styles.header} id='profil'>
 			<div className={styles.name}>
 				<p className={styles.lastName}>Dubois</p>
 				<p className={styles.firstName}>Jérémy</p>
@@ -16,4 +16,4 @@ const Home = () => {
 		</section>
 	);
 };
-export default Home;
+export default Header;

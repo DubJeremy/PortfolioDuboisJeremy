@@ -65,7 +65,7 @@ const Navbar = () => {
 					</div>
 				) : (
 					<button
-						className={`${styles.menuBurger} ${isToggled ? '' : styles.opened}`}
+						className={`${styles.menuBurger} ${isToggled ? styles.opened : ''}`}
 						onClick={toggleMenu}
 						aria-label='Main Menu'
 					>
@@ -89,8 +89,8 @@ const Navbar = () => {
 			<div
 				className={`${styles.menuToggled} ${
 					isToggled
-						? `${styles.expanded} ${styles['slide-down']}`
-						: `${styles.expanded} ${styles['fade-out']}`
+						? `${styles.expanded} ${styles['fade-out']}`
+						: `${styles.expanded} ${styles['slide-down']}`
 				}`}
 			>
 				<div className={styles.navContainer}>
