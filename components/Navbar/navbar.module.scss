@@ -114,11 +114,11 @@
 .expanded {
 	transition: all 0.3s ease, box-shadow 0.3s ease;
 	transform: translateY(100%);
-	height: calc(100vh - 113px);
+	height: calc(100vh - 120px);
 	width: calc(100% - 30px);
 	z-index: 1000;
 	position: fixed;
-	margin-top: 80px;
+	margin-top: 95px;
 	border-bottom: 2px solid $blue;
 	&.slide-down {
 		transition: transform 0.3s ease, opacity 0.3s ease;
