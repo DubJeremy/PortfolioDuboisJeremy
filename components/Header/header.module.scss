@@ -2,15 +2,22 @@
 @import 'styles/mixins.scss';
 
 .header {
-	// background-color: red;
 	position: relative;
-	height: calc(120vh - 113px);
+	height: calc(100vh - 30px);
+	// height: calc(100vh - 110px);
 	width: 100%;
 	@include flex;
 	.name {
+		margin-top: 80px;
+		width: 85%;
+		font-family: 'Flaviotte';
+		font-size: 4.5em;
+		line-height: 0.9em;
 		.lastName {
+			text-align: start;
 		}
 		.firstName {
+			text-align: end;
 		}
 	}
 	.circle {
