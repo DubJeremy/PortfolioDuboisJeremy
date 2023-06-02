@@ -13,12 +13,12 @@
 	}
 	.lineXL {
 		height: 0%;
-		animation: linesXLAppear 3s ease-in-out;
+		animation: linesXLAppear 3s ease-in-out 1s;
 		animation-fill-mode: forwards;
 	}
 	.lineS {
 		height: 0%;
-		animation: linesSAppear 3s ease-in-out;
+		animation: linesSAppear 3s ease-in-out 1s;
 		animation-fill-mode: forwards;
 	}
 }
