@@ -1,8 +1,10 @@
 import React from 'react';
+import { Canvas } from '@react-three/fiber';
 
 import Lines from './lines';
 
 import styles from './header.module.scss';
+import Circle from './circle';
 
 const Header = () => {
 	return (
@@ -11,7 +13,11 @@ const Header = () => {
 				<p className={styles.lastName}>Dubois</p>
 				<p className={styles.firstName}>Jérémy</p>
 			</div>
-			<div className={styles.circle}></div>
+			{/* <div className={styles.circleContainer}> */}
+			{/* <Canvas> */}
+			<Circle />
+			{/* </Canvas> */}
+			{/* </div> */}
 			<Lines />
 		</section>
 	);
