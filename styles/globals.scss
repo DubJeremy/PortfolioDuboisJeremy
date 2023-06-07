@@ -42,6 +42,7 @@ body {
 	max-height: 100vh;
 	padding: auto;
 	@include flex;
+	position: relative;
 }
 body:before {
 	position: fixed;
@@ -53,7 +54,6 @@ body:before {
 	width: 100%;
 	height: calc(100% + 100px);
 	z-index: -2;
-	// z-index: 0;
 }
 body:after {
 	position: fixed;
@@ -72,13 +72,13 @@ body:after {
 	content: '';
 	width: 100%;
 	height: calc(100% + 100px);
-	// z-index: 60;
 	z-index: -1;
 }
 main {
 	width: calc(100vw - 30px);
 	height: calc(100vh - 30px);
-	border: 2px solid $blue;
+	top: 15px;
+	left: 15px;
 }
 
 li {

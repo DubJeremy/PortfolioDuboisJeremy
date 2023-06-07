@@ -1,0 +1,131 @@
+@import '../../../styles/variables.scss';
+@import 'styles/mixins.scss';
+
+.circle {
+	position: absolute;
+	top: 80px;
+	width: 198px;
+	height: calc(100vh - 110px);
+	background-color: transparent;
+	@include flex($just: flex-start);
+	animation: circleAppear 1s ease-in-out 1s;
+	transform: translateY(-100%);
+	animation-fill-mode: forwards;
+	.background {
+		height: calc(50% + 100px);
+		width: 198px;
+		animation: backOpacity 0.5s ease-in-out 2s;
+		opacity: 0;
+		animation-fill-mode: forwards;
+	}
+	.background:before {
+		position: fixed;
+		left: calc(50% - 100px);
+		top: 0;
+		background: url(/img/background.webp) 0 0;
+		background-size: 500px 500px;
+		content: '';
+		width: 200px;
+		height: calc(calc(calc(100vh - 110px) / 2) + 100px);
+		z-index: 1;
+	}
+	.background:after {
+		position: fixed;
+		left: calc(50% - 100px);
+		top: 0;
+		background-image: url(/img/noise.png);
+		pointer-events: none !important;
+		background-size: 250px 250px;
+		-webkit-animation: noiseTextureAnim 0.55s steps(1) infinite;
+		animation: noiseTextureAnim 0.55s steps(1) infinite;
+		will-change: background-position;
+		-webkit-backface-visibility: hidden;
+		backface-visibility: hidden;
+		-webkit-transform: translateZ(0);
+		transform: translateZ(0);
+		content: '';
+		width: 200px;
+		height: calc(calc(calc(100vh - 110px) / 2) + 100px);
+		z-index: 2;
+	}
+	.img {
+		background-color: transparent;
+		position: relative;
+		z-index: 3;
+		margin-top: -100px;
+		margin-left: -1px;
+		width: 200px;
+		height: 200px;
+		border-radius: 50%;
+		box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+	}
+}
+
+@keyframes noiseTextureAnim {
+	0% {
+		background-position: 0 0;
+	}
+	10% {
+		background-position: 10px 10px;
+	}
+	20% {
+		background-position: 150px 20px;
+	}
+	30% {
+		background-position: 125px 125px;
+	}
+	40% {
+		background-position: 40px 170px;
+	}
+	50% {
+		background-position: 125px 125px;
+	}
+	60% {
+		background-position: 90px 10px;
+	}
+	70% {
+		background-position: 60px 100px;
+	}
+	80% {
+		background-position: 20px 70px;
+	}
+	90% {
+		background-position: 120px 80px;
+	}
+	to {
+		background-position: 0 250px;
+	}
+}
+@keyframes circleAppear {
+	0% {
+		transform: translateY(-100%);
+	}
+	100% {
+		transform: translateY(0%);
+	}
+}
+@keyframes backOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+@media screen and (max-width: $extra-small) {
+}
+@media screen and (max-width: $extra-small) and (min-height: $small) {
+}
+@media screen and (min-width: $small) {
+}
+@media screen and (min-width: $medium) {
+}
+@media screen and (min-width: $large) and (orientation: portrait) {
+}
+@media screen and (min-width: $large) and (orientation: landscape) {
+}
+@media screen and (min-width: $extra-large) and (orientation: landscape) {
+}
+@media screen and (min-width: $ultra-large) {
+}

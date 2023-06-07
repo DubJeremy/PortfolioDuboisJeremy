@@ -1,0 +1,73 @@
+@import '../../styles/variables.scss';
+@import 'styles/mixins.scss';
+
+.header {
+	position: relative;
+	height: calc(100vh - 30px);
+	width: 100%;
+	@include flex;
+	overflow: hidden;
+	.name {
+		position: absolute;
+		z-index: 4;
+		margin-top: 120px;
+		width: 85%;
+		font-family: 'Flaviotte';
+		font-size: 4.5em;
+		line-height: 0.9em;
+
+		.lastName {
+			text-align: start;
+			animation: lastNAppear 1s ease-in-out 2.8s;
+			transform: translateX(-120%);
+			animation-fill-mode: forwards;
+		}
+		.firstName {
+			text-align: end;
+			animation: firstNAppear 1s ease-in-out 2.8s;
+			transform: translateX(120%);
+			animation-fill-mode: forwards;
+		}
+	}
+	.circleContainer {
+		width: 200px;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		@include flex;
+	}
+}
+
+@keyframes lastNAppear {
+	0% {
+		transform: translateX(-120%);
+	}
+	100% {
+		transform: translateX(0%);
+	}
+}
+@keyframes firstNAppear {
+	0% {
+		transform: translateX(120%);
+	}
+	100% {
+		transform: translateX(0%);
+	}
+}
+
+@media screen and (max-width: $extra-small) {
+}
+@media screen and (max-width: $extra-small) and (min-height: $small) {
+}
+@media screen and (min-width: $small) {
+}
+@media screen and (min-width: $medium) {
+}
+@media screen and (min-width: $large) and (orientation: portrait) {
+}
+@media screen and (min-width: $large) and (orientation: landscape) {
+}
+@media screen and (min-width: $extra-large) and (orientation: landscape) {
+}
+@media screen and (min-width: $ultra-large) {
+}
