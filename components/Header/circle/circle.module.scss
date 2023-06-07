@@ -14,7 +14,9 @@
 	.background {
 		height: calc(50% + 100px);
 		width: 198px;
-		background-color: red;
+		animation: backOpacity 0.5s ease-in-out 2s;
+		opacity: 0;
+		animation-fill-mode: forwards;
 	}
 	.background:before {
 		position: fixed;
@@ -100,6 +102,14 @@
 	}
 	100% {
 		transform: translateY(0%);
+	}
+}
+@keyframes backOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
 	}
 }
 

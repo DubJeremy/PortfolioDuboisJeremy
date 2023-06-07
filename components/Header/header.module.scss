@@ -6,6 +6,7 @@
 	height: calc(100vh - 30px);
 	width: 100%;
 	@include flex;
+	overflow: hidden;
 	.name {
 		position: absolute;
 		z-index: 4;
@@ -17,9 +18,15 @@
 
 		.lastName {
 			text-align: start;
+			animation: lastNAppear 1s ease-in-out 2.8s;
+			transform: translateX(-120%);
+			animation-fill-mode: forwards;
 		}
 		.firstName {
 			text-align: end;
+			animation: firstNAppear 1s ease-in-out 2.8s;
+			transform: translateX(120%);
+			animation-fill-mode: forwards;
 		}
 	}
 	.circleContainer {
@@ -28,6 +35,23 @@
 		position: absolute;
 		top: 0;
 		@include flex;
+	}
+}
+
+@keyframes lastNAppear {
+	0% {
+		transform: translateX(-120%);
+	}
+	100% {
+		transform: translateX(0%);
+	}
+}
+@keyframes firstNAppear {
+	0% {
+		transform: translateX(120%);
+	}
+	100% {
+		transform: translateX(0%);
 	}
 }
 
