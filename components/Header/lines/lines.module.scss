@@ -11,39 +11,18 @@
 	.line {
 		width: 1px;
 		background-color: white;
-	}
-	.lineXL {
 		height: 0%;
-		animation: linesXLAppear 3s ease-in-out 1s;
-		animation-fill-mode: forwards;
-	}
-	.lineS {
-		height: 0%;
-		animation: linesSAppear 3s ease-in-out 1s;
+		animation: linesAppear 1s ease-in-out 2s;
 		animation-fill-mode: forwards;
 	}
 }
 
-@keyframes linesXLAppear {
+@keyframes linesAppear {
 	0% {
 		height: 0;
 	}
-	50% {
-		height: 100%;
-	}
 	100% {
 		height: 100%;
-	}
-}
-@keyframes linesSAppear {
-	0% {
-		height: 0;
-	}
-	50% {
-		height: 100%;
-	}
-	100% {
-		height: 25%;
 	}
 }
 

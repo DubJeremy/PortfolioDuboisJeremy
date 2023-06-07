@@ -4,7 +4,6 @@
 .header {
 	position: relative;
 	height: calc(100vh - 30px);
-	// height: calc(100vh - 110px);
 	width: 100%;
 	@include flex;
 	.name {
@@ -28,8 +27,6 @@
 		height: 100%;
 		position: absolute;
 		top: 0;
-		// z-index: 3;
-		// margin-top: 280px;
 		@include flex;
 	}
 }

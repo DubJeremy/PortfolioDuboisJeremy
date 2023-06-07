@@ -9,41 +9,27 @@ const Lines = () => {
 
 	return (
 		<div className={styles.lines}>
-			<div className={`${styles.line} ${styles.lineXL}`} />
-			<div className={`${styles.line} ${styles.lineXL}`} />
-			<div className={`${styles.line} ${styles.lineXL}`} />
-			<div className={`${styles.line} ${styles.lineXL}`} />
-			{/* <div className={`${styles.line} ${styles.lineS}`} />
-			<div className={`${styles.line} ${styles.lineS}`} />
-			<div className={`${styles.line} ${styles.lineS}`} />
-			<div className={`${styles.line} ${styles.lineS}`} />
-			<div className={`${styles.line} ${styles.lineS}`} />
-			<div className={`${styles.line} ${styles.lineS}`} />
-			<div className={`${styles.line} ${styles.lineS}`} />
-			<div className={`${styles.line} ${styles.lineS}`} />
-			<div className={`${styles.line} ${styles.lineS}`} />
-			<div className={`${styles.line} ${styles.lineS}`} />
-			<div className={`${styles.line} ${styles.lineS}`} />
-			<div className={`${styles.line} ${styles.lineS}`} />
-			<div className={`${styles.line} ${styles.lineS}`} />
-			<div className={`${styles.line} ${styles.lineS}`} /> */}
-			<div className={`${styles.line} ${styles.lineXL}`} />
-			<div className={`${styles.line} ${styles.lineXL}`} />
-			<div className={`${styles.line} ${styles.lineXL}`} />
-			<div className={`${styles.line} ${styles.lineXL}`} />
-			<div className={`${styles.line} ${styles.lineXL}`} />
-			<div className={`${styles.line} ${styles.lineXL}`} />
-			<div className={`${styles.line} ${styles.lineXL}`} />
-			<div className={`${styles.line} ${styles.lineXL}`} />
-			<div className={`${styles.line} ${styles.lineXL}`} />
-			<div className={`${styles.line} ${styles.lineXL}`} />
-			<div className={`${styles.line} ${styles.lineXL}`} />
-			<div className={`${styles.line} ${styles.lineXL}`} />
-			<div className={`${styles.line} ${styles.lineXL}`} />
-			<div className={`${styles.line} ${styles.lineXL}`} />
-			<div className={`${styles.line} ${styles.lineXL}`} />
-			<div className={`${styles.line} ${styles.lineXL}`} />
-			<div className={`${styles.line} ${styles.lineXL}`} />
+			<div className={`${styles.line} ${styles.line}`} />
+			<div className={`${styles.line} ${styles.line}`} />
+			<div className={`${styles.line} ${styles.line}`} />
+			<div className={`${styles.line} ${styles.line}`} />
+			<div className={`${styles.line} ${styles.line}`} />
+			<div className={`${styles.line} ${styles.line}`} />
+			<div className={`${styles.line} ${styles.line}`} />
+			<div className={`${styles.line} ${styles.line}`} />
+			<div className={`${styles.line} ${styles.line}`} />
+			<div className={`${styles.line} ${styles.line}`} />
+			<div className={`${styles.line} ${styles.line}`} />
+			<div className={`${styles.line} ${styles.line}`} />
+			<div className={`${styles.line} ${styles.line}`} />
+			<div className={`${styles.line} ${styles.line}`} />
+			<div className={`${styles.line} ${styles.line}`} />
+			<div className={`${styles.line} ${styles.line}`} />
+			<div className={`${styles.line} ${styles.line}`} />
+			<div className={`${styles.line} ${styles.line}`} />
+			<div className={`${styles.line} ${styles.line}`} />
+			<div className={`${styles.line} ${styles.line}`} />
+			<div className={`${styles.line} ${styles.line}`} />
 		</div>
 	);
 };

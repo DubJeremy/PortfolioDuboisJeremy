@@ -4,19 +4,22 @@
 .circle {
 	position: absolute;
 	top: 80px;
-	// width: 200px;
 	width: 198px;
 	height: calc(100vh - 110px);
 	background-color: transparent;
 	@include flex($just: flex-start);
+	animation: circleAppear 1s ease-in-out 1s;
+	transform: translateY(-100%);
+	animation-fill-mode: forwards;
 	.background {
 		height: calc(50% + 100px);
 		width: 198px;
+		background-color: red;
 	}
 	.background:before {
 		position: fixed;
 		left: calc(50% - 100px);
-		top: 95px;
+		top: 0;
 		background: url(/img/background.webp) 0 0;
 		background-size: 500px 500px;
 		content: '';
@@ -27,7 +30,7 @@
 	.background:after {
 		position: fixed;
 		left: calc(50% - 100px);
-		top: 95px;
+		top: 0;
 		background-image: url(/img/noise.png);
 		pointer-events: none !important;
 		background-size: 250px 250px;
@@ -89,6 +92,14 @@
 	}
 	to {
 		background-position: 0 250px;
+	}
+}
+@keyframes circleAppear {
+	0% {
+		transform: translateY(-100%);
+	}
+	100% {
+		transform: translateY(0%);
 	}
 }
 
