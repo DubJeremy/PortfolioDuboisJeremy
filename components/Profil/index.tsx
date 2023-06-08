@@ -29,15 +29,13 @@ const Profil = () => {
 			</div>
 			<div className={styles.info}>
 				<h3>Dubois Jérémy</h3>
-				<h4>Portfolio | </h4>
+				<h4>Portfolio | {t('WEB_DEV')}</h4>
 				<div className={styles.profilContact}>
 					<div className={styles.location}>
-						<Image
-							src={'/img/icon/location.webp'}
-							alt='logo location'
-							fill
-							className={styles.imgLogoLocation}
-						/>
+						<div className={styles.imgLogoLocation}>
+							<Image src={'/img/icon/location.webp'} alt='logo location' fill />{' '}
+						</div>
+
 						<p>Bordeaux</p>
 					</div>
 					<div className={styles.mail}>
@@ -48,12 +46,9 @@ const Profil = () => {
 					</div>
 					<div className={styles.btns}>
 						<button>{t('CV')}</button>
-						<Image
-							src={'/img/logo/linkedin.webp'}
-							alt='logo Linkedin'
-							fill
-							className={styles.logoLinkedin}
-						/>
+						<div className={styles.logoLinkedin}>
+							<Image src={'/img/logo/linkedin.webp'} alt='logo Linkedin' fill />
+						</div>
 					</div>
 				</div>
 				<div className={styles.circle}>
