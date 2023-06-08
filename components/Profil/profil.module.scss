@@ -6,15 +6,15 @@
 	width: 100%;
 	border-top: 2px solid $blue;
 	.desc {
-		padding: 8vh 25px;
+		padding: 8vh 25px 0 25px;
 		min-height: calc(100vh - 110px);
 		border-bottom: 2px solid $blue;
 		.txt {
 			> h2 {
 				font-family: 'Flaviotte';
 				font-weight: 500;
-				line-height: 1.1em;
 				font-size: 1.3em;
+				line-height: 1.1em;
 			}
 			h2:nth-child(2) {
 				margin-bottom: 2vh;
@@ -23,10 +23,16 @@
 				font-family: 'JosefinS';
 				font-weight: 350;
 				font-size: 1.1em;
+				line-height: 1.15em;
 				text-align: justify;
 			}
 		}
 		.photoContainer {
+			margin: 4vh 0;
+			// background-color: rgba(255, 0, 0, 0.067);
+			height: 30vh;
+			width: 100%;
+			@include flex;
 			.photo {
 			}
 		}

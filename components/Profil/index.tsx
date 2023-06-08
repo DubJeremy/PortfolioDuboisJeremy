@@ -3,8 +3,10 @@ import Image from 'next/image';
 
 import useTranslation from '@/translations/hooks';
 import Circle from '../Header/circle';
+import ProfilPicture from './ProfilPicture';
 
 import styles from './profil.module.scss';
+import { Canvas } from '@react-three/fiber';
 
 const Profil = () => {
 	const { t } = useTranslation();
@@ -20,7 +22,9 @@ const Profil = () => {
 					<p>{t('DESC_T')}</p>
 				</div>
 				<div className={styles.photoContainer}>
-					<div className={styles.photo}></div>
+					<Canvas>
+						<ProfilPicture />
+					</Canvas>
 				</div>
 			</div>
 			<div className={styles.info}>

@@ -1,0 +1,27 @@
+@import '../../../styles/variables.scss';
+@import 'styles/mixins.scss';
+
+.profilPicture {
+	// width: 250px;
+	// height: 200px;
+	position: relative;
+	z-index: 5;
+	box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+@media screen and (max-width: $extra-small) {
+}
+@media screen and (max-width: $extra-small) and (min-height: $small) {
+}
+@media screen and (min-width: $small) {
+}
+@media screen and (min-width: $medium) {
+}
+@media screen and (min-width: $large) and (orientation: portrait) {
+}
+@media screen and (min-width: $large) and (orientation: landscape) {
+}
+@media screen and (min-width: $extra-large) and (orientation: landscape) {
+}
+@media screen and (min-width: $ultra-large) {
+}
