@@ -3,6 +3,7 @@ import Head from 'next/head';
 import Navbar from '@/components/Navbar';
 import ScreenFrame from '@/components/ScreenFrame';
 import Header from '@/components/Header';
+import Profil from '@/components/Profil';
 
 export default function Home() {
 	return (
@@ -26,6 +27,7 @@ export default function Home() {
 				<ScreenFrame />
 				<Navbar />
 				<Header />
+				<Profil />
 			</main>
 		</>
 	);

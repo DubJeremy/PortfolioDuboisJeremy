@@ -2,7 +2,8 @@ export const fr: { [key: string]: string } = {
 	// NAV --------------------------------
 	PROJECT: 'Projets',
 	// PROFIL --------------------------------
-	DESC_TITLE: 'Bonjour,<br/>je m’appel Jérémy Dubois,',
+	DESC_TITLE_F: 'Bonjour,',
+	DESC_TITLE_S: 'je m’appel Jérémy Dubois,',
 	DESC_F:
 		'Je suis un Développeur web FullStack junior. J’utilise des technologies JavaScript tel que React et Node.js pour créer des interfaces utilisateur performantes et élégantes.',
 	DESC_S:

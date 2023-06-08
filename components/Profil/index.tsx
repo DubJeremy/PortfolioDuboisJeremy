@@ -2,6 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 
 import useTranslation from '@/translations/hooks';
+import Circle from '../Header/circle';
 
 import styles from './profil.module.scss';
 
@@ -12,7 +13,8 @@ const Profil = () => {
 		<section className={styles.profil} id='profil'>
 			<div className={styles.desc}>
 				<div className={styles.txt}>
-					<h2>{t('DESC_TITLE')}</h2>
+					<h2>{t('DESC_TITLE_F')}</h2>
+					<h2>{t('DESC_TITLE_S')}</h2>
 					<p>{t('DESC_F')}</p>
 					<p>{t('DESC_S')}</p>
 					<p>{t('DESC_T')}</p>
@@ -30,7 +32,7 @@ const Profil = () => {
 							src={'/img/icon/location.webp'}
 							alt='logo location'
 							fill
-							className={styles.imgLogoStriped}
+							className={styles.imgLogoLocation}
 						/>
 						<p>Bordeaux</p>
 					</div>
@@ -46,15 +48,17 @@ const Profil = () => {
 							src={'/img/logo/linkedin.webp'}
 							alt='logo Linkedin'
 							fill
-							className={styles.imgLogoStriped}
+							className={styles.logoLinkedin}
 						/>
 					</div>
 				</div>
-				<div className={styles.circle}></div>
+				<div className={styles.circle}>
+					<Circle />
+				</div>
 			</div>
 			<div className={styles.stripes}>
 				<Image
-					src={'/img/logo/patternStripedS.webp'}
+					src={'/img/patternStripedS.webp'}
 					alt='patterne striped'
 					fill
 					className={styles.imgStripes}
