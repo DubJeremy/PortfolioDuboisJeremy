@@ -1,6 +1,143 @@
 @import '../../styles/variables.scss';
 @import 'styles/mixins.scss';
 
+.profil {
+	overflow: hidden;
+	width: calc(100vw - 30px);
+	border-top: 2px solid $blue;
+	.desc {
+		padding: 8vh 25px 0 25px;
+		min-height: calc(100vh - 110px);
+		border-bottom: 2px solid $blue;
+		.txt {
+			> h2 {
+				font-family: 'Flaviotte';
+				font-weight: 500;
+				font-size: 1.3em;
+				line-height: 1.1em;
+			}
+			h2:nth-child(2) {
+				margin-bottom: 2vh;
+			}
+			> p {
+				font-family: 'JosefinS';
+				font-weight: 350;
+				font-size: 1.1em;
+				line-height: 1.15em;
+				text-align: justify;
+			}
+		}
+		.photoContainer {
+			margin: 4vh 0;
+			height: 30vh;
+			width: 100%;
+			@include flex;
+			.photo {
+			}
+		}
+	}
+	.info {
+		position: relative;
+		color: $blue;
+		padding: 25px;
+		font-family: 'JosefinS';
+		border-bottom: 2px solid $blue;
+		overflow: hidden;
+		> h3 {
+			font-weight: 400;
+		}
+		> h4 {
+			font-weight: 400;
+		}
+		.profilContact {
+			margin-top: 20px;
+			.location {
+				@include flex($dir: row, $just: flex-start);
+				height: 20px;
+				.imgLogoLocation {
+					height: 70%;
+					width: 10px;
+					position: relative;
+					padding-bottom: 2px;
+					margin: 0 12px 2px 0;
+				}
+				> p {
+					font-weight: 300;
+				}
+			}
+			.mail {
+				margin-bottom: 10px;
+				@include flex($dir: row, $just: flex-start);
+				.at {
+					margin: 0 12px 2px 0;
+					width: 13px;
+					margin-left: -3px;
+				}
+				> a {
+					font-weight: 300;
+				}
+			}
+			.btns {
+				@include flex($dir: row, $just: flex-start);
+				> button {
+					background-color: $blue;
+					color: white;
+					font-weight: 300;
+					height: 30px;
+					padding: 0 25px;
+					border-radius: 2px;
+					margin-left: -1px;
+					margin-right: 15px;
+				}
+				.logoLinkedin {
+					position: relative;
+					height: 30px;
+					width: 30px;
+				}
+			}
+		}
+		.circle {
+			position: absolute;
+			top: -70px;
+			right: -70px;
+			height: 150px;
+			width: 150px;
+		}
+	}
+	.stripes {
+		position: relative;
+		width: 100%;
+		height: 15vh;
+		border-bottom: 2px solid $blue;
+	}
+	.techs {
+		border-bottom: 2px solid $blue;
+		position: relative;
+		width: calc(100vw - 90px);
+		padding: 27.5px 30px;
+		@include flex($dir: row);
+		.logoTech {
+			position: relative;
+			background-color: transparent;
+		}
+		.square {
+			width: calc(calc(100vw - 90px) / 4);
+			height: calc(calc(100vw - 90px) / 4);
+			margin: 10px calc(calc(calc(100vw - 90px) / 4) / 6);
+		}
+		.long {
+			width: calc(calc(100vw - 90px) / 4);
+			height: calc(calc(100vw - 250px) / 4);
+			margin: 10px calc(calc(calc(100vw - 90px) / 4) / 6);
+		}
+		.thin {
+			width: calc(calc(calc(100vw - 90px) / 4) - 20px);
+			height: calc(calc(100vw - 90px) / 4);
+			margin: 10px calc(calc(calc(calc(100vw - 90px) / 4) / 6) + 10px);
+		}
+	}
+}
+
 @media screen and (max-width: $extra-small) {
 }
 @media screen and (max-width: $extra-small) and (min-height: $small) {
