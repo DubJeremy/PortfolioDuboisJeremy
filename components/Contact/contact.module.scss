@@ -2,10 +2,139 @@
 @import 'styles/mixins.scss';
 
 .contact {
-	height: 100vh;
+	height: 100vh; // à retirer
 	position: relative;
 	overflow: hidden;
+	color: $blue;
+	border-bottom: 2px solid $blue;
+	@include flex($just: flex-start); // $just à retirer
+	.title {
+		background-color: transparent;
+		width: 100%;
+		height: 70px;
+		border-bottom: 2px solid $blue;
+		@include flex($dir: row);
+		> h3 {
+			width: 40%;
+			text-align: center;
+			font-family: 'Flaviotte';
+			font-size: 2.2em;
+			font-weight: 400;
+		}
+		.patternContainer {
+			position: relative;
+			border-left: 2px solid $blue;
+			width: calc(60% - 2px);
+			height: 100%;
+		}
+	}
+	.inputs {
+		width: 70%;
+		@include flex;
+		position: relative;
+		z-index: 2;
+		background-color: transparent;
+		> a {
+			font-family: 'Flaviotte';
+			width: 100%;
+			text-align: center;
+			font-size: 1.2em;
+			font-weight: 600;
+			padding-top: 7vh;
+			cursor: pointer;
+		}
+		.input {
+			width: 100%;
+			margin: 2.5px 0;
+			color: $blue;
+			input {
+				width: calc(100% - 11px);
+				border: 1px solid $blue;
+				border-radius: 2px;
+				font-family: 'JosefinS';
+				padding: 15px 5px;
+				color: $blue;
+				&::placeholder {
+					color: $blue;
+					font-size: 1.1em;
+				}
+				&:-webkit-autofill,
+				&:-webkit-autofill:hover,
+				&:-webkit-autofill:focus,
+				&:-webkit-autofill:active {
+					-webkit-text-fill-color: $blue !important;
+				}
+			}
+		}
+		.message {
+			> input {
+				height: 20vh;
+			}
+		}
+		&:before {
+			background: url(/img/background.webp) 0 0;
+			background-size: 500px 500px;
+			width: 100%;
+			height: 100%;
+			content: '';
+			position: fixed;
+			z-index: 1;
+		}
+		&:after {
+			background-image: url(/img/noise.png);
+			pointer-events: none !important;
+			background-size: 250px 250px;
+			-webkit-animation: noiseTextureAnim 0.55s steps(1) infinite;
+			animation: noiseTextureAnim 0.55s steps(1) infinite;
+			will-change: background-position;
+			-webkit-backface-visibility: hidden;
+			backface-visibility: hidden;
+			-webkit-transform: translateZ(0);
+			transform: translateZ(0);
+			content: '';
+			width: 100%;
+			height: 100%;
+			position: fixed;
+			z-index: 2;
+		}
+	}
 }
+@keyframes noiseTextureAnim {
+	0% {
+		background-position: 0 0;
+	}
+	10% {
+		background-position: 10px 10px;
+	}
+	20% {
+		background-position: 150px 20px;
+	}
+	30% {
+		background-position: 125px 125px;
+	}
+	40% {
+		background-position: 40px 170px;
+	}
+	50% {
+		background-position: 125px 125px;
+	}
+	60% {
+		background-position: 90px 10px;
+	}
+	70% {
+		background-position: 60px 100px;
+	}
+	80% {
+		background-position: 20px 70px;
+	}
+	90% {
+		background-position: 120px 80px;
+	}
+	to {
+		background-position: 0 250px;
+	}
+}
+
 @media screen and (max-width: $extra-small) {
 }
 @media screen and (max-width: $extra-small) and (min-height: $small) {

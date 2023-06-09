@@ -10,17 +10,10 @@ const Contact = () => {
 
 	return (
 		<section className={styles.contact} id='contact'>
-			<div className={styles.header}>
-				<div className={styles.title}>
-					<h3>Contact</h3>
-					<div className={styles.patternContainer}>
-						<Image
-							src={'/img/patternShurikenS.webp'}
-							alt='pattern'
-							fill
-							className={styles.imgPattern}
-						/>
-					</div>
+			<div className={styles.title}>
+				<h3>Contact</h3>
+				<div className={styles.patternContainer}>
+					<Image src={'/img/patternShurikenS.webp'} alt='pattern' fill />
 				</div>
 			</div>
 			<div className={styles.inputs}>
@@ -31,7 +24,10 @@ const Contact = () => {
 				<label className={styles.input} htmlFor='mail'>
 					<input type='email' name='mail' placeholder='Mail' required />
 				</label>
-				<label className={styles.input} htmlFor='message'>
+				<label
+					className={`${styles.input} ${styles.message}`}
+					htmlFor='message'
+				>
 					<input type='text' name='message' placeholder='Message' required />
 				</label>
 			</div>
