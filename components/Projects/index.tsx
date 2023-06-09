@@ -10,17 +10,10 @@ const Projects = () => {
 
 	return (
 		<section className={styles.projects} id='projects'>
-			<div className={styles.header}>
-				<div className={styles.title}>
-					<h3>{t('PROJECT')}</h3>
-					<div className={styles.patternContainer}>
-						<Image
-							src={'/img/patternShurikenS.webp'}
-							alt='pattern'
-							fill
-							className={styles.imgPattern}
-						/>
-					</div>
+			<div className={styles.title}>
+				<h3>{t('PROJECT')}</h3>
+				<div className={styles.patternContainer}>
+					<Image src={'/img/patternShurikenS.webp'} alt='pattern' fill />
 				</div>
 			</div>
 			<div className={styles.screens}></div>
@@ -28,60 +21,41 @@ const Projects = () => {
 				<h4>KBDev Website</h4>
 				<p>{t('KBDEV')}</p>
 				<div className={styles.techs}>
-					<div className={styles.logoTech}>
-						<Image
-							src={'/img/logo/next.webp'}
-							alt='Next.js logo'
-							fill
-							className={styles.imgTech}
-						/>
+					<div className={`${styles.logoTech} ${styles.long}`}>
+						<Image src={'/img/logo/next.webp'} alt='Next.js logo' fill />
 					</div>
-					<div className={styles.logoTech}>
-						<Image
-							src={'/img/logo/react.webp'}
-							alt='react logo'
-							fill
-							className={styles.imgTech}
-						/>
+					<div className={`${styles.logoTech} ${styles.square}`}>
+						<Image src={'/img/logo/react.webp'} alt='react logo' fill />
 					</div>
-					<div className={styles.logoTech}>
+					<div className={`${styles.logoTech} ${styles.square}`}>
 						<Image
 							src={'/img/logo/typescript.webp'}
 							alt='typescript logo'
 							fill
-							className={styles.imgTech}
 						/>
 					</div>
-					<div className={styles.logoTech}>
-						<Image
-							src={'/img/logo/sass.webp'}
-							alt='sass logo'
-							fill
-							className={styles.imgTech}
-						/>
+					<div className={`${styles.logoTech} ${styles.square}`}>
+						<Image src={'/img/logo/sass.webp'} alt='sass logo' fill />
 					</div>
-					<div className={styles.logoTech}>
+					<div className={`${styles.logoTech} ${styles.square}`}>
 						<Image
 							src={'/img/logo/nodeMailer.webp'}
 							alt='nodeMailer logo'
 							fill
-							className={styles.imgTech}
 						/>
 					</div>
-					<div className={styles.logoTech}>
+					<div className={`${styles.logoTech} ${styles.square}`}>
 						<Image
 							src={'/img/logo/affinityDesigner.webp'}
 							alt='Affinity Designer logo'
 							fill
-							className={styles.imgTech}
 						/>
 					</div>
-					<div className={styles.logoTech}>
+					<div className={`${styles.logoTech} ${styles.square}`}>
 						<Image
-							src={'/img/logo/nodeMailer.webp'}
-							alt='nodeMailer logo'
+							src={'/img/logo/framerMotion.webp'}
+							alt='Framer Motion logo'
 							fill
-							className={styles.imgTech}
 						/>
 					</div>
 				</div>
@@ -91,22 +65,12 @@ const Projects = () => {
 					<p>{t('VIEW_PROJECT')}</p>
 				</div>
 				<div className={styles.logoStriped}>
-					<Image
-						src={'/img/patternStripedS.webp'}
-						alt='pattern striped'
-						fill
-						className={styles.logoStriped}
-					/>
+					<Image src={'/img/patternStripedS.webp'} alt='pattern striped' fill />
 				</div>
 				<div className={styles.next}>
 					<p>{t('NEXT')}</p>
-					<div className={styles.logoTech}>
-						<Image
-							src={'/img/icon/arrow.webp'}
-							alt='arrow'
-							fill
-							className={styles.arrow}
-						/>
+					<div className={styles.arrow}>
+						<Image src={'/img/icon/arrow.webp'} alt='arrow' fill />
 					</div>
 				</div>
 			</div>
