@@ -56,109 +56,52 @@ const Profil = () => {
 				</div>
 			</div>
 			<div className={styles.stripes}>
-				<Image
-					src={'/img/patternStripedS.webp'}
-					alt='patterne striped'
-					fill
-					className={styles.imgStripes}
-				/>
+				<Image src={'/img/patternStripedS.webp'} alt='patterne striped' fill />
 			</div>
 			<div className={styles.techs}>
-				<div className={styles.logoTech}>
-					<Image
-						src={'/img/logo/next.webp'}
-						alt='next.js logo'
-						fill
-						className={styles.imgTech}
-					/>
+				<div className={`${styles.logoTech} ${styles.long}`}>
+					<Image src={'/img/logo/next.webp'} alt='next.js logo' fill />
 				</div>
-				<div className={styles.logoTech}>
-					<Image
-						src={'/img/logo/react.webp'}
-						alt='react logo'
-						fill
-						className={styles.imgTech}
-					/>
+				<div className={`${styles.logoTech} ${styles.square}`}>
+					<Image src={'/img/logo/react.webp'} alt='react logo' fill />
 				</div>
-				<div className={styles.logoTech}>
+				<div className={`${styles.logoTech} ${styles.square}`}>
 					<Image
 						src={'/img/logo/reactNative.webp'}
 						alt='React Native logo'
 						fill
-						className={styles.imgTech}
 					/>
 				</div>
-				<div className={styles.logoTech}>
-					<Image
-						src={'/img/logo/typeOrm.webp'}
-						alt='typeOrm logo'
-						fill
-						className={styles.imgTech}
-					/>
+				<div className={`${styles.logoTech} ${styles.square}`}>
+					<Image src={'/img/logo/typeOrm.webp'} alt='typeOrm logo' fill />
 				</div>
-				<div className={styles.logoTech}>
-					<Image
-						src={'/img/logo/postgreSql.webp'}
-						alt='postgreSql logo'
-						fill
-						className={styles.imgTech}
-					/>
+				<div className={`${styles.logoTech} ${styles.square}`}>
+					<Image src={'/img/logo/postgreSql.webp'} alt='postgreSql logo' fill />
 				</div>
-				<div className={styles.logoTech}>
-					<Image
-						src={'/img/logo/express.webp'}
-						alt='express logo'
-						fill
-						className={styles.imgTech}
-					/>
+				<div className={`${styles.logoTech} ${styles.long}`}>
+					<Image src={'/img/logo/express.webp'} alt='express logo' fill />
 				</div>
-				<div className={styles.logoTech}>
-					<Image
-						src={'/img/logo/mongoose.webp'}
-						alt='mongoose logo'
-						fill
-						className={styles.imgTech}
-					/>
+				<div className={`${styles.logoTech} ${styles.long}`}>
+					<Image src={'/img/logo/mongoose.webp'} alt='mongoose logo' fill />
 				</div>
-				<div className={styles.logoTech}>
-					<Image
-						src={'/img/logo/mongoDb.webp'}
-						alt='mongoDb logo'
-						fill
-						className={styles.imgTech}
-					/>
+				<div className={`${styles.logoTech} ${styles.thin}`}>
+					<Image src={'/img/logo/mongoDb.webp'} alt='mongoDb logo' fill />
 				</div>
-				<div className={styles.logoTech}>
-					<Image
-						src={'/img/logo/typescript.webp'}
-						alt='typescript logo'
-						fill
-						className={styles.imgTech}
-					/>
+				<div className={`${styles.logoTech} ${styles.square}`}>
+					<Image src={'/img/logo/typescript.webp'} alt='typescript logo' fill />
 				</div>
-				<div className={styles.logoTech}>
-					<Image
-						src={'/img/logo/sass.webp'}
-						alt='sass logo'
-						fill
-						className={styles.imgTech}
-					/>
+				<div className={`${styles.logoTech} ${styles.square}`}>
+					<Image src={'/img/logo/sass.webp'} alt='sass logo' fill />
 				</div>
-				<div className={styles.logoTech}>
+				<div className={`${styles.logoTech} ${styles.square}`}>
 					<Image
 						src={'/img/logo/affinityDesigner.webp'}
 						alt='Affinity Designer logo'
 						fill
-						className={styles.imgTech}
 					/>
 				</div>
-				<div className={styles.logoTech}>
-					<Image
-						src={'/img/logo/figma.webp'}
-						alt='figma logo'
-						fill
-						className={styles.imgTech}
-					/>
+				<div className={`${styles.logoTech} ${styles.thin}`}>
+					<Image src={'/img/logo/figma.webp'} alt='figma logo' fill />
 				</div>
 			</div>
 		</section>

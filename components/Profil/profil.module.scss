@@ -29,7 +29,6 @@
 		}
 		.photoContainer {
 			margin: 4vh 0;
-			// background-color: rgba(255, 0, 0, 0.067);
 			height: 30vh;
 			width: 100%;
 			@include flex;
@@ -110,17 +109,31 @@
 		width: 100%;
 		height: 15vh;
 		border-bottom: 2px solid $blue;
-		.imgStripes {
-		}
 	}
 	.techs {
 		border-bottom: 2px solid $blue;
-		height: 100vh;
 		position: relative;
-		width: 10%;
+		width: calc(100% - 40px);
+		padding: 27.5px 20px;
+		@include flex($dir: row);
 		.logoTech {
-			.imgTech {
-			}
+			position: relative;
+			background-color: transparent;
+		}
+		.square {
+			width: calc(calc(100vw - 70px) / 4);
+			height: calc(calc(100vw - 70px) / 4);
+			margin: 12.5px calc(calc(calc(100vw - 70px) / 4) / 6);
+		}
+		.long {
+			width: calc(calc(100vw - 70px) / 4);
+			height: calc(calc(100vw - 250px) / 4);
+			margin: 12.5px calc(calc(calc(100vw - 70px) / 4) / 6);
+		}
+		.thin {
+			width: calc(calc(calc(100vw - 70px) / 4) - 20px);
+			height: calc(calc(100vw - 70px) / 4);
+			margin: 12.5px calc(calc(calc(calc(100vw - 70px) / 4) / 6) + 10px);
 		}
 	}
 }
