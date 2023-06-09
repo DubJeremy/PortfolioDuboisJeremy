@@ -113,27 +113,27 @@
 	.techs {
 		border-bottom: 2px solid $blue;
 		position: relative;
-		width: calc(100% - 40px);
-		padding: 27.5px 20px;
+		width: calc(100vw - 90px);
+		padding: 27.5px 30px;
 		@include flex($dir: row);
 		.logoTech {
 			position: relative;
 			background-color: transparent;
 		}
 		.square {
-			width: calc(calc(100vw - 70px) / 4);
-			height: calc(calc(100vw - 70px) / 4);
-			margin: 12.5px calc(calc(calc(100vw - 70px) / 4) / 6);
+			width: calc(calc(100vw - 90px) / 4);
+			height: calc(calc(100vw - 90px) / 4);
+			margin: 10px calc(calc(calc(100vw - 90px) / 4) / 6);
 		}
 		.long {
-			width: calc(calc(100vw - 70px) / 4);
+			width: calc(calc(100vw - 90px) / 4);
 			height: calc(calc(100vw - 250px) / 4);
-			margin: 12.5px calc(calc(calc(100vw - 70px) / 4) / 6);
+			margin: 10px calc(calc(calc(100vw - 90px) / 4) / 6);
 		}
 		.thin {
-			width: calc(calc(calc(100vw - 70px) / 4) - 20px);
-			height: calc(calc(100vw - 70px) / 4);
-			margin: 12.5px calc(calc(calc(calc(100vw - 70px) / 4) / 6) + 10px);
+			width: calc(calc(calc(100vw - 90px) / 4) - 20px);
+			height: calc(calc(100vw - 90px) / 4);
+			margin: 10px calc(calc(calc(calc(100vw - 90px) / 4) / 6) + 10px);
 		}
 	}
 }
