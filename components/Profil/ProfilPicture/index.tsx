@@ -5,7 +5,7 @@ import { TextureLoader, Mesh, DoubleSide, BufferGeometry, Color } from 'three';
 import styles from './profilPicture.module.scss';
 
 const ProfilPicture = () => {
-	const texture = useLoader(TextureLoader, '/img/chat.png');
+	const texture = useLoader(TextureLoader, '/img/pp.png');
 	const flagRef = useRef<Mesh>();
 
 	useFrame((state, delta) => {
@@ -29,7 +29,7 @@ const ProfilPicture = () => {
 
 	return (
 		<mesh ref={flagRef} className={styles.profilPicture}>
-			<planeGeometry args={[8, 6, 30, 20]} />
+			<planeGeometry args={[6, 7, 30, 20]} />
 			<meshBasicMaterial map={texture} side={DoubleSide} />
 		</mesh>
 	);

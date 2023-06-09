@@ -2,11 +2,11 @@ import React from 'react';
 import Image from 'next/image';
 
 import useTranslation from '@/translations/hooks';
-import Circle from '../Header/circle';
 import ProfilPicture from './ProfilPicture';
 
 import styles from './profil.module.scss';
 import { Canvas } from '@react-three/fiber';
+import Circle from './circle';
 
 const Profil = () => {
 	const { t } = useTranslation();

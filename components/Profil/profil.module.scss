@@ -3,7 +3,7 @@
 
 .profil {
 	overflow: hidden;
-	width: 100%;
+	width: calc(100vw - 30px);
 	border-top: 2px solid $blue;
 	.desc {
 		padding: 8vh 25px 0 25px;
@@ -43,7 +43,7 @@
 		padding: 25px;
 		font-family: 'JosefinS';
 		border-bottom: 2px solid $blue;
-		width: 100%;
+		overflow: hidden;
 		> h3 {
 			font-weight: 400;
 		}
@@ -99,11 +99,10 @@
 		}
 		.circle {
 			position: absolute;
-			top: 0;
-			right: 0;
-			height: 20px;
-			width: 20px;
-			background-color: red;
+			top: -70px;
+			right: -70px;
+			height: 150px;
+			width: 150px;
 		}
 	}
 	.stripes {
