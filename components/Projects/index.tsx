@@ -34,10 +34,10 @@ const Projects = () => {
 							fill
 						/>
 					</div>
-					<div className={`${styles.logoTech} ${styles.square}`}>
+					<div className={`${styles.logoTech} ${styles.medium}`}>
 						<Image src={'/img/logo/sass.webp'} alt='sass logo' fill />
 					</div>
-					<div className={`${styles.logoTech} ${styles.square}`}>
+					<div className={`${styles.logoTech} ${styles.medium}`}>
 						<Image
 							src={'/img/logo/nodeMailer.webp'}
 							alt='nodeMailer logo'
@@ -63,13 +63,16 @@ const Projects = () => {
 			<div className={styles.btns}>
 				<div className={styles.viewProject}>
 					<p>{t('VIEW_PROJECT')}</p>
+					<div className={styles.arrowD}>
+						<Image src={'/img/icon/arrowD.webp'} alt='arrow' fill />
+					</div>
 				</div>
 				<div className={styles.logoStriped}>
 					<Image src={'/img/patternStripedS.webp'} alt='pattern striped' fill />
 				</div>
 				<div className={styles.next}>
 					<p>{t('NEXT')}</p>
-					<div className={styles.arrow}>
+					<div className={styles.arrowH}>
 						<Image src={'/img/icon/arrow.webp'} alt='arrow' fill />
 					</div>
 				</div>
