@@ -1,6 +1,234 @@
 @import '../../styles/variables.scss';
 @import 'styles/mixins.scss';
 
+.projects {
+	min-height: 100vh;
+	width: calc(100vw - 30px);
+	color: $blue;
+	.title {
+		width: 100%;
+		height: 70px;
+		border-bottom: 2px solid $blue;
+		@include flex($dir: row);
+		h3 {
+			width: 40%;
+			text-align: center;
+			font-family: 'Flaviotte';
+			font-size: 2.2em;
+			font-weight: 400;
+		}
+		.patternContainer {
+			position: relative;
+			border-left: 2px solid $blue;
+			width: calc(60% - 2px);
+			height: 100%;
+		}
+	}
+	.screens {
+		width: 100%;
+		height: 40vh;
+	}
+	.descProject {
+		width: 100%;
+		h4 {
+			font-family: 'Flaviotte';
+			font-size: 2em;
+			-webkit-text-stroke: 0.85px $blue;
+			color: transparent;
+			width: 100%;
+			text-align: center;
+			margin-bottom: 15px;
+		}
+		> p {
+			padding: 0 25px;
+			font-family: 'JosefinS';
+			font-weight: 350;
+			text-align: justify;
+		}
+		.techs {
+			padding: 30px 40px 40px 40px;
+			@include flex($dir: row);
+			border-bottom: 2px solid $blue;
+			.logoTech {
+				position: relative;
+				transition: all 0.2s ease-in-out;
+				&:hover {
+					transform: scale(1.1);
+				}
+			}
+			.square {
+				width: calc(calc(100vw - 110px) / 6);
+				height: calc(calc(100vw - 110px) / 6);
+				margin: 10px calc(calc(calc(100vw - 110px) / 6) / 4);
+			}
+			.long {
+				width: calc(calc(100vw - 110px) / 6);
+				height: calc(calc(100vw - 200px) / 6);
+				margin: 10px calc(calc(calc(100vw - 110px) / 6) / 4);
+			}
+			.medium {
+				width: calc(calc(calc(100vw - 110px) / 6) + 10px);
+				height: calc(calc(100vw - 150px) / 6);
+				margin: 10px calc(calc(calc(calc(100vw - 110px) / 6) / 4) - 5px);
+			}
+			.thin {
+			}
+		}
+	}
+	.btns {
+		height: 50px;
+		border-bottom: 2px solid $blue;
+		position: relative;
+		@include flex($dir: row);
+		font-family: 'JosefinS';
+		font-weight: 400;
+		font-size: 0.9em;
+		.viewProject {
+			position: relative;
+			width: 40%;
+			height: 100%;
+			cursor: pointer;
+			> p {
+				padding: 10px 10px;
+			}
+			.arrowD {
+				position: absolute;
+				height: 20px;
+				width: 20px;
+				right: 5px;
+				bottom: 5px;
+				transition: all 0.2s ease-in-out;
+			}
+			&:hover {
+				.arrowD {
+					transform: scale(1.1);
+				}
+			}
+			&:active {
+				.arrowD {
+					transform: scale(0.95);
+				}
+			}
+		}
+		.logoStriped {
+			position: relative;
+			z-index: -2;
+			width: calc(60% - 2px);
+			height: 100%;
+			border-left: 2px solid $blue;
+		}
+		.next {
+			position: absolute;
+			z-index: 1;
+			right: 0;
+			top: 0;
+			width: 35%;
+			height: 50%;
+			border-left: 2px solid $blue;
+			border-bottom: 2px solid $blue;
+			@include flex($just: space-around, $dir: row);
+			padding: 0 2px;
+			cursor: pointer;
+			> p {
+				font-size: 0.8em;
+			}
+			.arrowH {
+				position: relative;
+				width: 20px;
+				height: 10px;
+				transition: all 0.2s ease-in-out;
+			}
+			&:before {
+				background: url(/img/background.webp) 0 0;
+				background-size: 500px 500px;
+				width: 100%;
+				height: 100%;
+				content: '';
+				position: absolute;
+				z-index: -1;
+			}
+			&:after {
+				background-image: url(/img/noise.png);
+				pointer-events: none !important;
+				background-size: 250px 250px;
+				-webkit-animation: noiseTextureAnim 0.55s steps(1) infinite;
+				animation: noiseTextureAnim 0.55s steps(1) infinite;
+				will-change: background-position;
+				-webkit-backface-visibility: hidden;
+				backface-visibility: hidden;
+				-webkit-transform: translateZ(0);
+				transform: translateZ(0);
+				content: '';
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				z-index: 0;
+			}
+			&:hover {
+				.arrowH {
+					transform: scale(1.1);
+				}
+			}
+			&:active {
+				.arrowH {
+					transform: scale(0.95);
+				}
+			}
+		}
+	}
+	.scrollText {
+		height: 140px;
+		border-bottom: 2px solid $blue;
+		margin-bottom: 15px;
+		position: relative;
+		overflow: hidden;
+		> p {
+			font-family: 'Flaviotte';
+			font-size: 190px;
+			line-height: 175px;
+			color: transparent;
+			-webkit-text-stroke: 4px $blue;
+			white-space: nowrap;
+		}
+	}
+}
+
+@keyframes noiseTextureAnim {
+	0% {
+		background-position: 0 0;
+	}
+	10% {
+		background-position: 10px 10px;
+	}
+	20% {
+		background-position: 150px 20px;
+	}
+	30% {
+		background-position: 125px 125px;
+	}
+	40% {
+		background-position: 40px 170px;
+	}
+	50% {
+		background-position: 125px 125px;
+	}
+	60% {
+		background-position: 90px 10px;
+	}
+	70% {
+		background-position: 60px 100px;
+	}
+	80% {
+		background-position: 20px 70px;
+	}
+	90% {
+		background-position: 120px 80px;
+	}
+	to {
+		background-position: 0 250px;
+	}
+}
+
 @media screen and (max-width: $extra-small) {
 }
 @media screen and (max-width: $extra-small) and (min-height: $small) {

@@ -4,6 +4,8 @@ import Navbar from '@/components/Navbar';
 import ScreenFrame from '@/components/ScreenFrame';
 import Header from '@/components/Header';
 import Profil from '@/components/Profil';
+import Projects from '@/components/Projects';
+import Contact from '@/components/Contact';
 
 export default function Home() {
 	return (
@@ -28,6 +30,8 @@ export default function Home() {
 				<Navbar />
 				<Header />
 				<Profil />
+				<Projects />
+				<Contact />
 			</main>
 		</>
 	);

@@ -24,7 +24,7 @@ const Navbar = () => {
 		const section = document.getElementById(sectionId);
 
 		if (section) {
-			const sectionTop = section.offsetTop - window.innerHeight * 0.1;
+			const sectionTop = section.offsetTop - window.innerHeight * 0.16;
 			window.scrollTo({ top: sectionTop, behavior: 'smooth' });
 		}
 		setActiveSection(sectionId);

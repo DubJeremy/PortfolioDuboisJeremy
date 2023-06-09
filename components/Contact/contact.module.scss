@@ -1,6 +1,11 @@
 @import '../../styles/variables.scss';
 @import 'styles/mixins.scss';
 
+.contact {
+	height: 100vh;
+	position: relative;
+	overflow: hidden;
+}
 @media screen and (max-width: $extra-small) {
 }
 @media screen and (max-width: $extra-small) and (min-height: $small) {
