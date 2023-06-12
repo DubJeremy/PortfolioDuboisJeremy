@@ -1,0 +1,46 @@
+@import '../../styles/variables.scss';
+@import 'styles/mixins.scss';
+
+.turnMobile {
+	height: 100vh;
+	@include flex;
+	p {
+		font-family: 'JosefinS';
+		font-size: 1.5em;
+		text-align: center;
+		width: 60%;
+		margin-bottom: 20px;
+	}
+	.imgContainer {
+		width: 100px;
+		height: 100px;
+		position: relative;
+		animation: rotate-fade 3s linear infinite;
+		.imgTurnMobile {
+			object-fit: contain;
+		}
+	}
+}
+
+@keyframes rotate-fade {
+	0% {
+		opacity: 1;
+		transform: rotate(-90deg);
+	}
+	25% {
+		opacity: 1;
+		transform: rotate(0deg);
+	}
+	50% {
+		opacity: 0;
+		transform: rotate(0deg);
+	}
+	75% {
+		opacity: 0;
+		transform: rotate(-90deg);
+	}
+	100% {
+		opacity: 1;
+		transform: rotate(-90deg);
+	}
+}

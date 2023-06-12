@@ -26,4 +26,7 @@ export const en: { [key: string]: string } = {
 	SEND: 'Send',
 	// FOOTER --------------------------------
 	INSPIRED_BY: 'Inspired by',
+	// noLANDSCAPE --------------------------------
+	LANDSCAPE:
+		'For the best experience, make sure your device remains in portrait mode.',
 };
