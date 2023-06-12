@@ -1,6 +1,39 @@
 @import '../../styles/variables.scss';
 @import 'styles/mixins.scss';
 
+.footer {
+	padding-bottom: 20px;
+	.scrollText {
+		height: 140px;
+		border-bottom: 2px solid $blue;
+		position: relative;
+		overflow: hidden;
+		> p {
+			font-family: 'Flaviotte';
+			font-size: 190px;
+			line-height: 175px;
+			color: transparent;
+			-webkit-text-stroke: 4px $blue;
+			white-space: nowrap;
+		}
+	}
+	.container {
+		position: relative;
+		height: 40vh;
+		width: 100%;
+		@include flex($just: flex-end);
+		color: $blue;
+		font-family: 'JosefinS';
+		.credit {
+			cursor: pointer;
+			margin-bottom: 25px;
+		}
+		> p {
+			font-size: 1.3em;
+		}
+	}
+}
+
 @media screen and (max-width: $extra-small) {
 }
 @media screen and (max-width: $extra-small) and (min-height: $small) {
