@@ -134,13 +134,30 @@
 		.img {
 			width: 174px;
 			height: 174px;
-			margin-left: -4px;
 		}
 	}
 }
 @media screen and (max-width: $extra-small) and (min-height: $small) {
 }
 @media screen and (min-width: $small) {
+	.circle {
+		width: 248px;
+		.background {
+			width: 246px;
+		}
+		.background:before {
+			width: 250px;
+			left: calc(50% - 125px);
+		}
+		.background:after {
+			width: 250px;
+			left: calc(50% - 125px);
+		}
+		.img {
+			width: 254px;
+			height: 254px;
+		}
+	}
 }
 @media screen and (min-width: $medium) {
 }

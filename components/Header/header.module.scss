@@ -66,7 +66,26 @@
 @media screen and (max-width: $extra-small) and (min-height: $small) {
 }
 @media screen and (min-width: $small) {
+	.header {
+		.name {
+			width: 65%;
+			@include flex;
+			.lastName {
+				margin-right: 20vw;
+			}
+			.firstName {
+				margin-left: 20vw;
+			}
+		}
+	}
 }
+@media screen and (min-width: $small) and (orientation: landscape) {
+	.header {
+		.name {
+		}
+	}
+}
+
 @media screen and (min-width: $medium) {
 }
 @media screen and (min-width: $large) and (orientation: portrait) {

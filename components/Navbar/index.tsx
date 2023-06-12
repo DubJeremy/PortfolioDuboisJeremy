@@ -7,7 +7,7 @@ import useTranslation from '@/translations/hooks';
 import styles from './navbar.module.scss';
 
 const Navbar = () => {
-	const [targetReached] = useMediaQuery(`(min-width: 500px)`);
+	const [targetReached] = useMediaQuery(`(min-width: 992px)`);
 	const [isToggled, setToggle] = useState(false);
 	const [activeSection, setActiveSection] = useState('profil');
 	const { t } = useTranslation();
