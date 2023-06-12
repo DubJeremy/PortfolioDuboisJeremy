@@ -117,7 +117,33 @@
 }
 @media screen and (min-width: $medium) {
 }
-@media screen and (min-width: $large) and (orientation: portrait) {
+@media screen and (min-width: $large) {
+	.top {
+		height: 25px;
+		.borderBottom {
+			height: 4px;
+			width: calc(100vw - 50px);
+		}
+	}
+	.right {
+		width: 25px;
+		border-left: 4px solid $blue;
+		top: 25px;
+		height: calc(100vh - 50px);
+	}
+	.bottom {
+		height: 25px;
+		.borderTop {
+			height: 4px;
+			width: calc(100% - 50px);
+		}
+	}
+	.left {
+		width: 25px;
+		height: calc(100vh - 50px);
+		top: 25px;
+		border-right: 4px solid $blue;
+	}
 }
 @media screen and (min-width: $large) and (orientation: landscape) {
 }

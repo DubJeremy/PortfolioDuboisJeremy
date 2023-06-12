@@ -29,7 +29,9 @@ const Navbar = () => {
 		}
 		setActiveSection(sectionId);
 		// setToggle(false);
-		toggleMenu();
+		if (!targetReached) {
+			toggleMenu();
+		}
 	};
 
 	useEffect(() => {
@@ -39,6 +41,33 @@ const Navbar = () => {
 			document.body.style.overflow = 'visible';
 		}
 	}, [isToggled]);
+
+	useEffect(() => {
+		const handleScroll = () => {
+			const sections = Array.from(
+				document.querySelectorAll('section')
+			) as HTMLElement[];
+			const scrollPosition = window.pageYOffset;
+
+			sections.forEach((section: HTMLElement) => {
+				const sectionTop = section.offsetTop;
+				const sectionHeight = section.offsetHeight;
+				const sectionId = section.getAttribute('id');
+
+				if (
+					scrollPosition >= sectionTop - sectionHeight * 0.25 &&
+					scrollPosition < sectionTop + sectionHeight - sectionHeight * 0.25 &&
+					sectionId !== null
+				) {
+					setActiveSection(sectionId);
+				}
+			});
+		};
+		window.addEventListener('scroll', handleScroll);
+		return () => {
+			window.removeEventListener('scroll', handleScroll);
+		};
+	}, []);
 
 	return (
 		<>
@@ -57,9 +86,37 @@ const Navbar = () => {
 				{targetReached ? (
 					<div className={styles.nav}>
 						<ul>
-							<li>Profil</li>
-							<li>{t('PROJECT')}</li>
-							<li>Contact</li>
+							<li className={activeSection === 'profil' ? styles.activeLi : ''}>
+								<a
+									href='#profil'
+									className={activeSection === 'profil' ? styles.active : ''}
+									onClick={(e) => handleClick(e, 'profil')}
+								>
+									Profil
+								</a>
+							</li>
+							<li
+								className={activeSection === 'projects' ? styles.activeLi : ''}
+							>
+								<a
+									href='#projects'
+									className={activeSection === 'projects' ? styles.active : ''}
+									onClick={(e) => handleClick(e, 'projects')}
+								>
+									{t('PROJECT')}
+								</a>
+							</li>
+							<li
+								className={activeSection === 'contact' ? styles.activeLi : ''}
+							>
+								<a
+									href='#contact'
+									className={activeSection === 'contact' ? styles.active : ''}
+									onClick={(e) => handleClick(e, 'contact')}
+								>
+									Contact
+								</a>
+							</li>
 						</ul>
 						<div className={styles.language}>FR</div>
 					</div>
@@ -116,7 +173,9 @@ const Navbar = () => {
 						<li>
 							<a
 								href='#contact'
-								className={activeSection === 'contact' ? styles.active : ''}
+								className={`${
+									activeSection === 'contact' ? styles.active : ''
+								} ${styles.contact}`}
 								onClick={(e) => handleClick(e, 'contact')}
 							>
 								Contact
