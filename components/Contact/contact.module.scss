@@ -205,6 +205,9 @@
 }
 
 @media screen and (max-width: $extra-small) {
+	.contact {
+		min-height: calc(100vh - 90px);
+	}
 }
 @media screen and (max-width: $extra-small) and (min-height: $small) {
 }

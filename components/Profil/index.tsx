@@ -36,7 +36,7 @@ const Profil = () => {
 							<Image src={'/img/icon/location.webp'} alt='logo location' fill />{' '}
 						</div>
 
-						<p>Bordeaux</p>
+						<p>Bordeaux, France</p>
 					</div>
 					<div className={styles.mail}>
 						<p className={styles.at}>@</p>

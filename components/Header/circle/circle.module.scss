@@ -114,6 +114,29 @@
 }
 
 @media screen and (max-width: $extra-small) {
+	.circle {
+		top: 60px;
+		min-height: calc(100vh - 90px);
+		width: 168px;
+		.background {
+			width: 166px;
+		}
+		.background:before {
+			height: calc(calc(calc(100vh - 90px) / 2) + 100px);
+			width: 170px;
+			left: calc(50% - 85px);
+		}
+		.background:after {
+			height: calc(calc(calc(100vh - 90px) / 2) + 100px);
+			width: 170px;
+			left: calc(50% - 85px);
+		}
+		.img {
+			width: 174px;
+			height: 174px;
+			margin-left: -4px;
+		}
+	}
 }
 @media screen and (max-width: $extra-small) and (min-height: $small) {
 }
