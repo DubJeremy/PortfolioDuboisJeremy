@@ -13,7 +13,7 @@
 	animation-fill-mode: forwards;
 	.background {
 		height: calc(50% + 100px);
-		width: 198px;
+		width: 196px;
 		animation: backOpacity 0.5s ease-in-out 2s;
 		opacity: 0;
 		animation-fill-mode: forwards;
@@ -53,9 +53,9 @@
 		position: relative;
 		z-index: 3;
 		margin-top: -100px;
-		margin-left: -1px;
-		width: 200px;
-		height: 200px;
+		margin-left: -4px;
+		width: 204px;
+		height: 204px;
 		border-radius: 50%;
 		box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
 	}

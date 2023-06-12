@@ -10,7 +10,7 @@
 		height: 70px;
 		border-bottom: 2px solid $blue;
 		@include flex($dir: row);
-		h3 {
+		> h3 {
 			width: 40%;
 			text-align: center;
 			font-family: 'Flaviotte';
@@ -179,7 +179,6 @@
 	.scrollText {
 		height: 140px;
 		border-bottom: 2px solid $blue;
-		margin-bottom: 15px;
 		position: relative;
 		overflow: hidden;
 		> p {

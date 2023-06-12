@@ -23,6 +23,7 @@ export const en: { [key: string]: string } = {
 	NEXT: 'Next Project',
 	// CONTACT --------------------------------
 	NAME: 'Name',
+	SEND: 'Send',
 	// FOOTER --------------------------------
 	INSPIRED_BY: 'Inspired by',
 };
