@@ -73,6 +73,9 @@ const Navbar = () => {
 		<>
 			<div className={styles.navbar}>
 				<div className={styles.logo}>
+					<a href='#profil'>
+						<Image src={'/img/logo/logo.webp'} alt='logo D' fill />
+					</a>
 					<div className={styles.logoStriped}>
 						<Image
 							src={'/img/logoStriped.webp'}
@@ -81,9 +84,8 @@ const Navbar = () => {
 							className={styles.imgLogoStriped}
 						/>
 					</div>
-					{/* <a href='#home'>D</a> */}
 				</div>
-				{targetReached ? (
+				{!targetReached ? (
 					<div className={styles.nav}>
 						<ul>
 							<li className={activeSection === 'profil' ? styles.activeLi : ''}>
