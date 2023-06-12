@@ -5,7 +5,7 @@ import useMediaQuery from '@/tools/useMediaQuery';
 import styles from './lines.module.scss';
 
 const Lines = () => {
-	const [targetReached] = useMediaQuery(`(min-width: 500px)`);
+	const [targetReached] = useMediaQuery(`(min-width: 768px)`);
 
 	return (
 		<div className={styles.lines}>
@@ -30,6 +30,15 @@ const Lines = () => {
 			<div className={`${styles.line} ${styles.line}`} />
 			<div className={`${styles.line} ${styles.line}`} />
 			<div className={`${styles.line} ${styles.line}`} />
+			{targetReached && (
+				<>
+					<div className={`${styles.line} ${styles.line}`} />
+					<div className={`${styles.line} ${styles.line}`} />
+					<div className={`${styles.line} ${styles.line}`} />
+					<div className={`${styles.line} ${styles.line}`} />
+					<div className={`${styles.line} ${styles.line}`} />
+				</>
+			)}
 		</div>
 	);
 };

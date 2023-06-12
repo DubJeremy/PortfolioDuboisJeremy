@@ -63,8 +63,6 @@
 		}
 	}
 }
-@media screen and (max-width: $extra-small) and (min-height: $small) {
-}
 @media screen and (min-width: $small) {
 	.header {
 		.name {
@@ -72,21 +70,38 @@
 			@include flex;
 			.lastName {
 				margin-right: 20vw;
+				transform: translateX(-60vw);
 			}
 			.firstName {
 				margin-left: 20vw;
+				transform: translateX(60vw);
 			}
 		}
 	}
-}
-@media screen and (min-width: $small) and (orientation: landscape) {
-	.header {
-		.name {
+	@keyframes lastNAppear {
+		0% {
+			transform: translateX(-60vw);
+		}
+		100% {
+			transform: translateX(0%);
+		}
+	}
+	@keyframes firstNAppear {
+		0% {
+			transform: translateX(60vw);
+		}
+		100% {
+			transform: translateX(0%);
 		}
 	}
 }
 
 @media screen and (min-width: $medium) {
+	.header {
+		.name {
+			font-size: 15vw;
+		}
+	}
 }
 @media screen and (min-width: $large) and (orientation: portrait) {
 }

@@ -160,6 +160,25 @@
 	}
 }
 @media screen and (min-width: $medium) {
+	.circle {
+		width: 348px;
+		.background {
+			width: 346px;
+		}
+		.background:before {
+			width: 350px;
+			left: calc(50% - 175px);
+		}
+		.background:after {
+			width: 350px;
+			left: calc(50% - 175px);
+		}
+		.img {
+			width: 354px;
+			height: 354px;
+			margin-top: -120px;
+		}
+	}
 }
 @media screen and (min-width: $large) and (orientation: portrait) {
 }
