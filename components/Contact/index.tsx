@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 
 import styles from './contact.module.scss';
-import useTranslation from '@/translations/hooks';
+import useTranslation from '@/components/Translator/hooks';
 import Lines from './lines';
 
 const Contact = () => {

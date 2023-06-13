@@ -25,6 +25,7 @@ body,
 body * {
 	color: inherit;
 	background-color: inherit;
+	scroll-behavior: smooth;
 }
 *,
 :after,
@@ -140,5 +141,3 @@ button:focus {
 		background-position: 0 250px;
 	}
 }
-
-// transition: background-color 0.4s linear;

@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 
-import useTranslation from '@/translations/hooks';
+import useTranslation from '@/components/Translator/hooks';
 import ProfilPicture from './ProfilPicture';
 
 import styles from './profil.module.scss';

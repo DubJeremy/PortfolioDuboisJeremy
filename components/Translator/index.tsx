@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import useTranslation from './hooks';
 
-import styles from '../Navbar/Navbar.module.scss';
+import styles from './translator.module.scss';
 
 export default function Translator() {
 	const [language, setLanguage] = useState('fr');
@@ -17,9 +17,14 @@ export default function Translator() {
 			locale: currentLanguage,
 		};
 		push(pathname, pathname, options);
-	}, [pathname, push]);
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, []);
 
-	function handleLocaleChange(targetLocale: string) {
+	function handleLocaleChange(
+		targetLocale: string,
+		event: React.MouseEvent<HTMLButtonElement>
+	) {
+		event.preventDefault();
 		if (!window) {
 			return;
 		}
@@ -45,10 +50,10 @@ export default function Translator() {
 	const targetLanguage = language === 'fr' ? 'en' : 'fr';
 
 	return (
-		<div className='lang'>
+		<div className={styles.lang}>
 			<button
 				className={styles.language}
-				onClick={() => handleLocaleChange(targetLanguage)}
+				onClick={(event) => handleLocaleChange(targetLanguage, event)}
 			>
 				{targetLanguage}
 			</button>

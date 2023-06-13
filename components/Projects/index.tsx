@@ -1,6 +1,6 @@
 import React from 'react';
 
-import useTranslation from '@/translations/hooks';
+import useTranslation from '@/components/Translator/hooks';
 
 import styles from './projects.module.scss';
 import Image from 'next/image';

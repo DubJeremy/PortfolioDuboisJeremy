@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 
 import useMediaQuery from '@/tools/useMediaQuery';
-import useTranslation from '@/translations/hooks';
+import useTranslation from '@/components/Translator/hooks';
+import Translator from '../Translator';
 
 import styles from './navbar.module.scss';
 
@@ -79,11 +80,9 @@ const Navbar = () => {
 		<>
 			<div className={styles.navbar}>
 				<div className={styles.logo}>
-					{/* {targetReached && ( */}
 					<p className={scrollTarget ? styles.showLogo : ''}>
 						<Image src={'/img/logo/logo.webp'} alt='logo D' fill />
 					</p>
-					{/* )} */}
 
 					<div className={styles.logoStriped}>
 						<Image
@@ -129,7 +128,9 @@ const Navbar = () => {
 								</a>
 							</li>
 						</ul>
-						<div className={styles.language}>FR</div>
+						<div className={styles.language}>
+							<Translator />
+						</div>
 					</div>
 				) : (
 					<button
@@ -193,7 +194,9 @@ const Navbar = () => {
 							</a>
 						</li>
 					</ul>
-					<div className={styles.languageToggle}>FR</div>
+					<div className={styles.languageToggle} onClick={() => toggleMenu()}>
+						<Translator />
+					</div>
 				</div>
 			</div>
 		</>

@@ -1,0 +1,31 @@
+@import '../../styles/variables.scss';
+@import 'styles/mixins.scss';
+
+.lang {
+	.language {
+		font-family: 'JosefinS';
+		font-size: 1em;
+		text-transform: uppercase;
+	}
+}
+@media screen and (max-width: $extra-small) {
+}
+@media screen and (max-width: $extra-small) and (min-height: $small) {
+}
+@media screen and (min-width: $small) {
+}
+@media screen and (min-width: $medium) {
+}
+@media screen and (min-width: $large) {
+	.lang {
+		.language {
+			font-size: 2em;
+		}
+	}
+}
+@media screen and (min-width: $large) and (orientation: landscape) {
+}
+@media screen and (min-width: $extra-large) and (orientation: landscape) {
+}
+@media screen and (min-width: $ultra-large) {
+}
