@@ -79,11 +79,11 @@ const Navbar = () => {
 		<>
 			<div className={styles.navbar}>
 				<div className={styles.logo}>
-					{targetReached && (
-						<p className={scrollTarget ? styles.showLogo : ''}>
-							<Image src={'/img/logo/logo.webp'} alt='logo D' fill />
-						</p>
-					)}
+					{/* {targetReached && ( */}
+					<p className={scrollTarget ? styles.showLogo : ''}>
+						<Image src={'/img/logo/logo.webp'} alt='logo D' fill />
+					</p>
+					{/* )} */}
 
 					<div className={styles.logoStriped}>
 						<Image
