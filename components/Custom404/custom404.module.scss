@@ -48,7 +48,6 @@
 			height: 100%;
 			width: 44.5%;
 			margin-left: 5%;
-			// margin-left: 4.5%;
 			@include flex($align: flex-start);
 			animation: imgAnim 0.6s ease-out 0.9s forwards;
 			.logo {
@@ -112,7 +111,6 @@
 			position: absolute;
 			z-index: 4;
 			right: 0;
-			// background-color: white;
 			transform: translateX(0);
 			animation: coverAnim 0.2s ease-out 0.9s forwards;
 			&:before {

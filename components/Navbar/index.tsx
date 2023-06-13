@@ -11,6 +11,7 @@ const Navbar = () => {
 	const [isToggled, setToggle] = useState(false);
 	const [activeSection, setActiveSection] = useState('profil');
 	const { t } = useTranslation();
+	const [scrollTarget, setScrollTaget] = useState(false);
 
 	const toggleMenu = () => {
 		setToggle(!isToggled);
@@ -47,7 +48,7 @@ const Navbar = () => {
 			const sections = Array.from(
 				document.querySelectorAll('section')
 			) as HTMLElement[];
-			const scrollPosition = window.pageYOffset;
+			const scrollPosition = window.scrollY;
 
 			sections.forEach((section: HTMLElement) => {
 				const sectionTop = section.offsetTop;
@@ -61,6 +62,11 @@ const Navbar = () => {
 				) {
 					setActiveSection(sectionId);
 				}
+				if (scrollPosition >= sectionHeight) {
+					setScrollTaget(true);
+				} else {
+					setScrollTaget(false);
+				}
 			});
 		};
 		window.addEventListener('scroll', handleScroll);
@@ -73,9 +79,12 @@ const Navbar = () => {
 		<>
 			<div className={styles.navbar}>
 				<div className={styles.logo}>
-					<a href='#profil'>
-						<Image src={'/img/logo/logo.webp'} alt='logo D' fill />
-					</a>
+					{targetReached && (
+						<p className={scrollTarget ? styles.showLogo : ''}>
+							<Image src={'/img/logo/logo.webp'} alt='logo D' fill />
+						</p>
+					)}
+
 					<div className={styles.logoStriped}>
 						<Image
 							src={'/img/logoStriped.webp'}
@@ -85,7 +94,7 @@ const Navbar = () => {
 						/>
 					</div>
 				</div>
-				{!targetReached ? (
+				{targetReached ? (
 					<div className={styles.nav}>
 						<ul>
 							<li className={activeSection === 'profil' ? styles.activeLi : ''}>
