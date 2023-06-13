@@ -12,9 +12,9 @@ function Custom404() {
 					<span>error</span> 404
 				</p>
 				<div className={styles.splitter}></div>
-				<Link href={'/'} className={styles.imgContainer}>
+				<Link href={'/'} className={styles.logoContainer}>
 					<div className={styles.logo}>
-						<p>Portfolio | Dubois Jérémy</p>
+						<p>D</p>
 					</div>
 				</Link>
 				<div className={styles.coverError}></div>
