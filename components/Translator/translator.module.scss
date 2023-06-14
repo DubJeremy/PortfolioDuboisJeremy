@@ -24,6 +24,11 @@
 	}
 }
 @media screen and (min-width: $large) and (orientation: landscape) {
+	.lang {
+		.language {
+			font-size: 1.1em;
+		}
+	}
 }
 @media screen and (min-width: $extra-large) and (orientation: landscape) {
 }
