@@ -5,7 +5,7 @@
 	position: fixed;
 }
 .top {
-	width: calc(100vw - 28px);
+	width: calc(100% - 28px);
 	height: 15px;
 	top: 0;
 	left: 14px;
@@ -23,7 +23,7 @@
 	z-index: 1002;
 }
 .bottom {
-	width: calc(100vw - 28px);
+	width: calc(100% - 28px);
 	height: 15px;
 	bottom: 0;
 	left: 14px;
@@ -39,6 +39,19 @@
 	border-right: 2px solid $blue;
 	box-sizing: border-box;
 	z-index: 1002;
+}
+.corner {
+	width: 14px;
+	height: 16px;
+	z-index: 1004;
+}
+.rightTop {
+	top: 0;
+	right: 0;
+}
+.rightBottom {
+	bottom: 0;
+	right: 0;
 }
 .sideFrame:before {
 	background: url(/img/background.webp) 0 0;

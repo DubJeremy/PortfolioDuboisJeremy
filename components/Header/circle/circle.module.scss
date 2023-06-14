@@ -204,6 +204,31 @@
 		}
 	}
 }
+@media screen and (min-width: $medium) and (orientation: landscape) {
+	.circle {
+		width: 208px;
+		.background {
+			width: 206px;
+			height: calc(50% + 100px);
+		}
+		.background:before {
+			width: 208px;
+			left: calc(50% - 104px);
+			height: calc(calc(calc(100vh - 130px) / 2) + 100px);
+		}
+		.background:after {
+			width: 208px;
+			left: calc(50% - 104px);
+			height: calc(calc(calc(100vh - 130px) / 2) + 100px);
+		}
+		.img {
+			width: 218px;
+			height: 218px;
+			margin-top: -118px;
+			margin-left: -6px;
+		}
+	}
+}
 @media screen and (min-width: $large) and (orientation: portrait) {
 	.circle {
 		top: 100px;
@@ -233,26 +258,8 @@
 @media screen and (min-width: $large) and (orientation: landscape) {
 	.circle {
 		top: 100px;
-		width: 208px;
-		.background {
-			width: 206px;
-			height: calc(50% + 100px);
-		}
-		.background:before {
-			width: 208px;
-			left: calc(50% - 104px);
-			height: calc(calc(calc(100vh - 130px) / 2) + 100px);
-		}
-		.background:after {
-			width: 208px;
-			left: calc(50% - 104px);
-			height: calc(calc(calc(100vh - 130px) / 2) + 100px);
-		}
 		.img {
-			width: 218px;
-			height: 218px;
 			margin-top: -128px;
-			margin-left: -6px;
 		}
 	}
 }

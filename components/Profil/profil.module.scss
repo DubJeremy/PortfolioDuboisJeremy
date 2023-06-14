@@ -2,8 +2,9 @@
 @import 'styles/mixins.scss';
 
 .profil {
-	overflow: hidden;
+	overflow-x: hidden;
 	width: calc(100vw - 30px);
+	max-width: 100%;
 	border-top: 2px solid $blue;
 	.desc {
 		padding: 8vh 25px 0 25px;

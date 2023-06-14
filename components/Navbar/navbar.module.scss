@@ -3,9 +3,11 @@
 
 .navbar {
 	height: 80px;
-	width: calc(100% - 30px);
+	width: calc(100vw - 30px);
+	max-width: 100%;
 	border-bottom: 2px solid $blue;
 	overflow: hidden;
+	overflow-x: hidden;
 	display: flex;
 	justify-content: space-between;
 	position: fixed;
@@ -112,8 +114,8 @@
 	}
 }
 .menuToggled {
-	width: 0%;
-	height: 0%;
+	width: 0vw;
+	height: 0vh;
 	@include flex;
 	position: relative;
 	transition: all 0.3s ease, box-shadow 0.3s ease;
@@ -153,7 +155,8 @@
 	transition: all 0.3s ease, box-shadow 0.3s ease;
 	transform: translateY(100%);
 	height: calc(100vh - 110px);
-	width: calc(100% - 30px);
+	width: calc(100vw - 30px);
+	max-width: 100%;
 	z-index: 1000;
 	position: fixed;
 	margin-top: 80px;
@@ -165,7 +168,7 @@
 	}
 	&.fade-out {
 		transition: transform 0.7s ease, opacity 0.3s ease;
-		transform: translateY(00);
+		transform: translateY(0);
 		opacity: 1;
 	}
 }

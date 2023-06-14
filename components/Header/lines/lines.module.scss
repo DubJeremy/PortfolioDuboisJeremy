@@ -40,7 +40,10 @@
 }
 @media screen and (min-width: $small) {
 }
-@media screen and (min-width: $medium) {
+@media screen and (min-width: $medium) and (orientation: landscape) {
+	.lines {
+		clip-path: polygon(30% 0, 70% 0, 100% 70%, 100% 100%, 0 100%, 0 70%);
+	}
 }
 @media screen and (min-width: $large) {
 	.lines {
@@ -49,9 +52,6 @@
 	}
 }
 @media screen and (min-width: $large) and (orientation: landscape) {
-	.lines {
-		clip-path: polygon(30% 0, 70% 0, 100% 70%, 100% 100%, 0 100%, 0 70%);
-	}
 }
 @media screen and (min-width: $extra-large) and (orientation: landscape) {
 }
