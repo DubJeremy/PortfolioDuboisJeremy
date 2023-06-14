@@ -38,11 +38,9 @@ body * {
 body {
 	overflow-x: hidden;
 	width: 100vw;
+	max-width: 100%;
 	height: 100vh;
-	max-width: 100vw;
 	max-height: 100vh;
-	padding: auto;
-	@include flex;
 	position: relative;
 }
 body:before {
@@ -78,9 +76,15 @@ body:after {
 main {
 	width: calc(100vw - 30px);
 	height: calc(100vh - 30px);
-	top: 15px;
-	left: 15px;
-	// overflow-x: hidden;
+	padding: 15px;
+	position: relative;
+}
+@media screen and (min-width: $large) {
+	main {
+		width: calc(100vw - 50px);
+		height: calc(100vh - 50px);
+		padding: 25px;
+	}
 }
 
 li {

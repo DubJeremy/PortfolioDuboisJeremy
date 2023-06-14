@@ -5,45 +5,39 @@
 	position: fixed;
 }
 .top {
-	width: 100vw;
+	width: calc(100vw - 28px);
 	height: 15px;
 	top: 0;
-	left: 0;
+	left: 14px;
 	z-index: 1003;
-	@include flex($just: flex-end);
-	.borderBottom {
-		height: 2px;
-		width: calc(100% - 30px);
-		background-color: $blue;
-	}
+	border-bottom: 2px solid $blue;
+	box-sizing: border-box;
 }
 .right {
 	width: 15px;
-	height: 100vh;
-	top: 0px;
+	height: calc(100vh - 30px);
+	top: 15px;
 	right: 0;
 	border-left: 2px solid $blue;
+	box-sizing: border-box;
 	z-index: 1002;
 }
 .bottom {
-	width: 100vw;
+	width: calc(100vw - 28px);
 	height: 15px;
 	bottom: 0;
-	left: 0;
+	left: 14px;
 	z-index: 1003;
-	@include flex($just: flex-start);
-	.borderTop {
-		height: 2px;
-		width: calc(100% - 30px);
-		background-color: $blue;
-	}
+	border-top: 2px solid $blue;
+	box-sizing: border-box;
 }
 .left {
 	width: 15px;
-	height: calc(100vh - 23px);
-	top: 13px;
+	height: calc(100vh - 30px);
+	top: 15px;
 	left: 0;
 	border-right: 2px solid $blue;
+	box-sizing: border-box;
 	z-index: 1002;
 }
 .sideFrame:before {
@@ -109,34 +103,24 @@
 	}
 }
 
-@media screen and (max-width: $extra-small) {
-}
-@media screen and (max-width: $extra-small) and (min-height: $small) {
-}
-@media screen and (min-width: $small) {
-}
-@media screen and (min-width: $medium) {
-}
 @media screen and (min-width: $large) {
 	.top {
 		height: 25px;
-		.borderBottom {
-			height: 4px;
-			width: calc(100vw - 50px);
-		}
+		width: calc(100vw - 42px);
+		border-bottom: 4px solid $blue;
+		left: 21px;
 	}
 	.right {
 		width: 25px;
+		height: calc(100vh - 50px);
 		border-left: 4px solid $blue;
 		top: 25px;
-		height: calc(100vh - 50px);
 	}
 	.bottom {
 		height: 25px;
-		.borderTop {
-			height: 4px;
-			width: calc(100% - 50px);
-		}
+		width: calc(100vw - 42px);
+		border-top: 4px solid $blue;
+		left: 21px;
 	}
 	.left {
 		width: 25px;
