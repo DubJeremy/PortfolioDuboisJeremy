@@ -15,6 +15,13 @@
 		animation: linesAppear 1s ease-in-out 2s;
 		animation-fill-mode: forwards;
 	}
+	.lineXL {
+		width: 1px;
+		background-color: white;
+		height: 0%;
+		animation: linesAppear 1s ease-in-out 1.5s;
+		animation-fill-mode: forwards;
+	}
 }
 
 @keyframes linesAppear {
@@ -37,6 +44,9 @@
 @media screen and (min-width: $large) and (orientation: portrait) {
 }
 @media screen and (min-width: $large) and (orientation: landscape) {
+	.lines {
+		clip-path: polygon(30% 0, 70% 0, 100% 70%, 100% 100%, 0 100%, 0 70%);
+	}
 }
 @media screen and (min-width: $extra-large) and (orientation: landscape) {
 }

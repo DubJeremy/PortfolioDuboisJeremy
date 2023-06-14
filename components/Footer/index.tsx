@@ -14,7 +14,9 @@ const Footer = () => {
 				<p>Portfolio Dubois Jérémy</p>
 			</div>
 			<div className={styles.container}>
-				<a className={styles.credit}>{t('INSPIRED_BY')} Kazuki Noda</a>
+				<a className={styles.credit}>
+					{t('INSPIRED_BY')} Kazuki Noda Portfolio
+				</a>
 				<p>©Dubois Jérémy</p>
 			</div>
 			{/* <div className={styles.picture}>

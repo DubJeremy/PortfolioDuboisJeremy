@@ -12,7 +12,8 @@ import useMediaQuery from '@/tools/useMediaQuery';
 import TurnMobile from '@/components/TurnMobile';
 
 export default function Home() {
-	const [targetReached] = useMediaQuery(`(max-height: 768px)`);
+	const [targetReachedH] = useMediaQuery(`(max-height: 500px)`);
+	const [targetReached] = useMediaQuery(`(max-width: 992px)`);
 	const [isInLandscape, setIsInLandscape] = useState<boolean | null>(null);
 
 	useEffect(() => {
@@ -48,7 +49,7 @@ export default function Home() {
 				<link rel='icon' href='/favicon.ico' />
 			</Head>
 			<main>
-				{isInLandscape && !targetReached ? (
+				{isInLandscape && targetReachedH && targetReached ? (
 					<TurnMobile />
 				) : (
 					<>

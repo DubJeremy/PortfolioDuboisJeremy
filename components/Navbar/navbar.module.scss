@@ -294,7 +294,7 @@
 }
 @media screen and (min-width: $medium) {
 }
-@media screen and (min-width: $large) and (orientation: portrait) {
+@media screen and (min-width: $large) {
 	.navbar {
 		height: 100px;
 		border-bottom: 4px solid $blue;

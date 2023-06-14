@@ -103,9 +103,35 @@
 		}
 	}
 }
+@media screen and (min-width: $large) {
+}
 @media screen and (min-width: $large) and (orientation: portrait) {
 }
 @media screen and (min-width: $large) and (orientation: landscape) {
+	.header {
+		.name {
+			font-size: 8vw;
+			.lastName {
+				margin-right: 12vw;
+			}
+			.firstName {
+				margin-left: 12vw;
+			}
+		}
+	}
+}
+@media screen and (min-width: $large) and (orientation: landscape) and (min-height: $medium) {
+	.header {
+		.name {
+			font-size: 10vw;
+			.lastName {
+				margin-right: 15vw;
+			}
+			.firstName {
+				margin-left: 15vw;
+			}
+		}
+	}
 }
 @media screen and (min-width: $extra-large) and (orientation: landscape) {
 }
