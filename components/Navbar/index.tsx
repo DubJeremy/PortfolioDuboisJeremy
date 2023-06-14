@@ -30,7 +30,6 @@ const Navbar = () => {
 			window.scrollTo({ top: sectionTop, behavior: 'smooth' });
 		}
 		setActiveSection(sectionId);
-		// setToggle(false);
 		if (!targetReached) {
 			toggleMenu();
 		}
@@ -78,7 +77,7 @@ const Navbar = () => {
 
 	return (
 		<>
-			<div className={styles.navbar}>
+			<div className={`${styles.navbar} ${isToggled ? styles.navToggled : ''}`}>
 				<div className={styles.logo}>
 					<p className={scrollTarget ? styles.showLogo : ''}>
 						<Image src={'/img/logo/logo.webp'} alt='logo D' fill />

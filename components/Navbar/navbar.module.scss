@@ -12,6 +12,7 @@
 	justify-content: space-between;
 	position: fixed;
 	z-index: 1001;
+	padding-left: 10px;
 	.logo {
 		width: 80px;
 		min-width: 80px;
@@ -75,6 +76,7 @@
 		cursor: pointer;
 		@include flex;
 		padding: 0;
+		margin-right: 10px;
 		.line {
 			fill: none;
 			stroke: $blue;
@@ -161,6 +163,7 @@
 	position: fixed;
 	margin-top: 80px;
 	border-bottom: 2px solid $blue;
+	padding-left: 0px;
 	&.slide-down {
 		transition: transform 0.3s ease, opacity 0.3s ease;
 		transform: translateY(-100%);
@@ -223,6 +226,9 @@
 	height: 100%;
 	position: absolute;
 	z-index: -1;
+}
+.navToggled {
+	padding-left: 0;
 }
 
 @keyframes noiseTextureAnim {
@@ -291,7 +297,18 @@
 		margin-top: 60px;
 	}
 }
-@media screen and (max-width: $extra-small) and (min-height: $small) {
+@media screen and (max-width: $extra-small) {
+	.navbar {
+		height: 60px;
+		.logo {
+			width: 60px;
+			min-width: 60px;
+			> p {
+				width: 60px;
+				height: 60px;
+			}
+		}
+	}
 }
 @media screen and (min-width: $small) {
 }
@@ -308,8 +325,6 @@
 			min-width: 100px;
 			> p {
 				border-right: 4px solid $blue;
-				top: 5px;
-				left: 5px;
 				width: 100px;
 				height: 100px;
 			}

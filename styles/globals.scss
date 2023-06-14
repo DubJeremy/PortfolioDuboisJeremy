@@ -42,6 +42,10 @@ body {
 	height: 100vh;
 	max-height: 100vh;
 	position: relative;
+	left: 50%;
+	right: 50%;
+	margin-left: -50vw;
+	margin-right: -50vw;
 }
 body:before {
 	position: fixed;
@@ -78,6 +82,10 @@ main {
 	height: calc(100vh - 30px);
 	padding: 15px;
 	position: relative;
+	left: 50%;
+	right: 50%;
+	margin-left: -50vw;
+	margin-right: -50vw;
 }
 @media screen and (min-width: $large) {
 	main {
@@ -85,6 +93,10 @@ main {
 		height: calc(100vh - 50px);
 		padding: 25px;
 	}
+}
+.section {
+	overflow-x: hidden;
+	max-width: 100%;
 }
 
 li {
