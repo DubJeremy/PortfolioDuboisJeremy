@@ -54,7 +54,7 @@ export default function Home() {
 				) : (
 					<>
 						<ScreenFrame />
-						<Navbar />
+						{/* <Navbar /> */}
 						<Header />
 						<Profil />
 						<Projects />
