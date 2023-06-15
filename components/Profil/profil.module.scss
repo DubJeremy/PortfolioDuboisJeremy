@@ -86,7 +86,7 @@
 					padding: 0 25px;
 					border-radius: 2px;
 					margin-left: -1px;
-					margin-right: 15px;
+					margin-right: 10px;
 				}
 				.logoLinkedin {
 					position: relative;
@@ -105,7 +105,7 @@
 	.techs {
 		border-bottom: 2px solid $blue;
 		position: relative;
-		width: calc(100vw - 90px);
+		width: calc(100% - 60px);
 		padding: 27.5px 30px;
 		@include flex($dir: row);
 		.logoTech {
@@ -113,19 +113,19 @@
 			background-color: transparent;
 		}
 		.square {
-			width: calc(calc(100vw - 90px) / 4);
-			height: calc(calc(100vw - 90px) / 4);
-			margin: 10px calc(calc(calc(100vw - 90px) / 4) / 6);
+			width: calc(calc(100% - 60px) / 4);
+			height: calc(calc(80vw - 60px) / 4);
+			margin: 10px calc(calc(calc(100% - 60px) / 4) / 6);
 		}
 		.long {
-			width: calc(calc(100vw - 90px) / 4);
-			height: calc(calc(100vw - 250px) / 4);
-			margin: 10px calc(calc(calc(100vw - 90px) / 4) / 6);
+			width: calc(calc(100% - 60px) / 4);
+			height: calc(calc(80vw - 250px) / 4);
+			margin: 10px calc(calc(calc(100% - 60px) / 4) / 6);
 		}
 		.thin {
-			width: calc(calc(calc(100vw - 90px) / 4) - 20px);
-			height: calc(calc(100vw - 90px) / 4);
-			margin: 10px calc(calc(calc(calc(100vw - 90px) / 4) / 6) + 10px);
+			width: calc(calc(calc(100% - 60px) / 4) - 20px);
+			height: calc(calc(80vw - 60px) / 4);
+			margin: 10px calc(calc(calc(calc(100% - 60px) / 4) / 6) + 10px);
 		}
 	}
 }
@@ -152,20 +152,24 @@
 				}
 			}
 		}
+		.techs {
+			.long {
+				height: calc(calc(80vw - 190px) / 4);
+			}
+		}
 	}
 }
 @media screen and (max-width: $extra-small) and (min-height: $small) {
 	.profil {
-		.desc {
-			.txt {
-				> h2 {
-					font-size: 1.1em;
-				}
-				> p {
-					font-size: 0.9em;
-				}
+		.techs {
+			.thin {
+				width: calc(calc(calc(100% - 60px) / 4));
+				height: calc(calc(80vw - 60px) / 4);
+				margin: 10px calc(calc(calc(calc(100% - 60px) / 4) / 6));
 			}
 		}
+	}
+	.profil {
 		.info {
 			> h3 {
 				font-size: 0.9em;
@@ -201,10 +205,137 @@
 	}
 }
 @media screen and (min-width: $small) {
+	.profil {
+		.techs {
+			width: calc(100% - 100px);
+			padding: 27.5px 50px;
+			.logoTech {
+				position: relative;
+				background-color: transparent;
+			}
+			.square {
+				width: calc(calc(100% - 100px) / 4);
+				height: calc(calc(80vw - 100px) / 4);
+				margin: 10px calc(calc(calc(100% - 100px) / 4) / 6);
+			}
+			.long {
+				width: calc(calc(100% - 100px) / 4);
+				height: calc(calc(80vw - 250px) / 4);
+				margin: 10px calc(calc(calc(100% - 100px) / 4) / 6);
+			}
+			.thin {
+				width: calc(calc(calc(100% - 100px) / 4) - 20px);
+				height: calc(calc(80vw - 100px) / 4);
+				margin: 10px calc(calc(calc(calc(100% - 100px) / 4) / 6) + 10px);
+			}
+		}
+	}
 }
 @media screen and (min-width: $medium) {
+	.profil {
+		.desc {
+			padding: 5vh 50px 0 50px;
+			min-height: 0px;
+		}
+		.info {
+			padding: 50px;
+			> h3 {
+				font-size: 1.5em;
+			}
+			> h4 {
+				font-size: 1.2em;
+			}
+			.profilContact {
+				margin-top: 25px;
+				.location {
+					height: 25px;
+
+					> p {
+						font-size: 1.1em;
+					}
+				}
+				.mail {
+					margin-bottom: 10px;
+					@include flex($dir: row, $just: flex-start);
+					.at {
+						font-size: 1.2em;
+					}
+					> a {
+						font-size: 1.1em;
+					}
+				}
+				.btns {
+					> button {
+						height: 35px;
+						padding: 0 45px;
+						border-radius: 2px;
+						margin-left: -1px;
+						margin-right: 10px;
+					}
+					.logoLinkedin {
+						position: relative;
+						height: 35px;
+						width: 35px;
+					}
+				}
+			}
+		}
+		.stripes {
+			height: 10vh;
+		}
+		.techs {
+			width: calc(100% - 200px);
+			padding: 50px 100px;
+
+			.logoTech {
+				position: relative;
+				background-color: transparent;
+			}
+			.square {
+				width: calc(calc(100% - 200px) / 4);
+				height: calc(calc(70vw - 200px) / 4);
+				margin: 10px calc(calc(calc(100% - 200px) / 4) / 6);
+			}
+			.long {
+				width: calc(calc(100% - 200px) / 4);
+				height: calc(calc(60vw - 350px) / 4);
+				margin: 10px calc(calc(calc(100% - 200px) / 4) / 6);
+			}
+			.thin {
+				width: calc(calc(calc(100% - 200px) / 4) - 30px);
+				height: calc(calc(70vw - 200px) / 4);
+				margin: 10px calc(calc(calc(calc(100% - 200px) / 4) / 6) + 15px);
+			}
+		}
+	}
 }
 @media screen and (min-width: $large) and (orientation: portrait) {
+	.profil {
+		.techs {
+			width: calc(100% - 400px);
+			padding: 50px 200px;
+
+			.logoTech {
+				position: relative;
+				background-color: transparent;
+			}
+			.square {
+				width: calc(calc(100% - 200px) / 4);
+				height: calc(calc(70vw - 200px) / 4);
+				margin: 10px calc(calc(calc(100% - 200px) / 4) / 6);
+			}
+			.long {
+				width: calc(calc(100% - 200px) / 4);
+				height: calc(calc(50vw - 350px) / 4);
+				margin: 10px calc(calc(calc(100% - 200px) / 4) / 6);
+			}
+			.thin {
+				width: calc(calc(calc(100% - 200px) / 4) - 30px);
+				height: calc(calc(70vw - 200px) / 4);
+				margin: 10px calc(calc(calc(calc(100% - 200px) / 4) / 6) + 15px);
+			}
+		}
+	}
 }
 @media screen and (min-width: $large) and (orientation: landscape) {
 }

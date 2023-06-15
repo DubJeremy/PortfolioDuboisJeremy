@@ -38,11 +38,21 @@
 		width: 100px;
 	}
 }
-@media screen and (max-width: $extra-small) and (min-height: $small) {
-}
 @media screen and (min-width: $small) {
+	.circleContainer {
+		top: -125px;
+		right: -125px;
+		height: 250px;
+		width: 250px;
+	}
 }
 @media screen and (min-width: $medium) {
+	.circleContainer {
+		top: -300px;
+		right: -250px;
+		height: 450px;
+		width: 450px;
+	}
 }
 @media screen and (min-width: $large) and (orientation: portrait) {
 }

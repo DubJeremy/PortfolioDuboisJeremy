@@ -7,9 +7,11 @@ import ProfilPicture from './ProfilPicture';
 import styles from './profil.module.scss';
 import { Canvas } from '@react-three/fiber';
 import Circle from './circle';
+import useMediaQuery from '@/tools/useMediaQuery';
 
 const Profil = () => {
 	const { t } = useTranslation();
+	const [targetReached] = useMediaQuery(`(min-width: 768px)`);
 
 	return (
 		<section className={styles.profil} id='profil'>
@@ -51,12 +53,18 @@ const Profil = () => {
 						</div>
 					</div>
 				</div>
-				{/* <div className={styles.circle}> */}
 				<Circle />
-				{/* </div> */}
 			</div>
 			<div className={styles.stripes}>
-				<Image src={'/img/patternStripedS.webp'} alt='patterne striped' fill />
+				<Image
+					src={
+						targetReached
+							? '/img/patternStripedS.webp'
+							: '/img/patternStripedXL.webp'
+					}
+					alt='patterne striped'
+					fill
+				/>
 			</div>
 			<div className={styles.techs}>
 				<div className={`${styles.logoTech} ${styles.long}`}>
