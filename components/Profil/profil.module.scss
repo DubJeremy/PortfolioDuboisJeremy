@@ -95,13 +95,6 @@
 				}
 			}
 		}
-		// .circle {
-		// 	position: absolute;
-		// 	top: -70px;
-		// 	right: -70px;
-		// 	height: 150px;
-		// 	width: 150px;
-		// }
 	}
 	.stripes {
 		position: relative;
@@ -138,8 +131,74 @@
 }
 
 @media screen and (max-width: $extra-small) {
+	.profil {
+		.desc {
+			.txt {
+				> h2 {
+					font-size: 1.1em;
+				}
+				> p {
+					font-size: 0.9em;
+				}
+			}
+		}
+		.info {
+			.profilContact {
+				.btns {
+					> button {
+						padding: 0 20px;
+						margin-right: 8px;
+					}
+				}
+			}
+		}
+	}
 }
 @media screen and (max-width: $extra-small) and (min-height: $small) {
+	.profil {
+		.desc {
+			.txt {
+				> h2 {
+					font-size: 1.1em;
+				}
+				> p {
+					font-size: 0.9em;
+				}
+			}
+		}
+		.info {
+			> h3 {
+				font-size: 0.9em;
+			}
+			> h4 {
+				font-size: 0.9em;
+			}
+			.profilContact {
+				.location {
+					> p {
+						font-size: 0.8em;
+					}
+				}
+				.mail {
+					> a {
+						font-size: 0.8em;
+					}
+				}
+				.btns {
+					> button {
+						padding: 0 15px;
+						font-size: 0.7em;
+						margin-right: 5px;
+						height: 25px;
+					}
+					.logoLinkedin {
+						height: 25px;
+						width: 25px;
+					}
+				}
+			}
+		}
+	}
 }
 @media screen and (min-width: $small) {
 }

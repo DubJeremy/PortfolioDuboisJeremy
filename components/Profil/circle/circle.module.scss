@@ -31,6 +31,12 @@
 }
 
 @media screen and (max-width: $extra-small) {
+	.circleContainer {
+		top: -50px;
+		right: -50px;
+		height: 100px;
+		width: 100px;
+	}
 }
 @media screen and (max-width: $extra-small) and (min-height: $small) {
 }
