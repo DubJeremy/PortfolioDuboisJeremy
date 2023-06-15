@@ -51,9 +51,9 @@ const Profil = () => {
 						</div>
 					</div>
 				</div>
-				<div className={styles.circle}>
-					<Circle />
-				</div>
+				{/* <div className={styles.circle}> */}
+				<Circle />
+				{/* </div> */}
 			</div>
 			<div className={styles.stripes}>
 				<Image src={'/img/patternStripedS.webp'} alt='patterne striped' fill />
