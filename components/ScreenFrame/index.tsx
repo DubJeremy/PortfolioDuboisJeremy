@@ -12,10 +12,10 @@ const ScreenFrame = () => {
 
 			<div className={`${styles.left} ${styles.sideFrame}`} />
 			<div
-				className={`${styles.sideFrame} ${styles.corner} ${styles.rightTop}`}
+				className={` ${styles.sideFrame} ${styles.corner} ${styles.rightBottom}`}
 			/>
 			<div
-				className={` ${styles.sideFrame} ${styles.corner} ${styles.rightBottom}`}
+				className={` ${styles.sideFrame} ${styles.corner} ${styles.leftBottom}`}
 			/>
 		</>
 	);

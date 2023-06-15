@@ -5,7 +5,7 @@
 	opacity: 0.8;
 	position: absolute;
 	z-index: -1;
-	width: calc(100vw - 30px);
+	width: 100%;
 	height: calc(100vh - 30px);
 	max-width: 100%;
 	@include flex($dir: row, $just: space-around, $align: flex-end);
@@ -47,7 +47,6 @@
 }
 @media screen and (min-width: $large) {
 	.lines {
-		width: calc(100vw - 50px);
 		height: calc(100vh - 50px);
 	}
 }

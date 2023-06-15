@@ -4,9 +4,8 @@
 .header {
 	position: relative;
 	height: calc(100vh - 30px);
-	width: calc(100vw - 30px);
+	width: 100%;
 	max-width: 100%;
-	padding-left: 8px;
 	@include flex;
 	overflow: hidden;
 	z-index: 5;
