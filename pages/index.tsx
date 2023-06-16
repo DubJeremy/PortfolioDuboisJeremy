@@ -55,9 +55,9 @@ export default function Home() {
 					<>
 						<ScreenFrame />
 						<Navbar />
-						<Header />
+						{/* <Header /> */}
 						<Profil />
-						<Projects />
+						{/* <Projects /> */}
 						<Contact />
 						<Footer />
 					</>

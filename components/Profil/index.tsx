@@ -81,7 +81,8 @@ const Profil = () => {
 					<div className={styles.btns}>
 						<button>{t('CV')}</button>
 						<a
-							href='https://www.linkedin.com/in/jeremy-dubois-dev'
+							href='https://www.linkedin.com/in/jeremy-dubois-dev
+							'
 							className={styles.logoLinkedin}
 						>
 							<Image src={'/img/logo/linkedin.webp'} alt='logo Linkedin' fill />
