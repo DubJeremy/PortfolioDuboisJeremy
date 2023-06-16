@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 
 import useTranslation from '@/components/Translator/hooks';
@@ -8,10 +8,28 @@ import styles from './profil.module.scss';
 import { Canvas } from '@react-three/fiber';
 import Circle from './circle';
 import useMediaQuery from '@/tools/useMediaQuery';
+import Lines from './lines';
 
 const Profil = () => {
 	const { t } = useTranslation();
 	const [targetReached] = useMediaQuery(`(min-width: 768px)`);
+	const [targetReachedL] = useMediaQuery(`(min-width: 992px)`);
+	const [isInLandscape, setIsInLandscape] = useState<boolean | null>(null);
+
+	useEffect(() => {
+		heightFunction();
+		window.addEventListener('resize', heightFunction, false);
+	}, []);
+
+	const heightFunction = () => {
+		if (typeof window !== 'undefined') {
+			if (window.innerHeight < window.innerWidth) {
+				setIsInLandscape(true);
+			} else {
+				setIsInLandscape(false);
+			}
+		}
+	};
 
 	return (
 		<section className={styles.profil} id='profil'>
@@ -23,11 +41,25 @@ const Profil = () => {
 					<p>{t('DESC_S')}</p>
 					<p>{t('DESC_T')}</p>
 				</div>
-				<div className={styles.photoContainer}>
-					<Canvas>
-						<ProfilPicture />
-					</Canvas>
-				</div>
+
+				{targetReachedL && isInLandscape ? (
+					<div className={styles.container}>
+						<div className={styles.photoContainer}>
+							<Canvas>
+								<ProfilPicture />
+							</Canvas>
+						</div>
+						<div className={styles.linesContainer}>
+							<Lines />
+						</div>
+					</div>
+				) : (
+					<div className={styles.photoContainer}>
+						<Canvas>
+							<ProfilPicture />
+						</Canvas>
+					</div>
+				)}
 			</div>
 			<div className={styles.info}>
 				<h3>Dubois Jérémy</h3>
@@ -48,9 +80,12 @@ const Profil = () => {
 					</div>
 					<div className={styles.btns}>
 						<button>{t('CV')}</button>
-						<div className={styles.logoLinkedin}>
+						<a
+							href='https://www.linkedin.com/in/jeremy-dubois-dev'
+							className={styles.logoLinkedin}
+						>
 							<Image src={'/img/logo/linkedin.webp'} alt='logo Linkedin' fill />
-						</div>
+						</a>
 					</div>
 				</div>
 				<Circle />

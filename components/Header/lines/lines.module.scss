@@ -20,7 +20,7 @@
 		width: 1px;
 		background-color: white;
 		height: 0%;
-		animation: linesAppear 1s ease-in-out 1.5s;
+		animation: linesAppear 1s ease-in-out 2s;
 		animation-fill-mode: forwards;
 	}
 }
@@ -47,7 +47,6 @@
 }
 @media screen and (min-width: $large) {
 	.lines {
-		height: calc(100vh - 50px);
 	}
 }
 @media screen and (min-width: $large) and (orientation: landscape) {
