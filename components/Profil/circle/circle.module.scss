@@ -57,6 +57,12 @@
 @media screen and (min-width: $large) and (orientation: portrait) {
 }
 @media screen and (min-width: $large) and (orientation: landscape) {
+	.circleContainer {
+		top: -25px;
+		right: -100px;
+		height: 250px;
+		width: 250px;
+	}
 }
 @media screen and (min-width: $extra-large) and (orientation: landscape) {
 }
