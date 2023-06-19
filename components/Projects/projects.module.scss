@@ -52,26 +52,15 @@
 			.logoTech {
 				position: relative;
 				transition: all 0.2s ease-in-out;
-				&:hover {
-					transform: scale(1.1);
-				}
-			}
-			.square {
 				width: calc(calc(100vw - 110px) / 6);
 				height: calc(calc(100vw - 110px) / 6);
 				margin: 10px calc(calc(calc(100vw - 110px) / 6) / 4);
-			}
-			.long {
-				width: calc(calc(100vw - 110px) / 6);
-				height: calc(calc(100vw - 200px) / 6);
-				margin: 10px calc(calc(calc(100vw - 110px) / 6) / 4);
-			}
-			.medium {
-				width: calc(calc(calc(100vw - 110px) / 6) + 10px);
-				height: calc(calc(100vw - 150px) / 6);
-				margin: 10px calc(calc(calc(calc(100vw - 110px) / 6) / 4) - 5px);
-			}
-			.thin {
+				&:hover {
+					transform: scale(1.1);
+				}
+				img {
+					object-fit: contain;
+				}
 			}
 		}
 	}
@@ -229,18 +218,86 @@
 }
 
 @media screen and (max-width: $extra-small) {
+	.projects {
+		.title {
+			height: 50px;
+			> h3 {
+				width: 45%;
+			}
+			.patternContainer {
+				width: calc(55% - 2px);
+			}
+		}
+	}
 }
 @media screen and (max-width: $extra-small) and (min-height: $small) {
+	.projects {
+		.title {
+			> h3 {
+				width: 55%;
+			}
+			.patternContainer {
+				width: calc(45% - 2px);
+			}
+		}
+	}
 }
 @media screen and (min-width: $small) {
 }
 @media screen and (min-width: $medium) {
+	.projects {
+		.title {
+			@include flex($dir: row, $wrap: nowrap);
+			> h3 {
+				width: 25%;
+			}
+			.patternContainer {
+				width: calc(75% - 2px);
+			}
+		}
+	}
+}
+@media screen and (min-width: $large) {
+	.projects {
+		.title {
+			border-bottom: 4px solid $blue;
+			> h3 {
+				width: 30%;
+			}
+			.patternContainer {
+				border-left: 4px solid $blue;
+				width: calc(70% - 4px);
+			}
+		}
+	}
 }
 @media screen and (min-width: $large) and (orientation: portrait) {
 }
 @media screen and (min-width: $large) and (orientation: landscape) {
+	.projects {
+		.title {
+			@include flex($dir: row, $wrap: nowrap);
+			> h3 {
+				width: 25%;
+			}
+			.patternContainer {
+				width: calc(75% - 2px);
+			}
+		}
+	}
 }
 @media screen and (min-width: $extra-large) and (orientation: landscape) {
+	.projects {
+		.title {
+			> h3 {
+				width: 15%;
+				font-size: 2.8em;
+			}
+			.patternContainer {
+				width: calc(85% - 2px);
+			}
+		}
+	}
 }
 @media screen and (min-width: $ultra-large) {
 }

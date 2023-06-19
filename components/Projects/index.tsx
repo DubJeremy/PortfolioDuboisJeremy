@@ -1,19 +1,29 @@
 import React from 'react';
+import Image from 'next/image';
 
 import useTranslation from '@/components/Translator/hooks';
+import useMediaQuery from '@/tools/useMediaQuery';
 
 import styles from './projects.module.scss';
-import Image from 'next/image';
 
 const Projects = () => {
 	const { t } = useTranslation();
+	const [targetReached] = useMediaQuery(`(min-width: 768px)`);
 
 	return (
 		<section className={styles.projects} id='projects'>
 			<div className={styles.title}>
 				<h3>{t('PROJECT')}</h3>
 				<div className={styles.patternContainer}>
-					<Image src={'/img/patternShurikenS.webp'} alt='pattern' fill />
+					<Image
+						src={
+							targetReached
+								? '/img/patternShurikenXL.webp'
+								: '/img/patternShurikenS.webp'
+						}
+						alt='pattern'
+						fill
+					/>
 				</div>
 			</div>
 			<div className={styles.screens}></div>
@@ -21,37 +31,37 @@ const Projects = () => {
 				<h4>KBDev Website</h4>
 				<p>{t('KBDEV')}</p>
 				<div className={styles.techs}>
-					<div className={`${styles.logoTech} ${styles.long}`}>
+					<div className={styles.logoTech}>
 						<Image src={'/img/logo/next.webp'} alt='Next.js logo' fill />
 					</div>
-					<div className={`${styles.logoTech} ${styles.square}`}>
+					<div className={styles.logoTech}>
 						<Image src={'/img/logo/react.webp'} alt='react logo' fill />
 					</div>
-					<div className={`${styles.logoTech} ${styles.square}`}>
+					<div className={styles.logoTech}>
 						<Image
 							src={'/img/logo/typescript.webp'}
 							alt='typescript logo'
 							fill
 						/>
 					</div>
-					<div className={`${styles.logoTech} ${styles.medium}`}>
+					<div className={styles.logoTech}>
 						<Image src={'/img/logo/sass.webp'} alt='sass logo' fill />
 					</div>
-					<div className={`${styles.logoTech} ${styles.medium}`}>
+					<div className={styles.logoTech}>
 						<Image
 							src={'/img/logo/nodeMailer.webp'}
 							alt='nodeMailer logo'
 							fill
 						/>
 					</div>
-					<div className={`${styles.logoTech} ${styles.square}`}>
+					<div className={styles.logoTech}>
 						<Image
 							src={'/img/logo/affinityDesigner.webp'}
 							alt='Affinity Designer logo'
 							fill
 						/>
 					</div>
-					<div className={`${styles.logoTech} ${styles.square}`}>
+					<div className={styles.logoTech}>
 						<Image
 							src={'/img/logo/framerMotion.webp'}
 							alt='Framer Motion logo'
