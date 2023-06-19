@@ -278,6 +278,18 @@
 		}
 	}
 }
+@media screen and (min-width: $large) {
+	.contact {
+		border-bottom: 4px solid $blue;
+		.title {
+			border-bottom: 4px solid $blue;
+			.patternContainer {
+				border-left: 4px solid $blue;
+				width: calc(60% - 4px);
+			}
+		}
+	}
+}
 @media screen and (min-width: $large) and (orientation: portrait) {
 	.contact {
 		.inputs {
@@ -334,6 +346,7 @@
 }
 @media screen and (min-width: $extra-large) and (orientation: landscape) {
 	.contact {
+		padding-bottom: 20vh;
 		.title {
 			> h3 {
 				width: 15%;
@@ -344,12 +357,26 @@
 			}
 		}
 		.inputs {
+			@include flex($dir: row);
 			> a {
-				font-size: 2.5em;
+				font-size: 2.6em;
+				font-weight: 400;
+			}
+			label:nth-child(2) {
+				width: 40%;
+				margin-right: 5%;
+			}
+			label:nth-child(3) {
+				width: 55%;
+			}
+			.input {
+				input {
+					padding: 10px 5px;
+				}
 			}
 			.message {
 				> textarea {
-					// height: 20vh;
+					height: 20vh;
 				}
 			}
 			.btnContainer {
@@ -361,4 +388,9 @@
 	}
 }
 @media screen and (min-width: $ultra-large) {
+	.contact {
+		.inputs {
+			// width: 30%;
+		}
+	}
 }
