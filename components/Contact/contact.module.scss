@@ -306,10 +306,10 @@
 		.title {
 			@include flex($dir: row, $wrap: nowrap);
 			> h3 {
-				width: 25%;
+				width: 20%;
 			}
 			.patternContainer {
-				width: calc(75% - 2px);
+				width: calc(80% - 2px);
 			}
 		}
 		.inputs {

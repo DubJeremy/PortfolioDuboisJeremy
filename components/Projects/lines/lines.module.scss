@@ -1,0 +1,42 @@
+@import '../../../styles/variables.scss';
+@import 'styles/mixins.scss';
+
+.lines {
+	opacity: 0.8;
+	width: 100%;
+	height: 100%;
+	@include flex($dir: row, $just: space-around, $align: flex-end);
+	.line {
+		width: 1px;
+		background-color: white;
+		height: 0%;
+		animation: linesAppear 1s ease-in-out 2s;
+		animation-fill-mode: forwards;
+	}
+}
+
+@keyframes linesAppear {
+	0% {
+		height: 0;
+	}
+	100% {
+		height: 100%;
+	}
+}
+
+@media screen and (max-width: $extra-small) {
+}
+@media screen and (max-width: $extra-small) and (min-height: $small) {
+}
+@media screen and (min-width: $small) {
+}
+@media screen and (min-width: $medium) {
+}
+@media screen and (min-width: $large) and (orientation: portrait) {
+}
+@media screen and (min-width: $large) and (orientation: landscape) {
+}
+@media screen and (min-width: $extra-large) and (orientation: landscape) {
+}
+@media screen and (min-width: $ultra-large) {
+}

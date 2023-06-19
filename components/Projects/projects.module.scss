@@ -2,7 +2,6 @@
 @import 'styles/mixins.scss';
 
 .projects {
-	min-height: 100vh;
 	width: 100%;
 	color: $blue;
 	.title {
@@ -30,6 +29,7 @@
 	}
 	.descProject {
 		width: 100%;
+		border-bottom: 2px solid $blue;
 		h4 {
 			font-family: 'Flaviotte';
 			font-size: 2em;
@@ -48,7 +48,6 @@
 		.techs {
 			padding: 30px 40px 40px 40px;
 			@include flex($dir: row);
-			border-bottom: 2px solid $blue;
 			.logoTech {
 				position: relative;
 				transition: all 0.2s ease-in-out;
@@ -228,6 +227,26 @@
 				width: calc(55% - 2px);
 			}
 		}
+		.descProject {
+			> p {
+				font-size: 0.9em;
+			}
+		}
+		.btns {
+			font-size: 0.8em;
+			.viewProject {
+				.arrowD {
+					height: 15px;
+					width: 15px;
+				}
+			}
+			.next {
+				.arrowH {
+					width: 15px;
+					height: 10px;
+				}
+			}
+		}
 	}
 }
 @media screen and (max-width: $extra-small) and (min-height: $small) {
@@ -243,6 +262,13 @@
 	}
 }
 @media screen and (min-width: $small) {
+	.projects {
+		.descProject {
+			> p {
+				font-size: 1.1em;
+			}
+		}
+	}
 }
 @media screen and (min-width: $medium) {
 	.projects {
@@ -253,6 +279,50 @@
 			}
 			.patternContainer {
 				width: calc(75% - 2px);
+			}
+		}
+		.descProject {
+			@include flex;
+			h4 {
+				font-size: 2.3em;
+			}
+			> p {
+				padding: 0 50px;
+			}
+			.techs {
+				width: 50%;
+				padding: 15px 0 25px 0;
+				.logoTech {
+					margin: 10px calc(calc(calc(100% / 9) / 14) * 2);
+					width: calc(100% / 9);
+					height: calc(50vw / 9);
+				}
+			}
+		}
+		.btns {
+			height: 60px;
+			font-size: 1.2em;
+			.viewProject {
+				width: 25%;
+				.arrowD {
+					height: 25px;
+					width: 25px;
+					right: 7px;
+					bottom: 7px;
+				}
+			}
+			.logoStriped {
+				width: calc(75% - 2px);
+			}
+			.next {
+				width: 20%;
+				> p {
+					font-size: 0.9em;
+				}
+				.arrowH {
+					width: 30px;
+					height: 15px;
+				}
 			}
 		}
 	}
@@ -269,19 +339,115 @@
 				width: calc(70% - 4px);
 			}
 		}
+		.descProject {
+			border-bottom: 4px solid $blue;
+		}
+		.btns {
+			border-bottom: 4px solid $blue;
+
+			.logoStriped {
+				border-left: 4px solid $blue;
+			}
+			.next {
+				border-left: 4px solid $blue;
+				border-bottom: 4px solid $blue;
+			}
+		}
+		.scrollText {
+			border-bottom: 4px solid $blue;
+		}
 	}
 }
 @media screen and (min-width: $large) and (orientation: portrait) {
+	.projects {
+		.screens {
+			height: 35vh;
+		}
+		.btns {
+			.logoStriped {
+				border-left: 4px solid $blue;
+				width: calc(75% - 4px);
+			}
+		}
+	}
 }
 @media screen and (min-width: $large) and (orientation: landscape) {
 	.projects {
 		.title {
 			@include flex($dir: row, $wrap: nowrap);
 			> h3 {
-				width: 25%;
+				width: 20%;
+				border-right: 4px solid $blue;
+				box-sizing: border-box;
+				height: 100%;
+				@include flex;
 			}
 			.patternContainer {
-				width: calc(75% - 2px);
+				width: 80%;
+				border-left: 0;
+			}
+		}
+		.footer {
+			grid-template-rows: 60vh 60px;
+		}
+		.noFooter {
+			grid-template-rows: 60vh;
+			border-bottom: 4px solid $blue;
+		}
+		.content {
+			width: 100%;
+			display: grid;
+			grid-template-columns: 25% 75%;
+			.descProject {
+				background-color: aliceblue;
+				grid-column: 1/2;
+				grid-row: 1/2;
+				height: 100%;
+				width: 100%;
+				border-bottom: 0;
+				border-right: 4px solid $blue;
+				box-sizing: border-box;
+				> p {
+					padding: 0;
+				}
+				.techs {
+					.logoTech {
+					}
+				}
+			}
+			.screensContainer {
+				background-color: pink;
+				grid-column: 2/3;
+				grid-row: 1/2;
+				.showProject {
+					> h4 {
+					}
+					.screens {
+					}
+				}
+			}
+			.btns {
+				background-color: aquamarine;
+				grid-column: 1/3;
+				grid-row: 2/3;
+				border-top: 4px solid $blue;
+				@include flex($align: flex-start);
+				.viewProject {
+					border-right: 4px solid $blue;
+					box-sizing: border-box;
+					height: 100%;
+					width: 25%;
+					> p {
+					}
+					.arrowD {
+					}
+				}
+				.pattern {
+					width: 75%;
+					height: 100%;
+					border: 0;
+					position: relative;
+				}
 			}
 		}
 	}

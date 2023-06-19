@@ -1,4 +1,4 @@
-export const contentDigitalSupport: ProjectTypes.Content[] = [
+export const contentProjects: ProjectTypes.Content[] = [
 	{
 		id: 0,
 		footer: true,
@@ -44,20 +44,20 @@ export const contentDigitalSupport: ProjectTypes.Content[] = [
 		title: 'TCG-Collect',
 		desc: 'TCG',
 		techs: [
-			'next',
-			'react',
+			'typeOrm',
+			'postgreSql',
+			'express',
+			'reactNative',
 			'typescript',
 			'sass',
-			'nodeMailer',
-			'affinityDesigner',
-			'framerMotion',
+			'figma',
 		],
 		screens: [
-			'kbdevAulia',
-			'kbdevAuliaMobile',
-			'kbdevDigitalSupport',
-			'kbdevHome',
-			'kbdevHomeMobile',
+			'tcgBackCard',
+			'tcgCards',
+			'tcgFilters',
+			'tcgProfil',
+			'tcgSeries',
 		],
 	},
 ];
