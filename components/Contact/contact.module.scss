@@ -283,9 +283,12 @@
 		border-bottom: 4px solid $blue;
 		.title {
 			border-bottom: 4px solid $blue;
+			> h3 {
+				width: 30%;
+			}
 			.patternContainer {
 				border-left: 4px solid $blue;
-				width: calc(60% - 4px);
+				width: calc(70% - 4px);
 			}
 		}
 	}
