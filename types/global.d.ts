@@ -1,7 +1,7 @@
 declare namespace ProjectTypes {
 	interface Content {
 		id: number;
-		footer: boolean;
+		done: boolean;
 		title: string;
 		desc: string;
 		link?: string;

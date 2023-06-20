@@ -7,6 +7,7 @@ import { contentProjects } from '@/constants/contentProjects';
 import Lines from './lines';
 
 import styles from './projects.module.scss';
+import Loader from './loader';
 
 const Projects = () => {
 	const { t } = useTranslation();
@@ -82,12 +83,28 @@ const Projects = () => {
 									</div>
 								)}
 							</div>
-							{content.footer && (
+							{content.done ? (
 								<div className={styles.btns}>
 									<div className={styles.viewProject}>
 										<p>{t('VIEW_PROJECT')}</p>
 										<div className={styles.arrowD}>
 											<Image src={'/img/icon/arrowD.webp'} alt='arrow' fill />
+										</div>
+									</div>
+									<div className={styles.pattern}>
+										<Image
+											src={'/img/patternStripedXL.webp'}
+											alt='pattern striped'
+											fill
+										/>
+									</div>
+								</div>
+							) : (
+								<div className={styles.btns}>
+									<div className={styles.inDevelopment}>
+										<p>{t('IN_DEVELOPMENT')}</p>
+										<div className={styles.loader}>
+											<Loader />
 										</div>
 									</div>
 									<div className={styles.pattern}>

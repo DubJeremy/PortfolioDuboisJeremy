@@ -373,6 +373,7 @@
 }
 @media screen and (min-width: $large) and (orientation: landscape) {
 	.projects {
+		border-bottom: 0;
 		.title {
 			@include flex($dir: row, $wrap: nowrap);
 			> h3 {
@@ -387,17 +388,12 @@
 				border-left: 0;
 			}
 		}
-		.footer {
-			grid-template-rows: 60vh 60px;
-		}
-		.noFooter {
-			grid-template-rows: 60vh;
-			border-bottom: 4px solid $blue;
-		}
 		.content {
+			border-bottom: 4px solid $blue;
 			width: 100%;
 			display: grid;
 			grid-template-columns: 25% 75%;
+			grid-template-rows: 60vh 60px;
 			.descProject {
 				background-color: aliceblue;
 				grid-column: 1/2;
@@ -427,10 +423,10 @@
 				}
 			}
 			.btns {
-				background-color: aquamarine;
 				grid-column: 1/3;
 				grid-row: 2/3;
 				border-top: 4px solid $blue;
+				border-bottom: 0;
 				@include flex($align: flex-start);
 				.viewProject {
 					border-right: 4px solid $blue;
@@ -440,6 +436,23 @@
 					> p {
 					}
 					.arrowD {
+					}
+				}
+				.inDevelopment {
+					border-right: 4px solid $blue;
+					box-sizing: border-box;
+					height: 100%;
+					width: 25%;
+					@include flex($dir: row);
+					> p {
+						width: 50%;
+						text-align: center;
+					}
+					.loader {
+						width: 30%;
+						height: 100%;
+						@include flex;
+						transform: scale(2);
 					}
 				}
 				.pattern {

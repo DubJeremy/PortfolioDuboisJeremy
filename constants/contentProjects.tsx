@@ -1,7 +1,7 @@
 export const contentProjects: ProjectTypes.Content[] = [
 	{
 		id: 0,
-		footer: true,
+		done: true,
 		title: 'KBDev Website',
 		desc: 'KBDEV',
 		link: 'https://kbdev.io',
@@ -24,7 +24,7 @@ export const contentProjects: ProjectTypes.Content[] = [
 	},
 	{
 		id: 1,
-		footer: true,
+		done: true,
 		title: 'Petshine',
 		desc: 'PETSHINE',
 		link: 'https://www.petshine.dubj.fr',
@@ -40,7 +40,7 @@ export const contentProjects: ProjectTypes.Content[] = [
 	},
 	{
 		id: 2,
-		footer: false,
+		done: false,
 		title: 'TCG-Collect',
 		desc: 'TCG',
 		techs: [
