@@ -21,9 +21,13 @@ export const en: { [key: string]: string } = {
 	TCG: 'Mobile application for Pokémon card collectors. Personal project whose main purpose is to manage and monitor his card collection. At therme, it will present itself as a social network allowing the user, in addition to managing his collection, to be able to follow that of his friends as well as to propose exchanges with them.',
 	BY: ' de',
 	NEXT: 'Next Project',
+	IN_DEVELOPMENT: 'in development',
 	// CONTACT --------------------------------
 	NAME: 'Name',
 	SEND: 'Send',
 	// FOOTER --------------------------------
 	INSPIRED_BY: 'Inspired by',
+	// noLANDSCAPE --------------------------------
+	LANDSCAPE:
+		'For the best experience, make sure your device remains in portrait mode.',
 };

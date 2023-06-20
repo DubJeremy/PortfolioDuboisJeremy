@@ -21,9 +21,13 @@ export const fr: { [key: string]: string } = {
 	TCG: 'Application Mobile pour les collectionneurs de carte Pokémon. Projet personnelle ayant pour but principale de gérer et suivre sa collection de carte. À therme elle se présentera comme un réseau social permettant à l’utilisateur en plus de gérer sa collection de pouvoir suivre celle de ses amis ainsi que de proposer des échanges avec ceux-ci.',
 	BY: ' de',
 	NEXT: 'Projet Suivant',
+	IN_DEVELOPMENT: 'En développement',
 	// CONTACT --------------------------------
 	NAME: 'Nom',
 	SEND: 'Envoyer',
 	// FOOTER --------------------------------
 	INSPIRED_BY: 'Inspiré par',
+	// noLANDSCAPE --------------------------------
+	LANDSCAPE:
+		'Pour une meilleure expérience veillée a ce que votre appareil reste en mode portrait',
 };

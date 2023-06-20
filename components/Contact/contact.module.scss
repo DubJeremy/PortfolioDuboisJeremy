@@ -2,12 +2,12 @@
 @import 'styles/mixins.scss';
 
 .contact {
-	min-height: calc(100vh - 110px);
 	position: relative;
 	overflow: hidden;
 	color: $blue;
 	border-bottom: 2px solid $blue;
 	@include flex($just: flex-start);
+	padding-bottom: 25vh;
 	.title {
 		background-color: transparent;
 		width: 100%;
@@ -168,6 +168,7 @@
 		}
 	}
 }
+
 @keyframes noiseTextureAnim {
 	0% {
 		background-position: 0 0;
@@ -205,18 +206,198 @@
 }
 
 @media screen and (max-width: $extra-small) {
+	.contact {
+		padding-bottom: 25vh;
+		.title {
+			height: 50px;
+			> h3 {
+				width: 45%;
+			}
+			.patternContainer {
+				width: calc(55% - 2px);
+			}
+		}
+		.inputs {
+			> a {
+				font-size: 1em;
+				padding-top: 10vh;
+			}
+		}
+	}
 }
 @media screen and (max-width: $extra-small) and (min-height: $small) {
-}
-@media screen and (min-width: $small) {
+	.contact {
+		padding-bottom: 15vh;
+		.title {
+			> h3 {
+				width: 55%;
+			}
+			.patternContainer {
+				width: calc(45% - 2px);
+			}
+		}
+		.inputs {
+			> a {
+				font-size: 0.8em;
+				padding-top: 7vh;
+			}
+		}
+	}
 }
 @media screen and (min-width: $medium) {
+	.contact {
+		padding-bottom: 15vh;
+		.title {
+			@include flex($dir: row, $wrap: nowrap);
+			> h3 {
+				width: 25%;
+			}
+			.patternContainer {
+				width: calc(75% - 2px);
+			}
+		}
+		.inputs {
+			width: 50%;
+			> a {
+				font-size: 1.8em;
+			}
+			.input {
+				margin: 5px 0;
+			}
+			.message {
+				margin-bottom: 0;
+				> textarea {
+					height: 15vh;
+				}
+			}
+			.btnContainer {
+				bottom: -35px;
+				height: 35px;
+				width: 50%;
+			}
+		}
+	}
+}
+@media screen and (min-width: $large) {
+	.contact {
+		border-bottom: 4px solid $blue;
+		.title {
+			border-bottom: 4px solid $blue;
+			> h3 {
+				width: 30%;
+			}
+			.patternContainer {
+				border-left: 4px solid $blue;
+				width: calc(70% - 4px);
+			}
+		}
+	}
 }
 @media screen and (min-width: $large) and (orientation: portrait) {
+	.contact {
+		.inputs {
+			width: 40%;
+		}
+	}
 }
 @media screen and (min-width: $large) and (orientation: landscape) {
+	.contact {
+		padding-bottom: 25vh;
+		.title {
+			@include flex($dir: row, $wrap: nowrap);
+			> h3 {
+				width: 20%;
+			}
+			.patternContainer {
+				width: calc(80% - 2px);
+			}
+		}
+		.inputs {
+			width: 40%;
+			> a {
+				font-size: 1.8em;
+				padding-top: 10vh;
+			}
+			.input {
+				margin: 5px 0;
+			}
+			.message {
+				margin-bottom: 0;
+				> textarea {
+					height: 25vh;
+				}
+			}
+			.btnContainer {
+				bottom: -35px;
+				height: 35px;
+				width: 50%;
+			}
+		}
+	}
+}
+@media screen and (min-width: $large) and (orientation: landscape) and (min-height: $medium) {
+	.contact {
+		padding-bottom: 15vh;
+		.inputs {
+			.message {
+				> textarea {
+					height: 15vh;
+				}
+			}
+		}
+	}
 }
 @media screen and (min-width: $extra-large) and (orientation: landscape) {
+	.contact {
+		padding-bottom: 20vh;
+		.title {
+			> h3 {
+				width: 15%;
+				font-size: 2.8em;
+			}
+			.patternContainer {
+				width: calc(85% - 2px);
+			}
+		}
+		.inputs {
+			@include flex($dir: row);
+			> a {
+				font-size: 2.6em;
+				font-weight: 400;
+			}
+			label:nth-child(2) {
+				width: calc(45% - 10px);
+				margin-right: 10px;
+			}
+			label:nth-child(3) {
+				width: 55%;
+			}
+			.input {
+				input {
+					padding: 10px 5px;
+				}
+			}
+			.message {
+				> textarea {
+					height: 20vh;
+				}
+			}
+			.btnContainer {
+				bottom: -35px;
+				height: 35px;
+				width: 45%;
+			}
+		}
+	}
 }
 @media screen and (min-width: $ultra-large) {
+	.contact {
+		padding-bottom: 25vh;
+		.inputs {
+			> a {
+				font-size: 3vw;
+				padding-top: 15vh;
+			}
+		}
+	}
 }

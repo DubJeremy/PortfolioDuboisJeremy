@@ -4,18 +4,60 @@
 .navbar {
 	height: 80px;
 	width: calc(100% - 30px);
+	max-width: 100%;
 	border-bottom: 2px solid $blue;
 	overflow: hidden;
+	overflow-x: hidden;
 	display: flex;
 	justify-content: space-between;
 	position: fixed;
 	z-index: 1001;
-	// background-color: blue;
 	.logo {
 		width: 80px;
 		min-width: 80px;
 		height: 100%;
 		border-right: 2px solid $blue;
+		overflow: hidden;
+		@include flex($dir: row);
+		position: relative;
+		> p {
+			border-right: 2px solid $blue;
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			z-index: 2;
+			width: 80px;
+			height: 80px;
+			@include flex;
+			color: $blue;
+			font-family: 'Flaviotte';
+			font-size: 90px;
+			text-align: center;
+			line-height: 1em;
+			transform: translateX(-100%);
+			transition: all 0.4s ease-in-out;
+
+			&:after {
+				background-image: url(/img/noise.png);
+				pointer-events: none !important;
+				background-size: 250px 250px;
+				-webkit-animation: noiseTextureAnim 0.55s steps(1) infinite;
+				animation: noiseTextureAnim 0.55s steps(1) infinite;
+				will-change: background-position;
+				-webkit-backface-visibility: hidden;
+				backface-visibility: hidden;
+				-webkit-transform: translateZ(0);
+				transform: translateZ(0);
+				content: '';
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				z-index: 3;
+			}
+		}
+		.showLogo {
+			transform: translateX(0);
+		}
 		.logoStriped {
 			width: 100%;
 			height: 100%;
@@ -23,8 +65,6 @@
 			.imgLogoStriped {
 				object-fit: contain;
 			}
-		}
-		> a {
 		}
 	}
 	.menuBurger {
@@ -35,6 +75,7 @@
 		cursor: pointer;
 		@include flex;
 		padding: 0;
+		margin-right: 10px;
 		.line {
 			fill: none;
 			stroke: $blue;
@@ -75,7 +116,7 @@
 }
 .menuToggled {
 	width: 0%;
-	height: 0%;
+	height: 0vh;
 	@include flex;
 	position: relative;
 	transition: all 0.3s ease, box-shadow 0.3s ease;
@@ -115,11 +156,14 @@
 	transition: all 0.3s ease, box-shadow 0.3s ease;
 	transform: translateY(100%);
 	height: calc(100vh - 110px);
+
 	width: calc(100% - 30px);
+	max-width: 100%;
 	z-index: 1000;
 	position: fixed;
 	margin-top: 80px;
 	border-bottom: 2px solid $blue;
+	padding-left: 0px;
 	&.slide-down {
 		transition: transform 0.3s ease, opacity 0.3s ease;
 		transform: translateY(-100%);
@@ -127,7 +171,7 @@
 	}
 	&.fade-out {
 		transition: transform 0.7s ease, opacity 0.3s ease;
-		transform: translateY(00);
+		transform: translateY(0);
 		opacity: 1;
 	}
 }
@@ -183,6 +227,9 @@
 	position: absolute;
 	z-index: -1;
 }
+.navToggled {
+	padding-left: 0;
+}
 
 @keyframes noiseTextureAnim {
 	0% {
@@ -221,14 +268,121 @@
 }
 
 @media screen and (max-width: $extra-small) {
+	.navbar {
+		height: 60px;
+		.logo {
+			width: 60px;
+			min-width: 60px;
+			> p {
+				width: 60px;
+				height: 60px;
+			}
+		}
+		.menuBurger {
+			width: 60px;
+		}
+	}
+	.menuToggled {
+		.navContainer {
+			> ul {
+				> li {
+					> a {
+						font-size: 2.5em;
+					}
+					.active {
+						font-size: 4em;
+					}
+				}
+			}
+		}
+	}
+	.expanded {
+		height: calc(100vh - 90px);
+		margin-top: 60px;
+	}
 }
-@media screen and (max-width: $extra-small) and (min-height: $small) {
-}
-@media screen and (min-width: $small) {
-}
-@media screen and (min-width: $medium) {
-}
-@media screen and (min-width: $large) and (orientation: portrait) {
+@media screen and (min-width: $large) {
+	.navbar {
+		height: 100px;
+		border-bottom: 4px solid $blue;
+		.logo {
+			border-right: 4px solid $blue;
+			width: 100px;
+			height: 100px;
+			min-width: 100px;
+			> p {
+				border-right: 4px solid $blue;
+				width: 100px;
+				height: 100px;
+			}
+			.logoStriped {
+				position: relative;
+				z-index: 1;
+				@include flex;
+				width: 100px;
+				height: 100px;
+			}
+		}
+		.nav {
+			position: relative;
+			color: $blue;
+			@include flex;
+			height: 100%;
+			width: 100%;
+			> ul {
+				height: 100%;
+				width: 100%;
+				@include flex($dir: row, $just: flex-end);
+				> li {
+					@include flex;
+					font-family: 'Flaviotte';
+					border-right: 4px solid $blue;
+					height: 100%;
+					width: calc(20% - 4px);
+					position: relative;
+					transition: all 0.4s ease-in-out;
+					> a {
+						font-size: 1.5em;
+						padding-top: 5px;
+						width: 100%;
+						text-align: left;
+						padding-left: 25%;
+						transition: all 0.4s ease-in-out;
+					}
+					.active {
+					}
+					.contact {
+						border: none;
+					}
+				}
+				.activeLi {
+					width: calc(60% - 4px);
+					transition: all 0.4s ease-in-out;
+					> a {
+						transition: all 0.4s ease-in-out;
+						color: black;
+						padding-top: 10px;
+						font-size: 2.5em;
+						padding-left: 30px;
+						text-align: left;
+					}
+				}
+			}
+			.language {
+				position: fixed;
+				z-index: 1001;
+				top: 140px;
+				right: 50px;
+				cursor: pointer;
+			}
+		}
+	}
+	.navbar:before {
+		height: 100px;
+	}
+	.navbar:after {
+		height: 100px;
+	}
 }
 @media screen and (min-width: $large) and (orientation: landscape) {
 }

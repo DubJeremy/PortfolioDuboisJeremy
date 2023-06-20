@@ -13,11 +13,7 @@ const Header = () => {
 				<p className={styles.lastName}>Dubois</p>
 				<p className={styles.firstName}>Jérémy</p>
 			</div>
-			{/* <div className={styles.circleContainer}> */}
-			{/* <Canvas> */}
 			<Circle />
-			{/* </Canvas> */}
-			{/* </div> */}
 			<Lines />
 		</section>
 	);

@@ -7,7 +7,7 @@ import Image from 'next/image';
 const Circle = () => {
 	useEffect(() => {
 		const circle = document.getElementById('circle');
-		const tiltStrength = 40; // Force de l'inclinaison (ajustez selon vos besoins)
+		const tiltStrength = 40;
 
 		const handleMouseMove = (e: { clientX: number; clientY: number }) => {
 			const xPos = (e.clientX / window.innerWidth - 0.5) * tiltStrength;

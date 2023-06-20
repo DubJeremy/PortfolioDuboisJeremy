@@ -6,9 +6,17 @@
 	position: absolute;
 	z-index: -1;
 	width: 100%;
-	height: 100%;
+	height: calc(100vh - 30px);
+	max-width: 100%;
 	@include flex($dir: row, $just: space-around, $align: flex-end);
 	.line {
+		width: 1px;
+		background-color: white;
+		height: 0%;
+		animation: linesAppear 1s ease-in-out 2s;
+		animation-fill-mode: forwards;
+	}
+	.lineXL {
 		width: 1px;
 		background-color: white;
 		height: 0%;
@@ -32,9 +40,14 @@
 }
 @media screen and (min-width: $small) {
 }
-@media screen and (min-width: $medium) {
+@media screen and (min-width: $medium) and (orientation: landscape) {
+	.lines {
+		clip-path: polygon(30% 0, 70% 0, 100% 70%, 100% 100%, 0 100%, 0 70%);
+	}
 }
-@media screen and (min-width: $large) and (orientation: portrait) {
+@media screen and (min-width: $large) {
+	.lines {
+	}
 }
 @media screen and (min-width: $large) and (orientation: landscape) {
 }

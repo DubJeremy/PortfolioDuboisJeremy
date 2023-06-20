@@ -1,12 +1,13 @@
-@import '../../../styles/variables.scss';
+@import '../../styles/variables.scss';
 @import 'styles/mixins.scss';
 
-.profilPicture {
-	position: relative;
-	z-index: 5;
-	box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+.lang {
+	.language {
+		font-family: 'JosefinS';
+		font-size: 1em;
+		text-transform: uppercase;
+	}
 }
-
 @media screen and (max-width: $extra-small) {
 }
 @media screen and (max-width: $extra-small) and (min-height: $small) {
@@ -15,9 +16,19 @@
 }
 @media screen and (min-width: $medium) {
 }
-@media screen and (min-width: $large) and (orientation: portrait) {
+@media screen and (min-width: $large) {
+	.lang {
+		.language {
+			font-size: 1.5em;
+		}
+	}
 }
 @media screen and (min-width: $large) and (orientation: landscape) {
+	.lang {
+		.language {
+			font-size: 1.1em;
+		}
+	}
 }
 @media screen and (min-width: $extra-large) and (orientation: landscape) {
 }

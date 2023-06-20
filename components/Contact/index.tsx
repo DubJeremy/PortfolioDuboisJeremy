@@ -1,12 +1,15 @@
 import React from 'react';
 import Image from 'next/image';
 
-import styles from './contact.module.scss';
-import useTranslation from '@/translations/hooks';
+import useTranslation from '@/components/Translator/hooks';
 import Lines from './lines';
+import useMediaQuery from '@/tools/useMediaQuery';
+
+import styles from './contact.module.scss';
 
 const Contact = () => {
 	const { t } = useTranslation();
+	const [targetReached] = useMediaQuery(`(min-width: 768px)`);
 
 	return (
 		<section
@@ -17,7 +20,15 @@ const Contact = () => {
 			<div className={styles.title}>
 				<h3>Contact</h3>
 				<div className={styles.patternContainer}>
-					<Image src={'/img/patternShurikenS.webp'} alt='pattern' fill />
+					<Image
+						src={
+							targetReached
+								? '/img/patternShurikenXL.webp'
+								: '/img/patternShurikenS.webp'
+						}
+						alt='pattern'
+						fill
+					/>
 				</div>
 			</div>
 			<form className={styles.inputs} method='post'>

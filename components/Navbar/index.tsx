@@ -2,15 +2,17 @@ import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 
 import useMediaQuery from '@/tools/useMediaQuery';
-import useTranslation from '@/translations/hooks';
+import useTranslation from '@/components/Translator/hooks';
+import Translator from '../Translator';
 
 import styles from './navbar.module.scss';
 
 const Navbar = () => {
-	const [targetReached] = useMediaQuery(`(min-width: 500px)`);
+	const [targetReached] = useMediaQuery(`(min-width: 992px)`);
 	const [isToggled, setToggle] = useState(false);
 	const [activeSection, setActiveSection] = useState('profil');
 	const { t } = useTranslation();
+	const [scrollTarget, setScrollTaget] = useState(false);
 
 	const toggleMenu = () => {
 		setToggle(!isToggled);
@@ -28,8 +30,9 @@ const Navbar = () => {
 			window.scrollTo({ top: sectionTop, behavior: 'smooth' });
 		}
 		setActiveSection(sectionId);
-		// setToggle(false);
-		toggleMenu();
+		if (!targetReached) {
+			toggleMenu();
+		}
 	};
 
 	useEffect(() => {
@@ -40,10 +43,46 @@ const Navbar = () => {
 		}
 	}, [isToggled]);
 
+	useEffect(() => {
+		const handleScroll = () => {
+			const sections = Array.from(
+				document.querySelectorAll('section')
+			) as HTMLElement[];
+			const scrollPosition = window.scrollY;
+
+			sections.forEach((section: HTMLElement) => {
+				const sectionTop = section.offsetTop;
+				const sectionHeight = section.offsetHeight;
+				const sectionId = section.getAttribute('id');
+
+				if (
+					scrollPosition >= sectionTop - sectionHeight * 0.25 &&
+					scrollPosition < sectionTop + sectionHeight - sectionHeight * 0.25 &&
+					sectionId !== null
+				) {
+					setActiveSection(sectionId);
+				}
+				if (scrollPosition >= sectionHeight) {
+					setScrollTaget(true);
+				} else {
+					setScrollTaget(false);
+				}
+			});
+		};
+		window.addEventListener('scroll', handleScroll);
+		return () => {
+			window.removeEventListener('scroll', handleScroll);
+		};
+	}, []);
+
 	return (
 		<>
-			<div className={styles.navbar}>
+			<div className={`${styles.navbar} ${isToggled ? styles.navToggled : ''}`}>
 				<div className={styles.logo}>
+					<p className={scrollTarget ? styles.showLogo : ''}>
+						<Image src={'/img/logo/logo.webp'} alt='logo D' fill />
+					</p>
+
 					<div className={styles.logoStriped}>
 						<Image
 							src={'/img/logoStriped.webp'}
@@ -52,16 +91,45 @@ const Navbar = () => {
 							className={styles.imgLogoStriped}
 						/>
 					</div>
-					{/* <a href='#home'>D</a> */}
 				</div>
 				{targetReached ? (
 					<div className={styles.nav}>
 						<ul>
-							<li>Profil</li>
-							<li>{t('PROJECT')}</li>
-							<li>Contact</li>
+							<li className={activeSection === 'profil' ? styles.activeLi : ''}>
+								<a
+									href='#profil'
+									className={activeSection === 'profil' ? styles.active : ''}
+									onClick={(e) => handleClick(e, 'profil')}
+								>
+									Profil
+								</a>
+							</li>
+							<li
+								className={activeSection === 'projects' ? styles.activeLi : ''}
+							>
+								<a
+									href='#projects'
+									className={activeSection === 'projects' ? styles.active : ''}
+									onClick={(e) => handleClick(e, 'projects')}
+								>
+									{t('PROJECT')}
+								</a>
+							</li>
+							<li
+								className={activeSection === 'contact' ? styles.activeLi : ''}
+							>
+								<a
+									href='#contact'
+									className={activeSection === 'contact' ? styles.active : ''}
+									onClick={(e) => handleClick(e, 'contact')}
+								>
+									Contact
+								</a>
+							</li>
 						</ul>
-						<div className={styles.language}>FR</div>
+						<div className={styles.language}>
+							<Translator />
+						</div>
 					</div>
 				) : (
 					<button
@@ -116,14 +184,18 @@ const Navbar = () => {
 						<li>
 							<a
 								href='#contact'
-								className={activeSection === 'contact' ? styles.active : ''}
+								className={`${
+									activeSection === 'contact' ? styles.active : ''
+								} ${styles.contact}`}
 								onClick={(e) => handleClick(e, 'contact')}
 							>
 								Contact
 							</a>
 						</li>
 					</ul>
-					<div className={styles.languageToggle}>FR</div>
+					<div className={styles.languageToggle} onClick={() => toggleMenu()}>
+						<Translator />
+					</div>
 				</div>
 			</div>
 		</>

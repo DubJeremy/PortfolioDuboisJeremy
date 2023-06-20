@@ -3,11 +3,8 @@
 
 .lines {
 	opacity: 0.8;
-	position: absolute;
-	z-index: -1;
 	width: 100%;
-	height: calc(100% - 70px);
-	bottom: 0;
+	height: 100%;
 	@include flex($dir: row, $just: space-around, $align: flex-end);
 	.line {
 		width: 1px;
@@ -28,23 +25,12 @@
 }
 
 @media screen and (max-width: $extra-small) {
-	.lines {
-		height: calc(100% - 50px);
-	}
 }
-@media screen and (min-width: $medium) and (orientation: landscape) {
-	.lines {
-		clip-path: polygon(
-			30% 49%,
-			70% 49%,
-			85% 0,
-			100% 0,
-			100% 100%,
-			0 100%,
-			0 0,
-			15% 0
-		);
-	}
+@media screen and (max-width: $extra-small) and (min-height: $small) {
+}
+@media screen and (min-width: $small) {
+}
+@media screen and (min-width: $medium) {
 }
 @media screen and (min-width: $large) and (orientation: portrait) {
 }

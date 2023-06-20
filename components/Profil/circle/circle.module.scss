@@ -1,17 +1,25 @@
 @import '../../../styles/variables.scss';
 @import 'styles/mixins.scss';
 
-.circle {
-	position: relative;
-	height: 100%;
-	width: 100%;
-	background-color: transparent;
-	@include flex($just: flex-start);
+.circleContainer {
+	position: absolute;
+	top: -70px;
+	right: -70px;
+	height: 150px;
+	width: 150px;
 	animation: circleAppear 1s ease-in-out 1s;
 	transform: translateY(-50%);
 	animation-fill-mode: forwards;
-	border-radius: 50%;
-	box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+	.circle {
+		position: relative;
+		z-index: 3;
+		height: 100%;
+		width: 100%;
+		background-color: transparent;
+		@include flex($just: flex-start);
+		border-radius: 50%;
+		box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+	}
 }
 @keyframes circleAppear {
 	0% {
@@ -23,16 +31,38 @@
 }
 
 @media screen and (max-width: $extra-small) {
-}
-@media screen and (max-width: $extra-small) and (min-height: $small) {
+	.circleContainer {
+		top: -50px;
+		right: -50px;
+		height: 100px;
+		width: 100px;
+	}
 }
 @media screen and (min-width: $small) {
+	.circleContainer {
+		top: -125px;
+		right: -125px;
+		height: 250px;
+		width: 250px;
+	}
 }
 @media screen and (min-width: $medium) {
+	.circleContainer {
+		top: -300px;
+		right: -250px;
+		height: 450px;
+		width: 450px;
+	}
 }
 @media screen and (min-width: $large) and (orientation: portrait) {
 }
 @media screen and (min-width: $large) and (orientation: landscape) {
+	.circleContainer {
+		top: -25px;
+		right: -100px;
+		height: 250px;
+		width: 250px;
+	}
 }
 @media screen and (min-width: $extra-large) and (orientation: landscape) {
 }

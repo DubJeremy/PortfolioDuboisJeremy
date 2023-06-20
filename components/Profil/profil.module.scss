@@ -2,8 +2,9 @@
 @import 'styles/mixins.scss';
 
 .profil {
-	overflow: hidden;
-	width: calc(100vw - 30px);
+	overflow-x: hidden;
+	width: 100%;
+	max-width: 100%;
 	border-top: 2px solid $blue;
 	.desc {
 		padding: 8vh 25px 0 25px;
@@ -85,7 +86,7 @@
 					padding: 0 25px;
 					border-radius: 2px;
 					margin-left: -1px;
-					margin-right: 15px;
+					margin-right: 10px;
 				}
 				.logoLinkedin {
 					position: relative;
@@ -93,13 +94,6 @@
 					width: 30px;
 				}
 			}
-		}
-		.circle {
-			position: absolute;
-			top: -70px;
-			right: -70px;
-			height: 150px;
-			width: 150px;
 		}
 	}
 	.stripes {
@@ -111,44 +105,348 @@
 	.techs {
 		border-bottom: 2px solid $blue;
 		position: relative;
-		width: calc(100vw - 90px);
+		width: calc(100% - 60px);
 		padding: 27.5px 30px;
 		@include flex($dir: row);
 		.logoTech {
 			position: relative;
 			background-color: transparent;
-		}
-		.square {
-			width: calc(calc(100vw - 90px) / 4);
-			height: calc(calc(100vw - 90px) / 4);
-			margin: 10px calc(calc(calc(100vw - 90px) / 4) / 6);
-		}
-		.long {
-			width: calc(calc(100vw - 90px) / 4);
-			height: calc(calc(100vw - 250px) / 4);
-			margin: 10px calc(calc(calc(100vw - 90px) / 4) / 6);
-		}
-		.thin {
-			width: calc(calc(calc(100vw - 90px) / 4) - 20px);
-			height: calc(calc(100vw - 90px) / 4);
-			margin: 10px calc(calc(calc(calc(100vw - 90px) / 4) / 6) + 10px);
+			transition: all 0.2s ease-in-out;
+			width: calc(calc(100% - 60px) / 4);
+			height: calc(calc(80vw - 60px) / 4);
+			margin: 10px calc(calc(calc(100% - 60px) / 4) / 6);
+			&:hover {
+				transform: scale(1.1);
+			}
+			img {
+				object-fit: contain;
+			}
 		}
 	}
 }
 
 @media screen and (max-width: $extra-small) {
-}
-@media screen and (max-width: $extra-small) and (min-height: $small) {
+	.profil {
+		.desc {
+			.txt {
+				> h2 {
+					font-size: 1.1em;
+				}
+				> p {
+					font-size: 0.9em;
+				}
+			}
+		}
+		.info {
+			.profilContact {
+				.btns {
+					> button {
+						padding: 0 20px;
+						margin-right: 8px;
+					}
+				}
+			}
+		}
+	}
 }
 @media screen and (min-width: $small) {
+	.profil {
+		.techs {
+			width: calc(100% - 100px);
+			padding: 27.5px 50px;
+			.logoTech {
+				position: relative;
+				background-color: transparent;
+				width: calc(calc(100% - 100px) / 4);
+				height: calc(calc(80vw - 100px) / 4);
+				margin: 10px calc(calc(calc(100% - 100px) / 4) / 6);
+			}
+		}
+	}
 }
 @media screen and (min-width: $medium) {
+	.profil {
+		.desc {
+			padding: 5vh 50px 0 50px;
+			min-height: 0px;
+		}
+		.info {
+			padding: 50px;
+			> h3 {
+				font-size: 1.5em;
+			}
+			> h4 {
+				font-size: 1.2em;
+			}
+			.profilContact {
+				margin-top: 25px;
+				.location {
+					height: 25px;
+
+					> p {
+						font-size: 1.1em;
+					}
+				}
+				.mail {
+					margin-bottom: 10px;
+					@include flex($dir: row, $just: flex-start);
+					.at {
+						font-size: 1.2em;
+					}
+					> a {
+						font-size: 1.1em;
+					}
+				}
+				.btns {
+					> button {
+						height: 35px;
+						padding: 0 45px;
+						border-radius: 2px;
+						margin-left: -1px;
+						margin-right: 10px;
+					}
+					.logoLinkedin {
+						position: relative;
+						height: 35px;
+						width: 35px;
+					}
+				}
+			}
+		}
+		.stripes {
+			height: 10vh;
+		}
+		.techs {
+			width: calc(100% - 200px);
+			padding: 50px 100px;
+
+			.logoTech {
+				position: relative;
+				background-color: transparent;
+				width: calc(calc(100% - 200px) / 4);
+				height: calc(calc(70vw - 200px) / 4);
+				margin: 10px calc(calc(calc(100% - 200px) / 4) / 6);
+			}
+		}
+	}
 }
 @media screen and (min-width: $large) and (orientation: portrait) {
+	.profil {
+		border-top: 4px solid $blue;
+		border-bottom: 4px solid $blue;
+		.desc {
+			border-bottom: 4px solid $blue;
+		}
+		.info {
+			border-bottom: 4px solid $blue;
+		}
+		.stripes {
+			border-bottom: 4px solid $blue;
+		}
+		.techs {
+			width: calc(100% - 400px);
+			padding: 50px 200px;
+
+			.logoTech {
+				position: relative;
+				background-color: transparent;
+			}
+			.square {
+				width: calc(calc(100% - 200px) / 4);
+				height: calc(calc(70vw - 200px) / 4);
+				margin: 10px calc(calc(calc(100% - 200px) / 4) / 6);
+			}
+			.long {
+				width: calc(calc(100% - 200px) / 4);
+				height: calc(calc(50vw - 350px) / 4);
+				margin: 10px calc(calc(calc(100% - 200px) / 4) / 6);
+			}
+			.thin {
+				width: calc(calc(calc(100% - 200px) / 4) - 30px);
+				height: calc(calc(70vw - 200px) / 4);
+				margin: 10px calc(calc(calc(calc(100% - 200px) / 4) / 6) + 15px);
+			}
+		}
+	}
 }
 @media screen and (min-width: $large) and (orientation: landscape) {
+	.profil {
+		display: grid;
+		grid-template-columns: 25% 75%;
+		grid-template-rows: auto 10vh;
+		border-top: 4px solid $blue;
+		border-bottom: 4px solid $blue;
+		.desc {
+			min-height: 60vh;
+			overflow: hidden;
+			grid-row: 1/2;
+			grid-column: 2/3;
+			border-bottom: 4px solid $blue;
+			padding: 0;
+			display: grid;
+			grid-template-columns: 5% 60% 3% 32%;
+			grid-template-rows: 100%;
+			.txt {
+				grid-column: 2/3;
+				padding: 10vh 0;
+				height: 100%;
+				@include flex($align: flex-start, $just: flex-start);
+				> h2 {
+					font-weight: 500;
+					font-size: 1.5em;
+				}
+				> p {
+					font-weight: 300;
+					text-align: start;
+				}
+			}
+			.container {
+				grid-column: 4/5;
+				position: relative;
+				width: 100%;
+				height: 100%;
+				.photoContainer {
+					height: 100%;
+					margin: 10vh 0;
+					height: 40%;
+				}
+				.linesContainer {
+					width: 75%;
+					height: 100%;
+					position: absolute;
+					top: 0;
+					right: 0;
+					z-index: -1;
+				}
+			}
+		}
+		.info {
+			overflow: hidden;
+			grid-row: 1/2;
+			grid-column: 1/2;
+			border-right: 4px solid $blue;
+			border-bottom: 4px solid $blue;
+			padding: 15px;
+			@include flex($just: flex-end);
+			font-size: 0.7em;
+			> h3 {
+				font-weight: 600;
+				width: 100%;
+				text-align: start;
+			}
+			> h4 {
+				font-size: 1.15em;
+				font-weight: 600;
+				width: 100%;
+				text-align: start;
+			}
+			.profilContact {
+				margin-top: 15px;
+				width: 100%;
+				.location {
+					> p {
+						font-weight: 400;
+					}
+				}
+				.mail {
+					> a {
+						font-weight: 400;
+					}
+				}
+				.btns {
+					> button {
+						height: 25px;
+						width: calc(100% - 35px);
+						font-weight: 400;
+						padding: 0;
+						font-size: 0.8em;
+					}
+					.logoLinkedin {
+						height: 25px;
+						width: 25px;
+					}
+				}
+			}
+		}
+		.stripes {
+			overflow: hidden;
+			grid-row: 2/3;
+			grid-column: 1/2;
+			border-bottom: none;
+			border-right: 4px solid $blue;
+			box-sizing: border-box;
+			height: 100%;
+		}
+		.techs {
+			overflow: hidden;
+			grid-row: 2/3;
+			grid-column: 2/3;
+			border: none;
+			@include flex($dir: row, $just: space-around, $wrap: nowrap);
+			padding: 0;
+			width: 100%;
+			.logoTech {
+				width: 5%;
+				max-height: 70%;
+				margin: 0;
+			}
+		}
+	}
 }
 @media screen and (min-width: $extra-large) and (orientation: landscape) {
+	.profil {
+		grid-template-columns: 20% 80%;
+		.desc {
+			.txt {
+				> h2 {
+					font-size: 2.1em;
+				}
+				> p {
+					font-size: 1.5em;
+				}
+			}
+			.container {
+				.photoContainer {
+					height: 45%;
+				}
+				.linesContainer {
+					width: 65%;
+				}
+			}
+		}
+		.info {
+			font-size: 0.9em;
+			> h4 {
+				font-size: 1em;
+			}
+			.location {
+				font-size: 0.8em;
+			}
+			.mail {
+				font-size: 0.8em;
+			}
+		}
+	}
 }
 @media screen and (min-width: $ultra-large) {
+	.profil {
+		grid-template-columns: 18% 82%;
+		.desc {
+			.container {
+				.photoContainer {
+					height: 40%;
+					margin: 8vh 0;
+				}
+			}
+		}
+		.info {
+			font-size: 1em;
+			.location {
+				font-size: 1em;
+			}
+			.mail {
+				font-size: 1em;
+			}
+		}
+	}
 }

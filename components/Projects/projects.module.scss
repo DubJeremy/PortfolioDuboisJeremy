@@ -2,8 +2,7 @@
 @import 'styles/mixins.scss';
 
 .projects {
-	min-height: 100vh;
-	width: calc(100vw - 30px);
+	width: 100%;
 	color: $blue;
 	.title {
 		width: 100%;
@@ -30,6 +29,7 @@
 	}
 	.descProject {
 		width: 100%;
+		border-bottom: 2px solid $blue;
 		h4 {
 			font-family: 'Flaviotte';
 			font-size: 2em;
@@ -48,30 +48,18 @@
 		.techs {
 			padding: 30px 40px 40px 40px;
 			@include flex($dir: row);
-			border-bottom: 2px solid $blue;
 			.logoTech {
 				position: relative;
 				transition: all 0.2s ease-in-out;
-				&:hover {
-					transform: scale(1.1);
-				}
-			}
-			.square {
 				width: calc(calc(100vw - 110px) / 6);
 				height: calc(calc(100vw - 110px) / 6);
 				margin: 10px calc(calc(calc(100vw - 110px) / 6) / 4);
-			}
-			.long {
-				width: calc(calc(100vw - 110px) / 6);
-				height: calc(calc(100vw - 200px) / 6);
-				margin: 10px calc(calc(calc(100vw - 110px) / 6) / 4);
-			}
-			.medium {
-				width: calc(calc(calc(100vw - 110px) / 6) + 10px);
-				height: calc(calc(100vw - 150px) / 6);
-				margin: 10px calc(calc(calc(calc(100vw - 110px) / 6) / 4) - 5px);
-			}
-			.thin {
+				&:hover {
+					transform: scale(1.1);
+				}
+				img {
+					object-fit: contain;
+				}
 			}
 		}
 	}
@@ -229,18 +217,363 @@
 }
 
 @media screen and (max-width: $extra-small) {
+	.projects {
+		.title {
+			height: 50px;
+			> h3 {
+				width: 45%;
+			}
+			.patternContainer {
+				width: calc(55% - 2px);
+			}
+		}
+		.descProject {
+			> p {
+				font-size: 0.9em;
+			}
+		}
+		.btns {
+			font-size: 0.8em;
+			.viewProject {
+				.arrowD {
+					height: 15px;
+					width: 15px;
+				}
+			}
+			.next {
+				.arrowH {
+					width: 15px;
+					height: 10px;
+				}
+			}
+		}
+	}
 }
 @media screen and (max-width: $extra-small) and (min-height: $small) {
+	.projects {
+		.title {
+			> h3 {
+				width: 55%;
+			}
+			.patternContainer {
+				width: calc(45% - 2px);
+			}
+		}
+	}
 }
 @media screen and (min-width: $small) {
+	.projects {
+		.descProject {
+			> p {
+				font-size: 1.1em;
+			}
+		}
+	}
 }
 @media screen and (min-width: $medium) {
+	.projects {
+		.title {
+			@include flex($dir: row, $wrap: nowrap);
+			> h3 {
+				width: 25%;
+			}
+			.patternContainer {
+				width: calc(75% - 2px);
+			}
+		}
+		.descProject {
+			@include flex;
+			h4 {
+				font-size: 2.3em;
+			}
+			> p {
+				padding: 0 50px;
+			}
+			.techs {
+				width: 50%;
+				padding: 15px 0 25px 0;
+				.logoTech {
+					margin: 10px calc(calc(calc(100% / 9) / 14) * 2);
+					width: calc(100% / 9);
+					height: calc(50vw / 9);
+				}
+			}
+		}
+		.btns {
+			height: 60px;
+			font-size: 1.2em;
+			.viewProject {
+				width: 25%;
+				.arrowD {
+					height: 25px;
+					width: 25px;
+					right: 7px;
+					bottom: 7px;
+				}
+			}
+			.logoStriped {
+				width: calc(75% - 2px);
+			}
+			.next {
+				width: 20%;
+				> p {
+					font-size: 0.9em;
+				}
+				.arrowH {
+					width: 30px;
+					height: 15px;
+				}
+			}
+		}
+	}
+}
+@media screen and (min-width: $large) {
+	.projects {
+		.title {
+			border-bottom: 4px solid $blue;
+			> h3 {
+				width: 30%;
+			}
+			.patternContainer {
+				border-left: 4px solid $blue;
+				width: calc(70% - 4px);
+			}
+		}
+		.descProject {
+			border-bottom: 4px solid $blue;
+		}
+		.btns {
+			border-bottom: 4px solid $blue;
+
+			.logoStriped {
+				border-left: 4px solid $blue;
+			}
+			.next {
+				border-left: 4px solid $blue;
+				border-bottom: 4px solid $blue;
+			}
+		}
+		.scrollText {
+			border-bottom: 4px solid $blue;
+		}
+	}
 }
 @media screen and (min-width: $large) and (orientation: portrait) {
+	.projects {
+		.screens {
+			height: 35vh;
+		}
+		.btns {
+			.logoStriped {
+				border-left: 4px solid $blue;
+				width: calc(75% - 4px);
+			}
+		}
+	}
 }
 @media screen and (min-width: $large) and (orientation: landscape) {
+	.projects {
+		border-bottom: 0;
+		.title {
+			@include flex($dir: row, $wrap: nowrap);
+			> h3 {
+				width: 20%;
+				border-right: 4px solid $blue;
+				box-sizing: border-box;
+				height: 100%;
+				@include flex;
+			}
+			.patternContainer {
+				width: 80%;
+				border-left: 0;
+			}
+		}
+		.content {
+			border-bottom: 4px solid $blue;
+			width: 100%;
+			display: grid;
+			grid-template-columns: 30% 70%;
+			grid-template-rows: 65vh 60px;
+			.descProject {
+				grid-column: 1/2;
+				grid-row: 1/2;
+				height: 100%;
+				width: 100%;
+				border-bottom: 0;
+				border-right: 4px solid $blue;
+				box-sizing: border-box;
+				@include flex($just: flex-end, $align: flex-start);
+				padding: 25px;
+				> p {
+					padding: 0;
+					text-align: left;
+					margin-bottom: 5px;
+				}
+				.techs {
+					width: 50%;
+					padding: 0;
+					justify-content: flex-start;
+					.logoTech {
+						margin: 10px calc(calc(100% / 5) / 8) 0 calc(calc(100% / 5) / 8);
+						width: calc(100% / 5);
+						height: calc(15vw / 5);
+					}
+				}
+			}
+			.screensContainer {
+				grid-column: 2/3;
+				grid-row: 1/2;
+				.showProject {
+					background-color: $blueLight;
+					height: 100%;
+					@include flex($align: flex-start, $just: flex-end);
+					position: relative;
+					overflow: hidden;
+					> h4 {
+						background-color: transparent;
+						font-family: 'Flaviotte';
+						font-size: 40vh;
+						line-height: 25vh;
+						color: transparent;
+						-webkit-text-stroke: 0.01px white;
+						white-space: nowrap;
+					}
+					.screens {
+						background-color: transparent;
+						position: absolute;
+					}
+				}
+				.project {
+					@include flex($align: flex-start);
+					position: relative;
+					width: 100%;
+					height: 100%;
+					> h4 {
+						padding-left: 10%;
+						font-family: 'Flaviotte';
+						font-size: 5.5vw;
+						color: transparent;
+						-webkit-text-stroke: 0.01px $blue;
+						white-space: nowrap;
+					}
+					.linesContainer {
+						width: 25%;
+						height: 100%;
+						position: absolute;
+						top: 0;
+						right: 0;
+						z-index: -1;
+					}
+				}
+			}
+			.btns {
+				grid-column: 1/3;
+				grid-row: 2/3;
+				border-top: 4px solid $blue;
+				border-bottom: 0;
+				@include flex($align: flex-start);
+				.viewProject {
+					border-right: 4px solid $blue;
+					box-sizing: border-box;
+					height: 100%;
+					width: 30%;
+					.arrowD {
+						bottom: 11px;
+					}
+				}
+				.inDevelopment {
+					border-right: 4px solid $blue;
+					box-sizing: border-box;
+					height: 100%;
+					width: 30%;
+					@include flex($dir: row);
+					> p {
+						width: 50%;
+						text-align: center;
+					}
+					.loader {
+						width: 20%;
+						height: 100%;
+						@include flex;
+						transform: scale(2);
+					}
+				}
+				.pattern {
+					width: 70%;
+					height: 100%;
+					border: 0;
+					position: relative;
+				}
+			}
+		}
+	}
+}
+@media screen and (min-width: $large) and (orientation: landscape) and (min-height: $medium) {
+	.projects {
+		.content {
+			grid-template-rows: 50vh 60px;
+		}
+	}
 }
 @media screen and (min-width: $extra-large) and (orientation: landscape) {
+	.projects {
+		.title {
+			> h3 {
+				width: 15%;
+				font-size: 2.8em;
+			}
+			.patternContainer {
+				width: calc(85% - 2px);
+			}
+		}
+		.content {
+			.descProject {
+				> p {
+					font-size: 1.3em;
+				}
+			}
+		}
+	}
 }
 @media screen and (min-width: $ultra-large) {
+	.projects {
+		.content {
+			grid-template-columns: 20% 80%;
+			grid-template-rows: 45vh 60px;
+			.descProject {
+				.techs {
+					.logoTech {
+						height: calc(10vw / 5);
+					}
+				}
+			}
+			.screensContainer {
+				.showProject {
+					> h4 {
+						background-color: transparent;
+						font-family: 'Flaviotte';
+						font-size: 40vh;
+						line-height: 25vh;
+						color: transparent;
+						-webkit-text-stroke: 0.01px white;
+						white-space: nowrap;
+					}
+				}
+			}
+			.btns {
+				.viewProject {
+					width: 20%;
+				}
+				.inDevelopment {
+					width: 20%;
+					.loader {
+						width: 15%;
+					}
+				}
+				.pattern {
+					width: 80%;
+				}
+			}
+		}
+	}
 }

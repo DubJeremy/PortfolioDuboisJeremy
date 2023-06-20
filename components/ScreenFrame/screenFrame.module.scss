@@ -5,46 +5,51 @@
 	position: fixed;
 }
 .top {
-	width: 100vw;
-	height: 15px;
+	width: calc(100% - 30px);
+	height: 14px;
 	top: 0;
-	left: 0;
+	left: 15px;
 	z-index: 1003;
-	@include flex($just: flex-end);
-	.borderBottom {
-		height: 2px;
-		width: calc(100% - 30px);
-		background-color: $blue;
-	}
+	border-bottom: 2px solid $blue;
 }
 .right {
 	width: 15px;
-	height: 100vh;
-	top: 0px;
+	height: calc(100vh - 27px);
+	top: 14px;
 	right: 0;
 	border-left: 2px solid $blue;
+	box-sizing: border-box;
 	z-index: 1002;
 }
 .bottom {
-	width: 100vw;
-	height: 15px;
+	width: calc(100% - 30px);
+	height: 13px;
 	bottom: 0;
-	left: 0;
+	left: 15px;
 	z-index: 1003;
-	@include flex($just: flex-start);
-	.borderTop {
-		height: 2px;
-		width: calc(100% - 30px);
-		background-color: $blue;
-	}
+	border-top: 2px solid $blue;
 }
 .left {
 	width: 15px;
-	height: calc(100vh - 23px);
-	top: 13px;
+	height: calc(100vh - 27px);
+	top: 14px;
 	left: 0;
 	border-right: 2px solid $blue;
+	box-sizing: border-box;
 	z-index: 1002;
+}
+.corner {
+	width: 15px;
+	height: 13px;
+	z-index: 1004;
+}
+.rightBottom {
+	bottom: 0;
+	right: 0;
+}
+.leftBottom {
+	bottom: 0;
+	left: 0;
 }
 .sideFrame:before {
 	background: url(/img/background.webp) 0 0;
@@ -109,15 +114,36 @@
 	}
 }
 
-@media screen and (max-width: $extra-small) {
-}
-@media screen and (max-width: $extra-small) and (min-height: $small) {
-}
-@media screen and (min-width: $small) {
-}
-@media screen and (min-width: $medium) {
-}
-@media screen and (min-width: $large) and (orientation: portrait) {
+@media screen and (min-width: $large) {
+	.top {
+		height: 25px;
+		width: calc(100% - 42px);
+		border-bottom: 4px solid $blue;
+		left: 21px;
+	}
+	.right {
+		width: 25px;
+		height: calc(100vh - 50px);
+		border-left: 4px solid $blue;
+		top: 25px;
+	}
+	.bottom {
+		height: 25px;
+		width: calc(100% - 42px);
+		border-top: 4px solid $blue;
+		left: 21px;
+	}
+	.left {
+		width: 25px;
+		height: calc(100vh - 50px);
+		top: 25px;
+		border-right: 4px solid $blue;
+	}
+	.corner {
+		width: 21px;
+		height: 26px;
+		z-index: 1004;
+	}
 }
 @media screen and (min-width: $large) and (orientation: landscape) {
 }

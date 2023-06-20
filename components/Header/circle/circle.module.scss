@@ -114,16 +114,179 @@
 }
 
 @media screen and (max-width: $extra-small) {
+	.circle {
+		top: 60px;
+		min-height: calc(100vh - 90px);
+		width: 168px;
+		.background {
+			width: 166px;
+		}
+		.background:before {
+			height: calc(calc(calc(100vh - 90px) / 2) + 100px);
+			width: 170px;
+			left: calc(50% - 85px);
+		}
+		.background:after {
+			height: calc(calc(calc(100vh - 90px) / 2) + 100px);
+			width: 170px;
+			left: calc(50% - 85px);
+		}
+		.img {
+			width: 174px;
+			height: 174px;
+		}
+	}
 }
-@media screen and (max-width: $extra-small) and (min-height: $small) {
-}
+
 @media screen and (min-width: $small) {
+	.circle {
+		width: 248px;
+		.background {
+			width: 246px;
+		}
+		.background:before {
+			width: 250px;
+			left: calc(50% - 125px);
+		}
+		.background:after {
+			width: 250px;
+			left: calc(50% - 125px);
+		}
+		.img {
+			width: 254px;
+			height: 254px;
+		}
+	}
+}
+@media screen and (min-width: $small) and (orientation: landscape) {
+	.circle {
+		width: 188px;
+		.background {
+			width: 186px;
+			height: calc(50% + 94px);
+		}
+		.background:before {
+			width: 188px;
+			left: calc(50% - 104px);
+			height: calc(calc(calc(100vh - 130px) / 2) + 94px);
+		}
+		.background:after {
+			width: 188px;
+			left: calc(50% - 104px);
+			height: calc(calc(calc(100vh - 130px) / 2) + 100px);
+		}
+		.img {
+			width: 198px;
+			height: 198px;
+			margin-top: -108px;
+			margin-left: -12px;
+		}
+	}
 }
 @media screen and (min-width: $medium) {
+	.circle {
+		width: 348px;
+		.background {
+			width: 346px;
+		}
+		.background:before {
+			width: 350px;
+			left: calc(50% - 175px);
+		}
+		.background:after {
+			width: 350px;
+			left: calc(50% - 175px);
+		}
+		.img {
+			width: 354px;
+			height: 354px;
+			margin-top: -120px;
+		}
+	}
+}
+@media screen and (min-width: $medium) and (orientation: landscape) {
+	.circle {
+		width: 208px;
+		.background {
+			width: 206px;
+			height: calc(50% + 100px);
+		}
+		.background:before {
+			width: 208px;
+			left: calc(50% - 104px);
+			height: calc(calc(calc(100vh - 130px) / 2) + 100px);
+		}
+		.background:after {
+			width: 208px;
+			left: calc(50% - 104px);
+			height: calc(calc(calc(100vh - 130px) / 2) + 100px);
+		}
+		.img {
+			width: 218px;
+			height: 218px;
+			margin-top: -118px;
+			margin-left: -6px;
+		}
+	}
 }
 @media screen and (min-width: $large) and (orientation: portrait) {
+	.circle {
+		top: 100px;
+		width: 348px;
+		.background {
+			width: 346px;
+			height: calc(50% + 150px);
+		}
+		.background:before {
+			width: 348px;
+			left: calc(50% - 175px);
+			height: calc(calc(calc(100vh - 130px) / 2) + 150px);
+		}
+		.background:after {
+			width: 348px;
+			left: calc(50% - 175px);
+			height: calc(calc(calc(100vh - 130px) / 2) + 150px);
+		}
+		.img {
+			width: 358px;
+			height: 358px;
+			margin-top: -188px;
+			margin-left: -9px;
+		}
+	}
 }
 @media screen and (min-width: $large) and (orientation: landscape) {
+	.circle {
+		top: 100px;
+		.img {
+			margin-top: -128px;
+		}
+	}
+}
+@media screen and (min-width: $large) and (orientation: landscape) and (min-height: $medium) {
+	.circle {
+		width: 248px;
+		.background {
+			width: 246px;
+			height: calc(50% + 150px);
+		}
+		.background:before {
+			width: 248px;
+			left: calc(50% - 124px);
+			height: calc(calc(calc(100vh - 130px) / 2) + 150px);
+		}
+		.background:after {
+			width: 248px;
+			left: calc(50% - 124px);
+			height: calc(calc(calc(100vh - 130px) / 2) + 150px);
+		}
+		.img {
+			width: 258px;
+			height: 258px;
+			margin-top: -188px;
+			margin-left: -9px;
+		}
+	}
 }
 @media screen and (min-width: $extra-large) and (orientation: landscape) {
 }

@@ -25,6 +25,7 @@ body,
 body * {
 	color: inherit;
 	background-color: inherit;
+	scroll-behavior: smooth;
 }
 *,
 :after,
@@ -36,12 +37,10 @@ body * {
 
 body {
 	overflow-x: hidden;
-	width: 100vw;
+	width: 100%;
+	max-width: 100%;
 	height: 100vh;
-	max-width: 100vw;
 	max-height: 100vh;
-	padding: auto;
-	@include flex;
 	position: relative;
 }
 body:before {
@@ -75,10 +74,21 @@ body:after {
 	z-index: 4;
 }
 main {
-	width: calc(100vw - 30px);
-	height: calc(100vh - 30px);
-	top: 15px;
-	left: 15px;
+	width: calc(100% - 30px);
+	height: 100vh;
+	margin: 15px;
+	position: relative;
+}
+@media screen and (min-width: $large) {
+	main {
+		width: calc(100% - 50px);
+		height: calc(100vh - 50px);
+		margin: 25px;
+	}
+}
+.section {
+	overflow-x: hidden;
+	max-width: 100%;
 }
 
 li {
@@ -140,5 +150,3 @@ button:focus {
 		background-position: 0 250px;
 	}
 }
-
-// transition: background-color 0.4s linear;
