@@ -393,7 +393,7 @@
 			width: 100%;
 			display: grid;
 			grid-template-columns: 30% 70%;
-			grid-template-rows: 55vh 60px;
+			grid-template-rows: 50vh 60px;
 			.descProject {
 				grid-column: 1/2;
 				grid-row: 1/2;
@@ -421,13 +421,48 @@
 				}
 			}
 			.screensContainer {
-				background-color: pink;
 				grid-column: 2/3;
 				grid-row: 1/2;
 				.showProject {
+					background-color: $blueLight;
+					height: 100%;
+					@include flex($align: flex-start, $just: flex-end);
+					position: relative;
+					overflow: hidden;
 					> h4 {
+						background-color: transparent;
+						font-family: 'Flaviotte';
+						font-size: 40vh;
+						line-height: 25vh;
+						color: transparent;
+						-webkit-text-stroke: 0.01px white;
+						white-space: nowrap;
 					}
 					.screens {
+						background-color: transparent;
+						position: absolute;
+					}
+				}
+				.project {
+					@include flex($align: flex-start);
+					position: relative;
+					width: 100%;
+					height: 100%;
+					> h4 {
+						padding-left: 10%;
+						font-family: 'Flaviotte';
+						font-size: 5.5vw;
+						color: transparent;
+						-webkit-text-stroke: 0.01px $blue;
+						white-space: nowrap;
+					}
+					.linesContainer {
+						width: 25%;
+						height: 100%;
+						position: absolute;
+						top: 0;
+						right: 0;
+						z-index: -1;
 					}
 				}
 			}
@@ -442,10 +477,6 @@
 					box-sizing: border-box;
 					height: 100%;
 					width: 30%;
-					> p {
-					}
-					.arrowD {
-					}
 				}
 				.inDevelopment {
 					border-right: 4px solid $blue;

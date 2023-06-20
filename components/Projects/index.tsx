@@ -50,12 +50,7 @@ const Projects = () => {
 			{targetReachedL && isInLandscape ? (
 				<>
 					{contentProjects.map((content: ProjectTypes.Content) => (
-						<div
-							className={`${styles.content} ${
-								content.footer ? styles.footer : styles.noFooter
-							}`}
-							key={content.id}
-						>
+						<div className={styles.content} key={content.id}>
 							<div className={styles.descProject}>
 								<p>{t(`${content.desc}`)}</p>
 								<div className={styles.techs}>
@@ -79,7 +74,9 @@ const Projects = () => {
 								) : (
 									<div className={styles.project}>
 										<h4>{content.title}</h4>
-										<Lines />
+										<div className={styles.linesContainer}>
+											<Lines />
+										</div>
 									</div>
 								)}
 							</div>
