@@ -392,10 +392,9 @@
 			border-bottom: 4px solid $blue;
 			width: 100%;
 			display: grid;
-			grid-template-columns: 25% 75%;
-			grid-template-rows: 60vh 60px;
+			grid-template-columns: 30% 70%;
+			grid-template-rows: 55vh 60px;
 			.descProject {
-				background-color: aliceblue;
 				grid-column: 1/2;
 				grid-row: 1/2;
 				height: 100%;
@@ -403,11 +402,21 @@
 				border-bottom: 0;
 				border-right: 4px solid $blue;
 				box-sizing: border-box;
+				@include flex($just: flex-end, $align: flex-start);
+				padding: 25px;
 				> p {
 					padding: 0;
+					text-align: left;
+					margin-bottom: 5px;
 				}
 				.techs {
+					width: 50%;
+					padding: 0;
+					justify-content: flex-start;
 					.logoTech {
+						margin: 10px calc(calc(100% / 5) / 8) 0 calc(calc(100% / 5) / 8);
+						width: calc(100% / 5);
+						height: calc(15vw / 5);
 					}
 				}
 			}
@@ -432,7 +441,7 @@
 					border-right: 4px solid $blue;
 					box-sizing: border-box;
 					height: 100%;
-					width: 25%;
+					width: 30%;
 					> p {
 					}
 					.arrowD {
@@ -442,21 +451,21 @@
 					border-right: 4px solid $blue;
 					box-sizing: border-box;
 					height: 100%;
-					width: 25%;
+					width: 30%;
 					@include flex($dir: row);
 					> p {
 						width: 50%;
 						text-align: center;
 					}
 					.loader {
-						width: 30%;
+						width: 20%;
 						height: 100%;
 						@include flex;
 						transform: scale(2);
 					}
 				}
 				.pattern {
-					width: 75%;
+					width: 70%;
 					height: 100%;
 					border: 0;
 					position: relative;
