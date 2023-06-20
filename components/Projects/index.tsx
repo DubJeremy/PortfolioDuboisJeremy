@@ -82,12 +82,12 @@ const Projects = () => {
 							</div>
 							{content.done ? (
 								<div className={styles.btns}>
-									<div className={styles.viewProject}>
+									<a href={content.link} className={styles.viewProject}>
 										<p>{t('VIEW_PROJECT')}</p>
 										<div className={styles.arrowD}>
 											<Image src={'/img/icon/arrowD.webp'} alt='arrow' fill />
 										</div>
-									</div>
+									</a>
 									<div className={styles.pattern}>
 										<Image
 											src={'/img/patternStripedXL.webp'}
@@ -189,7 +189,8 @@ const Projects = () => {
 					</div>
 					<div className={styles.scrollText}>
 						<p>
-							{t('PROJECT')} {t('BY')} Dubois Jérémy
+							{t('PROJECT')} {t('PROJECT')}
+							{/* {t('BY')} Dubois Jérémy */}
 						</p>
 					</div>
 				</>

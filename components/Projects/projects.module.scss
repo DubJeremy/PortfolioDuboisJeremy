@@ -393,7 +393,7 @@
 			width: 100%;
 			display: grid;
 			grid-template-columns: 30% 70%;
-			grid-template-rows: 50vh 60px;
+			grid-template-rows: 65vh 60px;
 			.descProject {
 				grid-column: 1/2;
 				grid-row: 1/2;
@@ -477,6 +477,9 @@
 					box-sizing: border-box;
 					height: 100%;
 					width: 30%;
+					.arrowD {
+						bottom: 11px;
+					}
 				}
 				.inDevelopment {
 					border-right: 4px solid $blue;
@@ -505,6 +508,13 @@
 		}
 	}
 }
+@media screen and (min-width: $large) and (orientation: landscape) and (min-height: $medium) {
+	.projects {
+		.content {
+			grid-template-rows: 50vh 60px;
+		}
+	}
+}
 @media screen and (min-width: $extra-large) and (orientation: landscape) {
 	.projects {
 		.title {
@@ -516,7 +526,54 @@
 				width: calc(85% - 2px);
 			}
 		}
+		.content {
+			.descProject {
+				> p {
+					font-size: 1.3em;
+				}
+			}
+		}
 	}
 }
 @media screen and (min-width: $ultra-large) {
+	.projects {
+		.content {
+			grid-template-columns: 20% 80%;
+			grid-template-rows: 45vh 60px;
+			.descProject {
+				.techs {
+					.logoTech {
+						height: calc(10vw / 5);
+					}
+				}
+			}
+			.screensContainer {
+				.showProject {
+					> h4 {
+						background-color: transparent;
+						font-family: 'Flaviotte';
+						font-size: 40vh;
+						line-height: 25vh;
+						color: transparent;
+						-webkit-text-stroke: 0.01px white;
+						white-space: nowrap;
+					}
+				}
+			}
+			.btns {
+				.viewProject {
+					width: 20%;
+				}
+				.inDevelopment {
+					width: 20%;
+					.loader {
+						width: 15%;
+					}
+				}
+				.pattern {
+					width: 80%;
+				}
+			}
+		}
+	}
 }

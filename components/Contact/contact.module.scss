@@ -366,8 +366,8 @@
 				font-weight: 400;
 			}
 			label:nth-child(2) {
-				width: 40%;
-				margin-right: 5%;
+				width: calc(45% - 10px);
+				margin-right: 10px;
 			}
 			label:nth-child(3) {
 				width: 55%;
@@ -392,8 +392,12 @@
 }
 @media screen and (min-width: $ultra-large) {
 	.contact {
+		padding-bottom: 25vh;
 		.inputs {
-			// width: 30%;
+			> a {
+				font-size: 3vw;
+				padding-top: 15vh;
+			}
 		}
 	}
 }

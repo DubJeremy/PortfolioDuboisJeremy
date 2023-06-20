@@ -277,6 +277,7 @@
 		border-top: 4px solid $blue;
 		border-bottom: 4px solid $blue;
 		.desc {
+			min-height: 60vh;
 			overflow: hidden;
 			grid-row: 1/2;
 			grid-column: 2/3;
@@ -288,6 +289,8 @@
 			.txt {
 				grid-column: 2/3;
 				padding: 10vh 0;
+				height: 100%;
+				@include flex($align: flex-start, $just: flex-start);
 				> h2 {
 					font-weight: 500;
 					font-size: 1.5em;
@@ -396,7 +399,10 @@
 		.desc {
 			.txt {
 				> h2 {
-					font-size: 1.7em;
+					font-size: 2.1em;
+				}
+				> p {
+					font-size: 1.5em;
 				}
 			}
 			.container {
@@ -406,6 +412,18 @@
 				.linesContainer {
 					width: 65%;
 				}
+			}
+		}
+		.info {
+			font-size: 0.9em;
+			> h4 {
+				font-size: 1em;
+			}
+			.location {
+				font-size: 0.8em;
+			}
+			.mail {
+				font-size: 0.8em;
 			}
 		}
 	}
@@ -419,6 +437,15 @@
 					height: 40%;
 					margin: 8vh 0;
 				}
+			}
+		}
+		.info {
+			font-size: 1em;
+			.location {
+				font-size: 1em;
+			}
+			.mail {
+				font-size: 1em;
 			}
 		}
 	}
