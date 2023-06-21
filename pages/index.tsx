@@ -15,6 +15,7 @@ import Cursor from '@/components/Cursor';
 export default function Home() {
 	const [targetReachedH] = useMediaQuery(`(max-height: 500px)`);
 	const [targetReached] = useMediaQuery(`(max-width: 992px)`);
+	const [targetReachedXL] = useMediaQuery(`(min-width: 1140px)`);
 	const [isInLandscape, setIsInLandscape] = useState<boolean | null>(null);
 
 	useEffect(() => {
@@ -54,7 +55,8 @@ export default function Home() {
 					<TurnMobile />
 				) : (
 					<>
-						<Cursor />
+						{targetReachedXL && <Cursor />}
+
 						<ScreenFrame />
 						<Navbar />
 						<Header />

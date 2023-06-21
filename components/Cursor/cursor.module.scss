@@ -1,7 +1,6 @@
 @import '../../styles/variables.scss';
 @import 'styles/mixins.scss';
 
-// custom cursor style
 .cursor {
 	position: fixed;
 	width: 40px;
@@ -17,14 +16,14 @@
 }
 
 .grow,
-.grow-small {
+.growSmall {
 	transform: scale(4);
 	background: white;
 	mix-blend-mode: difference;
 	border: none;
 }
 
-.grow-small {
+.growSmall {
 	transform: scale(2);
 }
 @media screen and (max-width: $extra-small) {
