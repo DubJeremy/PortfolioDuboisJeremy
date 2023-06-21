@@ -93,7 +93,7 @@ const Navbar = () => {
 					</div>
 				</div>
 				{targetReached ? (
-					<div className={styles.nav}>
+					<div className={`${styles.nav}  cursorScale small`}>
 						<ul>
 							<li className={activeSection === 'profil' ? styles.activeLi : ''}>
 								<a

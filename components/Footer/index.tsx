@@ -13,7 +13,7 @@ const Footer = () => {
 			<div className={styles.scrollText}>
 				<p>Portfolio Dubois Jérémy</p>
 			</div>
-			<div className={styles.container}>
+			<div className={`${styles.container} cursorScale`}>
 				<a className={styles.credit}>
 					{t('INSPIRED_BY')} Kazuki Noda Portfolio
 				</a>

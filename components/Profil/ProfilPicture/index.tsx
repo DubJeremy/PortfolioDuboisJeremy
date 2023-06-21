@@ -28,7 +28,7 @@ const ProfilPicture = () => {
 	});
 
 	return (
-		<mesh ref={flagRef} className={styles.profilPicture}>
+		<mesh ref={flagRef}>
 			<planeGeometry args={[6, 7, 30, 20]} />
 			<meshBasicMaterial map={texture} side={DoubleSide} />
 		</mesh>

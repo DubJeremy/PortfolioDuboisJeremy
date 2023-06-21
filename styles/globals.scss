@@ -42,6 +42,7 @@ body {
 	height: 100vh;
 	max-height: 100vh;
 	position: relative;
+	cursor: url(/img/cursor.svg), auto;
 }
 body:before {
 	position: fixed;

@@ -54,14 +54,14 @@ const Profil = () => {
 						</div>
 					</div>
 				) : (
-					<div className={styles.photoContainer}>
+					<div className={`${styles.photoContainer}  cursorScale`}>
 						<Canvas>
 							<ProfilPicture />
 						</Canvas>
 					</div>
 				)}
 			</div>
-			<div className={styles.info}>
+			<div className={`${styles.info}  cursorScale small`}>
 				<h3>Dubois Jérémy</h3>
 				<h4>Portfolio | {t('WEB_DEV')}</h4>
 				<div className={styles.profilContact}>

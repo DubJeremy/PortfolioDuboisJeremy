@@ -10,15 +10,15 @@ const Cursor = () => {
 	useEffect(() => {
 		const cursor = document.getElementById('cursor');
 
-		const handleMouseMove = (e) => {
+		const handleMouseMove = (e: MouseEvent) => {
 			const mouseX = e.clientX;
 			const mouseY = e.clientY;
 			gsap.to(cursor, { left: `${mouseX}px`, top: `${mouseY}px` });
 		};
 
-		const handleMouseEnter = (event) => {
+		const handleMouseEnter = () => {
 			setIsGrow(true);
-			setIsGrowSmall(event.target.classList.contains('growSmall'));
+			setIsGrowSmall(true);
 		};
 
 		const handleMouseLeave = () => {
@@ -28,22 +28,22 @@ const Cursor = () => {
 		window.addEventListener('mousemove', handleMouseMove);
 
 		document.querySelectorAll('.cursorScale').forEach((link) => {
-			link.addEventListener('mouseenter', handleMouseEnter);
-			link.addEventListener('mouseleave', handleMouseLeave);
-		});
+			link.addEventListener('mousemove', () => {
+				if (link.classList.contains('small')) {
+					setIsGrowSmall(true);
+				} else {
+					setIsGrow(true);
+				}
+			});
 
-		// document.querySelectorAll('.cursorScaleSmall').forEach((link) => {
-		// 	link.addEventListener('mouseenter', handleMouseEnter);
-		// 	link.addEventListener('mouseleave', handleMouseLeave);
-		// });
+			link.addEventListener('mouseleave', () => {
+				setIsGrow(false);
+				setIsGrowSmall(false);
+			});
+		});
 
 		return () => {
 			window.removeEventListener('mousemove', handleMouseMove);
-
-			// document.querySelectorAll('.cursorScale').forEach((link) => {
-			// 	link.removeEventListener('mouseenter', handleMouseEnter);
-			// 	link.removeEventListener('mouseleave', handleMouseLeave);
-			// });
 		};
 	}, []);
 

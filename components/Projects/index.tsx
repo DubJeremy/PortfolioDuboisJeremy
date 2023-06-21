@@ -65,7 +65,7 @@ const Projects = () => {
 									))}
 								</div>
 							</div>
-							<div className={styles.screensContainer}>
+							<div className={`${styles.screensContainer} cursorScale`}>
 								{isVisible ? (
 									<div className={styles.showProject}>
 										<h4>{content.title}</h4>
@@ -82,7 +82,10 @@ const Projects = () => {
 							</div>
 							{content.done ? (
 								<div className={styles.btns}>
-									<a href={content.link} className={styles.viewProject}>
+									<a
+										href={content.link}
+										className={`${styles.viewProject}  cursorScale small`}
+									>
 										<p>{t('VIEW_PROJECT')}</p>
 										<div className={styles.arrowD}>
 											<Image src={'/img/icon/arrowD.webp'} alt='arrow' fill />

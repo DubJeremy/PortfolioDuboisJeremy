@@ -31,7 +31,7 @@ const Contact = () => {
 					/>
 				</div>
 			</div>
-			<form className={styles.inputs} method='post'>
+			<form className={`${styles.inputs} cursorScale`} method='post'>
 				<a href='mailto:dubois.jeremy33@gmail.com'>dubois.jeremy33@gmail.com</a>
 				<label className={styles.input} htmlFor='name'>
 					<input type='text' name='name' placeholder={t('NAME')} required />
