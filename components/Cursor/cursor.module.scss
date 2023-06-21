@@ -1,0 +1,45 @@
+@import '../../styles/variables.scss';
+@import 'styles/mixins.scss';
+
+// custom cursor style
+.cursor {
+	position: fixed;
+	width: 40px;
+	height: 40px;
+	margin-left: -20px;
+	margin-top: -20px;
+	border-radius: 50%;
+	border: 2px solid $blue;
+	transition: transform 0.3s ease;
+	transform-origin: center center;
+	pointer-events: none;
+	z-index: 10000000;
+}
+
+.grow,
+.grow-small {
+	transform: scale(4);
+	background: white;
+	mix-blend-mode: difference;
+	border: none;
+}
+
+.grow-small {
+	transform: scale(2);
+}
+@media screen and (max-width: $extra-small) {
+}
+@media screen and (max-width: $extra-small) and (min-height: $small) {
+}
+@media screen and (min-width: $small) {
+}
+@media screen and (min-width: $medium) {
+}
+@media screen and (min-width: $large) and (orientation: portrait) {
+}
+@media screen and (min-width: $large) and (orientation: landscape) {
+}
+@media screen and (min-width: $extra-large) and (orientation: landscape) {
+}
+@media screen and (min-width: $ultra-large) {
+}

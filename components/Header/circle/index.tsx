@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import { gsap } from 'gsap';
+import Image from 'next/image';
 
 import styles from './circle.module.scss';
-import Image from 'next/image';
 
 const Circle = () => {
 	useEffect(() => {

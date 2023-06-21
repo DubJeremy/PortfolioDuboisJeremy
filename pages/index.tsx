@@ -10,6 +10,7 @@ import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import useMediaQuery from '@/tools/useMediaQuery';
 import TurnMobile from '@/components/TurnMobile';
+import Cursor from '@/components/Cursor';
 
 export default function Home() {
 	const [targetReachedH] = useMediaQuery(`(max-height: 500px)`);
@@ -53,6 +54,7 @@ export default function Home() {
 					<TurnMobile />
 				) : (
 					<>
+						<Cursor />
 						<ScreenFrame />
 						<Navbar />
 						<Header />
