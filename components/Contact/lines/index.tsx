@@ -20,11 +20,6 @@ const Lines = () => {
 					if (linesElement) {
 						linesElement.classList.add(styles.linesAnimate);
 					}
-				} else {
-					const linesElement = document.getElementById('lines');
-					if (linesElement) {
-						linesElement.classList.remove(styles.linesAnimate);
-					}
 				}
 			}
 		};
