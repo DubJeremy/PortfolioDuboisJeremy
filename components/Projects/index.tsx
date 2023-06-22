@@ -75,7 +75,7 @@ const Projects = () => {
 									<div className={styles.project}>
 										<h4>{content.title}</h4>
 										<div className={styles.linesContainer}>
-											<Lines />
+											<Lines idName={content.desc} />
 										</div>
 									</div>
 								)}

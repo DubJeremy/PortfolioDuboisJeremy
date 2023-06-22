@@ -9,7 +9,7 @@ const Lines = () => {
 			const scrollPosition = window.scrollY;
 
 			if (scrollPosition > windowHeight) {
-				const linesElement = document.getElementById('lines');
+				const linesElement = document.getElementById('linesContact');
 				if (linesElement) {
 					linesElement.classList.add(styles.linesAnimate);
 				}
@@ -24,7 +24,7 @@ const Lines = () => {
 	}, []);
 
 	return (
-		<div id='lines' className={styles.lines}>
+		<div id='linesContact' className={styles.lines}>
 			<div className={styles.line} />
 			<div className={styles.line} />
 			<div className={styles.line} />

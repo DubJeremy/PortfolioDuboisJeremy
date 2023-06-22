@@ -30,12 +30,17 @@
 }
 
 @media screen and (max-width: $extra-small) {
-	.lines {
-		height: calc(100% - 50px);
+	@keyframes linesAppear {
+		0% {
+			height: 0;
+		}
+		100% {
+			height: calc(100% - 50px);
+		}
 	}
 }
 @media screen and (min-width: $medium) and (orientation: landscape) {
-	.lines {
+	.linesAnimate {
 		clip-path: polygon(
 			30% 49%,
 			70% 49%,
@@ -47,12 +52,4 @@
 			15% 0
 		);
 	}
-}
-@media screen and (min-width: $large) and (orientation: portrait) {
-}
-@media screen and (min-width: $large) and (orientation: landscape) {
-}
-@media screen and (min-width: $extra-large) and (orientation: landscape) {
-}
-@media screen and (min-width: $ultra-large) {
 }
