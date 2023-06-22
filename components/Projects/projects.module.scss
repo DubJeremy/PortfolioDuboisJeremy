@@ -417,6 +417,9 @@
 						margin: 10px calc(calc(100% / 5) / 8) 0 calc(calc(100% / 5) / 8);
 						width: calc(100% / 5);
 						height: calc(15vw / 5);
+						&:hover {
+							transform: scale(1.3);
+						}
 					}
 				}
 			}
