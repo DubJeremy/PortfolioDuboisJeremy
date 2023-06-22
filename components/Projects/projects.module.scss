@@ -426,29 +426,44 @@
 			.screensContainer {
 				grid-column: 2/3;
 				grid-row: 1/2;
+				position: relative;
+				overflow: hidden;
 				.showProject {
 					background-color: $blueLight;
 					height: 100%;
+					width: 100%;
 					@include flex($align: flex-start, $just: flex-end);
-					position: relative;
+					position: absolute;
+					z-index: 2;
+					transform: translateX(-100%);
 					overflow: hidden;
+					transition: all 1.5s ease-in-out;
 					> h4 {
 						background-color: transparent;
 						font-family: 'Flaviotte';
-						font-size: 40vh;
-						line-height: 25vh;
+						font-size: 20vw;
+						line-height: 12vw;
 						color: transparent;
 						-webkit-text-stroke: 0.01px white;
 						white-space: nowrap;
+						transition: all 1.5s ease-in-out;
+						transform: translateX(100%);
+					}
+					.showTitle {
+						transform: translateX(0);
 					}
 					.screens {
 						background-color: transparent;
 						position: absolute;
 					}
 				}
+				.visible {
+					transform: translateX(0);
+				}
 				.project {
 					@include flex($align: flex-start);
 					position: relative;
+					z-index: 1;
 					width: 100%;
 					height: 100%;
 					> h4 {
@@ -553,13 +568,19 @@
 			.screensContainer {
 				.showProject {
 					> h4 {
+						background-color: red;
+						height: 100%;
 						background-color: transparent;
 						font-family: 'Flaviotte';
-						font-size: 40vh;
-						line-height: 25vh;
+						font-size: 12vw;
+						line-height: 12vw;
 						color: transparent;
 						-webkit-text-stroke: 0.01px white;
 						white-space: nowrap;
+						transform: translateX(100%);
+					}
+					.showTitle {
+						transform: translateX(0);
 					}
 				}
 			}

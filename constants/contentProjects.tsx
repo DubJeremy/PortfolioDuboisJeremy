@@ -1,6 +1,6 @@
 export const contentProjects: ProjectTypes.Content[] = [
 	{
-		id: 0,
+		id: 1,
 		done: true,
 		title: 'KBDev Website',
 		desc: 'KBDEV',
@@ -23,7 +23,7 @@ export const contentProjects: ProjectTypes.Content[] = [
 		],
 	},
 	{
-		id: 1,
+		id: 2,
 		done: true,
 		title: 'Petshine',
 		desc: 'PETSHINE',
@@ -39,7 +39,7 @@ export const contentProjects: ProjectTypes.Content[] = [
 		],
 	},
 	{
-		id: 2,
+		id: 3,
 		done: false,
 		title: 'TCG-Collect',
 		desc: 'TCG',

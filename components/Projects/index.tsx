@@ -15,6 +15,7 @@ const Projects = () => {
 	const [targetReachedL] = useMediaQuery(`(min-width: 992px)`);
 	const [isInLandscape, setIsInLandscape] = useState<boolean | null>(null);
 	const [isVisible, setIsVisible] = useState(false);
+	const [hoveredIndex, setHoveredIndex] = useState(-1);
 
 	useEffect(() => {
 		heightFunction();
@@ -65,20 +66,37 @@ const Projects = () => {
 									))}
 								</div>
 							</div>
-							<div className={`${styles.screensContainer} cursorScale`}>
-								{isVisible ? (
-									<div className={styles.showProject}>
-										<h4>{content.title}</h4>
+							<div className={`${styles.screensContainer} cursorScale small`}>
+								{hoveredIndex && (
+									<div
+										className={`${styles.showProject} ${
+											hoveredIndex === content.id ? styles.visible : ''
+										}`}
+										onMouseEnter={() => setHoveredIndex(content.id)}
+										onMouseLeave={() => setHoveredIndex(-1)}
+									>
+										<h4
+											className={
+												hoveredIndex === content.id ? styles.showTitle : ''
+											}
+										>
+											{content.title}
+										</h4>
 										<div className={styles.screens}></div>
 									</div>
-								) : (
-									<div className={styles.project}>
-										<h4>{content.title}</h4>
-										<div className={styles.linesContainer}>
-											<Lines idName={content.desc} />
-										</div>
-									</div>
 								)}
+								<div
+									className={styles.project}
+									// onMouseEnter={() => setIsVisible(true)}
+									// onMouseLeave={() => setIsVisible(false)}
+									onMouseEnter={() => setHoveredIndex(content.id)}
+									onMouseLeave={() => setHoveredIndex(-1)}
+								>
+									<h4>{content.title}</h4>
+									<div className={styles.linesContainer}>
+										<Lines idName={content.desc} />
+									</div>
+								</div>
 							</div>
 							{content.done ? (
 								<div className={styles.btns}>
