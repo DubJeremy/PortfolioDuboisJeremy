@@ -439,7 +439,7 @@
 					overflow: hidden;
 					transition: all 1.5s ease-in-out;
 					> h4 {
-						background-color: transparent;
+						min-width: 100%;
 						font-family: 'Flaviotte';
 						font-size: 20vw;
 						line-height: 12vw;
@@ -450,7 +450,7 @@
 						transform: translateX(100%);
 					}
 					.showTitle {
-						transform: translateX(0);
+						transform: translateX(0%);
 					}
 					.screens {
 						background-color: transparent;
@@ -568,19 +568,9 @@
 			.screensContainer {
 				.showProject {
 					> h4 {
-						background-color: red;
-						height: 100%;
-						background-color: transparent;
-						font-family: 'Flaviotte';
 						font-size: 12vw;
-						line-height: 12vw;
-						color: transparent;
-						-webkit-text-stroke: 0.01px white;
-						white-space: nowrap;
-						transform: translateX(100%);
-					}
-					.showTitle {
-						transform: translateX(0);
+						line-height: 7.5vw;
+						transform: translateX(110%);
 					}
 				}
 			}
