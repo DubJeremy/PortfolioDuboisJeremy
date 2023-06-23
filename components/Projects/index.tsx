@@ -5,17 +5,21 @@ import useTranslation from '@/components/Translator/hooks';
 import useMediaQuery from '@/tools/useMediaQuery';
 import { contentProjects } from '@/constants/contentProjects';
 import Lines from './lines';
+import Loader from './loader';
+import Screens from './screens';
 
 import styles from './projects.module.scss';
-import Loader from './loader';
 
 const Projects = () => {
 	const { t } = useTranslation();
 	const [targetReached] = useMediaQuery(`(min-width: 768px)`);
 	const [targetReachedL] = useMediaQuery(`(min-width: 992px)`);
 	const [isInLandscape, setIsInLandscape] = useState<boolean | null>(null);
-	const [isVisible, setIsVisible] = useState(false);
 	const [hoveredIndex, setHoveredIndex] = useState(-1);
+	const [projectId, setProjectId] = useState(1);
+	// const [contentIndex, setcontentIndex] = useState(projectId - 1);
+	// const [project, setproject] = useState(contentProjects[contentIndex]);
+	const project = contentProjects[projectId - 1];
 
 	useEffect(() => {
 		heightFunction();
@@ -31,6 +35,26 @@ const Projects = () => {
 			}
 		}
 	};
+
+	const nextProject = () => {
+		switch (projectId) {
+			case 1: {
+				setProjectId(2);
+				break;
+			}
+			case 2: {
+				setProjectId(3);
+				break;
+			}
+			case 3: {
+				setProjectId(1);
+				break;
+			}
+		}
+	};
+	//  useEffect(()=>{
+	// 	setcontentIndex(projectId - 1)
+	//  },[])
 
 	return (
 		<section className={styles.projects} id='projects'>
@@ -82,13 +106,13 @@ const Projects = () => {
 										>
 											{content.title}
 										</h4>
-										<div className={styles.screens}></div>
+										<div className={styles.screensContainer}>
+											{/* <Screens paths={} /> */}
+										</div>
 									</div>
 								)}
 								<div
 									className={styles.project}
-									// onMouseEnter={() => setIsVisible(true)}
-									// onMouseLeave={() => setIsVisible(false)}
 									onMouseEnter={() => setHoveredIndex(content.id)}
 									onMouseLeave={() => setHoveredIndex(-1)}
 								>
@@ -139,57 +163,31 @@ const Projects = () => {
 				</>
 			) : (
 				<>
-					<div className={styles.screens}></div>
+					<div className={styles.screensContainer}>
+						<Screens paths={project.screens} />
+					</div>
 					<div className={styles.descProject}>
-						<h4>KBDev Website</h4>
-						<p>{t('KBDEV')}</p>
+						<h4>{project.title}</h4>
+						<p>{t(`${project.desc}`)}</p>
 						<div className={styles.techs}>
-							<div className={styles.logoTech}>
-								<Image src={'/img/logo/next.webp'} alt='Next.js logo' fill />
-							</div>
-							<div className={styles.logoTech}>
-								<Image src={'/img/logo/react.webp'} alt='react logo' fill />
-							</div>
-							<div className={styles.logoTech}>
-								<Image
-									src={'/img/logo/typescript.webp'}
-									alt='typescript logo'
-									fill
-								/>
-							</div>
-							<div className={styles.logoTech}>
-								<Image src={'/img/logo/sass.webp'} alt='sass logo' fill />
-							</div>
-							<div className={styles.logoTech}>
-								<Image
-									src={'/img/logo/nodeMailer.webp'}
-									alt='nodeMailer logo'
-									fill
-								/>
-							</div>
-							<div className={styles.logoTech}>
-								<Image
-									src={'/img/logo/affinityDesigner.webp'}
-									alt='Affinity Designer logo'
-									fill
-								/>
-							</div>
-							<div className={styles.logoTech}>
-								<Image
-									src={'/img/logo/framerMotion.webp'}
-									alt='Framer Motion logo'
-									fill
-								/>
-							</div>
+							{project.techs.map((tech, index) => (
+								<div key={index} className={styles.logoTech}>
+									<Image
+										src={`/img/logo/${tech}.webp`}
+										alt={`${tech} logo`}
+										fill
+									/>
+								</div>
+							))}
 						</div>
 					</div>
 					<div className={styles.btns}>
-						<div className={styles.viewProject}>
+						<a href={project.link} className={styles.viewProject}>
 							<p>{t('VIEW_PROJECT')}</p>
 							<div className={styles.arrowD}>
 								<Image src={'/img/icon/arrowD.webp'} alt='arrow' fill />
 							</div>
-						</div>
+						</a>
 						<div className={styles.logoStriped}>
 							<Image
 								src={
@@ -201,7 +199,12 @@ const Projects = () => {
 								fill
 							/>
 						</div>
-						<div className={styles.next}>
+						<div
+							className={styles.next}
+							onClick={() => {
+								nextProject();
+							}}
+						>
 							<p>{t('NEXT')}</p>
 							<div className={styles.arrowH}>
 								<Image src={'/img/icon/arrow.webp'} alt='arrow' fill />

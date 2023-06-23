@@ -1,0 +1,148 @@
+@import '../../../styles/variables.scss';
+@import 'styles/mixins.scss';
+
+.screens {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	overflow: hidden;
+	.screen {
+		position: absolute;
+		background-color: transparent;
+		img {
+			box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+		}
+	}
+	.kbdevHome {
+		width: 65vw;
+		height: 40%;
+		transform: translate(5vw, -5%) rotate(-10deg);
+		z-index: 1;
+	}
+	.kbdevHomeMobile {
+		width: 18vw;
+		height: 45%;
+		right: 0;
+		transform: translate(-5vw, -10%) rotate(10deg);
+		z-index: 3;
+	}
+	.kbdevAulia {
+		right: 0;
+		top: 30%;
+		width: 55vw;
+		height: 40%;
+		transform: translate(-8vw, -5%) rotate(-7deg);
+		z-index: 2;
+	}
+	.kbdevAuliaMobile {
+		width: 18vw;
+		height: 45%;
+		top: 30%;
+		transform: translate(20vw, -15%) rotate(-6deg);
+		z-index: 3;
+	}
+	.kbdevDigitalSupport {
+		height: 40%;
+		width: 70vw;
+		bottom: 0;
+		transform: translate(13vw, -15%) rotate(5deg);
+		z-index: 1;
+	}
+	.petshineFav {
+		height: 40%;
+		width: 70vw;
+		top: 0;
+		right: 0;
+		transform: rotate(7deg);
+		z-index: 1;
+	}
+	.petshineCarousel {
+		width: 18vw;
+		height: 45%;
+		top: 0;
+		left: 0;
+		transform: translate(8vw, 15%) rotate(-15deg);
+		z-index: 3;
+	}
+	.petshineHome {
+		height: 40%;
+		width: 70vw;
+		top: 40%;
+		right: 0;
+		transform: translate(-10vw, -10px) rotate(-7deg);
+		z-index: 2;
+	}
+	.petshineHomeMobile {
+		width: 18vw;
+		height: 45%;
+		top: 45%;
+		right: 0;
+		transform: translate(-8vw, 10%) rotate(15deg);
+		z-index: 3;
+	}
+	.petshineWelness {
+		height: 40%;
+		width: 70vw;
+		bottom: 0;
+		left: 0;
+		transform: translate(5vw, -30px) rotate(2deg);
+		z-index: 1;
+	}
+	.tcgBackCard {
+		width: 28vw;
+		height: 45%;
+		top: 0;
+		right: 0;
+		transform: translate(-12vw, 10%) rotate(5deg);
+		z-index: 1;
+	}
+	.tcgCards {
+		width: 25vw;
+		height: 55%;
+		top: 0;
+		left: 0;
+		transform: translate(8vw, 10%) rotate(-5deg);
+		z-index: 3;
+	}
+	.tcgFilters {
+		width: 25vw;
+		height: 55%;
+		top: 0;
+		left: 0;
+		transform: translate(30vw, 40%);
+		z-index: 2;
+	}
+	.tcgProfil {
+		width: 25vw;
+		height: 55%;
+		top: 0;
+		right: 0;
+		transform: translate(-15vw, 55%) rotate(12deg);
+		z-index: 2;
+	}
+	.tcgSeries {
+		width: 25vw;
+		height: 55%;
+		top: 0;
+		left: 0;
+		transform: translate(10vw, 65%) rotate(-18deg);
+		z-index: 1;
+	}
+}
+
+@media screen and (max-width: $extra-small) {
+}
+@media screen and (max-width: $extra-small) and (min-height: $small) {
+}
+@media screen and (min-width: $small) {
+}
+@media screen and (min-width: $medium) {
+}
+@media screen and (min-width: $large) and (orientation: portrait) {
+}
+@media screen and (min-width: $large) and (orientation: landscape) {
+}
+@media screen and (min-width: $extra-large) and (orientation: landscape) {
+}
+@media screen and (min-width: $ultra-large) {
+}

@@ -15,11 +15,11 @@ export const contentProjects: ProjectTypes.Content[] = [
 			'framerMotion',
 		],
 		screens: [
+			'kbdevHome',
+			'kbdevHomeMobile',
 			'kbdevAulia',
 			'kbdevAuliaMobile',
 			'kbdevDigitalSupport',
-			'kbdevHome',
-			'kbdevHomeMobile',
 		],
 	},
 	{
@@ -30,11 +30,10 @@ export const contentProjects: ProjectTypes.Content[] = [
 		link: 'https://www.petshine.dubj.fr',
 		techs: ['next', 'react', 'typescript', 'sass', 'figma'],
 		screens: [
-			'petshineCarousel',
 			'petshineFav',
+			'petshineCarousel',
 			'petshineHome',
 			'petshineHomeMobile',
-			'petshineNav',
 			'petshineWelness',
 		],
 	},
