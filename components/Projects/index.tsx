@@ -17,8 +17,6 @@ const Projects = () => {
 	const [isInLandscape, setIsInLandscape] = useState<boolean | null>(null);
 	const [hoveredIndex, setHoveredIndex] = useState(-1);
 	const [projectId, setProjectId] = useState(1);
-	// const [contentIndex, setcontentIndex] = useState(projectId - 1);
-	// const [project, setproject] = useState(contentProjects[contentIndex]);
 	const project = contentProjects[projectId - 1];
 
 	useEffect(() => {
@@ -52,9 +50,17 @@ const Projects = () => {
 			}
 		}
 	};
-	//  useEffect(()=>{
-	// 	setcontentIndex(projectId - 1)
-	//  },[])
+
+	const handleClick = (event: React.MouseEvent, sectionId: string) => {
+		event.preventDefault();
+		const section = document.getElementById(sectionId);
+
+		if (section) {
+			const sectionTop = section.offsetTop - window.innerHeight * 0.1;
+			window.scrollTo({ top: sectionTop, behavior: 'smooth' });
+		}
+		nextProject();
+	};
 
 	return (
 		<section className={styles.projects} id='projects'>
@@ -201,9 +207,7 @@ const Projects = () => {
 						</div>
 						<div
 							className={styles.next}
-							onClick={() => {
-								nextProject();
-							}}
+							onClick={(e) => handleClick(e, 'projects')}
 						>
 							<p>{t('NEXT')}</p>
 							<div className={styles.arrowH}>
