@@ -58,9 +58,9 @@ export default function Home() {
 						{targetReachedXL && <Cursor />}
 
 						<ScreenFrame />
-						<Navbar />
+						{/* <Navbar />
 						<Header />
-						<Profil />
+						<Profil /> */}
 						<Projects />
 						<Contact />
 						<Footer />
