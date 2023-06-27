@@ -30,8 +30,8 @@ export const contentProjects: ProjectTypes.Content[] = [
 		link: 'https://www.petshine.dubj.fr',
 		techs: ['next', 'react', 'typescript', 'sass', 'figma'],
 		screens: [
-			'petshineFav',
 			'petshineCarousel',
+			'petshineFav',
 			'petshineHome',
 			'petshineHomeMobile',
 			'petshineWelness',

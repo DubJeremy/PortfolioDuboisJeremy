@@ -5,8 +5,6 @@
 	width: 100%;
 	height: 100%;
 	position: relative;
-	// overflow-x: hidden;
-	// overflow-y: visible;
 	.screen {
 		position: absolute;
 		background-color: transparent;
@@ -107,23 +105,6 @@
 		}
 	}
 	// -----------------
-	.petshineFav {
-		height: 40%;
-		width: 70vw;
-		top: 30%;
-		right: calc(50% - 35vw);
-		transform: translate(12vw, -70%) rotate(7deg);
-		z-index: 1;
-		animation: 0.8s ease-in-out petshineFavAnim;
-	}
-	@keyframes petshineFavAnim {
-		0% {
-			transform: translate(60vw, -40vh) rotate(0deg);
-		}
-		100% {
-			transform: translate(12vw, -70%) rotate(7deg);
-		}
-	}
 	.petshineCarousel {
 		width: 18vw;
 		height: 45%;
@@ -139,6 +120,23 @@
 		}
 		100% {
 			transform: translate(-30vw, -50%) rotate(-15deg);
+		}
+	}
+	.petshineFav {
+		height: 40%;
+		width: 70vw;
+		top: 30%;
+		right: calc(50% - 35vw);
+		transform: translate(12vw, -70%) rotate(7deg);
+		z-index: 1;
+		animation: 0.8s ease-in-out petshineFavAnim;
+	}
+	@keyframes petshineFavAnim {
+		0% {
+			transform: translate(60vw, -40vh) rotate(0deg);
+		}
+		100% {
+			transform: translate(12vw, -70%) rotate(7deg);
 		}
 	}
 	.petshineHome {
@@ -276,6 +274,32 @@
 		100% {
 			transform: translate(-20vw, 25%) rotate(-18deg);
 		}
+	}
+	//------------
+	.endAnimFi {
+		transform: translate(-100vw, -40vh) rotate(0deg);
+	}
+	.endAnimS {
+		transform: translate(60vw, -40vh) rotate(0deg);
+	}
+	.endAnimT {
+		transform: translate(80vw, 0vh) rotate(0deg);
+	}
+	.endAnimFo {
+		transform: translate(-80vw, 0vh) rotate(0deg);
+	}
+	.endAnimFif {
+		transform: translate(-90vw, 40vh) rotate(0deg);
+	}
+}
+@keyframes screensExitAnimation {
+	0% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+	100% {
+		opacity: 0;
+		transform: translateY(-100%);
 	}
 }
 

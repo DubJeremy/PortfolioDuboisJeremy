@@ -39,28 +39,42 @@
 			width: 100%;
 			text-align: center;
 			margin-bottom: 15px;
+			transition: all 0.5s ease-in-out;
+		}
+		.titleEndAnim {
+			transform: scale(0);
+			opacity: 0;
 		}
 		> p {
 			padding: 0 25px;
 			font-family: 'JosefinS';
 			font-weight: 350;
 			text-align: justify;
+			transition: all 0.5s ease-in-out;
+		}
+		.descEndAnim {
+			transform: scale(0);
+			opacity: 0;
 		}
 		.techs {
 			padding: 30px 40px 40px 40px;
 			@include flex($dir: row);
 			.logoTech {
 				position: relative;
-				transition: all 0.2s ease-in-out;
+				transition: all 0.5s ease-in-out;
 				width: calc(calc(100vw - 110px) / 6);
 				height: calc(calc(100vw - 110px) / 6);
 				margin: 10px calc(calc(calc(100vw - 110px) / 6) / 4);
+				transform: scale(1);
 				&:hover {
 					transform: scale(1.1);
 				}
 				img {
 					object-fit: contain;
 				}
+			}
+			.techAnim {
+				transform: scale(0);
 			}
 		}
 	}

@@ -18,6 +18,7 @@ const Projects = () => {
 	const [hoveredIndex, setHoveredIndex] = useState(-1);
 	const [projectId, setProjectId] = useState(1);
 	const project = contentProjects[projectId - 1];
+	const [endAnim, setEndAnim] = useState(false);
 
 	useEffect(() => {
 		heightFunction();
@@ -59,7 +60,12 @@ const Projects = () => {
 			const sectionTop = section.offsetTop - window.innerHeight * 0.1;
 			window.scrollTo({ top: sectionTop, behavior: 'smooth' });
 		}
-		nextProject();
+		setEndAnim(true);
+
+		setTimeout(() => {
+			setEndAnim(false);
+			nextProject();
+		}, 500);
 	};
 
 	return (
@@ -170,14 +176,23 @@ const Projects = () => {
 			) : (
 				<>
 					<div className={styles.screensContainer}>
-						<Screens paths={project.screens} />
+						<Screens paths={project.screens} endAnimation={endAnim} />
 					</div>
 					<div className={styles.descProject}>
-						<h4>{project.title}</h4>
-						<p>{t(`${project.desc}`)}</p>
+						<h4 className={endAnim ? styles.titleEndAnim : ''}>
+							{project.title}
+						</h4>
+						<p className={endAnim ? styles.descEndAnim : ''}>
+							{t(`${project.desc}`)}
+						</p>
 						<div className={styles.techs}>
 							{project.techs.map((tech, index) => (
-								<div key={index} className={styles.logoTech}>
+								<div
+									key={index}
+									className={`${styles.logoTech} ${
+										endAnim ? styles.techAnim : ''
+									}`}
+								>
 									<Image
 										src={`/img/logo/${tech}.webp`}
 										alt={`${tech} logo`}
