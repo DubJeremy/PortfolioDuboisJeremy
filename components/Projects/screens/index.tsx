@@ -23,7 +23,7 @@ const Screens = ({
 					fill
 				/>
 			</div>
-			<div
+			{/* <div
 				className={`${styles.screen} ${styles[paths[1]]} ${
 					endAnimation ? styles.endAnimS : ''
 				}`}
@@ -33,8 +33,8 @@ const Screens = ({
 					alt={`${paths[1]} screenshot`}
 					fill
 				/>
-			</div>
-			<div
+			</div> */}
+			{/* <div
 				className={`${styles.screen} ${styles[paths[2]]} ${
 					endAnimation ? styles.endAnimT : ''
 				}`}
@@ -44,8 +44,8 @@ const Screens = ({
 					alt={`${paths[2]} screenshot`}
 					fill
 				/>
-			</div>
-			<div
+			</div> */}
+			{/* <div
 				className={`${styles.screen} ${styles[paths[3]]} ${
 					endAnimation ? styles.endAnimFo : ''
 				}`}
@@ -55,8 +55,8 @@ const Screens = ({
 					alt={`${paths[3]} screenshot`}
 					fill
 				/>
-			</div>
-			<div
+			</div> */}
+			{/* <div
 				className={`${styles.screen} ${styles[paths[4]]} ${
 					endAnimation ? styles.endAnimFif : ''
 				}`}
@@ -66,7 +66,7 @@ const Screens = ({
 					alt={`${paths[4]} screenshot`}
 					fill
 				/>
-			</div>
+			</div> */}
 		</div>
 	);
 };

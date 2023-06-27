@@ -430,6 +430,7 @@
 			display: grid;
 			grid-template-columns: 30% 70%;
 			grid-template-rows: 65vh 60px;
+			position: relative;
 			.descProject {
 				grid-column: 1/2;
 				grid-row: 1/2;
@@ -439,15 +440,43 @@
 				border-right: 4px solid $blue;
 				box-sizing: border-box;
 				@include flex($just: flex-end, $align: flex-start);
-				padding: 25px;
+				// padding: 25px;
+				z-index: 3;
+				&:before {
+					background: url(/img/background.webp) 0 0;
+					background-size: 500px 500px;
+					width: calc(30% - 4px);
+					height: 65vh;
+					content: '';
+					position: absolute;
+					z-index: -2;
+				}
+				&:after {
+					background-image: url(/img/noise.png);
+					pointer-events: none !important;
+					background-size: 250px 250px;
+					-webkit-animation: noiseTextureAnim 0.55s steps(1) infinite;
+					animation: noiseTextureAnim 0.55s steps(1) infinite;
+					will-change: background-position;
+					-webkit-backface-visibility: hidden;
+					backface-visibility: hidden;
+					-webkit-transform: translateZ(0);
+					transform: translateZ(0);
+					content: '';
+					width: 30%;
+					height: 65vh;
+					position: absolute;
+					z-index: -1;
+				}
 				> p {
 					padding: 0;
 					text-align: left;
-					margin-bottom: 5px;
+					margin: 0 25px 5px 25px;
 				}
 				.techs {
 					width: 50%;
 					padding: 0;
+					margin: 0 25px 25px 25px;
 					justify-content: flex-start;
 					.logoTech {
 						margin: 10px calc(calc(100% / 5) / 8) 0 calc(calc(100% / 5) / 8);
@@ -464,7 +493,7 @@
 				grid-row: 1/2;
 				height: 100%;
 				position: relative;
-				overflow: hidden;
+				// overflow-x: hidden;
 				.showProject {
 					background-color: $blueLight;
 					height: 100%;
@@ -488,10 +517,6 @@
 					}
 					.showTitle {
 						transform: translateX(0%);
-					}
-					.screens {
-						background-color: transparent;
-						position: absolute;
 					}
 				}
 				.visible {
@@ -520,6 +545,21 @@
 						z-index: -1;
 					}
 				}
+			}
+			.screens {
+				grid-column: 2/3;
+				grid-row: 1/2;
+				position: absolute;
+				top: 0;
+				left: 0;
+				z-index: 3;
+				height: 100%;
+				width: 100%;
+				transition: all 1.5s ease-in-out;
+				transform: translateX(-100%);
+			}
+			.screensVisible {
+				transform: translateX(0);
 			}
 			.btns {
 				grid-column: 1/3;

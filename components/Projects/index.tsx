@@ -104,24 +104,30 @@ const Projects = () => {
 							</div>
 							<div className={`${styles.screensContainer} cursorScale small`}>
 								{hoveredIndex && (
-									<div
-										className={`${styles.showProject} ${
-											hoveredIndex === content.id ? styles.visible : ''
-										}`}
-										onMouseEnter={() => setHoveredIndex(content.id)}
-										onMouseLeave={() => setHoveredIndex(-1)}
-									>
-										<h4
-											className={
-												hoveredIndex === content.id ? styles.showTitle : ''
-											}
+									<>
+										<div
+											className={`${styles.showProject} ${
+												hoveredIndex === content.id ? styles.visible : ''
+											}`}
+											onMouseEnter={() => setHoveredIndex(content.id)}
+											onMouseLeave={() => setHoveredIndex(-1)}
 										>
-											{content.title}
-										</h4>
-										<div className={styles.screensContainer}>
-											{/* <Screens paths={} /> */}
+											<h4
+												className={
+													hoveredIndex === content.id ? styles.showTitle : ''
+												}
+											>
+												{content.title}
+											</h4>
 										</div>
-									</div>
+										<div
+											className={`${styles.screens} ${
+												hoveredIndex === content.id ? styles.screensVisible : ''
+											}`}
+										>
+											<Screens paths={content.screens} endAnimation={endAnim} />
+										</div>
+									</>
 								)}
 								<div
 									className={styles.project}
