@@ -242,6 +242,9 @@
 				width: calc(55% - 2px);
 			}
 		}
+		.screensContainer {
+			height: 50vh;
+		}
 		.descProject {
 			> p {
 				font-size: 0.9em;
@@ -274,13 +277,31 @@
 				width: calc(45% - 2px);
 			}
 		}
+		.screensContainer {
+			height: 40vh;
+		}
+		.descProject {
+			.techs {
+				padding: 15px 40px 20px 40px;
+			}
+		}
 	}
 }
 @media screen and (min-width: $small) {
 	.projects {
+		.screensContainer {
+			height: 50vh;
+		}
 		.descProject {
 			> p {
 				font-size: 1.1em;
+			}
+			.techs {
+				.logoTech {
+					width: calc(calc(100vw - 110px) / 10);
+					height: calc(calc(100vw - 110px) / 10);
+					margin: 10px calc(calc(calc(100vw - 110px) / 7) / 4);
+				}
 			}
 		}
 	}
