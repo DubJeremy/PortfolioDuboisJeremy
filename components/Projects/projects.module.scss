@@ -440,7 +440,6 @@
 				border-right: 4px solid $blue;
 				box-sizing: border-box;
 				@include flex($just: flex-end, $align: flex-start);
-				// padding: 25px;
 				z-index: 3;
 				&:before {
 					background: url(/img/background.webp) 0 0;
@@ -463,7 +462,7 @@
 					-webkit-transform: translateZ(0);
 					transform: translateZ(0);
 					content: '';
-					width: 30%;
+					width: calc(30% - 4px);
 					height: 65vh;
 					position: absolute;
 					z-index: -1;
@@ -493,7 +492,6 @@
 				grid-row: 1/2;
 				height: 100%;
 				position: relative;
-				// overflow-x: hidden;
 				.showProject {
 					background-color: $blueLight;
 					height: 100%;
@@ -607,6 +605,14 @@
 	.projects {
 		.content {
 			grid-template-rows: 50vh 60px;
+			.descProject {
+				&:before {
+					height: 50vh;
+				}
+				&:after {
+					height: 50vh;
+				}
+			}
 		}
 	}
 }
@@ -640,6 +646,14 @@
 					.logoTech {
 						height: calc(10vw / 5);
 					}
+				}
+				&:before {
+					height: 45vh;
+					width: calc(20% - 4px);
+				}
+				&:after {
+					height: 45vh;
+					width: calc(20% - 4px);
 				}
 			}
 			.screensContainer {

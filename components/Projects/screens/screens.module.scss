@@ -503,277 +503,231 @@
 }
 @media screen and (min-width: $large) and (orientation: landscape) {
 	.screens {
-		width: 100%;
-		height: 100%;
-		position: relative;
-		.screen {
-			position: absolute;
-			background-color: transparent;
-
-			transition: all 0.3s ease-in-out;
-			img {
-				box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
-			}
-			&:hover {
-				transform: translate(0, 0) rotate(0deg) scale(1.3);
-				z-index: 5;
-			}
-		}
 		.kbdevHome {
-			width: 65vw;
+			width: 30vw;
 			height: 40%;
 			top: 30%;
-			left: calc(50% - 32.5vw);
-			transform: translate(-8vw, -70%) rotate(-10deg);
-			z-index: 3;
-			animation: 0.8s ease-in-out kbdevHomeAnim;
+			left: calc(50% - 15vw);
+			transform: translate(-20vw, 0) rotate(-10deg);
 		}
 		@keyframes kbdevHomeAnim {
 			0% {
 				transform: translate(-100vw, -40vh) rotate(0deg);
 			}
 			100% {
-				transform: translate(-8vw, -70%) rotate(-10deg);
+				transform: translate(-20vw, 0) rotate(-10deg);
 			}
 		}
 		.kbdevHomeMobile {
-			width: 18vw;
+			width: 8vw;
 			height: 45%;
-			right: 0;
-			top: 27.5%;
-			left: calc(50% - 9vw);
-			transform: translate(30vw, -70%) rotate(10deg);
-			z-index: 4;
-			animation: 0.8s ease-in-out kbdevHomeMobileAnim;
+			top: 30%;
+			left: calc(50% - 4vw);
+			transform: translate(-2vw, 0%) rotate(7deg);
 		}
 		@keyframes kbdevHomeMobileAnim {
 			0% {
 				transform: translate(60vw, -40vh) rotate(0deg);
 			}
 			100% {
-				transform: translate(30vw, -70%) rotate(10deg);
+				transform: translate(-2vw, 0%) rotate(7deg);
 			}
 		}
 		.kbdevAulia {
-			width: 55vw;
+			width: 25vw;
 			height: 40%;
-			right: calc(50% - 27.5vw);
 			top: 30%;
-			transform: translate(8vw, 15%) rotate(-7deg);
-			z-index: 2;
-			animation: 0.8s ease-in-out kbdevAuliaAnim;
+			left: calc(50% - 15vw);
+			transform: translate(20vw, 50%) rotate(12deg);
 		}
 		@keyframes kbdevAuliaAnim {
 			0% {
 				transform: translate(80vw, 0vh) rotate(0deg);
 			}
 			100% {
-				transform: translate(8vw, 15%) rotate(-7deg);
+				transform: translate(20vw, 50%) rotate(12deg);
 			}
 		}
 		.kbdevAuliaMobile {
-			width: 18vw;
+			width: 8vw;
 			height: 45%;
-			top: 32%;
-			left: calc(50% - 9vw);
-			transform: translate(-22vw, -10%) rotate(-6deg);
-			z-index: 4;
-			animation: 0.8s ease-in-out kbdevAuliaMobileAnim;
+			top: 30%;
+			left: calc(50% - 4vw);
+			transform: translate(7vw, -5%) rotate(-5deg);
 		}
 		@keyframes kbdevAuliaMobileAnim {
 			0% {
 				transform: translate(-80vw, 0vh) rotate(0deg);
 			}
 			100% {
-				transform: translate(-22vw, -10%) rotate(-6deg);
+				transform: translate(7vw, -5%) rotate(-5deg);
 			}
 		}
 		.kbdevDigitalSupport {
+			width: 30vw;
 			height: 40%;
-			width: 70vw;
-			left: calc(50% - 35vw);
 			top: 30%;
-			transform: translate(-5vw, 60%) rotate(5deg);
-			z-index: 1;
-			animation: 0.8s ease-in-out kbdevDigitalSupportAnim;
+			left: calc(50% - 15vw);
+			transform: translate(20vw, -50%) rotate(-10deg);
 		}
 		@keyframes kbdevDigitalSupportAnim {
 			0% {
-				transform: translate(-90vw, 40vh) rotate(0deg);
+				transform: translate(90vw, -40vh) rotate(0deg);
 			}
 			100% {
-				transform: translate(-5vw, 60%) rotate(5deg);
+				transform: translate(20vw, -50%) rotate(-10deg);
 			}
 		}
 		// -----------------
 		.petshineCarousel {
-			width: 18vw;
+			width: 8vw;
 			height: 45%;
-			top: 27.5%;
-			left: calc(50% - 9vw);
-			transform: translate(-30vw, -50%) rotate(-15deg);
-			z-index: 3;
-			animation: 0.8s ease-in-out petshineCarouselAnim;
+			top: 30%;
+			left: calc(50% - 4vw);
+			transform: translate(-30vw, 0%) rotate(7deg);
 		}
 		@keyframes petshineCarouselAnim {
 			0% {
 				transform: translate(-100vw, -40vh) rotate(0deg);
 			}
 			100% {
-				transform: translate(-30vw, -50%) rotate(-15deg);
+				transform: translate(-30vw, 0%) rotate(7deg);
 			}
 		}
 		.petshineFav {
+			width: 30vw;
 			height: 40%;
-			width: 70vw;
 			top: 30%;
-			right: calc(50% - 35vw);
-			transform: translate(12vw, -70%) rotate(7deg);
-			z-index: 1;
-			animation: 0.8s ease-in-out petshineFavAnim;
+			left: calc(50% - 15vw);
+			transform: translate(-15vw, -70%) rotate(-7deg);
 		}
 		@keyframes petshineFavAnim {
 			0% {
-				transform: translate(60vw, -40vh) rotate(0deg);
+				transform: translate(-80vw, -40vh) rotate(0deg);
 			}
 			100% {
-				transform: translate(12vw, -70%) rotate(7deg);
+				transform: translate(-15vw, -70%) rotate(-7deg);
 			}
 		}
 		.petshineHome {
+			width: 30vw;
 			height: 40%;
-			width: 70vw;
 			top: 30%;
-			left: calc(50% - 35vw);
-			transform: translate(5vw, 15%) rotate(-7deg);
-			z-index: 2;
-			animation: 0.8s ease-in-out petshineHomeAnim;
+			left: calc(50% - 15vw);
+			transform: translate(0vw, 15%) rotate(7deg) scale(1);
 		}
 		@keyframes petshineHomeAnim {
 			0% {
-				transform: translate(-100vw, 0vh) rotate(0deg);
+				transform: translate(0vw, 80vh) rotate(0deg) scale(0);
 			}
 			100% {
-				transform: translate(5vw, 15%) rotate(-7deg);
+				transform: translate(0vw, 15%) rotate(7deg) scale(1);
 			}
 		}
 		.petshineHomeMobile {
-			width: 18vw;
+			width: 8vw;
 			height: 45%;
-			top: 27.5%;
-			right: calc(50% - 9vw);
-			transform: translate(28vw, 45%) rotate(15deg);
-			z-index: 3;
-			animation: 0.8s ease-in-out petshineHomeMobileAnim;
+			top: 30%;
+			left: calc(50% - 4vw);
+			transform: translate(18vw, -35%) rotate(-15deg);
 		}
 		@keyframes petshineHomeMobileAnim {
 			0% {
 				transform: translate(80vw, 0vh) rotate(0deg);
 			}
 			100% {
-				transform: translate(28vw, 45%) rotate(15deg);
+				transform: translate(18vw, -35%) rotate(-15deg);
 			}
 		}
 		.petshineWelness {
+			width: 30vw;
 			height: 40%;
-			width: 70vw;
 			top: 30%;
-			left: calc(50% - 35vw);
-			transform: translate(-5vw, 50%) rotate(5deg);
-			z-index: 1;
-			animation: 0.8s ease-in-out petshineWelnessAnim;
+			left: calc(50% - 15vw);
+			transform: translate(20vw, 50%) rotate(-15deg);
 		}
 		@keyframes petshineWelnessAnim {
 			0% {
-				transform: translate(-90vw, 40vh) rotate(0deg);
+				transform: translate(90vw, 40vh) rotate(0deg);
 			}
 			100% {
-				transform: translate(-5vw, 50%) rotate(5deg);
+				transform: translate(20vw, 50%) rotate(-15deg);
 			}
 		}
 		//--------------------------
 		.tcgBackCard {
-			width: 25vw;
-			height: 45%;
+			width: 15vw;
+			height: 55%;
 			top: 27.5%;
-			right: calc(50% - 12.5vw);
-			transform: translate(20vw, -50%) rotate(-25deg);
-			z-index: 1;
-			animation: 0.8s ease-in-out tcgBackCardAnim;
+			left: calc(50% - 7.5vw);
+			transform: translate(-25vw, -60%) rotate(15deg);
 		}
 		@keyframes tcgBackCardAnim {
 			0% {
-				transform: translate(60vw, -40vh) rotate(0deg);
+				transform: translate(-80vw, -40vh) rotate(0deg);
 			}
 			100% {
-				transform: translate(20vw, -50%) rotate(-25deg);
+				transform: translate(-25vw, -60%) rotate(15deg);
 			}
 		}
 		.tcgCards {
-			width: 23vw;
+			width: 12vw;
 			height: 55%;
-			top: 22.5%;
-			left: calc(50% - 11.5vw);
-			transform: translate(-25vw, -35%) rotate(20deg);
-			z-index: 3;
-			animation: 0.8s ease-in-out tcgCardsAnim;
+			top: 30%;
+			left: calc(50% - 4vw);
+			transform: translate(-20vw, 0%) rotate(-10deg);
 		}
 		@keyframes tcgCardsAnim {
 			0% {
-				transform: translate(-100vw, -40vh) rotate(0deg);
+				transform: translate(-100vw, 40vh) rotate(0deg);
 			}
 			100% {
-				transform: translate(-25vw, -35%) rotate(20deg);
+				transform: translate(-20vw, 0%) rotate(-10deg);
 			}
 		}
 		.tcgFilters {
-			width: 23vw;
+			width: 12vw;
 			height: 55%;
-			top: 22.5%;
-			left: calc(50% - 11.5vw);
-			z-index: 2;
-			animation: 0.8s ease-in-out tcgFiltersAnim;
+			top: 30%;
+			left: calc(50% - 4vw);
+			transform: translate(-8vw, -10%) rotate(10deg) scale(1);
 		}
 		@keyframes tcgFiltersAnim {
 			0% {
-				transform: translate(0vw, 100vh);
+				transform: translate(0vw, 100vh) scale(0);
 			}
 			100% {
-				transform: translate(0, 0);
+				transform: translate(-5vw, -10%) rotate(10deg) scale(1);
 			}
 		}
 		.tcgProfil {
-			width: 23vw;
+			width: 12vw;
 			height: 55%;
-			top: 22.5%;
-			left: calc(50% - 11.5vw);
-			transform: translate(22vw, 25%) rotate(12deg);
-			z-index: 2;
-			animation: 0.8s ease-in-out tcgProfilAnim;
+			top: 30%;
+			left: calc(50% - 4vw);
+			transform: translate(6vw, 10%) rotate(-5deg) scale(1);
 		}
 		@keyframes tcgProfilAnim {
 			0% {
-				transform: translate(80vw, 0vh) rotate(0deg);
+				transform: translate(0vw, -100vh) rotate(0deg) scale(0);
 			}
 			100% {
-				transform: translate(22vw, 25%) rotate(12deg);
+				transform: translate(6vw, 10%) rotate(-5deg) scale(1);
 			}
 		}
 		.tcgSeries {
-			width: 23vw;
+			width: 12vw;
 			height: 55%;
-			top: 22.5%;
-			left: calc(50% - 11.5vw);
-			transform: translate(-20vw, 25%) rotate(-18deg);
-			z-index: 1;
-			animation: 0.8s ease-in-out tcgSeriesAnim;
+			top: 30%;
+			left: calc(50% - 4vw);
+			transform: translate(20vw, -25%) rotate(15deg);
 		}
 		@keyframes tcgSeriesAnim {
 			0% {
-				transform: translate(-90vw, 40vh) rotate(0deg);
+				transform: translate(90vw, 40vh) rotate(0deg);
 			}
 			100% {
-				transform: translate(-20vw, 25%) rotate(-18deg);
+				transform: translate(15vw, -25%) rotate(15deg);
 			}
 		}
 		//------------

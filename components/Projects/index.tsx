@@ -124,6 +124,7 @@ const Projects = () => {
 											className={`${styles.screens} ${
 												hoveredIndex === content.id ? styles.screensVisible : ''
 											}`}
+											onMouseEnter={() => setHoveredIndex(content.id)}
 										>
 											<Screens paths={content.screens} endAnimation={endAnim} />
 										</div>
