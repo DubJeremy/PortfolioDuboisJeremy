@@ -68,6 +68,15 @@ const Projects = () => {
 		}, 500);
 	};
 
+	const activAnim = () => {
+		console.log('hghho');
+		setEndAnim(true);
+
+		setTimeout(() => {
+			setEndAnim(false);
+		}, 500);
+	};
+
 	return (
 		<section className={styles.projects} id='projects'>
 			<div className={styles.title}>
@@ -109,7 +118,10 @@ const Projects = () => {
 											className={`${styles.showProject} ${
 												hoveredIndex === content.id ? styles.visible : ''
 											}`}
-											onMouseEnter={() => setHoveredIndex(content.id)}
+											onMouseEnter={() => {
+												// setHoveredIndex(content.id);
+												activAnim();
+											}}
 											onMouseLeave={() => setHoveredIndex(-1)}
 										>
 											<h4
