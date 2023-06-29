@@ -1,0 +1,60 @@
+@import 'styles/variables.scss';
+@import 'styles/mixins.scss';
+
+.modal {
+	position: fixed;
+	right: 0;
+	@include flex;
+	height: auto;
+	width: 80%;
+	right: 10%;
+	left: 10%;
+	bottom: 15px;
+	padding: 10px;
+	background-color: $blue;
+	border-radius: 10px;
+	font-family: 'JosefinsSans.ttf';
+	font-weight: 600;
+	font-size: 1.4em;
+	text-align: center;
+	z-index: 999;
+	box-shadow: 12px 12px 28px -8px rgba(0, 0, 0, 0.53);
+}
+.success {
+	color: $blue;
+}
+.error {
+	color: $error;
+	border: 2px solid $error;
+
+	.contact {
+		font-size: 0.6em;
+		color: $blue;
+		> div {
+			text-decoration: underline;
+			margin-left: 5px;
+
+			&:hover {
+				cursor: pointer;
+			}
+		}
+	}
+}
+@media only screen and (min-width: $medium) {
+	.modal {
+		width: 65%;
+		font-size: 1.8em;
+		right: 15px;
+		left: auto;
+	}
+}
+.error {
+	.contact {
+		font-size: 0.8em;
+	}
+}
+@media only screen and (min-width: $extra-large) {
+	.modal {
+		width: 40%;
+	}
+}

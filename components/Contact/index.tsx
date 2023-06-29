@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 
 import useTranslation from '@/components/Translator/hooks';
@@ -10,13 +10,53 @@ import styles from './contact.module.scss';
 const Contact = () => {
 	const { t } = useTranslation();
 	const [targetReached] = useMediaQuery(`(min-width: 768px)`);
+	const [showConfirmModal, setShowConfirmModal] = useState(false);
+	const [submittedSuccess, setSubmittedSuccess] = useState<boolean | null>(
+		null
+	);
+
+	const popupSubmit = () => {
+		setShowConfirmModal(true);
+		const timer = setTimeout(() => {
+			setShowConfirmModal(false);
+		}, 6000);
+		return () => clearTimeout(timer);
+	};
+
+	async function handleSubmit(e: React.SyntheticEvent<HTMLFormElement>) {
+		e.preventDefault();
+
+		const formData: { [K: string]: string | null } = {};
+		const formElements = e.currentTarget.elements;
+		let castedField: HTMLInputElement;
+
+		if (formElements) {
+			Array.from(e.currentTarget.elements).forEach((field) => {
+				castedField = field as HTMLInputElement;
+				if (!castedField.name) return;
+				formData[castedField.name] = castedField.value;
+			});
+		}
+
+		fetch('/api/mail', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify(formData),
+		}).then((response) => {
+			if (response.status === 200) {
+				setSubmittedSuccess(true);
+			} else {
+				setSubmittedSuccess(false);
+			}
+			popupSubmit();
+		});
+	}
+	console.log(submittedSuccess);
 
 	return (
-		<section
-			className={styles.contact}
-			id='contact'
-			// onSubmit={handleSubmit}
-		>
+		<section className={styles.contact} id='contact'>
 			<div className={styles.title}>
 				<h3>Contact</h3>
 				<div className={styles.patternContainer}>
@@ -31,7 +71,7 @@ const Contact = () => {
 					/>
 				</div>
 			</div>
-			<form className={styles.inputs} method='post'>
+			<form className={styles.inputs} method='post' onSubmit={handleSubmit}>
 				<a href='mailto:dubois.jeremy33@gmail.com'>dubois.jeremy33@gmail.com</a>
 				<label className={styles.input} htmlFor='name'>
 					<input type='text' name='name' placeholder={t('NAME')} required />
@@ -48,7 +88,7 @@ const Contact = () => {
 				<div className={styles.btnContainer}>
 					<button
 						className={styles.btn}
-						// onSubmit={() => setShowConfirmModal(true)}
+						onSubmit={() => setShowConfirmModal(true)}
 					>
 						{t('SEND')}
 						<span>▶</span>
