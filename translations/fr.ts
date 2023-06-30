@@ -25,6 +25,10 @@ export const fr: { [key: string]: string } = {
 	// CONTACT --------------------------------
 	NAME: 'Nom',
 	SEND: 'Envoyer',
+	MESSAGE_ERROR: 'Une erreur s’est produite !',
+	MESSAGE_CONTACT:
+		'Veuillez réessayer ou nous contacter directement à cette adresse :',
+	MESSAGE_SENDED: 'Votre message a été envoyé !',
 	// FOOTER --------------------------------
 	INSPIRED_BY: 'Inspiré par',
 	// noLANDSCAPE --------------------------------
