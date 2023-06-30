@@ -2,30 +2,52 @@
 @import 'styles/mixins.scss';
 
 .modal {
-	position: fixed;
-	right: 0;
 	@include flex;
-	height: auto;
-	width: 80%;
-	right: 10%;
-	left: 10%;
-	bottom: 15px;
-	padding: 10px;
-	background-color: $blue;
-	border-radius: 10px;
-	font-family: 'JosefinsSans.ttf';
-	font-weight: 600;
-	font-size: 1.4em;
+	padding: 15px;
+	font-family: 'JosefinS';
+	font-weight: 400;
+	font-size: 1em;
 	text-align: center;
-	z-index: 999;
-	box-shadow: 12px 12px 28px -8px rgba(0, 0, 0, 0.53);
+	box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+	&:before {
+		background: url(/img/background.webp) 0 0;
+		background-size: 500px 500px;
+		width: 100%;
+		height: 100%;
+		content: '';
+		position: absolute;
+		z-index: -2;
+	}
+	&:after {
+		background-image: url(/img/noise.png);
+		pointer-events: none !important;
+		background-size: 250px 250px;
+		-webkit-animation: noiseTextureAnim 0.55s steps(1) infinite;
+		animation: noiseTextureAnim 0.55s steps(1) infinite;
+		will-change: background-position;
+		-webkit-backface-visibility: hidden;
+		backface-visibility: hidden;
+		-webkit-transform: translateZ(0);
+		transform: translateZ(0);
+		content: '';
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		z-index: -1;
+	}
 }
 .success {
+	border: 2px solid $blue;
 	color: $blue;
+	flex-direction: row;
+	> div {
+		margin-left: 10px;
+		margin-bottom: 5px;
+	}
 }
 .error {
+	border: 1px solid $error;
 	color: $error;
-	border: 2px solid $error;
 
 	.contact {
 		font-size: 0.6em;
@@ -38,6 +60,44 @@
 				cursor: pointer;
 			}
 		}
+	}
+}
+.submitted {
+	transform: translateX(0);
+}
+@keyframes noiseTextureAnim {
+	0% {
+		background-position: 0 0;
+	}
+	10% {
+		background-position: 10px 10px;
+	}
+	20% {
+		background-position: 150px 20px;
+	}
+	30% {
+		background-position: 125px 125px;
+	}
+	40% {
+		background-position: 40px 170px;
+	}
+	50% {
+		background-position: 125px 125px;
+	}
+	60% {
+		background-position: 90px 10px;
+	}
+	70% {
+		background-position: 60px 100px;
+	}
+	80% {
+		background-position: 20px 70px;
+	}
+	90% {
+		background-position: 120px 80px;
+	}
+	to {
+		background-position: 0 250px;
 	}
 }
 @media only screen and (min-width: $medium) {

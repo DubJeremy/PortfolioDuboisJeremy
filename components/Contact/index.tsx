@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
-
 import useTranslation from '@/components/Translator/hooks';
+
 import Lines from './lines';
 import useMediaQuery from '@/tools/useMediaQuery';
+import Modal from './Modal';
 
 import styles from './contact.module.scss';
 
@@ -53,7 +54,6 @@ const Contact = () => {
 			popupSubmit();
 		});
 	}
-	console.log(submittedSuccess);
 
 	return (
 		<section className={styles.contact} id='contact'>
@@ -96,6 +96,13 @@ const Contact = () => {
 				</div>
 			</form>
 			<Lines />
+			<div
+				className={`${styles.modalContainer} ${
+					showConfirmModal ? styles.showContainer : ''
+				}`}
+			>
+				<Modal success={submittedSuccess} />
+			</div>
 		</section>
 	);
 };

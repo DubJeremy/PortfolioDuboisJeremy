@@ -2,17 +2,10 @@ import Link from 'next/link';
 
 import useTranslation from '@/components/Translator/hooks';
 
-import styles from 'components/Generic/Modal/modal.module.scss';
+import styles from './modal.module.scss';
 
-interface messageModal {
-	message?: string;
-	success: boolean | null;
-	showModal: boolean;
-}
-
-const Modal = (props: messageModal) => {
+const Modal = ({ success }: { success: boolean | null }) => {
 	const { t } = useTranslation();
-	const { message, success, showModal } = props;
 
 	return (
 		<div
@@ -24,7 +17,7 @@ const Modal = (props: messageModal) => {
 		>
 			{success === true ? (
 				<>
-					<p>{message}</p>
+					<p>{t('MESSAGE_SENDED')}</p>
 					<div>✓</div>
 				</>
 			) : (
@@ -33,8 +26,11 @@ const Modal = (props: messageModal) => {
 					<div>⚠</div>
 					<div className={styles.contact}>
 						{t('MESSAGE_CONTACT')}
-						<Link href='mailto:contact@kbdev.io?subject=Contact' passHref>
-							<div>{t('MAIL')}</div>
+						<Link
+							href='mailto:dubois.jeremy33@gmail.com?subject=Contact'
+							passHref
+						>
+							<div>dubois.jeremy33@gmail.com</div>
 						</Link>
 					</div>
 				</>
