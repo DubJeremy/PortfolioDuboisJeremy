@@ -15,6 +15,11 @@ const Contact = () => {
 	const [submittedSuccess, setSubmittedSuccess] = useState<boolean | null>(
 		null
 	);
+	const [formValues, setFormValues] = useState({
+		name: '',
+		mail: '',
+		message: '',
+	});
 
 	const popupSubmit = () => {
 		setShowConfirmModal(true);
@@ -52,6 +57,11 @@ const Contact = () => {
 				setSubmittedSuccess(false);
 			}
 			popupSubmit();
+			setFormValues({
+				name: '',
+				mail: '',
+				message: '',
+			});
 		});
 	}
 
@@ -74,16 +84,42 @@ const Contact = () => {
 			<form className={styles.inputs} method='post' onSubmit={handleSubmit}>
 				<a href='mailto:dubois.jeremy33@gmail.com'>dubois.jeremy33@gmail.com</a>
 				<label className={styles.input} htmlFor='name'>
-					<input type='text' name='name' placeholder={t('NAME')} required />
+					<input
+						type='text'
+						name='name'
+						placeholder={t('NAME')}
+						value={formValues.name}
+						onChange={(e) =>
+							setFormValues({ ...formValues, name: e.target.value })
+						}
+						required
+					/>
 				</label>
 				<label className={styles.input} htmlFor='mail'>
-					<input type='email' name='mail' placeholder='Mail' required />
+					<input
+						type='email'
+						name='mail'
+						placeholder='Mail'
+						value={formValues.mail}
+						onChange={(e) =>
+							setFormValues({ ...formValues, mail: e.target.value })
+						}
+						required
+					/>
 				</label>
 				<label
 					className={`${styles.input} ${styles.message}`}
 					htmlFor='message'
 				>
-					<textarea name='message' placeholder='Message' required />
+					<textarea
+						name='message'
+						placeholder='Message'
+						value={formValues.message}
+						onChange={(e) =>
+							setFormValues({ ...formValues, message: e.target.value })
+						}
+						required
+					/>
 				</label>
 				<div className={styles.btnContainer}>
 					<button
