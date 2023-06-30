@@ -7,7 +7,6 @@ export default async function sendMail(
 	req: NextApiRequest,
 	res: NextApiResponse
 ) {
-	console.log('aie1');
 	if (req.method === 'POST') {
 		const body = req.body;
 
