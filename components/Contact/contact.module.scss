@@ -377,6 +377,24 @@
 		}
 	}
 }
+@media screen and (min-width: $extra-large) and (max-height: $medium) {
+	.contact {
+		.inputs {
+			> a {
+				font-size: 2.3em;
+			}
+		}
+	}
+}
+@media screen and (min-width: $extra-large) and (min-height: $medium) {
+	.contact {
+		.inputs {
+			> a {
+				font-size: 2.6em;
+			}
+		}
+	}
+}
 @media screen and (min-width: $extra-large) and (orientation: landscape) {
 	.contact {
 		padding-bottom: 20vh;
@@ -392,7 +410,6 @@
 		.inputs {
 			@include flex($dir: row);
 			> a {
-				font-size: 2.6em;
 				font-weight: 400;
 			}
 			label:nth-child(2) {
