@@ -119,7 +119,6 @@ const Projects = () => {
 												hoveredIndex === content.id ? styles.visible : ''
 											}`}
 											onMouseEnter={() => {
-												// setHoveredIndex(content.id);
 												activAnim();
 											}}
 											onMouseLeave={() => setHoveredIndex(-1)}

@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
+import { Canvas } from '@react-three/fiber';
 
 import useTranslation from '@/components/Translator/hooks';
 import ProfilPicture from './ProfilPicture';
-
-import styles from './profil.module.scss';
-import { Canvas } from '@react-three/fiber';
 import Circle from './circle';
 import useMediaQuery from '@/tools/useMediaQuery';
 import Lines from './lines';
+
+import styles from './profil.module.scss';
 
 const Profil = () => {
 	const { t } = useTranslation();
@@ -69,7 +69,6 @@ const Profil = () => {
 						<div className={styles.imgLogoLocation}>
 							<Image src={'/img/icon/location.webp'} alt='logo location' fill />{' '}
 						</div>
-
 						<p>Bordeaux, France</p>
 					</div>
 					<div className={styles.mail}>
