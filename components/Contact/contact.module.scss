@@ -256,6 +256,14 @@
 		}
 	}
 }
+@media screen and (min-width: $small) {
+	.contact {
+		.modalContainer {
+			width: 50vw;
+			right: 30px;
+		}
+	}
+}
 @media screen and (min-width: $medium) {
 	.contact {
 		padding-bottom: 15vh;
@@ -288,6 +296,9 @@
 				width: 50%;
 			}
 		}
+		.modalContainer {
+			width: 40vw;
+		}
 	}
 }
 @media screen and (min-width: $large) {
@@ -302,6 +313,10 @@
 				border-left: 4px solid $blue;
 				width: calc(70% - 4px);
 			}
+		}
+		.modalContainer {
+			bottom: 45px;
+			right: 45px;
 		}
 	}
 }
@@ -344,6 +359,9 @@
 				height: 35px;
 				width: 50%;
 			}
+		}
+		.modalContainer {
+			width: 35vw;
 		}
 	}
 }
@@ -410,6 +428,9 @@
 				font-size: 3vw;
 				padding-top: 15vh;
 			}
+		}
+		.modalContainer {
+			width: 25vw;
 		}
 	}
 }

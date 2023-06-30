@@ -39,11 +39,6 @@
 .success {
 	border: 2px solid $blue;
 	color: $blue;
-	flex-direction: row;
-	> div {
-		margin-left: 10px;
-		margin-bottom: 5px;
-	}
 }
 .error {
 	border: 1px solid $error;
@@ -100,21 +95,14 @@
 		background-position: 0 250px;
 	}
 }
-@media only screen and (min-width: $medium) {
+@media only screen and (min-width: $large) {
 	.modal {
-		width: 65%;
-		font-size: 1.8em;
-		right: 15px;
-		left: auto;
+		font-size: 1.2em;
 	}
-}
-.error {
-	.contact {
-		font-size: 0.8em;
+	.success {
+		border: 3px solid $blue;
 	}
-}
-@media only screen and (min-width: $extra-large) {
-	.modal {
-		width: 40%;
+	.error {
+		border: 2px solid $error;
 	}
 }

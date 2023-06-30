@@ -13,7 +13,7 @@ const Contact = () => {
 	const [targetReached] = useMediaQuery(`(min-width: 768px)`);
 	const [showConfirmModal, setShowConfirmModal] = useState(false);
 	const [submittedSuccess, setSubmittedSuccess] = useState<boolean | null>(
-		null
+		true
 	);
 	const [formValues, setFormValues] = useState({
 		name: '',
