@@ -10,7 +10,6 @@ const Screens = ({
 	paths: string[];
 	endAnimation: boolean;
 }) => {
-	console.log(endAnimation);
 	return (
 		<div className={styles.screens}>
 			<div

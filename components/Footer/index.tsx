@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Canvas } from '@react-three/fiber';
+import gsap from 'gsap/dist/gsap';
+import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 
 import useTranslation from '@/components/Translator/hooks';
 import Picture from './Picture';
@@ -10,10 +12,40 @@ const Footer = () => {
 	const { t } = useTranslation();
 	const [hovered, setHovered] = useState(false);
 
+	const ref = useRef<HTMLDivElement>(null);
+	gsap.registerPlugin(ScrollTrigger);
+
+	useEffect(() => {
+		const element = ref.current;
+		if (element) {
+			gsap.fromTo(
+				element.querySelector('#scrollText2') as HTMLElement,
+				{
+					x: 0,
+				},
+				{
+					x: -100,
+					scrollTrigger: {
+						trigger: element.querySelector(
+							'#scrollTextContainer2'
+						) as HTMLElement,
+						start: 'top bottom',
+						end: 'bottom top',
+						scrub: true,
+						onUpdate: (self) => {
+							gsap.ticker.fps(120);
+							self.scroll();
+						},
+					},
+				}
+			);
+		}
+	}, []);
+
 	return (
-		<footer className={styles.footer}>
-			<div className={styles.scrollText}>
-				<p>Portfolio Dubois Jérémy</p>
+		<footer className={styles.footer} ref={ref}>
+			<div id='scrollTextContainer2' className={styles.scrollText}>
+				<p id='scrollText2'>Portfolio Dubois Jérémy</p>
 			</div>
 			<div className={styles.container}>
 				<a

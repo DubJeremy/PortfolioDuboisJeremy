@@ -1,5 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
+import gsap from 'gsap/dist/gsap';
+import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 
 import useTranslation from '@/components/Translator/hooks';
 import useMediaQuery from '@/tools/useMediaQuery';
@@ -69,7 +71,6 @@ const Projects = () => {
 	};
 
 	const activAnim = () => {
-		console.log('hghho');
 		setEndAnim(true);
 
 		setTimeout(() => {
@@ -77,8 +78,38 @@ const Projects = () => {
 		}, 500);
 	};
 
+	const ref = useRef<HTMLDivElement>(null);
+	gsap.registerPlugin(ScrollTrigger);
+
+	useEffect(() => {
+		const element = ref.current;
+		if (element) {
+			gsap.fromTo(
+				element.querySelector('#scrollText') as HTMLElement,
+				{
+					x: 0,
+				},
+				{
+					x: -100,
+					scrollTrigger: {
+						trigger: element.querySelector(
+							'#scrollTextContainer'
+						) as HTMLElement,
+						start: 'top bottom',
+						end: 'bottom top',
+						scrub: true,
+						onUpdate: (self) => {
+							gsap.ticker.fps(120);
+							self.scroll();
+						},
+					},
+				}
+			);
+		}
+	}, []);
+
 	return (
-		<section className={styles.projects} id='projects'>
+		<section className={styles.projects} id='projects' ref={ref}>
 			<div className={styles.title}>
 				<h3>{t('PROJECT')}</h3>
 				<div className={styles.patternContainer}>
@@ -248,11 +279,11 @@ const Projects = () => {
 							</div>
 						</div>
 					</div>
-					<div className={styles.scrollText}>
-						<p>
+					<div id='scrollTextContainer' className={styles.scrollText}>
+						<div id='scrollText'>
 							{t('PROJECT')} {t('PROJECT')}
 							{/* {t('BY')} Dubois Jérémy */}
-						</p>
+						</div>
 					</div>
 				</>
 			)}
