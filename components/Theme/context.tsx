@@ -20,37 +20,6 @@ type Props = {
 export function ThemeProvider({ children }: Props) {
 	const [theme, setTheme] = useState('blue');
 
-	// const handleThemeChange = (theme: string) => {
-	// 	setTheme(theme);
-	// };
-
-	const Themes = {
-		blue: {
-			main: '#0070a2',
-			light: '#bce4f6',
-		},
-		green: {
-			main: '#00a24e',
-			light: '#a6f6d3',
-		},
-		yellow: {
-			main: '#f2b63d',
-			light: '#f7e9c2',
-		},
-		purple: {
-			main: '#7f00ff',
-			light: '#c996ff',
-		},
-		pink: {
-			main: '#ff1e75',
-			light: '#ff9cc8',
-		},
-		white: {
-			main: '#ffffff',
-			light: '#f9f9f9',
-		},
-	};
-
 	useEffect(() => {
 		if (!window) {
 			return;
@@ -62,36 +31,6 @@ export function ThemeProvider({ children }: Props) {
 
 	return (
 		<ThemeContext.Provider value={{ theme, setTheme }}>
-			{/* <ThemeContext.Provider value={theme}> */}
-			{/* <ThemePortal>
-				<div className='squares'>
-					<div
-						className='square'
-						style={{ backgroundColor: Themes.blue.main }}
-						onClick={() => handleThemeChange('blue')}
-					></div>
-					<div
-						className='square'
-						style={{ backgroundColor: Themes.yellow.main }}
-						onClick={() => handleThemeChange('yellow')}
-					></div>
-					<div
-						className='square'
-						style={{ backgroundColor: Themes.purple.main }}
-						onClick={() => handleThemeChange('purple')}
-					></div>
-					<div
-						className='square'
-						style={{ backgroundColor: Themes.pink.main }}
-						onClick={() => handleThemeChange('pink')}
-					></div>
-					<div
-						className='square'
-						style={{ backgroundColor: Themes.white.main }}
-						onClick={() => handleThemeChange('white')}
-					></div>
-				</div>
-			</ThemePortal> */}
 			{children}
 		</ThemeContext.Provider>
 	);

@@ -1,12 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useRouter } from 'next/router';
 
 import useTheme from './hooks';
 
-import styles from './translator.module.scss';
+import styles from './theme.module.scss';
 
 export default function Theme() {
-	// const [themeSelected, setThemeSelected] = useState('blue');
 	const { theme, setTheme } = useTheme();
 	const { pathname, push } = useRouter();
 
@@ -34,7 +33,6 @@ export default function Theme() {
 		if (setTheme === undefined) {
 			return;
 		}
-		// setTheme(targetTheme);
 
 		switch (targetTheme) {
 			case 'blue': {
@@ -64,7 +62,7 @@ export default function Theme() {
 		}
 
 		const options = {
-			theme: targetTheme,
+			// theme: targetTheme,
 		};
 		push(pathname, pathname, options);
 	}

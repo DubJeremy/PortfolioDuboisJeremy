@@ -15,35 +15,28 @@ export default function useTheme() {
 
 	const { theme, setTheme } = context;
 
-	function t(key: string) {
+	function c(key: string) {
 		switch (theme) {
 			case 'blue': {
-				blue[key];
-				break;
+				return blue[key];
 			}
 			case 'green': {
-				green[key];
-				break;
+				return green[key];
 			}
 			case 'yellow': {
-				yellow[key];
-				break;
+				return yellow[key];
 			}
 			case 'purple': {
-				purple[key];
-				break;
+				return purple[key];
 			}
 			case 'pink': {
-				pink[key];
-				break;
+				return pink[key];
 			}
 			case 'white': {
-				white[key];
-				break;
+				return white[key];
 			}
 		}
-		return;
 	}
 
-	return { t, theme, setTheme };
+	return { c, theme, setTheme };
 }

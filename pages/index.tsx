@@ -11,10 +11,12 @@ import Footer from '@/components/Footer';
 import useMediaQuery from '@/tools/useMediaQuery';
 import TurnMobile from '@/components/TurnMobile';
 import Cursor from '@/components/Cursor';
+import Theme from '@/components/Theme';
 
 export default function Home() {
 	const [targetReachedH] = useMediaQuery(`(max-height: 500px)`);
 	const [targetReached] = useMediaQuery(`(max-width: 992px)`);
+	const [targetReachedL] = useMediaQuery(`(min-width: 992px)`);
 	const [targetReachedXL] = useMediaQuery(`(min-width: 1140px)`);
 	const [isInLandscape, setIsInLandscape] = useState<boolean | null>(null);
 
@@ -56,6 +58,7 @@ export default function Home() {
 				) : (
 					<>
 						{targetReachedXL && <Cursor />}
+						{targetReachedL && <Theme />}
 
 						<ScreenFrame />
 						<Navbar />
