@@ -60,7 +60,7 @@ export default function Home() {
 						<ScreenFrame />
 						<Navbar />
 						<Header />
-						{/* <Profil /> */}
+						<Profil />
 						<Projects />
 						<Contact />
 						<Footer />

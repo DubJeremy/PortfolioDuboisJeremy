@@ -33,14 +33,15 @@ export default function Translator() {
 		if (setLocale === undefined) {
 			return;
 		}
-		setLocale(targetLocale);
 
 		if (targetLocale === 'en') {
 			setLanguage('en');
 		} else {
 			setLanguage('fr');
 		}
+		setLocale(targetLocale);
 
+		console.log(localStorage);
 		const options = {
 			locale: targetLocale,
 		};
