@@ -5,10 +5,13 @@ import useTranslation from '@/components/Translator/hooks';
 import Lines from './lines';
 import useMediaQuery from '@/tools/useMediaQuery';
 import Modal from './Modal';
+import useTheme from '../Theme/hooks';
 
 import styles from './contact.module.scss';
+import { Color } from 'three';
 
 const Contact = () => {
+	const { c } = useTheme();
 	const { t } = useTranslation();
 	const [targetReached] = useMediaQuery(`(min-width: 768px)`);
 	const [showConfirmModal, setShowConfirmModal] = useState(false);
@@ -66,10 +69,32 @@ const Contact = () => {
 	}
 
 	return (
-		<section className={styles.contact} id='contact'>
-			<div className={styles.title}>
+		<section
+			className={styles.contact}
+			id='contact'
+			style={
+				targetReached
+					? { borderBottom: `4px solid ${c('MAIN')}`, color: `${c('MAIN')}` }
+					: { borderBottom: `2px solid ${c('MAIN')}`, color: `${c('MAIN')}` }
+			}
+		>
+			<div
+				className={styles.title}
+				style={
+					targetReached
+						? { borderBottom: `4px solid ${c('MAIN')}` }
+						: { borderBottom: `2px solid ${c('MAIN')}` }
+				}
+			>
 				<h3>Contact</h3>
-				<div className={styles.patternContainer}>
+				<div
+					className={styles.patternContainer}
+					style={
+						targetReached
+							? { borderLeft: `4px solid ${c('MAIN')}` }
+							: { borderLeft: `2px solid ${c('MAIN')}` }
+					}
+				>
 					<Image
 						src={
 							targetReached
@@ -83,7 +108,11 @@ const Contact = () => {
 			</div>
 			<form className={styles.inputs} method='post' onSubmit={handleSubmit}>
 				<a href='mailto:dubois.jeremy33@gmail.com'>dubois.jeremy33@gmail.com</a>
-				<label className={styles.input} htmlFor='name'>
+				<label
+					className={styles.input}
+					htmlFor='name'
+					style={{ color: `${c('MAIN')}` }}
+				>
 					<input
 						type='text'
 						name='name'
@@ -93,6 +122,10 @@ const Contact = () => {
 							setFormValues({ ...formValues, name: e.target.value })
 						}
 						required
+						style={{
+							border: `1px solid ${c('MAIN')}`,
+							color: `${c('MAIN')}`,
+						}}
 					/>
 				</label>
 				<label className={styles.input} htmlFor='mail'>
@@ -105,6 +138,10 @@ const Contact = () => {
 							setFormValues({ ...formValues, mail: e.target.value })
 						}
 						required
+						style={{
+							border: `1px solid ${c('MAIN')}`,
+							color: `${c('MAIN')}`,
+						}}
 					/>
 				</label>
 				<label
@@ -119,12 +156,19 @@ const Contact = () => {
 							setFormValues({ ...formValues, message: e.target.value })
 						}
 						required
+						style={{
+							border: `1px solid ${c('MAIN')}`,
+							color: `${c('MAIN')}`,
+						}}
 					/>
 				</label>
 				<div className={styles.btnContainer}>
 					<button
 						className={styles.btn}
 						onSubmit={() => setShowConfirmModal(true)}
+						style={{
+							backgroundColor: `${c('MAIN')}`,
+						}}
 					>
 						{t('SEND')}
 						<span>▶</span>
