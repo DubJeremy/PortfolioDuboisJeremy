@@ -7,10 +7,12 @@ import ProfilPicture from './ProfilPicture';
 import Circle from './circle';
 import useMediaQuery from '@/tools/useMediaQuery';
 import Lines from './lines';
+import useTheme from '../Theme/hooks';
 
 import styles from './profil.module.scss';
 
 const Profil = () => {
+	const { c } = useTheme();
 	const { t } = useTranslation();
 	const [targetReached] = useMediaQuery(`(min-width: 768px)`);
 	const [targetReachedL] = useMediaQuery(`(min-width: 992px)`);
@@ -32,8 +34,26 @@ const Profil = () => {
 	};
 
 	return (
-		<section className={styles.profil} id='profil'>
-			<div className={styles.desc}>
+		<section
+			className={styles.profil}
+			id='profil'
+			style={
+				targetReached
+					? {
+							borderTop: `4px solid ${c('MAIN')}`,
+							borderBottom: `4px solid ${c('MAIN')}`,
+					  }
+					: { borderTop: `2px solid ${c('MAIN')}` }
+			}
+		>
+			<div
+				className={styles.desc}
+				style={
+					targetReached
+						? { borderBottom: `4px solid ${c('MAIN')}` }
+						: { borderBottom: `2px solid ${c('MAIN')}` }
+				}
+			>
 				<div className={styles.txt}>
 					<h2>{t('DESC_TITLE_F')}</h2>
 					<h2>{t('DESC_TITLE_S')}</h2>
@@ -61,7 +81,20 @@ const Profil = () => {
 					</div>
 				)}
 			</div>
-			<div className={`${styles.info}  cursorScale small`}>
+			<div
+				className={`${styles.info}  cursorScale small`}
+				style={
+					targetReached && isInLandscape
+						? {
+								borderBottom: `4px solid ${c('MAIN')}`,
+								color: `${c('MAIN')}`,
+								borderRight: `4px solid ${c('MAIN')}`,
+						  }
+						: targetReached && !isInLandscape
+						? { borderBottom: `4px solid ${c('MAIN')}`, color: `${c('MAIN')}` }
+						: { borderBottom: `2px solid ${c('MAIN')}`, color: `${c('MAIN')}` }
+				}
+			>
 				<h3>Dubois Jérémy</h3>
 				<h4>Portfolio | {t('WEB_DEV')}</h4>
 				<div className={styles.profilContact}>
@@ -78,7 +111,18 @@ const Profil = () => {
 						</a>
 					</div>
 					<div className={styles.btns}>
-						<button>{t('CV')}</button>
+						<button
+							style={
+								c('MAIN') === '#ffffff'
+									? {
+											border: `2px solid ${c('MAIN')}`,
+											boxSizing: 'border-box',
+									  }
+									: { backgroundColor: `${c('MAIN')}` }
+							}
+						>
+							{t('CV')}
+						</button>
 						<a
 							href='https://www.linkedin.com/in/jeremy-dubois-dev
 							'
@@ -90,7 +134,16 @@ const Profil = () => {
 				</div>
 				<Circle />
 			</div>
-			<div className={styles.stripes}>
+			<div
+				className={styles.stripes}
+				style={
+					targetReached && !isInLandscape
+						? { borderBottom: `4px solid ${c('MAIN')}` }
+						: targetReached && isInLandscape
+						? { borderRight: `4px solid  ${c('MAIN')}` }
+						: { borderBottom: `2px solid ${c('MAIN')}` }
+				}
+			>
 				<Image
 					src={
 						targetReached
@@ -101,7 +154,14 @@ const Profil = () => {
 					fill
 				/>
 			</div>
-			<div className={styles.techs}>
+			<div
+				className={styles.techs}
+				style={
+					targetReached
+						? { opacity: 1 }
+						: { borderBottom: `2px solid ${c('MAIN')}` }
+				}
+			>
 				<div className={styles.logoTech}>
 					<Image src={'/img/logo/next.webp'} alt='next.js logo' fill />
 				</div>

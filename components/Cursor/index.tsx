@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { gsap } from 'gsap';
 
+import useTheme from '../Theme/hooks';
+
 import styles from './cursor.module.scss';
 
 const Cursor = () => {
+	const { c } = useTheme();
 	const [isGrow, setIsGrow] = useState(false);
 	const [isGrowSmall, setIsGrowSmall] = useState(false);
 
@@ -51,7 +54,13 @@ const Cursor = () => {
 		isGrowSmall ? styles['growSmall'] : ''
 	}`;
 
-	return <div id='cursor' className={cursorClassName} />;
+	return (
+		<div
+			id='cursor'
+			className={cursorClassName}
+			style={{ border: `2px solid ${c('MAIN')}` }}
+		/>
+	);
 };
 
 export default Cursor;

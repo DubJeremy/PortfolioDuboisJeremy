@@ -7,7 +7,7 @@
 	overflow: hidden;
 	.scrollText {
 		height: 140px;
-		border-bottom: 2px solid $blue;
+		transition: all 0.5s ease-in-out;
 		position: relative;
 		overflow: hidden;
 		> p {
@@ -15,7 +15,7 @@
 			font-size: 190px;
 			line-height: 175px;
 			color: transparent;
-			-webkit-text-stroke: 4px $blue;
+			transition: all 0.5s ease-in-out;
 			white-space: nowrap;
 		}
 	}
@@ -24,7 +24,7 @@
 		height: 40vh;
 		width: 100%;
 		@include flex($just: flex-end);
-		color: $blue;
+		transition: all 0.5s ease-in-out;
 		font-family: 'JosefinS';
 		.credit {
 			margin-bottom: 10px;
@@ -84,9 +84,6 @@
 @media screen and (min-width: $large) {
 	.footer {
 		padding-bottom: 40px;
-		.scrollText {
-			border-bottom: 4px solid $blue;
-		}
 		.container {
 			.credit {
 				margin-bottom: 15px;
@@ -116,8 +113,4 @@
 			}
 		}
 	}
-}
-@media screen and (min-width: $extra-large) and (orientation: landscape) {
-}
-@media screen and (min-width: $ultra-large) {
 }

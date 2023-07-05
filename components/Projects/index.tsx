@@ -9,10 +9,12 @@ import { contentProjects } from '@/constants/contentProjects';
 import Lines from './lines';
 import Loader from './loader';
 import Screens from './screens';
+import useTheme from '../Theme/hooks';
 
 import styles from './projects.module.scss';
 
 const Projects = () => {
+	const { c } = useTheme();
 	const { t } = useTranslation();
 	const [targetReached] = useMediaQuery(`(min-width: 768px)`);
 	const [targetReachedL] = useMediaQuery(`(min-width: 992px)`);
@@ -109,10 +111,29 @@ const Projects = () => {
 	}, []);
 
 	return (
-		<section className={styles.projects} id='projects' ref={ref}>
-			<div className={styles.title}>
+		<section
+			className={styles.projects}
+			id='projects'
+			ref={ref}
+			style={{ color: ` ${c('MAIN')}` }}
+		>
+			<div
+				className={styles.title}
+				style={
+					targetReached
+						? { borderBottom: `4px solid ${c('MAIN')}` }
+						: { borderBottom: `2px solid ${c('MAIN')}` }
+				}
+			>
 				<h3>{t('PROJECT')}</h3>
-				<div className={styles.patternContainer}>
+				<div
+					className={styles.patternContainer}
+					style={
+						targetReached
+							? { borderLeft: `4px solid ${c('MAIN')}` }
+							: { borderLeft: `2px solid ${c('MAIN')}` }
+					}
+				>
 					<Image
 						src={
 							targetReached
@@ -127,8 +148,15 @@ const Projects = () => {
 			{targetReachedL && isInLandscape ? (
 				<>
 					{contentProjects.map((content: ProjectTypes.Content) => (
-						<div className={styles.content} key={content.id}>
-							<div className={styles.descProject}>
+						<div
+							className={styles.content}
+							key={content.id}
+							style={{ borderBottom: `4px solid ${c('MAIN')}` }}
+						>
+							<div
+								className={styles.descProject}
+								style={{ borderRight: `4px solid ${c('MAIN')}` }}
+							>
 								<p>{t(`${content.desc}`)}</p>
 								<div className={styles.techs}>
 									{content.techs.map((tech, index) => (
@@ -153,6 +181,7 @@ const Projects = () => {
 												activAnim();
 											}}
 											onMouseLeave={() => setHoveredIndex(-1)}
+											style={{ backgroundColor: ` ${c('LIGHT')}` }}
 										>
 											<h4
 												className={
@@ -176,6 +205,7 @@ const Projects = () => {
 									className={styles.project}
 									onMouseEnter={() => setHoveredIndex(content.id)}
 									onMouseLeave={() => setHoveredIndex(-1)}
+									style={{ WebkitTextStroke: `0.01px ${c('MAIN')}` }}
 								>
 									<h4>{content.title}</h4>
 									<div className={styles.linesContainer}>
@@ -184,10 +214,14 @@ const Projects = () => {
 								</div>
 							</div>
 							{content.done ? (
-								<div className={styles.btns}>
+								<div
+									className={styles.btns}
+									style={{ borderTop: `4px solid ${c('MAIN')}` }}
+								>
 									<a
 										href={content.link}
 										className={`${styles.viewProject}  cursorScale small`}
+										style={{ borderRight: `4px solid ${c('MAIN')}` }}
 									>
 										<p>{t('VIEW_PROJECT')}</p>
 										<div className={styles.arrowD}>
@@ -203,8 +237,18 @@ const Projects = () => {
 									</div>
 								</div>
 							) : (
-								<div className={styles.btns}>
-									<div className={styles.inDevelopment}>
+								<div
+									className={styles.btns}
+									style={{
+										borderTop: `4px solid ${c('MAIN')}`,
+									}}
+								>
+									<div
+										className={styles.inDevelopment}
+										style={{
+											borderRight: `4px solid ${c('MAIN')}`,
+										}}
+									>
 										<p>{t('IN_DEVELOPMENT')}</p>
 										<div className={styles.loader}>
 											<Loader />
@@ -227,8 +271,18 @@ const Projects = () => {
 					<div className={styles.screensContainer}>
 						<Screens paths={project.screens} endAnimation={endAnim} />
 					</div>
-					<div className={styles.descProject}>
-						<h4 className={endAnim ? styles.titleEndAnim : ''}>
+					<div
+						className={styles.descProject}
+						style={
+							targetReachedL
+								? { borderBottom: `4px solid ${c('MAIN')}` }
+								: { borderBottom: `2px solid ${c('MAIN')}` }
+						}
+					>
+						<h4
+							className={endAnim ? styles.titleEndAnim : ''}
+							style={{ WebkitTextStroke: `0.85px ${c('MAIN')}` }}
+						>
 							{project.title}
 						</h4>
 						<p className={endAnim ? styles.descEndAnim : ''}>
@@ -251,14 +305,34 @@ const Projects = () => {
 							))}
 						</div>
 					</div>
-					<div className={styles.btns}>
+					<div
+						className={styles.btns}
+						style={
+							targetReachedL
+								? { borderBottom: `4px solid ${c('MAIN')}` }
+								: { borderBottom: `2px solid ${c('MAIN')}` }
+						}
+					>
 						<a href={project.link} className={styles.viewProject}>
 							<p>{t('VIEW_PROJECT')}</p>
 							<div className={styles.arrowD}>
 								<Image src={'/img/icon/arrowD.webp'} alt='arrow' fill />
 							</div>
 						</a>
-						<div className={styles.logoStriped}>
+						<div
+							className={styles.logoStriped}
+							style={
+								targetReachedL
+									? {
+											borderBottom: `4px solid ${c('MAIN')}`,
+											borderLeft: `4px solid ${c('MAIN')}`,
+									  }
+									: {
+											borderBottom: `2px solid ${c('MAIN')}`,
+											borderLeft: `2px solid ${c('MAIN')}`,
+									  }
+							}
+						>
 							<Image
 								src={
 									targetReached
@@ -272,6 +346,17 @@ const Projects = () => {
 						<div
 							className={styles.next}
 							onClick={(e) => handleClick(e, 'projects')}
+							style={
+								targetReachedL
+									? {
+											borderBottom: `4px solid ${c('MAIN')}`,
+											borderLeft: `4px solid ${c('MAIN')}`,
+									  }
+									: {
+											borderBottom: `2px solid ${c('MAIN')}`,
+											borderLeft: `2px solid ${c('MAIN')}`,
+									  }
+							}
 						>
 							<p>{t('NEXT')}</p>
 							<div className={styles.arrowH}>
@@ -279,8 +364,19 @@ const Projects = () => {
 							</div>
 						</div>
 					</div>
-					<div id='scrollTextContainer' className={styles.scrollText}>
-						<div id='scrollText'>
+					<div
+						id='scrollTextContainer'
+						className={styles.scrollText}
+						style={
+							targetReachedL
+								? { borderBottom: `4px solid ${c('MAIN')}` }
+								: { borderBottom: `2px solid ${c('MAIN')}` }
+						}
+					>
+						<div
+							id='scrollText'
+							style={{ WebkitTextStroke: `4px ${c('MAIN')}` }}
+						>
 							{t('PROJECT')} {t('PROJECT')}
 							{/* {t('BY')} Dubois Jérémy */}
 						</div>

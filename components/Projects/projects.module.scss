@@ -3,12 +3,12 @@
 
 .projects {
 	width: 100%;
-	color: $blue;
+	transition: all 0.5s ease-in-out;
 	overflow: hidden;
 	.title {
 		width: 100%;
 		height: 70px;
-		border-bottom: 2px solid $blue;
+		transition: all 0.5s ease-in-out;
 		@include flex($dir: row);
 		> h3 {
 			width: 40%;
@@ -19,7 +19,7 @@
 		}
 		.patternContainer {
 			position: relative;
-			border-left: 2px solid $blue;
+			transition: all 0.5s ease-in-out;
 			width: calc(60% - 2px);
 			height: 100%;
 		}
@@ -30,11 +30,10 @@
 	}
 	.descProject {
 		width: 100%;
-		border-bottom: 2px solid $blue;
+		transition: all 0.5s ease-in-out;
 		h4 {
 			font-family: 'Flaviotte';
 			font-size: 2em;
-			-webkit-text-stroke: 0.85px $blue;
 			color: transparent;
 			width: 100%;
 			text-align: center;
@@ -80,7 +79,7 @@
 	}
 	.btns {
 		height: 50px;
-		border-bottom: 2px solid $blue;
+		transition: all 0.5s ease-in-out;
 		position: relative;
 		@include flex($dir: row);
 		font-family: 'JosefinS';
@@ -118,7 +117,7 @@
 			z-index: -2;
 			width: calc(60% - 2px);
 			height: 100%;
-			border-left: 2px solid $blue;
+			transition: all 0.5s ease-in-out;
 		}
 		.next {
 			position: absolute;
@@ -127,8 +126,7 @@
 			top: 0;
 			width: 35%;
 			height: 50%;
-			border-left: 2px solid $blue;
-			border-bottom: 2px solid $blue;
+			transition: all 0.5s ease-in-out;
 			@include flex($just: space-around, $dir: row);
 			padding: 0 2px;
 			cursor: pointer;
@@ -181,7 +179,7 @@
 	}
 	.scrollText {
 		height: 140px;
-		border-bottom: 2px solid $blue;
+		transition: all 0.5s ease-in-out;
 		position: relative;
 		overflow: hidden;
 		> div {
@@ -189,7 +187,7 @@
 			font-size: 190px;
 			line-height: 175px;
 			color: transparent;
-			-webkit-text-stroke: 4px $blue;
+			transition: all 0.5s ease-in-out;
 			white-space: nowrap;
 		}
 	}
@@ -366,31 +364,12 @@
 @media screen and (min-width: $large) {
 	.projects {
 		.title {
-			border-bottom: 4px solid $blue;
 			> h3 {
 				width: 30%;
 			}
 			.patternContainer {
-				border-left: 4px solid $blue;
 				width: calc(70% - 4px);
 			}
-		}
-		.descProject {
-			border-bottom: 4px solid $blue;
-		}
-		.btns {
-			border-bottom: 4px solid $blue;
-
-			.logoStriped {
-				border-left: 4px solid $blue;
-			}
-			.next {
-				border-left: 4px solid $blue;
-				border-bottom: 4px solid $blue;
-			}
-		}
-		.scrollText {
-			border-bottom: 4px solid $blue;
 		}
 	}
 }
@@ -401,7 +380,6 @@
 		}
 		.btns {
 			.logoStriped {
-				border-left: 4px solid $blue;
 				width: calc(75% - 4px);
 			}
 		}
@@ -414,7 +392,6 @@
 			@include flex($dir: row, $wrap: nowrap);
 			> h3 {
 				width: 20%;
-				border-right: 4px solid $blue;
 				box-sizing: border-box;
 				height: 100%;
 				@include flex;
@@ -425,7 +402,7 @@
 			}
 		}
 		.content {
-			border-bottom: 4px solid $blue;
+			transition: all 0.5s ease-in-out;
 			width: 100%;
 			display: grid;
 			grid-template-columns: 30% 70%;
@@ -437,7 +414,7 @@
 				height: 100%;
 				width: 100%;
 				border-bottom: 0;
-				border-right: 4px solid $blue;
+				transition: all 0.5s ease-in-out;
 				box-sizing: border-box;
 				@include flex($just: flex-end, $align: flex-start);
 				z-index: 3;
@@ -493,7 +470,6 @@
 				height: 100%;
 				position: relative;
 				.showProject {
-					background-color: $blueLight;
 					height: 100%;
 					width: 100%;
 					@include flex($align: flex-start, $just: flex-end);
@@ -531,7 +507,7 @@
 						font-family: 'Flaviotte';
 						font-size: 5.5vw;
 						color: transparent;
-						-webkit-text-stroke: 0.01px $blue;
+						transition: all 0.5s ease-in-out;
 						white-space: nowrap;
 					}
 					.linesContainer {
@@ -562,11 +538,11 @@
 			.btns {
 				grid-column: 1/3;
 				grid-row: 2/3;
-				border-top: 4px solid $blue;
+				transition: all 0.5s ease-in-out;
 				border-bottom: 0;
 				@include flex($align: flex-start);
 				.viewProject {
-					border-right: 4px solid $blue;
+					transition: all 0.5s ease-in-out;
 					box-sizing: border-box;
 					height: 100%;
 					width: 30%;
@@ -575,7 +551,7 @@
 					}
 				}
 				.inDevelopment {
-					border-right: 4px solid $blue;
+					transition: all 0.5s ease-in-out;
 					box-sizing: border-box;
 					height: 100%;
 					width: 30%;

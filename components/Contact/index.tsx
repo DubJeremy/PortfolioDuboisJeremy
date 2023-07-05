@@ -8,7 +8,6 @@ import Modal from './Modal';
 import useTheme from '../Theme/hooks';
 
 import styles from './contact.module.scss';
-import { Color } from 'three';
 
 const Contact = () => {
 	const { c } = useTheme();
@@ -166,9 +165,14 @@ const Contact = () => {
 					<button
 						className={styles.btn}
 						onSubmit={() => setShowConfirmModal(true)}
-						style={{
-							backgroundColor: `${c('MAIN')}`,
-						}}
+						style={
+							c('MAIN') === '#ffffff'
+								? {
+										border: `2px solid ${c('MAIN')}`,
+										boxSizing: 'border-box',
+								  }
+								: { backgroundColor: `${c('MAIN')}` }
+						}
 					>
 						{t('SEND')}
 						<span>▶</span>
