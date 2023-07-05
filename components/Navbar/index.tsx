@@ -7,6 +7,7 @@ import Translator from '../Translator';
 import useTheme from '../Theme/hooks';
 
 import styles from './navbar.module.scss';
+import Theme from '../Theme';
 
 const Navbar = () => {
 	const { c } = useTheme();
@@ -240,6 +241,9 @@ const Navbar = () => {
 					</ul>
 					<div className={styles.languageToggle} onClick={() => toggleMenu()}>
 						<Translator />
+					</div>
+					<div className={styles.themesContainer}>
+						<Theme />
 					</div>
 				</div>
 			</div>

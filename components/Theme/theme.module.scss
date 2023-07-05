@@ -1,44 +1,45 @@
 @import '../../styles/variables.scss';
 @import 'styles/mixins.scss';
-
-.themes {
-	position: fixed;
-	left: 6px;
-	bottom: 29px;
-	z-index: 1005;
-	width: 15px;
-	@include flex($align: flex-end);
-	.theme {
-		height: 15px;
-		width: 8px;
-		margin-top: 8px;
-		cursor: pointer;
-		transition: all 0.3s ease-in-out;
+@media screen and (max-width: $large) {
+	.themes {
+		position: absolute;
+		left: 6px;
+		bottom: 15px;
+		z-index: 1005;
+		@include flex($align: flex-end, $dir: row);
+		.theme {
+			height: 15px;
+			width: 8px;
+			cursor: pointer;
+			transition: all 0.3s ease-in-out;
+			margin-right: 10px;
+			opacity: 0.5;
+		}
+		.blue {
+			background-color: $blueMain;
+		}
+		.green {
+			background-color: $greenMain;
+		}
+		.yellow {
+			background-color: $yellowMain;
+		}
+		.purple {
+			background-color: $purpleMain;
+		}
+		.pink {
+			background-color: $pinkMain;
+		}
+		.white {
+			background-color: $whiteMain;
+		}
+		.selected {
+			width: 20px;
+			height: 20px;
+			cursor: none;
+			opacity: 1;
+		}
 	}
-	.blue {
-		background-color: $blueMain;
-	}
-	.green {
-		background-color: $greenMain;
-	}
-	.yellow {
-		background-color: $yellowMain;
-	}
-	.purple {
-		background-color: $purpleMain;
-	}
-	.pink {
-		background-color: $pinkMain;
-	}
-	.white {
-		background-color: $whiteMain;
-	}
-	.selected {
-		width: 100%;
-		cursor: none;
-	}
-}
-@media screen and (max-width: $extra-small) {
 }
 @media screen and (max-width: $extra-small) and (min-height: $small) {
 }
@@ -46,7 +47,46 @@
 }
 @media screen and (min-width: $medium) {
 }
-@media screen and (min-width: $large) and (orientation: portrait) {
+@media screen and (min-width: $large) {
+	.themes {
+		position: fixed;
+		left: 6px;
+		bottom: 29px;
+		z-index: 1005;
+		width: 15px;
+		@include flex($align: flex-end);
+		.theme {
+			height: 15px;
+			width: 8px;
+			margin-top: 8px;
+			cursor: pointer;
+			transition: all 0.3s ease-in-out;
+			opacity: 0.5;
+		}
+		.blue {
+			background-color: $blueMain;
+		}
+		.green {
+			background-color: $greenMain;
+		}
+		.yellow {
+			background-color: $yellowMain;
+		}
+		.purple {
+			background-color: $purpleMain;
+		}
+		.pink {
+			background-color: $pinkMain;
+		}
+		.white {
+			background-color: $whiteMain;
+		}
+		.selected {
+			width: 100%;
+			cursor: none;
+			opacity: 1;
+		}
+	}
 }
 @media screen and (min-width: $large) and (orientation: landscape) {
 }
