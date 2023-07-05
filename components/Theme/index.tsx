@@ -2,12 +2,14 @@ import React, { useEffect } from 'react';
 import { useRouter } from 'next/router';
 
 import useTheme from './hooks';
+import useMediaQuery from '@/tools/useMediaQuery';
 
 import styles from './theme.module.scss';
 
 export default function Theme() {
 	const { theme, setTheme } = useTheme();
 	const { pathname, push } = useRouter();
+	const [targetReached] = useMediaQuery(`(min-width: 992px)`);
 
 	useEffect(() => {
 		const currentTheme = localStorage.getItem('thm') || 'blue';

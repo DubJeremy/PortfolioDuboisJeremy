@@ -4,10 +4,12 @@ import Image from 'next/image';
 import useMediaQuery from '@/tools/useMediaQuery';
 import useTranslation from '@/components/Translator/hooks';
 import Translator from '../Translator';
+import useTheme from '../Theme/hooks';
 
 import styles from './navbar.module.scss';
 
 const Navbar = () => {
+	const { c } = useTheme();
 	const [targetReached] = useMediaQuery(`(min-width: 992px)`);
 	const [isToggled, setToggle] = useState(false);
 	const [activeSection, setActiveSection] = useState('profil');
@@ -44,6 +46,12 @@ const Navbar = () => {
 	}, [isToggled]);
 
 	useEffect(() => {
+		if (targetReached) {
+			setToggle(false);
+		}
+	}, [targetReached]);
+
+	useEffect(() => {
 		const handleScroll = () => {
 			const sections = Array.from(
 				document.querySelectorAll('section')
@@ -69,6 +77,7 @@ const Navbar = () => {
 				}
 			});
 		};
+
 		window.addEventListener('scroll', handleScroll);
 		return () => {
 			window.removeEventListener('scroll', handleScroll);
@@ -77,9 +86,34 @@ const Navbar = () => {
 
 	return (
 		<>
-			<div className={`${styles.navbar} ${isToggled ? styles.navToggled : ''}`}>
-				<div className={styles.logo}>
-					<p className={scrollTarget ? styles.showLogo : ''}>
+			<div
+				className={`${styles.navbar} ${isToggled ? styles.navToggled : ''}`}
+				style={
+					targetReached
+						? { borderBottom: `4px solid ${c('MAIN')}` }
+						: { borderBottom: `2px solid ${c('MAIN')}` }
+				}
+			>
+				<div
+					className={styles.logo}
+					style={
+						targetReached
+							? { borderRight: `4px solid ${c('MAIN')}` }
+							: { borderRight: `2px solid ${c('MAIN')}` }
+					}
+				>
+					<p
+						className={scrollTarget ? styles.showLogo : ''}
+						style={
+							targetReached
+								? {
+										borderRight: `4px solid ${c('MAIN')}`,
+								  }
+								: {
+										borderRight: `2px solid ${c('MAIN')}`,
+								  }
+						}
+					>
 						<Image src={'/img/logo/logo.webp'} alt='logo D' fill />
 					</p>
 
@@ -93,9 +127,15 @@ const Navbar = () => {
 					</div>
 				</div>
 				{targetReached ? (
-					<div className={`${styles.nav}  cursorScale small`}>
+					<div
+						className={`${styles.nav}  cursorScale small`}
+						style={{ color: ` ${c('MAIN')}` }}
+					>
 						<ul>
-							<li className={activeSection === 'profil' ? styles.activeLi : ''}>
+							<li
+								className={activeSection === 'profil' ? styles.activeLi : ''}
+								style={{ borderRight: `4px solid ${c('MAIN')}` }}
+							>
 								<a
 									href='#profil'
 									className={activeSection === 'profil' ? styles.active : ''}
@@ -106,6 +146,7 @@ const Navbar = () => {
 							</li>
 							<li
 								className={activeSection === 'projects' ? styles.activeLi : ''}
+								style={{ borderRight: `4px solid ${c('MAIN')}` }}
 							>
 								<a
 									href='#projects'
@@ -140,14 +181,17 @@ const Navbar = () => {
 						<svg width='50' height='50' viewBox='0 0 100 100'>
 							<path
 								className={`${styles.line} ${styles.line1}`}
+								style={{ stroke: ` ${c('MAIN')}` }}
 								d='M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058'
 							/>
 							<path
 								className={`${styles.line} ${styles.line2}`}
+								style={{ stroke: ` ${c('MAIN')}` }}
 								d='M 20,50 H 80'
 							/>
 							<path
 								className={`${styles.line} ${styles.line3}`}
+								style={{ stroke: ` ${c('MAIN')}` }}
 								d='M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942'
 							/>
 						</svg>
@@ -160,8 +204,9 @@ const Navbar = () => {
 						? `${styles.expanded} ${styles['fade-out']}`
 						: `${styles.expanded} ${styles['slide-down']}`
 				}`}
+				style={{ borderBottom: ` 2px solid  ${c('MAIN')}` }}
 			>
-				<div className={styles.navContainer}>
+				<div className={styles.navContainer} style={{ color: ` ${c('MAIN')}` }}>
 					<ul>
 						<li>
 							<a
