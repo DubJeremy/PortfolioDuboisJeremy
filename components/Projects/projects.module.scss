@@ -592,7 +592,21 @@
 		}
 	}
 }
-@media screen and (min-width: $extra-large) and (orientation: landscape) {
+@media screen and (min-width: $extra-large) and (orientation: landscape) and (max-height: $medium) {
+	.projects {
+		.content {
+			.screensContainer {
+				.showProject {
+					> h4 {
+						font-size: 15vw;
+						line-height: 9vw;
+					}
+				}
+			}
+		}
+	}
+}
+@media screen and (min-width: $extra-large) and (orientation: landscape) and (min-height: $medium) {
 	.projects {
 		.title {
 			> h3 {

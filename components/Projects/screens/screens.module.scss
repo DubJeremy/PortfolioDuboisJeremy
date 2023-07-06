@@ -510,6 +510,7 @@
 @media screen and (min-width: $large) and (orientation: landscape) {
 	.screens {
 		.screen {
+			transition: all 0.8s ease-in-out;
 			&:hover {
 				// transform: scale(1.3);
 				z-index: 5;
@@ -520,14 +521,14 @@
 			height: 40%;
 			top: 30%;
 			left: calc(50% - 15vw);
-			transform: translate(-20vw, 0) rotate(-10deg);
+			transform: translate(-20vw, 0) rotate(-10deg) scale(1);
 		}
 		@keyframes kbdevHomeAnim {
 			0% {
-				transform: translate(-100vw, -40vh) rotate(0deg);
+				transform: translate(-100vw, -40vh) rotate(0deg) scale(0);
 			}
 			100% {
-				transform: translate(-20vw, 0) rotate(-10deg);
+				transform: translate(-20vw, 0) rotate(-10deg) scale(1);
 			}
 		}
 		.kbdevHomeMobile {
@@ -535,14 +536,14 @@
 			height: 45%;
 			top: 30%;
 			left: calc(50% - 4vw);
-			transform: translate(-2vw, 0%) rotate(7deg);
+			transform: translate(-2vw, 0%) rotate(7deg) scale(1);
 		}
 		@keyframes kbdevHomeMobileAnim {
 			0% {
-				transform: translate(60vw, -40vh) rotate(0deg);
+				transform: translate(60vw, -40vh) rotate(0deg) scale(0);
 			}
 			100% {
-				transform: translate(-2vw, 0%) rotate(7deg);
+				transform: translate(-2vw, 0%) rotate(7deg) scale(1);
 			}
 		}
 		.kbdevAulia {
@@ -550,14 +551,14 @@
 			height: 40%;
 			top: 30%;
 			left: calc(50% - 15vw);
-			transform: translate(20vw, 50%) rotate(12deg);
+			transform: translate(20vw, 50%) rotate(12deg) scale(1);
 		}
 		@keyframes kbdevAuliaAnim {
 			0% {
-				transform: translate(80vw, 0vh) rotate(0deg);
+				transform: translate(80vw, 0vh) rotate(0deg) scale(0);
 			}
 			100% {
-				transform: translate(20vw, 50%) rotate(12deg);
+				transform: translate(20vw, 50%) rotate(12deg) scale(1);
 			}
 		}
 		.kbdevAuliaMobile {
@@ -565,14 +566,14 @@
 			height: 45%;
 			top: 30%;
 			left: calc(50% - 4vw);
-			transform: translate(7vw, -5%) rotate(-5deg);
+			transform: translate(7vw, -5%) rotate(-5deg) scale(1);
 		}
 		@keyframes kbdevAuliaMobileAnim {
 			0% {
-				transform: translate(-80vw, 0vh) rotate(0deg);
+				transform: translate(-80vw, 0vh) rotate(0deg) scale(0);
 			}
 			100% {
-				transform: translate(7vw, -5%) rotate(-5deg);
+				transform: translate(7vw, -5%) rotate(-5deg) scale(1);
 			}
 		}
 		.kbdevDigitalSupport {
@@ -580,14 +581,14 @@
 			height: 40%;
 			top: 30%;
 			left: calc(50% - 15vw);
-			transform: translate(20vw, -50%) rotate(-10deg);
+			transform: translate(20vw, -50%) rotate(-10deg) scale(1);
 		}
 		@keyframes kbdevDigitalSupportAnim {
 			0% {
-				transform: translate(90vw, -40vh) rotate(0deg);
+				transform: translate(90vw, -40vh) rotate(0deg) scale(0);
 			}
 			100% {
-				transform: translate(20vw, -50%) rotate(-10deg);
+				transform: translate(20vw, -50%) rotate(-10deg) scale(1);
 			}
 		}
 		// -----------------
@@ -596,14 +597,14 @@
 			height: 45%;
 			top: 30%;
 			left: calc(50% - 4vw);
-			transform: translate(-30vw, 0%) rotate(7deg);
+			transform: translate(-30vw, 0%) rotate(7deg) scale(1);
 		}
 		@keyframes petshineCarouselAnim {
 			0% {
-				transform: translate(-100vw, -40vh) rotate(0deg);
+				transform: translate(-100vw, -40vh) rotate(0deg) scale(0);
 			}
 			100% {
-				transform: translate(-30vw, 0%) rotate(7deg);
+				transform: translate(-30vw, 0%) rotate(7deg) scale(1);
 			}
 		}
 		.petshineFav {
@@ -611,14 +612,14 @@
 			height: 40%;
 			top: 30%;
 			left: calc(50% - 15vw);
-			transform: translate(-15vw, -70%) rotate(-7deg);
+			transform: translate(-15vw, -70%) rotate(-7deg) scale(1);
 		}
 		@keyframes petshineFavAnim {
 			0% {
-				transform: translate(-80vw, -40vh) rotate(0deg);
+				transform: translate(-80vw, -40vh) rotate(0deg) scale(0);
 			}
 			100% {
-				transform: translate(-15vw, -70%) rotate(-7deg);
+				transform: translate(-15vw, -70%) rotate(-7deg) scale(1);
 			}
 		}
 		.petshineHome {
@@ -630,7 +631,7 @@
 		}
 		@keyframes petshineHomeAnim {
 			0% {
-				transform: translate(0vw, 80vh) rotate(0deg) scale(0);
+				transform: translate(0vw, 80vh) rotate(0deg) scale(0) scale(0);
 			}
 			100% {
 				transform: translate(0vw, 15%) rotate(7deg) scale(1);
@@ -641,14 +642,14 @@
 			height: 45%;
 			top: 30%;
 			left: calc(50% - 4vw);
-			transform: translate(18vw, -35%) rotate(-15deg);
+			transform: translate(18vw, -35%) rotate(-15deg) scale(1);
 		}
 		@keyframes petshineHomeMobileAnim {
 			0% {
-				transform: translate(80vw, 0vh) rotate(0deg);
+				transform: translate(80vw, 0vh) rotate(0deg) scale(0);
 			}
 			100% {
-				transform: translate(18vw, -35%) rotate(-15deg);
+				transform: translate(18vw, -35%) rotate(-15deg) scale(1);
 			}
 		}
 		.petshineWelness {
@@ -656,14 +657,14 @@
 			height: 40%;
 			top: 30%;
 			left: calc(50% - 15vw);
-			transform: translate(20vw, 50%) rotate(-15deg);
+			transform: translate(20vw, 50%) rotate(-15deg) scale(1);
 		}
 		@keyframes petshineWelnessAnim {
 			0% {
-				transform: translate(90vw, 40vh) rotate(0deg);
+				transform: translate(90vw, 40vh) rotate(0deg) scale(0);
 			}
 			100% {
-				transform: translate(20vw, 50%) rotate(-15deg);
+				transform: translate(20vw, 50%) rotate(-15deg) scale(1);
 			}
 		}
 		//--------------------------
@@ -672,14 +673,14 @@
 			height: 55%;
 			top: 27.5%;
 			left: calc(50% - 7.5vw);
-			transform: translate(-25vw, -60%) rotate(15deg);
+			transform: translate(-25vw, -60%) rotate(15deg) scale(1);
 		}
 		@keyframes tcgBackCardAnim {
 			0% {
-				transform: translate(-80vw, -40vh) rotate(0deg);
+				transform: translate(-80vw, -40vh) rotate(0deg) scale(0);
 			}
 			100% {
-				transform: translate(-25vw, -60%) rotate(15deg);
+				transform: translate(-25vw, -60%) rotate(15deg) scale(1);
 			}
 		}
 		.tcgCards {
@@ -687,14 +688,14 @@
 			height: 55%;
 			top: 30%;
 			left: calc(50% - 4vw);
-			transform: translate(-20vw, 0%) rotate(-10deg);
+			transform: translate(-20vw, 0%) rotate(-10deg) scale(1);
 		}
 		@keyframes tcgCardsAnim {
 			0% {
-				transform: translate(-100vw, 40vh) rotate(0deg);
+				transform: translate(-100vw, 40vh) rotate(0deg) scale(0);
 			}
 			100% {
-				transform: translate(-20vw, 0%) rotate(-10deg);
+				transform: translate(-20vw, 0%) rotate(-10deg) scale(1);
 			}
 		}
 		.tcgFilters {
@@ -721,7 +722,7 @@
 		}
 		@keyframes tcgProfilAnim {
 			0% {
-				transform: translate(0vw, -100vh) rotate(0deg) scale(0);
+				transform: translate(0vw, -100vh) rotate(0deg) scale(0) scale(0);
 			}
 			100% {
 				transform: translate(6vw, 10%) rotate(-5deg) scale(1);
@@ -732,31 +733,31 @@
 			height: 55%;
 			top: 30%;
 			left: calc(50% - 4vw);
-			transform: translate(20vw, -25%) rotate(15deg);
+			transform: translate(20vw, -25%) rotate(15deg) scale(1);
 		}
 		@keyframes tcgSeriesAnim {
 			0% {
-				transform: translate(90vw, 40vh) rotate(0deg);
+				transform: translate(90vw, 40vh) rotate(0deg) scale(0);
 			}
 			100% {
-				transform: translate(15vw, -25%) rotate(15deg);
+				transform: translate(20vw, -25%) rotate(15deg) scale(1);
 			}
 		}
 		//------------
 		.endAnimFi {
-			transform: translate(-100vw, -40vh) rotate(0deg);
+			transform: translate(-100vw, -40vh) rotate(0deg) scale(0);
 		}
 		.endAnimS {
-			transform: translate(60vw, -40vh) rotate(0deg);
+			transform: translate(60vw, -40vh) rotate(0deg) scale(0);
 		}
 		.endAnimT {
-			transform: translate(90vw, 0vh) rotate(0deg);
+			transform: translate(90vw, 0vh) rotate(0deg) scale(0);
 		}
 		.endAnimFo {
-			transform: translate(-80vw, 0vh) rotate(0deg);
+			transform: translate(-80vw, 0vh) rotate(0deg) scale(0);
 		}
 		.endAnimFif {
-			transform: translate(-90vw, 40vh) rotate(0deg);
+			transform: translate(-90vw, 40vh) rotate(0deg) scale(0);
 		}
 	}
 	@keyframes screensExitAnimation {

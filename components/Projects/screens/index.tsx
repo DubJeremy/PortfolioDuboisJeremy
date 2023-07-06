@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Image from 'next/image';
 
 import styles from './screens.module.scss';
@@ -6,15 +6,21 @@ import styles from './screens.module.scss';
 const Screens = ({
 	paths,
 	endAnimation,
+	id,
+	show,
 }: {
 	paths: string[];
 	endAnimation: boolean;
+	id?: number;
+	show?: boolean;
 }) => {
+	console.log(show);
+
 	return (
 		<div className={styles.screens}>
 			<div
 				className={`${styles.screen} ${styles[paths[0]]} ${
-					endAnimation ? styles.endAnimFi : ''
+					endAnimation && !show ? styles.endAnimFi : ''
 				}`}
 			>
 				<Image
@@ -25,7 +31,7 @@ const Screens = ({
 			</div>
 			<div
 				className={`${styles.screen} ${styles[paths[1]]} ${
-					endAnimation ? styles.endAnimS : ''
+					endAnimation && !show ? styles.endAnimS : ''
 				}`}
 			>
 				<Image
@@ -36,7 +42,7 @@ const Screens = ({
 			</div>
 			<div
 				className={`${styles.screen} ${styles[paths[2]]} ${
-					endAnimation ? styles.endAnimT : ''
+					endAnimation && !show ? styles.endAnimT : ''
 				}`}
 			>
 				<Image
@@ -47,7 +53,7 @@ const Screens = ({
 			</div>
 			<div
 				className={`${styles.screen} ${styles[paths[3]]} ${
-					endAnimation ? styles.endAnimFo : ''
+					endAnimation && !show ? styles.endAnimFo : ''
 				}`}
 			>
 				<Image
@@ -58,7 +64,7 @@ const Screens = ({
 			</div>
 			<div
 				className={`${styles.screen} ${styles[paths[4]]} ${
-					endAnimation ? styles.endAnimFif : ''
+					endAnimation && !show ? styles.endAnimFif : ''
 				}`}
 			>
 				<Image

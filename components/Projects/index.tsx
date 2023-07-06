@@ -22,7 +22,8 @@ const Projects = () => {
 	const [hoveredIndex, setHoveredIndex] = useState(-1);
 	const [projectId, setProjectId] = useState(1);
 	const project = contentProjects[projectId - 1];
-	const [endAnim, setEndAnim] = useState(false);
+	const [endAnim, setEndAnim] = useState(true);
+	const [screenAnim, setScreenAnim] = useState(true);
 
 	useEffect(() => {
 		heightFunction();
@@ -73,11 +74,17 @@ const Projects = () => {
 	};
 
 	const activAnim = () => {
-		setEndAnim(true);
-
 		setTimeout(() => {
 			setEndAnim(false);
-		}, 500);
+		}, 1000);
+	};
+
+	const showScreen = (id: number) => {
+		if (id === hoveredIndex) {
+			return true;
+		} else {
+			return false;
+		}
 	};
 
 	const ref = useRef<HTMLDivElement>(null);
@@ -171,40 +178,65 @@ const Projects = () => {
 								</div>
 							</div>
 							<div className={`${styles.screensContainer} cursorScale small`}>
-								{hoveredIndex && (
-									<>
-										<div
-											className={`${styles.showProject} ${
-												hoveredIndex === content.id ? styles.visible : ''
-											}`}
-											onMouseEnter={() => {
-												activAnim();
-											}}
-											onMouseLeave={() => setHoveredIndex(-1)}
-											style={{ backgroundColor: ` ${c('LIGHT')}` }}
-										>
-											<h4
-												className={
-													hoveredIndex === content.id ? styles.showTitle : ''
-												}
-											>
-												{content.title}
-											</h4>
-										</div>
-										<div
-											className={`${styles.screens} ${
-												hoveredIndex === content.id ? styles.screensVisible : ''
-											}`}
-											onMouseEnter={() => setHoveredIndex(content.id)}
-										>
-											<Screens paths={content.screens} endAnimation={endAnim} />
-										</div>
-									</>
-								)}
+								<div
+									className={`${styles.showProject} ${
+										hoveredIndex === content.id ? styles.visible : ''
+									}`}
+									// onMouseEnter={() => {
+									// 	activAnim();
+									// 	setEndAnim(true);
+									// }}
+									// onMouseLeave={() => {
+									// 	setEndAnim(true);
+									// 	setTimeout(() => {
+									// 		setHoveredIndex(-1);
+									// 	}, 500);
+									// }}
+									style={{ backgroundColor: ` ${c('LIGHT')}` }}
+								>
+									<h4
+										className={
+											hoveredIndex === content.id ? styles.showTitle : ''
+										}
+									>
+										{content.title}
+									</h4>
+								</div>
+								<div
+									className={`${styles.screens} ${
+										hoveredIndex === content.id ? styles.screensVisible : ''
+									}`}
+									// onMouseEnter={() => {
+									// 	setHoveredIndex(content.id);
+									// 	setEndAnim(false);
+									// }}
+									onMouseLeave={() => {
+										setEndAnim(true);
+										setTimeout(() => {
+											setHoveredIndex(-1);
+										}, 500);
+									}}
+								>
+									<Screens
+										paths={content.screens}
+										endAnimation={endAnim}
+										id={content.id}
+										show={showScreen(content.id)}
+									/>
+								</div>
+
 								<div
 									className={styles.project}
-									onMouseEnter={() => setHoveredIndex(content.id)}
-									onMouseLeave={() => setHoveredIndex(-1)}
+									onMouseEnter={() => {
+										setHoveredIndex(content.id);
+										activAnim();
+									}}
+									// onMouseLeave={() => {
+									// 	setEndAnim(true);
+									// 	setTimeout(() => {
+									// 		setHoveredIndex(-1);
+									// 	}, 500);
+									// }}
 									style={{ WebkitTextStroke: `0.01px ${c('MAIN')}` }}
 								>
 									<h4>{content.title}</h4>
