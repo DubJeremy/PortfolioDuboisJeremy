@@ -6,21 +6,15 @@ import styles from './screens.module.scss';
 const Screens = ({
 	paths,
 	endAnimation,
-	id,
-	show,
 }: {
 	paths: string[];
 	endAnimation: boolean;
-	id?: number;
-	show?: boolean;
 }) => {
-	console.log(show);
-
 	return (
 		<div className={styles.screens}>
 			<div
 				className={`${styles.screen} ${styles[paths[0]]} ${
-					endAnimation && !show ? styles.endAnimFi : ''
+					endAnimation ? styles.endAnimFi : ''
 				}`}
 			>
 				<Image
@@ -31,7 +25,7 @@ const Screens = ({
 			</div>
 			<div
 				className={`${styles.screen} ${styles[paths[1]]} ${
-					endAnimation && !show ? styles.endAnimS : ''
+					endAnimation ? styles.endAnimS : ''
 				}`}
 			>
 				<Image
@@ -42,7 +36,7 @@ const Screens = ({
 			</div>
 			<div
 				className={`${styles.screen} ${styles[paths[2]]} ${
-					endAnimation && !show ? styles.endAnimT : ''
+					endAnimation ? styles.endAnimT : ''
 				}`}
 			>
 				<Image
@@ -53,7 +47,7 @@ const Screens = ({
 			</div>
 			<div
 				className={`${styles.screen} ${styles[paths[3]]} ${
-					endAnimation && !show ? styles.endAnimFo : ''
+					endAnimation ? styles.endAnimFo : ''
 				}`}
 			>
 				<Image
@@ -64,7 +58,7 @@ const Screens = ({
 			</div>
 			<div
 				className={`${styles.screen} ${styles[paths[4]]} ${
-					endAnimation && !show ? styles.endAnimFif : ''
+					endAnimation ? styles.endAnimFif : ''
 				}`}
 			>
 				<Image

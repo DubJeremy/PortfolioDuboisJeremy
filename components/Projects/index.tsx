@@ -19,11 +19,13 @@ const Projects = () => {
 	const [targetReached] = useMediaQuery(`(min-width: 768px)`);
 	const [targetReachedL] = useMediaQuery(`(min-width: 992px)`);
 	const [isInLandscape, setIsInLandscape] = useState<boolean | null>(null);
-	const [hoveredIndex, setHoveredIndex] = useState(-1);
+	const [hoveredIndex, setHoveredIndex] = useState(1);
 	const [projectId, setProjectId] = useState(1);
 	const project = contentProjects[projectId - 1];
-	const [endAnim, setEndAnim] = useState(true);
+	const [endAnim, setEndAnim] = useState(false);
+	// const [endAnim, setEndAnim] = useState(true);
 	const [screenAnim, setScreenAnim] = useState(true);
+	console.log(hoveredIndex);
 
 	useEffect(() => {
 		heightFunction();
@@ -153,8 +155,94 @@ const Projects = () => {
 				</div>
 			</div>
 			{targetReachedL && isInLandscape ? (
-				<>
-					{contentProjects.map((content: ProjectTypes.Content) => (
+				<div className={styles.projectContainer}>
+					<div
+						className={styles.descContainer}
+						style={{ borderRight: `4px solid ${c('MAIN')}` }}
+					>
+						{contentProjects.map((content: ProjectTypes.Content) => (
+							<div
+								key={content.id}
+								className={styles.desc}
+								style={{ borderBottom: `4px solid ${c('MAIN')}` }}
+								onMouseEnter={() => {
+									setHoveredIndex(content.id);
+									console.log('content:', content.id);
+									// setEndAnim(false);
+								}}
+							>
+								<h4 className={styles.title} style={{ color: `${c('MAIN')}` }}>
+									{content.title}
+								</h4>
+								<div className={styles.text}></div>
+								{/* {content.done ? (
+									<div
+										className={styles.btns}
+										style={{ borderTop: `4px solid ${c('MAIN')}` }}
+									>
+										<a
+											href={content.link}
+											className={`${styles.viewProject}  cursorScale small`}
+											style={{ borderRight: `4px solid ${c('MAIN')}` }}
+										>
+											<p>{t('VIEW_PROJECT')}</p>
+											<div className={styles.arrowD}>
+												<Image src={'/img/icon/arrowD.webp'} alt='arrow' fill />
+											</div>
+										</a>
+										<div className={styles.pattern}>
+											<Image
+												src={'/img/patternStripedXL.webp'}
+												alt='pattern striped'
+												fill
+											/>
+										</div>
+									</div>
+								) : (
+									<div
+										className={styles.btns}
+										style={{
+											borderTop: `4px solid ${c('MAIN')}`,
+										}}
+									>
+										<div
+											className={styles.inDevelopment}
+											style={{
+												borderRight: `4px solid ${c('MAIN')}`,
+											}}
+										>
+											<p>{t('IN_DEVELOPMENT')}</p>
+											<div className={styles.loader}>
+												<Loader />
+											</div>
+										</div>
+										<div className={styles.pattern}>
+											<Image
+												src={'/img/patternStripedXL.webp'}
+												alt='pattern striped'
+												fill
+											/>
+										</div>
+									</div>
+								)} */}
+							</div>
+						))}
+					</div>
+					<div
+						className={styles.screensContainer}
+						style={{ borderBottom: `4px solid ${c('MAIN')}` }}
+					>
+						<div className={styles.screens}>
+							<Screens
+								paths={contentProjects[hoveredIndex - 1].screens}
+								endAnimation={endAnim}
+							/>
+							{/* <div className={styles.linesContainer}>
+								<Lines idName={'linesProjec'} />
+							</div> */}
+						</div>
+					</div>
+					{/* {contentProjects.map((content: ProjectTypes.Content) => (
 						<div
 							className={styles.content}
 							key={content.id}
@@ -245,59 +333,59 @@ const Projects = () => {
 									</div>
 								</div>
 							</div>
-							{content.done ? (
-								<div
-									className={styles.btns}
-									style={{ borderTop: `4px solid ${c('MAIN')}` }}
-								>
-									<a
-										href={content.link}
-										className={`${styles.viewProject}  cursorScale small`}
-										style={{ borderRight: `4px solid ${c('MAIN')}` }}
-									>
-										<p>{t('VIEW_PROJECT')}</p>
-										<div className={styles.arrowD}>
-											<Image src={'/img/icon/arrowD.webp'} alt='arrow' fill />
-										</div>
-									</a>
-									<div className={styles.pattern}>
-										<Image
-											src={'/img/patternStripedXL.webp'}
-											alt='pattern striped'
-											fill
-										/>
-									</div>
-								</div>
-							) : (
-								<div
-									className={styles.btns}
-									style={{
-										borderTop: `4px solid ${c('MAIN')}`,
-									}}
-								>
+								{content.done ? (
 									<div
-										className={styles.inDevelopment}
+										className={styles.btns}
+										style={{ borderTop: `4px solid ${c('MAIN')}` }}
+									>
+										<a
+											href={content.link}
+											className={`${styles.viewProject}  cursorScale small`}
+											style={{ borderRight: `4px solid ${c('MAIN')}` }}
+										>
+											<p>{t('VIEW_PROJECT')}</p>
+											<div className={styles.arrowD}>
+												<Image src={'/img/icon/arrowD.webp'} alt='arrow' fill />
+											</div>
+										</a>
+										<div className={styles.pattern}>
+											<Image
+												src={'/img/patternStripedXL.webp'}
+												alt='pattern striped'
+												fill
+											/>
+										</div>
+									</div>
+								) : (
+									<div
+										className={styles.btns}
 										style={{
-											borderRight: `4px solid ${c('MAIN')}`,
+											borderTop: `4px solid ${c('MAIN')}`,
 										}}
 									>
-										<p>{t('IN_DEVELOPMENT')}</p>
-										<div className={styles.loader}>
-											<Loader />
+										<div
+											className={styles.inDevelopment}
+											style={{
+												borderRight: `4px solid ${c('MAIN')}`,
+											}}
+										>
+											<p>{t('IN_DEVELOPMENT')}</p>
+											<div className={styles.loader}>
+												<Loader />
+											</div>
+										</div>
+										<div className={styles.pattern}>
+											<Image
+												src={'/img/patternStripedXL.webp'}
+												alt='pattern striped'
+												fill
+											/>
 										</div>
 									</div>
-									<div className={styles.pattern}>
-										<Image
-											src={'/img/patternStripedXL.webp'}
-											alt='pattern striped'
-											fill
-										/>
-									</div>
-								</div>
-							)}
+								)}
 						</div>
-					))}
-				</>
+					))} */}
+				</div>
 			) : (
 				<>
 					<div className={styles.screensContainer}>
