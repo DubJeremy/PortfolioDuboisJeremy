@@ -8,9 +8,4 @@ declare namespace ProjectTypes {
 		techs: string[];
 		screens: string[];
 	}
-	// interface ... {
-	// 	id: number;
-	// 	...: ...;
-	// 	...: ...;
-	// }
 }

@@ -4,7 +4,6 @@ export const blue: { [key: string]: string } = {
 };
 
 export const green: { [key: string]: string } = {
-	// MAIN: '#00a24e',
 	MAIN: '#317874',
 	LIGHT: '#a6f6d3',
 };

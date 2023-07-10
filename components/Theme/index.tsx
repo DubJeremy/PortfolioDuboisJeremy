@@ -63,9 +63,7 @@ export default function Theme() {
 			}
 		}
 
-		const options = {
-			// theme: targetTheme,
-		};
+		const options = {};
 		push(pathname, pathname, options);
 	}
 

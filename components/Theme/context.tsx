@@ -1,8 +1,5 @@
 import React, { Dispatch, SetStateAction, useEffect, useState } from 'react';
 
-import ThemePortal from '../../tools/themePortal';
-// import ThemeContext from '../../tools/themeContext';
-
 interface ThemeContextInterface {
 	theme: string;
 	setTheme: Dispatch<SetStateAction<string>>;
