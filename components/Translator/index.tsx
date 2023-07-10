@@ -41,7 +41,6 @@ export default function Translator() {
 		}
 		setLocale(targetLocale);
 
-		console.log(localStorage);
 		const options = {
 			locale: targetLocale,
 		};

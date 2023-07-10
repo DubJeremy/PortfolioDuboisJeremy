@@ -24,9 +24,6 @@ const Projects = () => {
 	const project = contentProjects[projectId - 1];
 	const [endAnim, setEndAnim] = useState(false);
 	const [screenAnim, setScreenAnim] = useState(true);
-	console.log(hoveredIndex);
-
-	console.log('hoveredIndex:', hoveredIndex, 'endAnim:', endAnim);
 
 	useEffect(() => {
 		heightFunction();
