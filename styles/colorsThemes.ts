@@ -4,7 +4,8 @@ export const blue: { [key: string]: string } = {
 };
 
 export const green: { [key: string]: string } = {
-	MAIN: '#00a24e',
+	// MAIN: '#00a24e',
+	MAIN: '#317874',
 	LIGHT: '#a6f6d3',
 };
 
@@ -19,8 +20,8 @@ export const purple: { [key: string]: string } = {
 };
 
 export const pink: { [key: string]: string } = {
-	MAIN: '#ff1e75',
-	LIGHT: '#ff9cc8',
+	MAIN: ' #FC766A',
+	LIGHT: '#ffc1bc',
 };
 
 export const white: { [key: string]: string } = {

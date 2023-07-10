@@ -23,9 +23,10 @@ const Projects = () => {
 	const [projectId, setProjectId] = useState(1);
 	const project = contentProjects[projectId - 1];
 	const [endAnim, setEndAnim] = useState(false);
-	// const [endAnim, setEndAnim] = useState(true);
 	const [screenAnim, setScreenAnim] = useState(true);
 	console.log(hoveredIndex);
+
+	console.log('hoveredIndex:', hoveredIndex, 'endAnim:', endAnim);
 
 	useEffect(() => {
 		heightFunction();
@@ -166,9 +167,13 @@ const Projects = () => {
 								className={styles.desc}
 								style={{ borderBottom: `4px solid ${c('MAIN')}` }}
 								onMouseEnter={() => {
-									setHoveredIndex(content.id);
-									console.log('content:', content.id);
-									// setEndAnim(false);
+									if (hoveredIndex !== content.id) {
+										setEndAnim(true);
+										setTimeout(() => {
+											setHoveredIndex(content.id);
+											setEndAnim(false);
+										}, 1000);
+									}
 								}}
 							>
 								<h4 className={styles.title} style={{ color: `${c('MAIN')}` }}>
