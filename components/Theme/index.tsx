@@ -1,15 +1,14 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useRouter } from 'next/router';
 
 import useTheme from './hooks';
-import useMediaQuery from '@/tools/useMediaQuery';
 
 import styles from './theme.module.scss';
 
 export default function Theme() {
 	const { theme, setTheme } = useTheme();
 	const { pathname, push } = useRouter();
-	const [targetReached] = useMediaQuery(`(min-width: 992px)`);
+	const scrollPosition = useRef(0);
 
 	useEffect(() => {
 		const currentTheme = localStorage.getItem('thm') || 'blue';
@@ -18,9 +17,13 @@ export default function Theme() {
 		const options = {
 			locale: currentTheme,
 		};
-		push(pathname, pathname, options);
+		push({ pathname, query: options });
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
+
+	useEffect(() => {
+		window.scrollTo(0, scrollPosition.current);
+	}, [theme]);
 
 	function handleLocaleChange(
 		targetTheme: string,
@@ -32,9 +35,6 @@ export default function Theme() {
 		}
 
 		localStorage.setItem('thm', targetTheme);
-		if (setTheme === undefined) {
-			return;
-		}
 
 		switch (targetTheme) {
 			case 'blue': {
@@ -63,8 +63,11 @@ export default function Theme() {
 			}
 		}
 
-		const options = {};
-		push(pathname, pathname, options);
+		const options = {
+			locale: targetTheme,
+		};
+		push({ pathname, query: options });
+		scrollPosition.current = window.scrollY;
 	}
 
 	return (
