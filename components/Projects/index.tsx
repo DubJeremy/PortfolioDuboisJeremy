@@ -23,7 +23,6 @@ const Projects = () => {
 	const [projectId, setProjectId] = useState(1);
 	const project = contentProjects[projectId - 1];
 	const [endAnim, setEndAnim] = useState(false);
-	const [screenAnim, setScreenAnim] = useState(true);
 
 	useEffect(() => {
 		heightFunction();
@@ -71,20 +70,6 @@ const Projects = () => {
 			setEndAnim(false);
 			nextProject();
 		}, 500);
-	};
-
-	const activAnim = () => {
-		setTimeout(() => {
-			setEndAnim(false);
-		}, 1000);
-	};
-
-	const showScreen = (id: number) => {
-		if (id === hoveredIndex) {
-			return true;
-		} else {
-			return false;
-		}
 	};
 
 	const ref = useRef<HTMLDivElement>(null);
@@ -161,7 +146,9 @@ const Projects = () => {
 						{contentProjects.map((content: ProjectTypes.Content) => (
 							<div
 								key={content.id}
-								className={styles.desc}
+								className={`${styles.desc} ${
+									hoveredIndex === content.id ? styles.selected : ''
+								}`}
 								style={{ borderBottom: `4px solid ${c('MAIN')}` }}
 								onMouseEnter={() => {
 									if (hoveredIndex !== content.id) {
@@ -169,14 +156,17 @@ const Projects = () => {
 										setTimeout(() => {
 											setHoveredIndex(content.id);
 											setEndAnim(false);
-										}, 1000);
+										}, 500);
 									}
 								}}
 							>
 								<h4 className={styles.title} style={{ color: `${c('MAIN')}` }}>
 									{content.title}
 								</h4>
-								<div className={styles.text}></div>
+								{hoveredIndex === content.id ? (
+									<div className={styles.text}>{t(`${content.desc}`)}</div>
+								) : null}
+
 								{/* {content.done ? (
 									<div
 										className={styles.btns}
@@ -239,9 +229,9 @@ const Projects = () => {
 								paths={contentProjects[hoveredIndex - 1].screens}
 								endAnimation={endAnim}
 							/>
-							{/* <div className={styles.linesContainer}>
-								<Lines idName={'linesProjec'} />
-							</div> */}
+							<div className={styles.linesContainer}>
+								<Lines idName={'linesProject'} />
+							</div>
 						</div>
 					</div>
 					{/* {contentProjects.map((content: ProjectTypes.Content) => (

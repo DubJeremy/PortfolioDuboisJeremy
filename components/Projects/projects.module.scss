@@ -415,18 +415,28 @@
 					box-sizing: border-box;
 					flex: 1;
 					width: 100%;
-					@include flex($align: flex-start);
+					@include flex($align: flex-start, $just: flex-start);
 					padding: 15px;
 					.title {
 						width: auto;
 						text-align: left;
 						font-family: 'Flaviotte';
-						font-size: 2.5em;
+						font-size: 1.5em;
 						font-weight: 100;
 						transition: all 0.5s ease-in-out;
 					}
 					.text {
-						height: 0px;
+						transition: all 0.5s ease-in-out;
+						// height: 0px;
+					}
+				}
+				.selected {
+					flex: 4;
+					.title {
+						font-size: 2.4em;
+						color: transparent;
+						white-space: nowrap;
+						--webkit-text-stroke: 4px black;
 					}
 				}
 			}
@@ -440,14 +450,14 @@
 					width: 100%;
 					height: 100%;
 				}
-				// .linesContainer {
-				// 	width: 25%;
-				// 	height: 100%;
-				// 	position: absolute;
-				// 	top: 0;
-				// 	right: 0;
-				// 	z-index: -1;
-				// }
+				.linesContainer {
+					width: 25%;
+					height: 100%;
+					position: absolute;
+					top: 0;
+					right: 0;
+					z-index: -1;
+				}
 			}
 		}
 		// .content {
@@ -669,7 +679,7 @@
 		.content {
 			.descProject {
 				> p {
-					font-size: 1.3em;
+					font-size: 1.4em;
 				}
 			}
 		}

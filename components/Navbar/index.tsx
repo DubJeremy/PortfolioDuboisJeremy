@@ -8,14 +8,52 @@ import useTheme from '../Theme/hooks';
 
 import styles from './navbar.module.scss';
 import Theme from '../Theme';
+import { ThemeContext } from '../Theme/context';
 
 const Navbar = () => {
-	const { c } = useTheme();
+	const { c, theme } = useTheme();
 	const [targetReached] = useMediaQuery(`(min-width: 992px)`);
 	const [isToggled, setToggle] = useState(false);
 	const [activeSection, setActiveSection] = useState('profil');
 	const { t } = useTranslation();
 	const [scrollTarget, setScrollTaget] = useState(false);
+
+	const [imgTheme, setImgTheme] = useState('');
+	const [transition, setTransition] = useState(false);
+
+	useEffect(() => {
+		setTransition(true);
+
+		setTimeout(() => {
+			switch (theme) {
+				case 'blue': {
+					setImgTheme('');
+					break;
+				}
+				case 'green': {
+					setImgTheme('G');
+					break;
+				}
+				case 'yellow': {
+					setImgTheme('Y');
+					break;
+				}
+				case 'purple': {
+					setImgTheme('Pu');
+					break;
+				}
+				case 'pink': {
+					setImgTheme('Pi');
+					break;
+				}
+				case 'white': {
+					setImgTheme('W');
+					break;
+				}
+			}
+			setTransition(false);
+		}, 500);
+	}, [theme]);
 
 	const toggleMenu = () => {
 		setToggle(!isToggled);
@@ -104,7 +142,9 @@ const Navbar = () => {
 					}
 				>
 					<p
-						className={scrollTarget ? styles.showLogo : ''}
+						className={`${scrollTarget ? styles.showLogo : ''} ${
+							transition ? styles.transition : ''
+						}`}
 						style={
 							targetReached
 								? {
@@ -115,12 +155,16 @@ const Navbar = () => {
 								  }
 						}
 					>
-						<Image src={'/img/logo/logo.webp'} alt='logo D' fill />
+						<Image src={`/img/logo/logo${imgTheme}.webp`} alt='logo D' fill />
 					</p>
 
-					<div className={styles.logoStriped}>
+					<div
+						className={`${styles.logoStriped} ${
+							transition ? styles.transition : ''
+						}`}
+					>
 						<Image
-							src={'/img/logoStriped.webp'}
+							src={`/img/logoStriped${imgTheme}.webp`}
 							alt='stripes'
 							fill
 							className={styles.imgLogoStriped}
