@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import useTranslation from '@/components/Translator/hooks';
 
@@ -10,7 +10,7 @@ import useTheme from '../Theme/hooks';
 import styles from './contact.module.scss';
 
 const Contact = () => {
-	const { c } = useTheme();
+	const { c, theme } = useTheme();
 	const { t } = useTranslation();
 	const [targetReached] = useMediaQuery(`(min-width: 768px)`);
 	const [showConfirmModal, setShowConfirmModal] = useState(false);
@@ -67,6 +67,42 @@ const Contact = () => {
 		});
 	}
 
+	const [imgTheme, setImgTheme] = useState('');
+	const [transition, setTransition] = useState(false);
+
+	useEffect(() => {
+		setTransition(true);
+		setTimeout(() => {
+			switch (theme) {
+				case 'blue': {
+					setImgTheme('');
+					break;
+				}
+				case 'green': {
+					setImgTheme('G');
+					break;
+				}
+				case 'yellow': {
+					setImgTheme('Y');
+					break;
+				}
+				case 'purple': {
+					setImgTheme('Pu');
+					break;
+				}
+				case 'pink': {
+					setImgTheme('Pi');
+					break;
+				}
+				case 'white': {
+					setImgTheme('W');
+					break;
+				}
+			}
+			setTransition(false);
+		}, 500);
+	}, [theme]);
+
 	return (
 		<section
 			className={styles.contact}
@@ -87,7 +123,9 @@ const Contact = () => {
 			>
 				<h3>Contact</h3>
 				<div
-					className={styles.patternContainer}
+					className={`${styles.patternContainer} ${
+						transition ? styles.transition : ''
+					}`}
 					style={
 						targetReached
 							? { borderLeft: `4px solid ${c('MAIN')}` }
@@ -97,8 +135,8 @@ const Contact = () => {
 					<Image
 						src={
 							targetReached
-								? '/img/patternShurikenXL.webp'
-								: '/img/patternShurikenS.webp'
+								? `/img/patternShurikenXL${imgTheme}.webp`
+								: `/img/patternShurikenS${imgTheme}.webp`
 						}
 						alt='pattern'
 						fill

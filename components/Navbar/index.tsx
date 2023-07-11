@@ -5,10 +5,9 @@ import useMediaQuery from '@/tools/useMediaQuery';
 import useTranslation from '@/components/Translator/hooks';
 import Translator from '../Translator';
 import useTheme from '../Theme/hooks';
+import Theme from '../Theme';
 
 import styles from './navbar.module.scss';
-import Theme from '../Theme';
-import { ThemeContext } from '../Theme/context';
 
 const Navbar = () => {
 	const { c, theme } = useTheme();
@@ -23,7 +22,6 @@ const Navbar = () => {
 
 	useEffect(() => {
 		setTransition(true);
-
 		setTimeout(() => {
 			switch (theme) {
 				case 'blue': {

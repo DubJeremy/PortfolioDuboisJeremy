@@ -25,6 +25,11 @@
 			transition: all 0.5s ease-in-out;
 			width: calc(60% - 2px);
 			height: 100%;
+			transition: all 0.5s ease-in-out;
+			opacity: 1;
+		}
+		.transition {
+			opacity: 0;
 		}
 	}
 	.inputs {

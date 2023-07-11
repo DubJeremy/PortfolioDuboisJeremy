@@ -12,11 +12,47 @@ import useTheme from '../Theme/hooks';
 import styles from './profil.module.scss';
 
 const Profil = () => {
-	const { c } = useTheme();
+	const { c, theme } = useTheme();
 	const { t } = useTranslation();
 	const [targetReached] = useMediaQuery(`(min-width: 768px)`);
 	const [targetReachedL] = useMediaQuery(`(min-width: 992px)`);
 	const [isInLandscape, setIsInLandscape] = useState<boolean | null>(null);
+
+	const [imgTheme, setImgTheme] = useState('');
+	const [transition, setTransition] = useState(false);
+
+	useEffect(() => {
+		setTransition(true);
+		setTimeout(() => {
+			switch (theme) {
+				case 'blue': {
+					setImgTheme('');
+					break;
+				}
+				case 'green': {
+					setImgTheme('G');
+					break;
+				}
+				case 'yellow': {
+					setImgTheme('Y');
+					break;
+				}
+				case 'purple': {
+					setImgTheme('Pu');
+					break;
+				}
+				case 'pink': {
+					setImgTheme('Pi');
+					break;
+				}
+				case 'white': {
+					setImgTheme('W');
+					break;
+				}
+			}
+			setTransition(false);
+		}, 500);
+	}, [theme]);
 
 	useEffect(() => {
 		heightFunction();
@@ -99,8 +135,16 @@ const Profil = () => {
 				<h4>Portfolio | {t('WEB_DEV')}</h4>
 				<div className={styles.profilContact}>
 					<div className={styles.location}>
-						<div className={styles.imgLogoLocation}>
-							<Image src={'/img/icon/location.webp'} alt='logo location' fill />{' '}
+						<div
+							className={`${styles.imgLogoLocation} ${
+								transition ? styles.transition : ''
+							}`}
+						>
+							<Image
+								src={`/img/icon/location${imgTheme}.webp`}
+								alt='logo location'
+								fill
+							/>{' '}
 						</div>
 						<p>Bordeaux, France</p>
 					</div>
@@ -126,16 +170,22 @@ const Profil = () => {
 						<a
 							href='https://www.linkedin.com/in/jeremy-dubois-dev
 							'
-							className={styles.logoLinkedin}
+							className={`${styles.logoLinkedin} ${
+								transition ? styles.transition : ''
+							}`}
 						>
-							<Image src={'/img/logo/linkedin.webp'} alt='logo Linkedin' fill />
+							<Image
+								src={`/img/logo/linkedin${imgTheme}.webp`}
+								alt='logo Linkedin'
+								fill
+							/>
 						</a>
 					</div>
 				</div>
 				<Circle />
 			</div>
 			<div
-				className={styles.stripes}
+				className={`${styles.stripes} ${transition ? styles.transition : ''}`}
 				style={
 					targetReached && !isInLandscape
 						? { borderBottom: `4px solid ${c('MAIN')}` }
@@ -147,8 +197,8 @@ const Profil = () => {
 				<Image
 					src={
 						targetReached
-							? '/img/patternStripedS.webp'
-							: '/img/patternStripedXL.webp'
+							? `/img/patternStripedS${imgTheme}.webp`
+							: `/img/patternStripedXL${imgTheme}.webp`
 					}
 					alt='patterne striped'
 					fill

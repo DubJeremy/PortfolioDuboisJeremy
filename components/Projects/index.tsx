@@ -14,7 +14,7 @@ import useTheme from '../Theme/hooks';
 import styles from './projects.module.scss';
 
 const Projects = () => {
-	const { c } = useTheme();
+	const { c, theme } = useTheme();
 	const { t } = useTranslation();
 	const [targetReached] = useMediaQuery(`(min-width: 768px)`);
 	const [targetReachedL] = useMediaQuery(`(min-width: 992px)`);
@@ -38,6 +38,42 @@ const Projects = () => {
 			}
 		}
 	};
+
+	const [imgTheme, setImgTheme] = useState('');
+	const [transition, setTransition] = useState(false);
+
+	useEffect(() => {
+		setTransition(true);
+		setTimeout(() => {
+			switch (theme) {
+				case 'blue': {
+					setImgTheme('');
+					break;
+				}
+				case 'green': {
+					setImgTheme('G');
+					break;
+				}
+				case 'yellow': {
+					setImgTheme('Y');
+					break;
+				}
+				case 'purple': {
+					setImgTheme('Pu');
+					break;
+				}
+				case 'pink': {
+					setImgTheme('Pi');
+					break;
+				}
+				case 'white': {
+					setImgTheme('W');
+					break;
+				}
+			}
+			setTransition(false);
+		}, 500);
+	}, [theme]);
 
 	const nextProject = () => {
 		switch (projectId) {
@@ -119,7 +155,9 @@ const Projects = () => {
 			>
 				<h3>{t('PROJECT')}</h3>
 				<div
-					className={styles.patternContainer}
+					className={`${styles.patternContainer} ${
+						transition ? styles.transition : ''
+					}`}
 					style={
 						targetReached
 							? { borderLeft: `4px solid ${c('MAIN')}` }
@@ -129,8 +167,8 @@ const Projects = () => {
 					<Image
 						src={
 							targetReached
-								? '/img/patternShurikenXL.webp'
-								: '/img/patternShurikenS.webp'
+								? `/img/patternShurikenXL${imgTheme}.webp`
+								: `/img/patternShurikenS${imgTheme}.webp`
 						}
 						alt='pattern'
 						fill
@@ -427,12 +465,22 @@ const Projects = () => {
 					>
 						<a href={project.link} className={styles.viewProject}>
 							<p>{t('VIEW_PROJECT')}</p>
-							<div className={styles.arrowD}>
-								<Image src={'/img/icon/arrowD.webp'} alt='arrow' fill />
+							<div
+								className={`${styles.arrowD} ${
+									transition ? styles.transition : ''
+								}`}
+							>
+								<Image
+									src={`/img/icon/arrowD${imgTheme}.webp`}
+									alt='arrow'
+									fill
+								/>
 							</div>
 						</a>
 						<div
-							className={styles.logoStriped}
+							className={`${styles.logoStriped} ${
+								transition ? styles.transition : ''
+							}`}
 							style={
 								targetReachedL
 									? {
@@ -448,8 +496,8 @@ const Projects = () => {
 							<Image
 								src={
 									targetReached
-										? '/img/patternStripedS.webp'
-										: '/img/patternStripedXL.webp'
+										? `/img/patternStripedS${imgTheme}.webp`
+										: `/img/patternStripedXL${imgTheme}.webp`
 								}
 								alt='pattern striped'
 								fill
@@ -471,8 +519,16 @@ const Projects = () => {
 							}
 						>
 							<p>{t('NEXT')}</p>
-							<div className={styles.arrowH}>
-								<Image src={'/img/icon/arrow.webp'} alt='arrow' fill />
+							<div
+								className={`${styles.arrowH} ${
+									transition ? styles.transition : ''
+								}`}
+							>
+								<Image
+									src={`/img/icon/arrow${imgTheme}.webp`}
+									alt='arrow'
+									fill
+								/>
 							</div>
 						</div>
 					</div>
