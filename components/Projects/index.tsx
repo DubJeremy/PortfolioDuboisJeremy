@@ -316,6 +316,16 @@ const Projects = () => {
 							<div className={styles.linesContainer}>
 								<Lines idName={'linesProject'} />
 							</div>
+							<div
+								className={`${styles.showProject} ${
+									endAnim ? styles.visible : ''
+								}`}
+								style={{ backgroundColor: ` ${c('LIGHT')}` }}
+							>
+								<h4 className={endAnim ? styles.showTitle : ''}>
+									{contentProjects[hoveredIndex - 1].title}
+								</h4>
+							</div>
 						</div>
 					</div>
 					{/* {contentProjects.map((content: ProjectTypes.Content) => (
