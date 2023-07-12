@@ -301,57 +301,6 @@ const Projects = () => {
 										</div>
 									)}
 								</div>
-
-								{/* {content.done ? (
-									<div
-										className={styles.btns}
-										style={{ borderTop: `4px solid ${c('MAIN')}` }}
-									>
-										<a
-											href={content.link}
-											className={`${styles.viewProject}  cursorScale small`}
-											style={{ borderRight: `4px solid ${c('MAIN')}` }}
-										>
-											<p>{t('VIEW_PROJECT')}</p>
-											<div className={styles.arrowD}>
-												<Image src={'/img/icon/arrowD.webp'} alt='arrow' fill />
-											</div>
-										</a>
-										<div className={styles.pattern}>
-											<Image
-												src={'/img/patternStripedXL.webp'}
-												alt='pattern striped'
-												fill
-											/>
-										</div>
-									</div>
-								) : (
-									<div
-										className={styles.btns}
-										style={{
-											borderTop: `4px solid ${c('MAIN')}`,
-										}}
-									>
-										<div
-											className={styles.inDevelopment}
-											style={{
-												borderRight: `4px solid ${c('MAIN')}`,
-											}}
-										>
-											<p>{t('IN_DEVELOPMENT')}</p>
-											<div className={styles.loader}>
-												<Loader />
-											</div>
-										</div>
-										<div className={styles.pattern}>
-											<Image
-												src={'/img/patternStripedXL.webp'}
-												alt='pattern striped'
-												fill
-											/>
-										</div>
-									</div>
-								)} */}
 							</div>
 						))}
 					</div>

@@ -787,47 +787,72 @@
 }
 @media screen and (min-width: $ultra-large) {
 	.projects {
-		.content {
-			grid-template-columns: 20% 80%;
-			grid-template-rows: 45vh 60px;
-			.descProject {
-				.techs {
-					.logoTech {
-						height: calc(10vw / 5);
+		.projectContainer {
+			.descContainer {
+				.desc {
+					.content {
+						.techs {
+							width: 50%;
+							.logoTech {
+								width: 15%;
+							}
+						}
+						.btns {
+							.viewProject {
+								width: 35%;
+							}
+							.inDevelopment {
+								width: 35%;
+							}
+							.pattern {
+								width: 65%;
+							}
+						}
 					}
-				}
-				&:before {
-					height: 45vh;
-					width: calc(20% - 4px);
-				}
-				&:after {
-					height: 45vh;
-					width: calc(20% - 4px);
-				}
-			}
-			.screensContainer {
-				.showProject {
-					> h4 {
-						font-size: 12vw;
-						line-height: 7.5vw;
-						transform: translateX(110%);
-					}
-				}
-			}
-			.btns {
-				.viewProject {
-					width: 20%;
-				}
-				.inDevelopment {
-					width: 20%;
-					.loader {
-						width: 15%;
-					}
-				}
-				.pattern {
-					width: 80%;
 				}
 			}
 		}
+		// .content {
+		// 	grid-template-columns: 20% 80%;
+		// 	grid-template-rows: 45vh 60px;
+		// 	.descProject {
+		// 		.techs {
+		// 			.logoTech {
+		// 				height: calc(10vw / 5);
+		// 			}
+		// 		}
+		// 		&:before {
+		// 			height: 45vh;
+		// 			width: calc(20% - 4px);
+		// 		}
+		// 		&:after {
+		// 			height: 45vh;
+		// 			width: calc(20% - 4px);
+		// 		}
+		// 	}
+		// 	.screensContainer {
+		// 		.showProject {
+		// 			> h4 {
+		// 				font-size: 12vw;
+		// 				line-height: 7.5vw;
+		// 				transform: translateX(110%);
+		// 			}
+		// 		}
+		// 	}
+		// 	.btns {
+		// 		.viewProject {
+		// 			width: 20%;
+		// 		}
+		// 		.inDevelopment {
+		// 			width: 20%;
+		// 			.loader {
+		// 				width: 15%;
+		// 			}
+		// 		}
+		// 		.pattern {
+		// 			width: 80%;
+		// 		}
+		// 	}
+		// }
 	}
 }

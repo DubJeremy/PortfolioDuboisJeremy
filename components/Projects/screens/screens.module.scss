@@ -517,13 +517,13 @@
 			transition: all 0.8s ease-in-out;
 		}
 		.kbdevHome {
-			width: 30vw;
+			width: 35vw;
 			height: 40%;
 			top: 30%;
 			left: calc(50% - 15vw);
-			transform: translate(-20vw, 0) rotate(-10deg) scale(1);
+			transform: translate(-24vw, 0) rotate(-10deg) scale(1);
 			&:hover {
-				transform: translate(-20vw, 0) scale(1.4);
+				transform: translate(-24vw, 0) scale(1.4);
 			}
 		}
 		@keyframes kbdevHomeAnim {
@@ -531,11 +531,11 @@
 				transform: translate(-100vw, -40vh) rotate(0deg) scale(0);
 			}
 			100% {
-				transform: translate(-20vw, 0) rotate(-10deg) scale(1);
+				transform: translate(-24vw, 0) rotate(-10deg) scale(1);
 			}
 		}
 		.kbdevHomeMobile {
-			width: 8vw;
+			width: 10vw;
 			height: 45%;
 			top: 30%;
 			left: calc(50% - 4vw);
@@ -553,7 +553,7 @@
 			}
 		}
 		.kbdevAulia {
-			width: 25vw;
+			width: 35vw;
 			height: 40%;
 			top: 30%;
 			left: calc(50% - 15vw);
@@ -571,7 +571,7 @@
 			}
 		}
 		.kbdevAuliaMobile {
-			width: 8vw;
+			width: 10vw;
 			height: 45%;
 			top: 30%;
 			left: calc(50% - 4vw);
@@ -589,13 +589,13 @@
 			}
 		}
 		.kbdevDigitalSupport {
-			width: 30vw;
+			width: 35vw;
 			height: 40%;
 			top: 30%;
 			left: calc(50% - 15vw);
-			transform: translate(20vw, -50%) rotate(-10deg) scale(1);
+			transform: translate(15vw, -50%) rotate(-10deg) scale(1);
 			&:hover {
-				transform: translate(20vw, -50%) scale(1.4);
+				transform: translate(15vw, -50%) scale(1.4);
 			}
 		}
 		@keyframes kbdevDigitalSupportAnim {
@@ -603,12 +603,12 @@
 				transform: translate(90vw, -40vh) rotate(0deg) scale(0);
 			}
 			100% {
-				transform: translate(20vw, -50%) rotate(-10deg) scale(1);
+				transform: translate(15vw, -50%) rotate(-10deg) scale(1);
 			}
 		}
 		// -----------------
 		.petshineCarousel {
-			width: 8vw;
+			width: 10vw;
 			height: 45%;
 			top: 30%;
 			left: calc(50% - 4vw);
@@ -626,7 +626,7 @@
 			}
 		}
 		.petshineFav {
-			width: 30vw;
+			width: 35vw;
 			height: 40%;
 			top: 30%;
 			left: calc(50% - 15vw);
@@ -644,7 +644,7 @@
 			}
 		}
 		.petshineHome {
-			width: 30vw;
+			width: 35vw;
 			height: 40%;
 			top: 30%;
 			left: calc(50% - 15vw);
@@ -662,7 +662,7 @@
 			}
 		}
 		.petshineHomeMobile {
-			width: 8vw;
+			width: 10vw;
 			height: 45%;
 			top: 30%;
 			left: calc(50% - 4vw);
@@ -680,7 +680,7 @@
 			}
 		}
 		.petshineWelness {
-			width: 30vw;
+			width: 35vw;
 			height: 40%;
 			top: 30%;
 			left: calc(50% - 15vw);
@@ -699,7 +699,7 @@
 		}
 		//--------------------------
 		.tcgBackCard {
-			width: 15vw;
+			width: 18vw;
 			height: 55%;
 			top: 27.5%;
 			left: calc(50% - 7.5vw);
@@ -718,7 +718,7 @@
 			}
 		}
 		.tcgCards {
-			width: 11vw;
+			width: 15vw;
 			height: 55%;
 			top: 30%;
 			left: calc(50% - 4vw);
@@ -736,7 +736,7 @@
 			}
 		}
 		.tcgFilters {
-			width: 11vw;
+			width: 15vw;
 			height: 55%;
 			top: 30%;
 			left: calc(50% - 4vw);
@@ -754,7 +754,7 @@
 			}
 		}
 		.tcgProfil {
-			width: 11vw;
+			width: 15vw;
 			height: 55%;
 			top: 30%;
 			left: calc(50% - 4vw);
@@ -772,7 +772,7 @@
 			}
 		}
 		.tcgSeries {
-			width: 11vw;
+			width: 15vw;
 			height: 55%;
 			top: 30%;
 			left: calc(50% - 4vw);
@@ -833,6 +833,167 @@
 	}
 }
 @media screen and (min-width: $extra-large) and (orientation: landscape) {
+	.screens {
+		.kbdevHome {
+			width: 30vw;
+			transform: translate(-20vw, 0) rotate(-10deg) scale(1);
+			&:hover {
+				transform: translate(-20vw, 0) scale(1.4);
+			}
+		}
+		@keyframes kbdevHomeAnim {
+			0% {
+				transform: translate(-100vw, -40vh) rotate(0deg) scale(0);
+			}
+			100% {
+				transform: translate(-20vw, 0) rotate(-10deg) scale(1);
+			}
+		}
+		.kbdevHomeMobile {
+			width: 9vw;
+		}
+		.kbdevAulia {
+			width: 28vw;
+		}
+		.kbdevAuliaMobile {
+			width: 9vw;
+		}
+		.kbdevDigitalSupport {
+			width: 30vw;
+		}
+		// -----------------
+		.petshineCarousel {
+			width: 9vw;
+		}
+		.petshineFav {
+			width: 30vw;
+		}
+		.petshineHome {
+			width: 30vw;
+		}
+		.petshineHomeMobile {
+			width: 9vw;
+		}
+		.petshineWelness {
+			width: 30vw;
+		}
+		//--------------------------
+		.tcgBackCard {
+			width: 17vw;
+		}
+		.tcgCards {
+			width: 13vw;
+		}
+		.tcgFilters {
+			width: 13vw;
+		}
+		.tcgProfil {
+			width: 13vw;
+		}
+		.tcgSeries {
+			width: 13vw;
+		}
+		//------------
+		.endAnimFi {
+			transform: translate(-100vw, -40vh) rotate(0deg) scale(0);
+			&:hover {
+				transform: translate(-100vw, -40vh) rotate(0deg) scale(0);
+			}
+		}
+		.endAnimS {
+			transform: translate(60vw, -40vh) rotate(0deg) scale(0);
+			&:hover {
+				transform: translate(60vw, -40vh) rotate(0deg) scale(0);
+			}
+		}
+		.endAnimT {
+			transform: translate(90vw, 0vh) rotate(0deg) scale(0);
+			&:hover {
+				transform: translate(90vw, 0vh) rotate(0deg) scale(0);
+			}
+		}
+		.endAnimFo {
+			transform: translate(-80vw, 0vh) rotate(0deg) scale(0);
+			&:hover {
+				transform: translate(-80vw, 0vh) rotate(0deg) scale(0);
+			}
+		}
+		.endAnimFif {
+			transform: translate(-90vw, 40vh) rotate(0deg) scale(0);
+			&:hover {
+				transform: translate(-90vw, 40vh) rotate(0deg) scale(0);
+			}
+		}
+	}
+	@keyframes screensExitAnimation {
+		0% {
+			opacity: 1;
+			transform: translateY(0);
+		}
+		100% {
+			opacity: 0;
+			transform: translateY(-100vw);
+		}
+	}
 }
 @media screen and (min-width: $ultra-large) {
+	.screens {
+		//--------------------------
+		.tcgBackCard {
+			width: 16vw;
+		}
+		.tcgCards {
+			width: 12vw;
+		}
+		.tcgFilters {
+			width: 12vw;
+		}
+		.tcgProfil {
+			width: 12vw;
+		}
+		.tcgSeries {
+			width: 12vw;
+		}
+		//------------
+		.endAnimFi {
+			transform: translate(-100vw, -40vh) rotate(0deg) scale(0);
+			&:hover {
+				transform: translate(-100vw, -40vh) rotate(0deg) scale(0);
+			}
+		}
+		.endAnimS {
+			transform: translate(60vw, -40vh) rotate(0deg) scale(0);
+			&:hover {
+				transform: translate(60vw, -40vh) rotate(0deg) scale(0);
+			}
+		}
+		.endAnimT {
+			transform: translate(90vw, 0vh) rotate(0deg) scale(0);
+			&:hover {
+				transform: translate(90vw, 0vh) rotate(0deg) scale(0);
+			}
+		}
+		.endAnimFo {
+			transform: translate(-80vw, 0vh) rotate(0deg) scale(0);
+			&:hover {
+				transform: translate(-80vw, 0vh) rotate(0deg) scale(0);
+			}
+		}
+		.endAnimFif {
+			transform: translate(-90vw, 40vh) rotate(0deg) scale(0);
+			&:hover {
+				transform: translate(-90vw, 40vh) rotate(0deg) scale(0);
+			}
+		}
+	}
+	@keyframes screensExitAnimation {
+		0% {
+			opacity: 1;
+			transform: translateY(0);
+		}
+		100% {
+			opacity: 0;
+			transform: translateY(-100vw);
+		}
+	}
 }

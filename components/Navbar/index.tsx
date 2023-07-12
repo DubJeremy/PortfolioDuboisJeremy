@@ -264,7 +264,7 @@ const Navbar = () => {
 				}`}
 				style={{ borderBottom: ` 2px solid  ${c('MAIN')}` }}
 			>
-				<div className={styles.navContainer}>
+				<div className={styles.navContainer} style={{ color: ` ${c('MAIN')}` }}>
 					<ul>
 						<li>
 							<a
