@@ -790,9 +790,17 @@
 		.projectContainer {
 			.descContainer {
 				.desc {
+					@include flex($align: flex-start);
+					.title {
+						padding: 25px;
+					}
 					.content {
+						.text {
+							padding: 0 50px 10px 25px;
+						}
 						.techs {
 							width: 50%;
+							margin: 0 25px 20px 25px;
 							.logoTech {
 								width: 15%;
 							}
@@ -809,6 +817,10 @@
 							}
 						}
 					}
+				}
+				.selected {
+					@include flex($just: flex-end, $align: flex-start);
+					min-height: 50%;
 				}
 			}
 		}
