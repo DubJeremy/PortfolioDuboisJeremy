@@ -172,7 +172,7 @@ const Navbar = () => {
 				{targetReached ? (
 					<div
 						className={`${styles.nav}  cursorScale small`}
-						style={{ color: ` ${c('MAIN')}` }}
+						// style={{ color: ` ${c('MAIN')}` }}
 					>
 						<ul>
 							<li
@@ -183,6 +183,11 @@ const Navbar = () => {
 									href='#profil'
 									className={activeSection === 'profil' ? styles.active : ''}
 									onClick={(e) => handleClick(e, 'profil')}
+									style={
+										activeSection === 'profil'
+											? { color: ` ${c('MAIN')}` }
+											: { color: '#5b5b5b' }
+									}
 								>
 									Profil
 								</a>
@@ -195,6 +200,11 @@ const Navbar = () => {
 									href='#projects'
 									className={activeSection === 'projects' ? styles.active : ''}
 									onClick={(e) => handleClick(e, 'projects')}
+									style={
+										activeSection === 'projects'
+											? { color: ` ${c('MAIN')}` }
+											: { color: '#5b5b5b' }
+									}
 								>
 									{t('PROJECT')}
 								</a>
@@ -206,6 +216,11 @@ const Navbar = () => {
 									href='#contact'
 									className={activeSection === 'contact' ? styles.active : ''}
 									onClick={(e) => handleClick(e, 'contact')}
+									style={
+										activeSection === 'contact'
+											? { color: ` ${c('MAIN')}` }
+											: { color: '#5b5b5b' }
+									}
 								>
 									Contact
 								</a>
@@ -249,7 +264,7 @@ const Navbar = () => {
 				}`}
 				style={{ borderBottom: ` 2px solid  ${c('MAIN')}` }}
 			>
-				<div className={styles.navContainer} style={{ color: ` ${c('MAIN')}` }}>
+				<div className={styles.navContainer}>
 					<ul>
 						<li>
 							<a

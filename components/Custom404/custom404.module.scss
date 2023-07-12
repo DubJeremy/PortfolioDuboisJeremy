@@ -14,6 +14,7 @@
 		z-index: 5;
 		overflow: hidden;
 		.error {
+			color: $black;
 			transform: translateX(100%);
 			z-index: 3;
 			height: 70%;
@@ -39,7 +40,7 @@
 			z-index: 5;
 			border-radius: 10px;
 			height: 100%;
-			background-color: black;
+			background-color: $black;
 			transform: translateY(50vh);
 			animation: splitterAnim 0.3s ease-out 0.2s forwards;
 		}

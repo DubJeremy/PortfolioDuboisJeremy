@@ -20,6 +20,7 @@ const Projects = () => {
 	const [targetReachedL] = useMediaQuery(`(min-width: 992px)`);
 	const [isInLandscape, setIsInLandscape] = useState<boolean | null>(null);
 	const [hoveredIndex, setHoveredIndex] = useState(1);
+	const [descHoveredIndex, setDescHoveredIndex] = useState(1);
 	const [projectId, setProjectId] = useState(1);
 	const project = contentProjects[projectId - 1];
 	const [endAnim, setEndAnim] = useState(false);
@@ -185,12 +186,15 @@ const Projects = () => {
 							<div
 								key={content.id}
 								className={`${styles.desc} ${
-									hoveredIndex === content.id ? styles.selected : ''
+									hoveredIndex === content.id
+										? styles.selected
+										: styles.notSelected
 								}`}
 								style={{ borderBottom: `4px solid ${c('MAIN')}` }}
 								onMouseEnter={() => {
 									if (hoveredIndex !== content.id) {
 										setEndAnim(true);
+										setDescHoveredIndex(content.id);
 										setTimeout(() => {
 											setHoveredIndex(content.id);
 											setEndAnim(false);
@@ -198,12 +202,105 @@ const Projects = () => {
 									}
 								}}
 							>
-								<h4 className={styles.title} style={{ color: `${c('MAIN')}` }}>
+								<h4
+									className={styles.title}
+									style={
+										hoveredIndex === content.id
+											? {
+													color: `transparent`,
+													WebkitTextStroke: `0.85px ${c('MAIN')}`,
+											  }
+											: {
+													color: `${c('MAIN')}`,
+											  }
+									}
+								>
 									{content.title}
 								</h4>
-								{hoveredIndex === content.id ? (
+								<div
+									className={`${styles.content} ${
+										hoveredIndex === content.id ? styles.show : ''
+									}`}
+								>
 									<div className={styles.text}>{t(`${content.desc}`)}</div>
-								) : null}
+									<div className={styles.techs}>
+										{content.techs.map((tech, index) => (
+											<div key={index} className={styles.logoTech}>
+												<Image
+													src={`/img/logo/${tech}.webp`}
+													alt={`${tech} logo`}
+													fill
+												/>
+											</div>
+										))}
+									</div>
+									{content.done ? (
+										<div
+											className={styles.btns}
+											style={{ borderTop: `2px solid ${c('MAIN')}` }}
+										>
+											<a
+												href={content.link}
+												className={`${styles.viewProject}  cursorScale small`}
+												style={{ borderRight: `2px solid ${c('MAIN')}` }}
+											>
+												<p>{t('VIEW_PROJECT')}</p>
+												<div
+													className={`${styles.arrowD}  ${
+														transition ? styles.transition : ''
+													}`}
+												>
+													<Image
+														src={`/img/icon/arrowD${imgTheme}.webp`}
+														alt='arrow'
+														fill
+													/>
+												</div>
+											</a>
+											<div
+												className={`${styles.pattern} ${
+													transition ? styles.transition : ''
+												}`}
+											>
+												<Image
+													src={`/img/patternStripedS${imgTheme}.webp`}
+													alt='pattern striped'
+													fill
+												/>
+											</div>
+										</div>
+									) : (
+										<div
+											className={styles.btns}
+											style={{
+												borderTop: `2px solid ${c('MAIN')}`,
+											}}
+										>
+											<div
+												className={styles.inDevelopment}
+												style={{
+													borderRight: `2px solid ${c('MAIN')}`,
+												}}
+											>
+												<p>{t('IN_DEVELOPMENT')}</p>
+												<div className={styles.loader}>
+													<Loader />
+												</div>
+											</div>
+											<div
+												className={`${styles.pattern} ${
+													transition ? styles.transition : ''
+												}`}
+											>
+												<Image
+													src={`/img/patternStripedS${imgTheme}.webp`}
+													alt='pattern striped'
+													fill
+												/>
+											</div>
+										</div>
+									)}
+								</div>
 
 								{/* {content.done ? (
 									<div

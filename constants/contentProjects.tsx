@@ -43,6 +43,7 @@ export const contentProjects: ProjectTypes.Content[] = [
 		title: 'TCG-Collect',
 		desc: 'TCG',
 		techs: [
+			'docker',
 			'typeOrm',
 			'postgreSql',
 			'express',
