@@ -20,10 +20,11 @@ const Projects = () => {
 	const [targetReachedL] = useMediaQuery(`(min-width: 992px)`);
 	const [isInLandscape, setIsInLandscape] = useState<boolean | null>(null);
 	const [hoveredIndex, setHoveredIndex] = useState(1);
-	const [descHoveredIndex, setDescHoveredIndex] = useState(1);
+	const [hoveredTitleIndex, setHoveredTitleIndex] = useState(1);
 	const [projectId, setProjectId] = useState(1);
 	const project = contentProjects[projectId - 1];
 	const [endAnim, setEndAnim] = useState(false);
+	const [show, setShow] = useState(true);
 
 	useEffect(() => {
 		heightFunction();
@@ -194,30 +195,34 @@ const Projects = () => {
 								onMouseEnter={() => {
 									if (hoveredIndex !== content.id) {
 										setEndAnim(true);
-										setDescHoveredIndex(content.id);
+										setShow(false);
+										setHoveredTitleIndex(content.id);
 										setTimeout(() => {
 											setHoveredIndex(content.id);
 											setEndAnim(false);
-										}, 500);
+											setShow(true);
+										}, 1500);
 									}
 								}}
 							>
 								<h4
 									className={styles.title}
 									style={
-										hoveredIndex === content.id
+										hoveredTitleIndex === content.id
 											? {
-													color: `transparent`,
+													color: `${c('MAIN')}`,
 													WebkitTextStroke: `0.85px ${c('MAIN')}`,
+													fontSize: '3.5vw',
 											  }
 											: {
-													color: `${c('MAIN')}`,
+													color: `transparent`,
+													WebkitTextStroke: `0.85px ${c('MAIN')}`,
 											  }
 									}
 								>
 									{content.title}
 								</h4>
-								<div
+								{/* <div
 									className={`${styles.content} ${
 										hoveredIndex === content.id ? styles.show : ''
 									}`}
@@ -300,7 +305,7 @@ const Projects = () => {
 											</div>
 										</div>
 									)}
-								</div>
+								</div> */}
 							</div>
 						))}
 					</div>
@@ -318,11 +323,11 @@ const Projects = () => {
 							</div>
 							<div
 								className={`${styles.showProject} ${
-									endAnim ? styles.visible : ''
+									show ? styles.visible : ''
 								}`}
 								style={{ backgroundColor: ` ${c('LIGHT')}` }}
 							>
-								<h4 className={endAnim ? styles.showTitle : ''}>
+								<h4 className={show ? styles.showTitle : ''}>
 									{contentProjects[hoveredIndex - 1].title}
 								</h4>
 							</div>

@@ -202,7 +202,7 @@
 		> div {
 			font-family: 'Flaviotte';
 			font-size: 190px;
-			line-height: 175px;
+			// line-height: 175px;
 			color: transparent;
 			transition: all 0.5s ease-in-out;
 			white-space: nowrap;
@@ -419,7 +419,7 @@
 			}
 		}
 		.projectContainer {
-			height: calc(100vh - 100px);
+			height: calc(100vh - 220px);
 			width: 100%;
 			@include flex($dir: row, $wrap: nowrap);
 			.descContainer {
@@ -427,18 +427,20 @@
 				height: 100%;
 				transition: all 0.5s ease-in-out;
 				@include flex($wrap: nowrap);
+				background: url(/img/background.webp) 0 0;
 				.desc {
 					transition: all 0.5s ease-in-out;
 					box-sizing: border-box;
 					width: 100%;
 					flex: 1;
 					@include flex($align: flex-start);
+					cursor: pointer;
 					.title {
 						padding: 15px;
 						width: auto;
 						text-align: left;
 						font-family: 'Flaviotte';
-						font-size: 1.5em;
+						font-size: 2.5vw;
 						font-weight: 100;
 						transition: all 0.5s ease-in-out;
 					}
@@ -524,13 +526,21 @@
 						}
 					}
 					.show {
-						height: fit-content;
+						// height: fit-content;
 					}
 				}
 				.selected {
-					flex: none;
 					.title {
-						font-size: 2.4em;
+						animation: titleAnimation 0.5s ease-in-out;
+						animation: forwards;
+					}
+				}
+				@keyframes titleAnim {
+					0% {
+						scale: 0;
+					}
+					100% {
+						scale: 1;
 					}
 				}
 				.notSelected {
@@ -542,18 +552,47 @@
 				width: 70%;
 				height: 100%;
 				box-sizing: border-box;
-				position: relative;
 				.screens {
+					position: relative;
 					width: 100%;
 					height: 100%;
-				}
-				.linesContainer {
-					width: 25%;
-					height: 100%;
-					position: absolute;
-					top: 0;
-					right: 0;
-					z-index: -1;
+					.linesContainer {
+						width: 25%;
+						height: 100%;
+						position: absolute;
+						top: 0;
+						right: 0;
+						z-index: -1;
+					}
+					.showProject {
+						height: 100%;
+						width: 100%;
+						@include flex($align: flex-start, $just: flex-end);
+						position: absolute;
+						top: 0;
+						z-index: -1;
+						transform: translateX(-100%);
+						// overflow: hidden;
+						transition: all 1.5s ease-in-out;
+						opacity: 0.5;
+						> h4 {
+							min-width: 100%;
+							font-family: 'Flaviotte';
+							font-size: 15vw;
+							// line-height: 19vw;
+							color: transparent;
+							-webkit-text-stroke: 0.01px white;
+							white-space: nowrap;
+							transition: all 1.5s ease-in-out;
+							transform: translateX(100%);
+						}
+						.showTitle {
+							transform: translateX(0);
+						}
+					}
+					.visible {
+						transform: translateX(0);
+					}
 				}
 			}
 		}
@@ -638,7 +677,7 @@
 		// 				min-width: 100%;
 		// 				font-family: 'Flaviotte';
 		// 				font-size: 20vw;
-		// 				line-height: 12vw;
+		line-height: 12vw;
 		// 				color: transparent;
 		// 				-webkit-text-stroke: 0.01px white;
 		// 				white-space: nowrap;
@@ -758,7 +797,7 @@
 				.showProject {
 					> h4 {
 						font-size: 15vw;
-						line-height: 9vw;
+						// line-height: 9vw;
 					}
 				}
 			}
@@ -790,7 +829,7 @@
 		.projectContainer {
 			.descContainer {
 				.desc {
-					@include flex($align: flex-start);
+					// @include flex($align: flex-start);
 					.title {
 						padding: 25px;
 					}
@@ -818,9 +857,21 @@
 						}
 					}
 				}
-				.selected {
-					@include flex($just: flex-end, $align: flex-start);
-					min-height: 50%;
+				// .selected {
+				// 	@include flex($just: flex-end, $align: flex-start);
+				// 	min-height: 50%;
+				// }
+			}
+			.screensContainer {
+				.screens {
+					.showProject {
+						@include flex;
+						> h4 {
+							background-color: red;
+							font-size: 15vw;
+							// line-height: 1.2em;
+						}
+					}
 				}
 			}
 		}
@@ -846,7 +897,7 @@
 		// 		.showProject {
 		// 			> h4 {
 		// 				font-size: 12vw;
-		// 				line-height: 7.5vw;
+		line-height: 7.5vw;
 		// 				transform: translateX(110%);
 		// 			}
 		// 		}
