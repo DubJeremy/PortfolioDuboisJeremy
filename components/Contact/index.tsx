@@ -109,7 +109,7 @@ const Contact = () => {
 			id='contact'
 			style={
 				targetReached
-					? { borderBottom: `4px solid ${c('MAIN')}`, color: `${c('MAIN')}` }
+					? { borderBottom: `3px solid ${c('MAIN')}`, color: `${c('MAIN')}` }
 					: { borderBottom: `2px solid ${c('MAIN')}`, color: `${c('MAIN')}` }
 			}
 		>
@@ -117,7 +117,7 @@ const Contact = () => {
 				className={styles.title}
 				style={
 					targetReached
-						? { borderBottom: `4px solid ${c('MAIN')}` }
+						? { borderBottom: `3px solid ${c('MAIN')}` }
 						: { borderBottom: `2px solid ${c('MAIN')}` }
 				}
 			>
@@ -128,7 +128,7 @@ const Contact = () => {
 					}`}
 					style={
 						targetReached
-							? { borderLeft: `4px solid ${c('MAIN')}` }
+							? { borderLeft: `3px solid ${c('MAIN')}` }
 							: { borderLeft: `2px solid ${c('MAIN')}` }
 					}
 				>

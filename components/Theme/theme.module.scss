@@ -50,7 +50,7 @@
 @media screen and (min-width: $large) {
 	.themes {
 		position: fixed;
-		left: 6px;
+		left: 6.5px;
 		bottom: 29px;
 		z-index: 1005;
 		width: 15px;
@@ -87,10 +87,4 @@
 			opacity: 1;
 		}
 	}
-}
-@media screen and (min-width: $large) and (orientation: landscape) {
-}
-@media screen and (min-width: $extra-large) and (orientation: landscape) {
-}
-@media screen and (min-width: $ultra-large) {
 }

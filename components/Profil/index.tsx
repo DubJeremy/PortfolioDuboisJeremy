@@ -76,8 +76,8 @@ const Profil = () => {
 			style={
 				targetReached
 					? {
-							borderTop: `4px solid ${c('MAIN')}`,
-							borderBottom: `4px solid ${c('MAIN')}`,
+							borderTop: `3px solid ${c('MAIN')}`,
+							borderBottom: `3px solid ${c('MAIN')}`,
 					  }
 					: { borderTop: `2px solid ${c('MAIN')}` }
 			}
@@ -86,7 +86,7 @@ const Profil = () => {
 				className={styles.desc}
 				style={
 					targetReached
-						? { borderBottom: `4px solid ${c('MAIN')}` }
+						? { borderBottom: `3px solid ${c('MAIN')}` }
 						: { borderBottom: `2px solid ${c('MAIN')}` }
 				}
 			>
@@ -122,12 +122,12 @@ const Profil = () => {
 				style={
 					targetReached && isInLandscape
 						? {
-								borderBottom: `4px solid ${c('MAIN')}`,
+								borderBottom: `3px solid ${c('MAIN')}`,
 								color: `${c('MAIN')}`,
-								borderRight: `4px solid ${c('MAIN')}`,
+								borderRight: `3px solid ${c('MAIN')}`,
 						  }
 						: targetReached && !isInLandscape
-						? { borderBottom: `4px solid ${c('MAIN')}`, color: `${c('MAIN')}` }
+						? { borderBottom: `3px solid ${c('MAIN')}`, color: `${c('MAIN')}` }
 						: { borderBottom: `2px solid ${c('MAIN')}`, color: `${c('MAIN')}` }
 				}
 			>
@@ -188,9 +188,9 @@ const Profil = () => {
 				className={`${styles.stripes} ${transition ? styles.transition : ''}`}
 				style={
 					targetReached && !isInLandscape
-						? { borderBottom: `4px solid ${c('MAIN')}` }
+						? { borderBottom: `3px solid ${c('MAIN')}` }
 						: targetReached && isInLandscape
-						? { borderRight: `4px solid  ${c('MAIN')}` }
+						? { borderRight: `3px solid  ${c('MAIN')}` }
 						: { borderBottom: `2px solid ${c('MAIN')}` }
 				}
 			>

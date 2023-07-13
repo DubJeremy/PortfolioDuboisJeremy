@@ -53,7 +53,7 @@ const Footer = () => {
 				className={styles.scrollText}
 				style={
 					targetReached
-						? { borderBottom: `4px solid ${c('MAIN')}` }
+						? { borderBottom: `3px solid ${c('MAIN')}` }
 						: { borderBottom: `2px solid ${c('MAIN')}` }
 				}
 			>

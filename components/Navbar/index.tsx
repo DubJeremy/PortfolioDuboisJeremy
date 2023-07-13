@@ -127,7 +127,7 @@ const Navbar = () => {
 				className={`${styles.navbar} ${isToggled ? styles.navToggled : ''}`}
 				style={
 					targetReached
-						? { borderBottom: `4px solid ${c('MAIN')}` }
+						? { borderBottom: `3px solid ${c('MAIN')}` }
 						: { borderBottom: `2px solid ${c('MAIN')}` }
 				}
 			>
@@ -135,7 +135,7 @@ const Navbar = () => {
 					className={styles.logo}
 					style={
 						targetReached
-							? { borderRight: `4px solid ${c('MAIN')}` }
+							? { borderRight: `3px solid ${c('MAIN')}` }
 							: { borderRight: `2px solid ${c('MAIN')}` }
 					}
 				>
@@ -146,7 +146,7 @@ const Navbar = () => {
 						style={
 							targetReached
 								? {
-										borderRight: `4px solid ${c('MAIN')}`,
+										borderRight: `3px solid ${c('MAIN')}`,
 								  }
 								: {
 										borderRight: `2px solid ${c('MAIN')}`,
@@ -177,7 +177,7 @@ const Navbar = () => {
 						<ul>
 							<li
 								className={activeSection === 'profil' ? styles.activeLi : ''}
-								style={{ borderRight: `4px solid ${c('MAIN')}` }}
+								style={{ borderRight: `3px solid ${c('MAIN')}` }}
 							>
 								<a
 									href='#profil'
@@ -194,7 +194,7 @@ const Navbar = () => {
 							</li>
 							<li
 								className={activeSection === 'projects' ? styles.activeLi : ''}
-								style={{ borderRight: `4px solid ${c('MAIN')}` }}
+								style={{ borderRight: `3px solid ${c('MAIN')}` }}
 							>
 								<a
 									href='#projects'

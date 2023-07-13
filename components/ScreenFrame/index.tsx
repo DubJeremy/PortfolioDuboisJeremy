@@ -15,7 +15,7 @@ const ScreenFrame = () => {
 				className={`${styles.top} ${styles.sideFrame} `}
 				style={
 					targetReached
-						? { borderBottom: `4px solid ${c('MAIN')}` }
+						? { borderBottom: `3px solid ${c('MAIN')}` }
 						: { borderBottom: `2px solid ${c('MAIN')}` }
 				}
 			/>
@@ -24,7 +24,7 @@ const ScreenFrame = () => {
 				className={`${styles.right} ${styles.sideFrame}`}
 				style={
 					targetReached
-						? { borderLeft: `4px solid ${c('MAIN')}` }
+						? { borderLeft: `3px solid ${c('MAIN')}` }
 						: { borderLeft: `2px solid ${c('MAIN')}` }
 				}
 			/>
@@ -32,7 +32,7 @@ const ScreenFrame = () => {
 				className={`${styles.bottom} ${styles.sideFrame}`}
 				style={
 					targetReached
-						? { borderTop: `4px solid ${c('MAIN')}` }
+						? { borderTop: `3px solid ${c('MAIN')}` }
 						: { borderTop: `2px solid ${c('MAIN')}` }
 				}
 			/>
@@ -41,7 +41,7 @@ const ScreenFrame = () => {
 				className={`${styles.left} ${styles.sideFrame}`}
 				style={
 					targetReached
-						? { borderRight: `4px solid ${c('MAIN')}` }
+						? { borderRight: `3px solid ${c('MAIN')}` }
 						: { borderRight: `2px solid ${c('MAIN')}` }
 				}
 			/>

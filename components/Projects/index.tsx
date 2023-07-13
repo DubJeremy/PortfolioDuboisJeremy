@@ -150,7 +150,7 @@ const Projects = () => {
 				className={styles.title}
 				style={
 					targetReached
-						? { borderBottom: `4px solid ${c('MAIN')}` }
+						? { borderBottom: `3px solid ${c('MAIN')}` }
 						: { borderBottom: `2px solid ${c('MAIN')}` }
 				}
 			>
@@ -161,7 +161,7 @@ const Projects = () => {
 					}`}
 					style={
 						targetReached
-							? { borderLeft: `4px solid ${c('MAIN')}` }
+							? { borderLeft: `3px solid ${c('MAIN')}` }
 							: { borderLeft: `2px solid ${c('MAIN')}` }
 					}
 				>
@@ -180,7 +180,7 @@ const Projects = () => {
 				<div className={styles.projectContainer}>
 					<div
 						className={styles.descContainer}
-						style={{ borderRight: `4px solid ${c('MAIN')}` }}
+						style={{ borderRight: `3px solid ${c('MAIN')}` }}
 					>
 						{contentProjects.map((content: ProjectTypes.Content) => (
 							<div
@@ -190,7 +190,7 @@ const Projects = () => {
 										? styles.selected
 										: styles.notSelected
 								}`}
-								style={{ borderBottom: `4px solid ${c('MAIN')}` }}
+								style={{ borderBottom: `3px solid ${c('MAIN')}` }}
 								onMouseEnter={() => {
 									if (hoveredIndex !== content.id) {
 										setEndAnim(true);
@@ -306,7 +306,7 @@ const Projects = () => {
 					</div>
 					<div
 						className={styles.screensContainer}
-						style={{ borderBottom: `4px solid ${c('MAIN')}` }}
+						style={{ borderBottom: `3px solid ${c('MAIN')}` }}
 					>
 						<div className={styles.screens}>
 							<Screens
@@ -332,11 +332,11 @@ const Projects = () => {
 						<div
 							className={styles.content}
 							key={content.id}
-							style={{ borderBottom: `4px solid ${c('MAIN')}` }}
+							style={{ borderBottom: `3px solid ${c('MAIN')}` }}
 						>
 							<div
 								className={styles.descProject}
-								style={{ borderRight: `4px solid ${c('MAIN')}` }}
+								style={{ borderRight: `3px solid ${c('MAIN')}` }}
 							>
 								<p>{t(`${content.desc}`)}</p>
 								<div className={styles.techs}>
@@ -422,12 +422,12 @@ const Projects = () => {
 								{content.done ? (
 									<div
 										className={styles.btns}
-										style={{ borderTop: `4px solid ${c('MAIN')}` }}
+										style={{ borderTop: `3px solid ${c('MAIN')}` }}
 									>
 										<a
 											href={content.link}
 											className={`${styles.viewProject}  cursorScale small`}
-											style={{ borderRight: `4px solid ${c('MAIN')}` }}
+											style={{ borderRight: `3px solid ${c('MAIN')}` }}
 										>
 											<p>{t('VIEW_PROJECT')}</p>
 											<div className={styles.arrowD}>
@@ -446,13 +446,13 @@ const Projects = () => {
 									<div
 										className={styles.btns}
 										style={{
-											borderTop: `4px solid ${c('MAIN')}`,
+											borderTop: `3px solid ${c('MAIN')}`,
 										}}
 									>
 										<div
 											className={styles.inDevelopment}
 											style={{
-												borderRight: `4px solid ${c('MAIN')}`,
+												borderRight: `3px solid ${c('MAIN')}`,
 											}}
 										>
 											<p>{t('IN_DEVELOPMENT')}</p>
@@ -481,7 +481,7 @@ const Projects = () => {
 						className={styles.descProject}
 						style={
 							targetReachedL
-								? { borderBottom: `4px solid ${c('MAIN')}` }
+								? { borderBottom: `3px solid ${c('MAIN')}` }
 								: { borderBottom: `2px solid ${c('MAIN')}` }
 						}
 					>
@@ -515,7 +515,7 @@ const Projects = () => {
 						className={styles.btns}
 						style={
 							targetReachedL
-								? { borderBottom: `4px solid ${c('MAIN')}` }
+								? { borderBottom: `3px solid ${c('MAIN')}` }
 								: { borderBottom: `2px solid ${c('MAIN')}` }
 						}
 					>
@@ -540,8 +540,8 @@ const Projects = () => {
 							style={
 								targetReachedL
 									? {
-											borderBottom: `4px solid ${c('MAIN')}`,
-											borderLeft: `4px solid ${c('MAIN')}`,
+											borderBottom: `3px solid ${c('MAIN')}`,
+											borderLeft: `3px solid ${c('MAIN')}`,
 									  }
 									: {
 											borderBottom: `2px solid ${c('MAIN')}`,
@@ -565,8 +565,8 @@ const Projects = () => {
 							style={
 								targetReachedL
 									? {
-											borderBottom: `4px solid ${c('MAIN')}`,
-											borderLeft: `4px solid ${c('MAIN')}`,
+											borderBottom: `3px solid ${c('MAIN')}`,
+											borderLeft: `3px solid ${c('MAIN')}`,
 									  }
 									: {
 											borderBottom: `2px solid ${c('MAIN')}`,
@@ -593,7 +593,7 @@ const Projects = () => {
 						className={styles.scrollText}
 						style={
 							targetReachedL
-								? { borderBottom: `4px solid ${c('MAIN')}` }
+								? { borderBottom: `3px solid ${c('MAIN')}` }
 								: { borderBottom: `2px solid ${c('MAIN')}` }
 						}
 					>
