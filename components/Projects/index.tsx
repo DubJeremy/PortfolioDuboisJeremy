@@ -12,6 +12,7 @@ import Screens from './screens';
 import useTheme from '../Theme/hooks';
 
 import styles from './projects.module.scss';
+import Link from 'next/link';
 
 const Projects = () => {
 	const { c, theme } = useTheme();
@@ -25,6 +26,7 @@ const Projects = () => {
 	const project = contentProjects[projectId - 1];
 	const [endAnim, setEndAnim] = useState(false);
 	const [show, setShow] = useState(true);
+	const [showLatency, setShowLatency] = useState(true);
 
 	useEffect(() => {
 		heightFunction();
@@ -184,24 +186,29 @@ const Projects = () => {
 						style={{ borderRight: `3px solid ${c('MAIN')}` }}
 					>
 						{contentProjects.map((content: ProjectTypes.Content) => (
-							<div
+							<Link
 								key={content.id}
+								href={`${content.link}`}
 								className={`${styles.desc} ${
 									hoveredIndex === content.id
 										? styles.selected
 										: styles.notSelected
-								}`}
+								} cursorScale small`}
 								style={{ borderBottom: `3px solid ${c('MAIN')}` }}
 								onMouseEnter={() => {
 									if (hoveredIndex !== content.id) {
 										setEndAnim(true);
 										setShow(false);
+										setShowLatency(false);
 										setHoveredTitleIndex(content.id);
 										setTimeout(() => {
 											setHoveredIndex(content.id);
 											setEndAnim(false);
 											setShow(true);
 										}, 1500);
+										setTimeout(() => {
+											setShowLatency(true);
+										}, 3000);
 									}
 								}}
 							>
@@ -222,6 +229,34 @@ const Projects = () => {
 								>
 									{content.title}
 								</h4>
+								{content.done ? (
+									<div
+										className={`${styles.arrowD} ${
+											hoveredTitleIndex === content.id && content.done
+												? styles.showArrow
+												: ''
+										}`}
+									>
+										<Image
+											src={`/img/icon/arrowD${imgTheme}.webp`}
+											alt='arrow'
+											fill
+										/>
+									</div>
+								) : (
+									<div
+										className={styles.inDevelopment}
+										style={{
+											borderRight: `3px solid ${c('MAIN')}`,
+										}}
+									>
+										<p>{t('IN_DEVELOPMENT')}</p>
+										<div className={styles.loader}>
+											<Loader />
+										</div>
+									</div>
+								)}
+
 								{/* <div
 									className={`${styles.content} ${
 										hoveredIndex === content.id ? styles.show : ''
@@ -306,7 +341,7 @@ const Projects = () => {
 										</div>
 									)}
 								</div> */}
-							</div>
+							</Link>
 						))}
 					</div>
 					<div
@@ -314,13 +349,13 @@ const Projects = () => {
 						style={{ borderBottom: `3px solid ${c('MAIN')}` }}
 					>
 						<div className={styles.screens}>
-							<Screens
+							{/* <Screens
 								paths={contentProjects[hoveredIndex - 1].screens}
 								endAnimation={endAnim}
-							/>
-							<div className={styles.linesContainer}>
+							/> */}
+							{/* <div className={styles.linesContainer}>
 								<Lines idName={'linesProject'} />
-							</div>
+							</div> */}
 							<div
 								className={`${styles.showProject} ${
 									show ? styles.visible : ''
@@ -330,6 +365,26 @@ const Projects = () => {
 								<h4 className={show ? styles.showTitle : ''}>
 									{contentProjects[hoveredIndex - 1].title}
 								</h4>
+								<div
+									className={`${styles.contentProject} ${
+										showLatency ? styles.showContentProject : ''
+									}`}
+								>
+									<p className={styles.desc}>
+										{t(`${contentProjects[hoveredIndex - 1].desc}`)}
+									</p>
+									<div className={styles.techs}>
+										{project.techs.map((tech, index) => (
+											<div key={index} className={styles.logoTech}>
+												<Image
+													src={`/img/logo/${tech}.webp`}
+													alt={`${tech} logo`}
+													fill
+												/>
+											</div>
+										))}
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>

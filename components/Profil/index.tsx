@@ -118,7 +118,7 @@ const Profil = () => {
 				)}
 			</div>
 			<div
-				className={`${styles.info}  cursorScale small`}
+				className={`${styles.info} cursorScale small`}
 				style={
 					targetReached && isInLandscape
 						? {
@@ -247,11 +247,7 @@ const Profil = () => {
 					<Image src={'/img/logo/sass.webp'} alt='sass logo' fill />
 				</div>
 				<div className={styles.logoTech}>
-					<Image
-						src={'/img/logo/affinityDesigner.webp'}
-						alt='Affinity Designer logo'
-						fill
-					/>
+					<Image src={'/img/logo/docker.webp'} alt='Docker logo' fill />
 				</div>
 				<div className={styles.logoTech}>
 					<Image src={'/img/logo/figma.webp'} alt='figma logo' fill />

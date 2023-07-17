@@ -435,6 +435,7 @@
 					flex: 1;
 					@include flex($align: flex-start);
 					cursor: pointer;
+					position: relative;
 					.title {
 						padding: 15px;
 						width: auto;
@@ -444,90 +445,106 @@
 						font-weight: 100;
 						transition: all 0.5s ease-in-out;
 					}
-					.content {
-						transition: all 0.5s ease-in-out;
-						height: 0px;
-						overflow: hidden;
-						font-family: 'JosefinS';
-						font-weight: 300;
-						.text {
-							padding: 0 15px;
-							margin-bottom: 15px;
+					.arrowD {
+						position: absolute;
+						height: 20px;
+						width: 20px;
+						right: 20px;
+						bottom: 20px;
+						transition: all 0.3s ease-in-out 0.2s;
+						opacity: 0;
+					}
+					.showArrow {
+						right: 10px;
+						bottom: 10px;
+						opacity: 1;
+					}
+					&:hover {
+						.showArrow {
+							transform: scale(1.2);
 						}
-						.techs {
-							width: 70%;
-							margin: 0 15px 5px 15px;
-							@include flex($dir: row, $just: flex-start);
-							.logoTech {
-								position: relative;
-								width: 20%;
-								margin: 0 5px 10px 0;
-								aspect-ratio: 3/2;
-								transition: all 0.5s ease-in-out;
-								img {
-									object-fit: contain;
-								}
+					}
+					// .content {
+					// 	transition: all 0.5s ease-in-out;
+					// 	height: 0px;
+					// 	overflow: hidden;
+					// 	font-family: 'JosefinS';
+					// 	font-weight: 300;
+					// 	.text {
+					// 		padding: 0 15px;
+					// 		margin-bottom: 15px;
+					// 	}
+					// 	.techs {
+					// 		width: 70%;
+					// 		margin: 0 15px 5px 15px;
+					// 		@include flex($dir: row, $just: flex-start);
+					// 		.logoTech {
+					// 			position: relative;
+					// 			width: 20%;
+					// 			margin: 0 5px 10px 0;
+					// 			aspect-ratio: 3/2;
+					// 			transition: all 0.5s ease-in-out;
+					// 			img {
+					// 				object-fit: contain;
+					// 			}
 
-								&:hover {
-									transform: scale(1.3);
-								}
-							}
-						}
-						.btns {
-							height: 50px;
-							transition: all 0.5s ease-in-out;
-							.viewProject {
-								transition: all 0.5s ease-in-out;
-								box-sizing: border-box;
-								height: 100%;
-								width: 55%;
-								font-size: 0.8em;
-								font-weight: 400;
-								.arrowD {
-									bottom: 6px;
-									height: 20px;
-									width: 20px;
-									transition: all 0.5s ease-in-out;
-									opacity: 1;
-								}
-								.transition {
-									opacity: 0;
-								}
-							}
-							.inDevelopment {
-								transition: all 0.5s ease-in-out;
-								box-sizing: border-box;
-								height: 100%;
-								width: 55%;
-								@include flex($just: space-around, $dir: row);
-								> p {
-									font-size: 0.7em;
-									font-weight: 400;
-									width: 50%;
-									text-align: center;
-								}
-								.loader {
-									width: 20%;
-									height: 100%;
-									@include flex;
-									transform: scale(1.5);
-								}
-							}
-							.pattern {
-								width: 45%;
-								height: 100%;
-								position: relative;
-								transition: all 0.5s ease-in-out;
-								opacity: 1;
-							}
-							.transition {
-								opacity: 0;
-							}
-						}
-					}
-					.show {
-						// height: fit-content;
-					}
+					// 			&:hover {
+					// 				transform: scale(1.3);
+					// 			}
+					// 		}
+					// 	}
+					// 	.btns {
+					// 		height: 50px;
+					// 		transition: all 0.5s ease-in-out;
+					// 		.viewProject {
+					// 			transition: all 0.5s ease-in-out;
+					// 			box-sizing: border-box;
+					// 			height: 100%;
+					// 			width: 55%;
+					// 			font-size: 0.8em;
+					// 			font-weight: 400;
+					// 			.arrowD {
+					// 				bottom: 6px;
+					// 				height: 20px;
+					// 				width: 20px;
+					// 				transition: all 0.5s ease-in-out;
+					// 				opacity: 1;
+					// 			}
+					// 			.transition {
+					// 				opacity: 0;
+					// 			}
+					// 		}
+					// 		.inDevelopment {
+					// 			transition: all 0.5s ease-in-out;
+					// 			box-sizing: border-box;
+					// 			height: 100%;
+					// 			width: 55%;
+					// 			@include flex($just: space-around, $dir: row);
+					// 			> p {
+					// 				font-size: 0.7em;
+					// 				font-weight: 400;
+					// 				width: 50%;
+					// 				text-align: center;
+					// 			}
+					// 			.loader {
+					// 				width: 20%;
+					// 				height: 100%;
+					// 				@include flex;
+					// 				transform: scale(1.5);
+					// 			}
+					// 		}
+					// 		.pattern {
+					// 			width: 45%;
+					// 			height: 100%;
+					// 			position: relative;
+					// 			transition: all 0.5s ease-in-out;
+					// 			opacity: 1;
+					// 		}
+					// 		.transition {
+					// 			opacity: 0;
+					// 		}
+					// 	}
+					// }
 				}
 				.selected {
 					.title {
@@ -572,22 +589,63 @@
 						top: 0;
 						z-index: -1;
 						transform: translateX(-100%);
-						// overflow: hidden;
+						overflow: hidden;
 						transition: all 1.5s ease-in-out;
-						opacity: 0.5;
 						> h4 {
 							min-width: 100%;
 							font-family: 'Flaviotte';
 							font-size: 15vw;
-							// line-height: 19vw;
+							line-height: 9vw;
 							color: transparent;
-							-webkit-text-stroke: 0.01px white;
+							-webkit-text-stroke: 0.1px white;
 							white-space: nowrap;
 							transition: all 1.5s ease-in-out;
 							transform: translateX(100%);
 						}
 						.showTitle {
 							transform: translateX(0);
+						}
+						.contentProject {
+							position: absolute;
+							top: 15px;
+							right: 15px;
+							width: 35%;
+							@include flex($align: flex-end);
+							transition: all 0.3s ease-in-out;
+							transform: translateY(15%);
+							opacity: 0;
+							.desc {
+								line-height: 1em;
+								font-family: 'JosefinS';
+								font-size: 0.9em;
+								color: black;
+								margin-bottom: 10px;
+								opacity: 0.5;
+								text-align: right;
+							}
+							.techs {
+								opacity: 0.7;
+								width: 70%;
+								@include flex($dir: row, $just: flex-end);
+								.logoTech {
+									position: relative;
+									width: calc(25% - 10px);
+									margin: 0 0 10px 10px;
+									aspect-ratio: 3/2;
+									transition: all 0.5s ease-in-out;
+									img {
+										object-fit: contain;
+									}
+
+									&:hover {
+										transform: scale(1.3);
+									}
+								}
+							}
+						}
+						.showContentProject {
+							transform: translateY(0);
+							opacity: 1;
 						}
 					}
 					.visible {
