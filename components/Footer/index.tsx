@@ -57,7 +57,14 @@ const Footer = () => {
 						: { borderBottom: `2px solid ${c('MAIN')}` }
 				}
 			>
-				<p id='scrollText2' style={{ WebkitTextStroke: `4px ${c('MAIN')}` }}>
+				<p
+					id='scrollText2'
+					style={
+						targetReached
+							? { WebkitTextStroke: `1.5px ${c('MAIN')}` }
+							: { WebkitTextStroke: `1px ${c('MAIN')}` }
+					}
+				>
 					Portfolio Dubois Jérémy
 				</p>
 			</div>

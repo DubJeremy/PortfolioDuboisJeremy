@@ -202,6 +202,7 @@
 		> div {
 			font-family: 'Flaviotte';
 			font-size: 190px;
+			line-height: 175px;
 			color: transparent;
 			transition: all 0.5s ease-in-out;
 			white-space: nowrap;
@@ -672,26 +673,14 @@
 								width: 15%;
 							}
 						}
-						.btns {
-							.viewProject {
-								width: 35%;
-							}
-							.inDevelopment {
-								width: 35%;
-							}
-							.pattern {
-								width: 65%;
-							}
-						}
 					}
 				}
 			}
 			.screensContainer {
 				.screens {
 					.showProject {
-						@include flex;
+						// @include flex();
 						> h4 {
-							font-size: 15vw;
 						}
 					}
 				}

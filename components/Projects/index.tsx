@@ -429,10 +429,9 @@ const Projects = () => {
 					>
 						<div
 							id='scrollText'
-							style={{ WebkitTextStroke: `4px ${c('MAIN')}` }}
+							style={{ WebkitTextStroke: `1px ${c('MAIN')}` }}
 						>
 							{t('PROJECT')} {t('PROJECT')}
-							{/* {t('BY')} Dubois Jérémy */}
 						</div>
 					</div>
 				</>
