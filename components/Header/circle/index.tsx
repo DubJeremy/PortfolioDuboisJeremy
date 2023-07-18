@@ -32,6 +32,7 @@ const Circle = () => {
 			<div className={styles.background} />
 			<div id='circle' className={styles.img}>
 				<Image src={'/img/ice.png'} alt='circle ice' fill />
+				<p>Web Developer</p>
 			</div>
 		</div>
 	);
