@@ -518,12 +518,12 @@
 		}
 		.kbdevHome {
 			width: 35vw;
-			height: 40%;
+			height: 45%;
 			top: 30%;
 			left: calc(50% - 15vw);
-			transform: translate(-24vw, 0) rotate(-10deg) scale(1);
+			transform: translate(-18vw, -10%) rotate(-10deg) scale(1);
 			&:hover {
-				transform: translate(-24vw, 0) scale(1.4);
+				transform: translate(-18vw, 10%) scale(1.4);
 			}
 		}
 		@keyframes kbdevHomeAnim {
@@ -531,17 +531,17 @@
 				transform: translate(-100vw, -40vh) rotate(0deg) scale(0);
 			}
 			100% {
-				transform: translate(-24vw, 0) rotate(-10deg) scale(1);
+				transform: translate(-18vw, 0) rotate(-10deg) scale(1);
 			}
 		}
 		.kbdevHomeMobile {
 			width: 10vw;
-			height: 45%;
+			height: 55%;
 			top: 30%;
 			left: calc(50% - 4vw);
-			transform: translate(-2vw, 0%) rotate(7deg) scale(1);
+			transform: translate(4vw, 10%) rotate(12deg) scale(1);
 			&:hover {
-				transform: translate(-2vw, 0%) scale(1.4);
+				transform: translate(4vw, 0%) scale(1.4);
 			}
 		}
 		@keyframes kbdevHomeMobileAnim {
@@ -549,7 +549,7 @@
 				transform: translate(60vw, -40vh) rotate(0deg) scale(0);
 			}
 			100% {
-				transform: translate(-2vw, 0%) rotate(7deg) scale(1);
+				transform: translate(4vw, 0%) rotate(12deg) scale(1);
 			}
 		}
 		.kbdevAulia {

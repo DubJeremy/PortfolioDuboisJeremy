@@ -185,9 +185,8 @@ const Projects = () => {
 						style={{ borderRight: `3px solid ${c('MAIN')}` }}
 					>
 						{contentProjects.map((content: ProjectTypes.Content) => (
-							<Link
+							<div
 								key={content.id}
-								href={`${content.link}`}
 								className={`${styles.desc} ${
 									hoveredIndex === content.id
 										? styles.selected
@@ -254,7 +253,7 @@ const Projects = () => {
 										</div>
 									</div>
 								)}
-							</Link>
+							</div>
 						))}
 					</div>
 					<div
@@ -262,11 +261,12 @@ const Projects = () => {
 						style={{ borderBottom: `3px solid ${c('MAIN')}` }}
 					>
 						<div className={styles.screens}>
-							{/* <Screens
-								paths={contentProjects[hoveredIndex - 1].screens}
-								endAnimation={endAnim}
-							/> */}
-
+							<Link href={`${contentProjects[hoveredIndex - 1].link}`}>
+								<Screens
+									paths={contentProjects[hoveredIndex - 1].screens}
+									endAnimation={endAnim}
+								/>
+							</Link>
 							<div
 								className={`${styles.showProject} ${
 									show ? styles.visible : ''

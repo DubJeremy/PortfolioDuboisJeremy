@@ -2,9 +2,13 @@ import React, { useEffect } from 'react';
 import { gsap } from 'gsap';
 import Image from 'next/image';
 
+import useTranslation from '@/components/Translator/hooks';
+
 import styles from './circle.module.scss';
 
 const Circle = () => {
+	const { t } = useTranslation();
+
 	useEffect(() => {
 		const circle = document.getElementById('circle');
 		const tiltStrength = 40;
@@ -32,7 +36,7 @@ const Circle = () => {
 			<div className={styles.background} />
 			<div id='circle' className={styles.img}>
 				<Image src={'/img/ice.png'} alt='circle ice' fill />
-				<p>Web Developer</p>
+				<p>{t('WEB_DEV')}</p>
 			</div>
 		</div>
 	);
