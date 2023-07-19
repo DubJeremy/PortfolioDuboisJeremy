@@ -10,20 +10,33 @@
 		background-color: transparent;
 		transition: all 0.3s ease-in-out;
 		@include flex($just: flex-end, $align: flex-end);
-		&:hover {
-			transform: translate(0, 0) rotate(0deg) scale(1.3);
-			z-index: 5;
-		}
 		img {
 			object-fit: contain;
 			filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.279));
 		}
 	}
-	.kbdevHome {
+	.desk {
 		width: 65vw;
 		height: 40%;
 		top: 30%;
 		left: calc(50% - 32.5vw);
+		&:hover {
+			transform: translate(0, 0) rotate(0deg) scale(1.4);
+			z-index: 5;
+		}
+	}
+	.mobile {
+		width: 18vw;
+		height: 45%;
+		right: 0;
+		top: 27.5%;
+		left: calc(50% - 9vw);
+		&:hover {
+			transform: translate(0, 0) rotate(0deg) scale(2);
+			z-index: 5;
+		}
+	}
+	.kbdevHome {
 		transform: translate(-8vw, -70%) rotate(-10deg);
 		z-index: 3;
 		animation: 0.8s ease-in-out kbdevHomeAnim;
@@ -37,11 +50,6 @@
 		}
 	}
 	.kbdevHomeMobile {
-		width: 18vw;
-		height: 45%;
-		right: 0;
-		top: 27.5%;
-		left: calc(50% - 9vw);
 		transform: translate(30vw, -70%) rotate(10deg);
 		z-index: 4;
 		animation: 0.8s ease-in-out kbdevHomeMobileAnim;
@@ -55,10 +63,6 @@
 		}
 	}
 	.kbdevAulia {
-		width: 55vw;
-		height: 40%;
-		right: calc(50% - 27.5vw);
-		top: 30%;
 		transform: translate(8vw, 15%) rotate(-7deg);
 		z-index: 2;
 		animation: 0.8s ease-in-out kbdevAuliaAnim;
@@ -72,10 +76,6 @@
 		}
 	}
 	.kbdevAuliaMobile {
-		width: 18vw;
-		height: 45%;
-		top: 32%;
-		left: calc(50% - 9vw);
 		transform: translate(-22vw, -10%) rotate(-6deg);
 		z-index: 4;
 		animation: 0.8s ease-in-out kbdevAuliaMobileAnim;
@@ -89,10 +89,6 @@
 		}
 	}
 	.kbdevDigitalSupport {
-		height: 40%;
-		width: 70vw;
-		left: calc(50% - 35vw);
-		top: 30%;
 		transform: translate(-5vw, 60%) rotate(5deg);
 		z-index: 1;
 		animation: 0.8s ease-in-out kbdevDigitalSupportAnim;
@@ -107,11 +103,7 @@
 	}
 	// -----------------
 	.petshineCarousel {
-		width: 18vw;
-		height: 45%;
-		top: 27.5%;
-		left: calc(50% - 9vw);
-		transform: translate(-30vw, -50%) rotate(-15deg);
+		transform: translate(-25vw, -50%) rotate(-15deg);
 		z-index: 3;
 		animation: 0.8s ease-in-out petshineCarouselAnim;
 	}
@@ -120,14 +112,10 @@
 			transform: translate(-100vw, -40vh) rotate(0deg);
 		}
 		100% {
-			transform: translate(-30vw, -50%) rotate(-15deg);
+			transform: translate(-25vw, -50%) rotate(-15deg);
 		}
 	}
 	.petshineFav {
-		height: 40%;
-		width: 70vw;
-		top: 30%;
-		right: calc(50% - 35vw);
 		transform: translate(12vw, -70%) rotate(7deg);
 		z-index: 1;
 		animation: 0.8s ease-in-out petshineFavAnim;
@@ -141,10 +129,6 @@
 		}
 	}
 	.petshineHome {
-		height: 40%;
-		width: 70vw;
-		top: 30%;
-		left: calc(50% - 35vw);
 		transform: translate(5vw, 15%) rotate(-7deg);
 		z-index: 2;
 		animation: 0.8s ease-in-out petshineHomeAnim;
@@ -158,10 +142,6 @@
 		}
 	}
 	.petshineHomeMobile {
-		width: 18vw;
-		height: 45%;
-		top: 27.5%;
-		right: calc(50% - 9vw);
 		transform: translate(28vw, 45%) rotate(15deg);
 		z-index: 3;
 		animation: 0.8s ease-in-out petshineHomeMobileAnim;
@@ -175,10 +155,6 @@
 		}
 	}
 	.petshineWelness {
-		height: 40%;
-		width: 70vw;
-		top: 30%;
-		left: calc(50% - 35vw);
 		transform: translate(-5vw, 50%) rotate(5deg);
 		z-index: 1;
 		animation: 0.8s ease-in-out petshineWelnessAnim;
@@ -193,87 +169,68 @@
 	}
 	//--------------------------
 	.tcgBackCard {
-		width: 25vw;
-		height: 45%;
-		top: 27.5%;
-		right: calc(50% - 12.5vw);
-		transform: translate(20vw, -50%) rotate(-25deg);
 		z-index: 1;
 		animation: 0.8s ease-in-out tcgBackCardAnim;
+		transform: translate(20vw, -50%) rotate(-25deg) scale(1.3);
 	}
 	@keyframes tcgBackCardAnim {
 		0% {
-			transform: translate(60vw, -40vh) rotate(0deg);
+			transform: translate(60vw, -40vh) rotate(0deg) scale(1.3);
 		}
 		100% {
-			transform: translate(20vw, -50%) rotate(-25deg);
+			transform: translate(20vw, -50%) rotate(-25deg) scale(1.3);
 		}
 	}
 	.tcgCards {
-		width: 23vw;
-		height: 55%;
-		top: 22.5%;
-		left: calc(50% - 11.5vw);
-		transform: translate(-25vw, -35%) rotate(20deg);
+		transform: translate(-25vw, -35%) rotate(20deg) scale(1.3);
 		z-index: 3;
 		animation: 0.8s ease-in-out tcgCardsAnim;
 	}
 	@keyframes tcgCardsAnim {
 		0% {
-			transform: translate(-100vw, -40vh) rotate(0deg);
+			transform: translate(-100vw, -40vh) rotate(0deg) scale(1.3);
 		}
 		100% {
-			transform: translate(-25vw, -35%) rotate(20deg);
+			transform: translate(-25vw, -35%) rotate(20deg) scale(1.3);
 		}
 	}
 	.tcgFilters {
-		width: 23vw;
-		height: 55%;
-		top: 22.5%;
-		left: calc(50% - 11.5vw);
 		z-index: 2;
 		animation: 0.8s ease-in-out tcgFiltersAnim;
+		transform: translate(0, 0) scale(1.3);
 	}
 	@keyframes tcgFiltersAnim {
 		0% {
-			transform: translate(0vw, 100vh);
+			transform: translate(0vw, 100vh) scale(1.3);
 		}
 		100% {
-			transform: translate(0, 0);
+			transform: translate(0, 0) scale(1.3);
 		}
 	}
 	.tcgProfil {
-		width: 23vw;
-		height: 55%;
-		top: 22.5%;
-		left: calc(50% - 11.5vw);
-		transform: translate(22vw, 25%) rotate(12deg);
+		transform: translate(22vw, 25%) rotate(12deg) scale(1.3);
 		z-index: 2;
 		animation: 0.8s ease-in-out tcgProfilAnim;
 	}
 	@keyframes tcgProfilAnim {
 		0% {
-			transform: translate(80vw, 0vh) rotate(0deg);
+			transform: translate(80vw, 0vh) rotate(0deg) scale(1.3);
 		}
 		100% {
-			transform: translate(22vw, 25%) rotate(12deg);
+			transform: translate(22vw, 25%) rotate(12deg) scale(1.3);
 		}
 	}
 	.tcgSeries {
-		width: 23vw;
-		height: 55%;
-		top: 22.5%;
-		left: calc(50% - 11.5vw);
-		transform: translate(-20vw, 25%) rotate(-18deg);
+		transform: translate(-20vw, 25%) rotate(-18deg) scale(1.3);
 		z-index: 1;
 		animation: 0.8s ease-in-out tcgSeriesAnim;
 	}
 	@keyframes tcgSeriesAnim {
 		0% {
-			transform: translate(-90vw, 40vh) rotate(0deg);
+			transform: translate(-90vw, 40vh) rotate(0deg) scale(1.3);
 		}
 		100% {
-			transform: translate(-20vw, 25%) rotate(-18deg);
+			transform: translate(-20vw, 25%) rotate(-18deg) scale(1.3);
 		}
 	}
 	//------------
@@ -304,187 +261,104 @@
 	}
 }
 
-@media screen and (min-width: $medium) {
+@media screen and (min-width: $small) {
 	.screens {
-		.kbdevHome {
-			height: 45%;
-			top: 27.5%;
-			transform: translate(-8vw, -60%) rotate(-10deg);
-		}
-		@keyframes kbdevHomeAnim {
-			0% {
-				transform: translate(-100vw, -40vh) rotate(0deg);
-			}
-			100% {
-				transform: translate(-8vw, -60%) rotate(-10deg);
-			}
-		}
 		.kbdevHomeMobile {
-			height: 50%;
-			top: 25%;
-			transform: translate(30vw, -55%) rotate(10deg);
+			transform: translate(25vw, -70%) rotate(10deg);
 		}
 		@keyframes kbdevHomeMobileAnim {
 			0% {
 				transform: translate(60vw, -40vh) rotate(0deg);
 			}
 			100% {
-				transform: translate(30vw, -55%) rotate(10deg);
+				transform: translate(25vw, -70%) rotate(10deg);
 			}
 		}
-		.kbdevAulia {
-			height: 45%;
-			top: 27.5%;
+		.endAnimS {
+			transform: translate(60vw, -40vh) rotate(0deg);
 		}
-		.kbdevAuliaMobile {
+	}
+}
+@media screen and (min-width: $medium) {
+	.screens {
+		.desk {
+			height: 45%;
+			top: 32.5%;
+		}
+		.mobile {
+			width: 20vw;
 			height: 50%;
 			top: 25%;
-			transform: translate(-22vw, 10%) rotate(-6deg);
+			left: calc(50% - 10vw);
 		}
-		@keyframes kbdevAuliaMobileAnim {
+		.kbdevHome {
+			transform: translate(-10vw, -70%) rotate(-10deg);
+		}
+		@keyframes kbdevHomeAnim {
 			0% {
-				transform: translate(-80vw, 0vh) rotate(0deg);
+				transform: translate(-100vw, -40vh) rotate(0deg);
 			}
 			100% {
-				transform: translate(-22vw, 10%) rotate(-6deg);
+				transform: translate(-10vw, -70%) rotate(-10deg);
+			}
+		}
+		.kbdevHomeMobile {
+			transform: translate(27vw, -60%) rotate(10deg);
+		}
+		@keyframes kbdevHomeMobileAnim {
+			0% {
+				transform: translate(60vw, -40vh) rotate(0deg);
+			}
+			100% {
+				transform: translate(27vw, -60%) rotate(10deg);
 			}
 		}
 		.kbdevDigitalSupport {
-			height: 45%;
-			top: 25%;
-			transform: translate(0vw, 55%) rotate(5deg);
+			transform: translate(-7vw, 35%) rotate(5deg);
 		}
 		@keyframes kbdevDigitalSupportAnim {
 			0% {
 				transform: translate(-90vw, 40vh) rotate(0deg);
 			}
 			100% {
-				transform: translate(0vw, 55%) rotate(5deg);
+				transform: translate(-7vw, 35%) rotate(5deg);
 			}
 		}
-		// -----------------
-		.petshineCarousel {
-			height: 50%;
-			top: 25%;
-			transform: translate(-30vw, -40%) rotate(-15deg);
-		}
-		@keyframes petshineCarouselAnim {
-			0% {
-				transform: translate(-100vw, -40vh) rotate(0deg);
-			}
-			100% {
-				transform: translate(-30vw, -40%) rotate(-15deg);
-			}
-		}
-		.petshineFav {
-			height: 45%;
-			top: 27.5%;
-			transform: translate(12vw, -60%) rotate(7deg);
-		}
-		@keyframes petshineFavAnim {
-			0% {
-				transform: translate(60vw, -40vh) rotate(0deg);
-			}
-			100% {
-				transform: translate(12vw, -60%) rotate(7deg);
-			}
-		}
+		//---------------
 		.petshineHome {
-			height: 45%;
-			top: 27.5%;
-			transform: translate(5vw, 10%) rotate(-7deg);
+			transform: translate(0, 0) rotate(-7deg);
 		}
 		@keyframes petshineHomeAnim {
 			0% {
 				transform: translate(-100vw, 0vh) rotate(0deg);
 			}
 			100% {
-				transform: translate(5vw, 10%) rotate(-7deg);
+				transform: translate(0, 0) rotate(-7deg);
 			}
 		}
 		.petshineHomeMobile {
-			height: 50%;
-			top: 25%;
-			transform: translate(28vw, 40%) rotate(15deg);
+			transform: translate(28vw, 30%) rotate(15deg);
 		}
 		@keyframes petshineHomeMobileAnim {
 			0% {
 				transform: translate(80vw, 0vh) rotate(0deg);
 			}
 			100% {
-				transform: translate(28vw, 40%) rotate(15deg);
+				transform: translate(28vw, 30%) rotate(15deg);
 			}
 		}
 		.petshineWelness {
-			height: 45%;
-			top: 27.5%;
-			transform: translate(-5vw, 45%) rotate(5deg);
+			transform: translate(-10vw, 30%) rotate(5deg);
 		}
 		@keyframes petshineWelnessAnim {
 			0% {
 				transform: translate(-90vw, 40vh) rotate(0deg);
 			}
 			100% {
-				transform: translate(-5vw, 45%) rotate(5deg);
+				transform: translate(-10vw, 30%) rotate(5deg);
 			}
 		}
-		//--------------------------
-		.tcgBackCard {
-			height: 50%;
-			top: 25%;
-			transform: translate(20vw, -45%) rotate(-25deg);
-		}
-		@keyframes tcgBackCardAnim {
-			0% {
-				transform: translate(60vw, -40vh) rotate(0deg);
-			}
-			100% {
-				transform: translate(20vw, -45%) rotate(-25deg);
-			}
-		}
-		.tcgCards {
-			height: 65%;
-			top: 17.5%;
-			transform: translate(-25vw, -25%) rotate(20deg);
-		}
-		@keyframes tcgCardsAnim {
-			0% {
-				transform: translate(-100vw, -40vh) rotate(0deg);
-			}
-			100% {
-				transform: translate(-25vw, -25%) rotate(20deg);
-			}
-		}
-		.tcgFilters {
-			height: 65%;
-			top: 17.5%;
-		}
-		.tcgProfil {
-			height: 65%;
-			top: 17.5%;
-			transform: translate(22vw, 20%) rotate(12deg);
-		}
-		@keyframes tcgProfilAnim {
-			0% {
-				transform: translate(80vw, 0vh) rotate(0deg);
-			}
-			100% {
-				transform: translate(22vw, 20%) rotate(12deg);
-			}
-		}
-		.tcgSeries {
-			height: 65%;
-			top: 17.5%;
-			transform: translate(-20vw, 20%) rotate(-18deg);
-		}
-		@keyframes tcgSeriesAnim {
-			0% {
-				transform: translate(-90vw, 40vh) rotate(0deg);
-			}
-			100% {
-				transform: translate(-20vw, 20%) rotate(-18deg);
-			}
-		}
+		//---------------
 		.endAnimFi {
 			transform: translate(-100vw, -40vh) rotate(0deg);
 		}
@@ -536,10 +410,6 @@
 			}
 		}
 		.kbdevHomeMobile {
-			width: 10vw;
-			height: 55%;
-			top: 30%;
-			left: calc(50% - 4vw);
 			transform: translate(4vw, 10%) rotate(12deg) scale(1);
 			&:hover {
 				transform: translate(4vw, 10%) scale(1.4);
@@ -554,10 +424,6 @@
 			}
 		}
 		.kbdevAulia {
-			width: 35vw;
-			height: 40%;
-			top: 30%;
-			left: calc(50% - 15vw);
 			transform: translate(20vw, 50%) rotate(12deg) scale(1);
 			&:hover {
 				transform: translate(20vw, 50%) scale(1.4);

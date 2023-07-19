@@ -21,6 +21,7 @@ export const contentProjects: ProjectTypes.Content[] = [
 			'kbdevAuliaMobile',
 			'kbdevDigitalSupport',
 		],
+		mobileApp: false,
 	},
 	{
 		id: 2,
@@ -32,10 +33,11 @@ export const contentProjects: ProjectTypes.Content[] = [
 		screens: [
 			'petshineHome',
 			'petshineHomeMobile',
-			'petshineCarousel',
 			'petshineFav',
+			'petshineCarousel',
 			'petshineWelness',
 		],
+		mobileApp: false,
 	},
 	{
 		id: 3,
@@ -59,5 +61,6 @@ export const contentProjects: ProjectTypes.Content[] = [
 			'tcgProfil',
 			'tcgSeries',
 		],
+		mobileApp: true,
 	},
 ];

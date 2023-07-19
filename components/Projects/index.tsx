@@ -265,6 +265,7 @@ const Projects = () => {
 								<Screens
 									paths={contentProjects[hoveredIndex - 1].screens}
 									endAnimation={endAnim}
+									mobileApp={contentProjects[hoveredIndex - 1].mobileApp}
 								/>
 							</Link>
 							<div
@@ -305,7 +306,11 @@ const Projects = () => {
 			) : (
 				<>
 					<div className={styles.screensContainer}>
-						<Screens paths={project.screens} endAnimation={endAnim} />
+						<Screens
+							paths={project.screens}
+							endAnimation={endAnim}
+							mobileApp={project.mobileApp}
+						/>
 					</div>
 					<div
 						className={styles.descProject}
