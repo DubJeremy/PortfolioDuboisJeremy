@@ -9,20 +9,20 @@ const Screens = ({
 	paths,
 	endAnimation,
 	mobileApp,
+	id,
 }: {
 	paths: string[];
 	endAnimation: boolean;
 	mobileApp: boolean;
+	id?: number;
 }) => {
 	const [targetReached] = useMediaQuery(`(max-width: 992px)`);
 	const [isInLandscape, setIsInLandscape] = useState<boolean | null>(null);
-	const [hovered, setHovered] = useState<boolean>(false);
 
 	useEffect(() => {
 		heightFunction();
 		window.addEventListener('resize', heightFunction, false);
 	}, []);
-
 	const heightFunction = () => {
 		if (typeof window !== 'undefined') {
 			if (window.innerHeight < window.innerWidth) {
@@ -33,12 +33,20 @@ const Screens = ({
 		}
 	};
 
+	const [hovered, setHovered] = useState<boolean>(false);
+
 	return (
 		<div className={styles.screens}>
 			<div
 				className={`${styles.screen} ${styles[paths[0]]} ${
 					endAnimation ? styles.endAnimFi : ''
 				} ${mobileApp ? styles.mobile : styles.desk}`}
+				onMouseEnter={() => {
+					setHovered(true);
+				}}
+				onMouseLeave={() => {
+					setHovered(false);
+				}}
 			>
 				<Image
 					src={`/img/screen/${paths[0]}.webp`}
@@ -50,6 +58,12 @@ const Screens = ({
 				className={`${styles.screen} ${styles[paths[1]]} ${
 					endAnimation ? styles.endAnimS : ''
 				} ${styles.mobile}`}
+				onMouseEnter={() => {
+					setHovered(true);
+				}}
+				onMouseLeave={() => {
+					setHovered(false);
+				}}
 			>
 				<Image
 					src={`/img/screen/${paths[1]}.webp`}
@@ -62,6 +76,14 @@ const Screens = ({
 					(!targetReached && !isInLandscape) || hovered ? styles[paths[2]] : ''
 				} ${endAnimation ? styles.endAnimT : ''} ${
 					mobileApp ? styles.mobile : styles.desk
+				} ${
+					id === 1
+						? styles.KBDevPositionD
+						: id === 2
+						? styles.PetPositionD
+						: id === 3
+						? styles.TCGPositionM
+						: ''
 				}`}
 			>
 				<Image
@@ -75,6 +97,14 @@ const Screens = ({
 					(!targetReached && !isInLandscape) || hovered ? styles[paths[3]] : ''
 				} ${endAnimation ? styles.endAnimFo : ''} ${styles.mobile} ${
 					targetReached && isInLandscape && hovered ? styles[paths[3]] : ''
+				} ${
+					id === 1
+						? styles.KBDevPositionM
+						: id === 2
+						? styles.PetPositionM
+						: id === 3
+						? styles.TCGPositionM
+						: ''
 				}`}
 			>
 				<Image
@@ -85,9 +115,17 @@ const Screens = ({
 			</div>
 			<div
 				className={`${styles.screen} ${
-					(!targetReached && !isInLandscape) || hovered ? styles[paths[5]] : ''
+					(!targetReached && !isInLandscape) || hovered ? styles[paths[4]] : ''
 				} ${endAnimation ? styles.endAnimFif : ''} ${
 					mobileApp ? styles.mobile : styles.desk
+				} ${
+					id === 1
+						? styles.KBDevPositionD
+						: id === 2
+						? styles.PetPositionD
+						: id === 3
+						? styles.TCGPositionM
+						: ''
 				}`}
 			>
 				<Image

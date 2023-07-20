@@ -261,13 +261,14 @@ const Projects = () => {
 						style={{ borderBottom: `3px solid ${c('MAIN')}` }}
 					>
 						<div className={styles.screens}>
-							<Link href={`${contentProjects[hoveredIndex - 1].link}`}>
-								<Screens
-									paths={contentProjects[hoveredIndex - 1].screens}
-									endAnimation={endAnim}
-									mobileApp={contentProjects[hoveredIndex - 1].mobileApp}
-								/>
-							</Link>
+							{/* <Link href={`${contentProjects[hoveredIndex - 1].link}`}> */}
+							<Screens
+								paths={contentProjects[hoveredIndex - 1].screens}
+								endAnimation={endAnim}
+								mobileApp={contentProjects[hoveredIndex - 1].mobileApp}
+								id={contentProjects[hoveredIndex - 1].id}
+							/>
+							{/* </Link> */}
 							<div
 								className={`${styles.showProject} ${
 									show ? styles.visible : ''
