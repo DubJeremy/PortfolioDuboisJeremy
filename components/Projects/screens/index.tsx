@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { gsap } from 'gsap';
 import Image from 'next/image';
 
 import useMediaQuery from '@/tools/useMediaQuery';
@@ -35,8 +36,30 @@ const Screens = ({
 
 	const [hovered, setHovered] = useState<boolean>(false);
 
+	useEffect(() => {
+		const screens = document.getElementById('screens');
+		const tiltStrength = 40;
+
+		const handleMouseMove = (e: { clientX: number; clientY: number }) => {
+			const xPos = (e.clientX / window.innerWidth - 0.5) * tiltStrength;
+			const yPos = (e.clientY / window.innerHeight - 0.5) * tiltStrength;
+
+			gsap.to(screens, {
+				rotationX: yPos,
+				rotationY: -xPos,
+				ease: 'power2.out',
+			});
+		};
+
+		window.addEventListener('mousemove', handleMouseMove);
+
+		return () => {
+			window.removeEventListener('mousemove', handleMouseMove);
+		};
+	}, []);
+
 	return (
-		<div className={styles.screens}>
+		<div id='screens' className={styles.screens}>
 			<div
 				className={`${styles.screen} ${styles[paths[0]]} ${
 					endAnimation ? styles.endAnimFi : ''
