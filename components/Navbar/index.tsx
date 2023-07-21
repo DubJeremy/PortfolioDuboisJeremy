@@ -15,7 +15,7 @@ const Navbar = () => {
 	const [isToggled, setToggle] = useState(false);
 	const [activeSection, setActiveSection] = useState('profil');
 	const { t } = useTranslation();
-	const [scrollTarget, setScrollTaget] = useState(false);
+	const [scrollTarget, setScrollTarget] = useState(false);
 
 	const [imgTheme, setImgTheme] = useState('');
 	const [transition, setTransition] = useState(false);
@@ -108,9 +108,9 @@ const Navbar = () => {
 					setActiveSection(sectionId);
 				}
 				if (scrollPosition >= sectionHeight) {
-					setScrollTaget(true);
+					setScrollTarget(true);
 				} else {
-					setScrollTaget(false);
+					setScrollTarget(false);
 				}
 			});
 		};

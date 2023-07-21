@@ -23,6 +23,7 @@ const Screens = ({
 	link?: string;
 }) => {
 	const [targetReached] = useMediaQuery(`(max-width: 992px)`);
+	const [targetReachedL] = useMediaQuery(`(min-width: 992px)`);
 	const [isInLandscape, setIsInLandscape] = useState<boolean | null>(null);
 
 	useEffect(() => {
@@ -63,87 +64,63 @@ const Screens = ({
 		};
 	}, []);
 
+	const handleClick = (
+		event: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
+		sectionId: string
+	) => {
+		event.preventDefault();
+		const section = document.getElementById(sectionId);
+
+		if (section) {
+			const sectionTop = section.offsetTop - window.innerHeight * 0.16;
+			window.scrollTo({ top: sectionTop, behavior: 'smooth' });
+		}
+	};
+
 	return (
 		<div id='screens' className={styles.screens}>
-			{link && targetReached && isInLandscape ? (
-				<Link href={link}>
-					<div
-						className={`${styles.screen} ${styles[paths[0]]} ${
-							endAnimation ? styles.endAnimFi : ''
-						} ${mobileApp ? styles.mobile : styles.desk} cursorScale small ${
-							done ? 'link' : ''
-						}`}
-						onMouseEnter={() => {
-							setHovered(true);
-						}}
-						onMouseLeave={() => {
-							setHovered(false);
-						}}
-					>
-						<Image
-							src={`/img/screen/${paths[0]}.webp`}
-							alt={`${paths[0]} screenshot`}
-							fill
-						/>
-					</div>
-					<div
-						className={`${styles.screen} ${styles[paths[1]]} ${
-							endAnimation ? styles.endAnimS : ''
-						} ${styles.mobile} cursorScale small ${done ? 'link' : ''}`}
-						onMouseEnter={() => {
-							setHovered(true);
-						}}
-						onMouseLeave={() => {
-							setHovered(false);
-						}}
-					>
-						<Image
-							src={`/img/screen/${paths[1]}.webp`}
-							alt={`${paths[1]} screenshot`}
-							fill
-						/>
-					</div>
-				</Link>
-			) : (
-				<>
-					<div
-						className={`${styles.screen} ${styles[paths[0]]} ${
-							endAnimation ? styles.endAnimFi : ''
-						} ${mobileApp ? styles.mobile : styles.desk} cursorScale small ${
-							done ? 'link' : ''
-						}`}
-						onMouseEnter={() => {
-							setHovered(true);
-						}}
-						onMouseLeave={() => {
-							setHovered(false);
-						}}
-					>
-						<Image
-							src={`/img/screen/${paths[0]}.webp`}
-							alt={`${paths[0]} screenshot`}
-							fill
-						/>
-					</div>
-					<div
-						className={`${styles.screen} ${styles[paths[1]]} ${
-							endAnimation ? styles.endAnimS : ''
-						} ${styles.mobile} cursorScale small ${done ? 'link' : ''}`}
-						onMouseEnter={() => {
-							setHovered(true);
-						}}
-						onMouseLeave={() => {
-							setHovered(false);
-						}}
-					>
-						<Image
-							src={`/img/screen/${paths[1]}.webp`}
-							alt={`${paths[1]} screenshot`}
-							fill
-						/>
-					</div>
-				</>
-			)}
+			<Link
+				href={link ? link : '/#projects'}
+				onClick={(e) => {
+					if (!link) handleClick(e, 'projects');
+				}}
+				className={`${styles.screen} ${styles[paths[0]]} ${
+					endAnimation ? styles.endAnimFi : ''
+				} ${mobileApp ? styles.mobile : styles.desk} cursorScale small ${
+					done ? 'link' : ''
+				}`}
+				onMouseEnter={() => {
+					setHovered(true);
+				}}
+				onMouseLeave={() => {
+					setHovered(false);
+				}}
+			>
+				<Image
+					src={`/img/screen/${paths[0]}.webp`}
+					alt={`${paths[0]} screenshot`}
+					fill
+				/>
+			</Link>
+			<Link
+				href={link ? link : '/#projects'}
+				onClick={(e) => handleClick(e, 'projects')}
+				className={`${styles.screen} ${styles[paths[1]]} ${
+					endAnimation ? styles.endAnimS : ''
+				} ${styles.mobile} cursorScale small ${done ? 'link' : ''}`}
+				onMouseEnter={() => {
+					setHovered(true);
+				}}
+				onMouseLeave={() => {
+					setHovered(false);
+				}}
+			>
+				<Image
+					src={`/img/screen/${paths[1]}.webp`}
+					alt={`${paths[1]} screenshot`}
+					fill
+				/>
+			</Link>
 
 			<div
 				className={`${styles.screen} ${
