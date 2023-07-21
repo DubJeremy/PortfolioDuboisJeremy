@@ -14,6 +14,7 @@ export const en: { [key: string]: string } = {
 	CV: 'Download the CV in pdf',
 	// PROJECTS --------------------------------
 	VIEW_PROJECT: 'View Project',
+	VIEW: 'View',
 	KBDEV:
 		'Website for the KBDev web development firm. I worked on this project as part of my work-study apprenticeship at the same company. I was involved in the project from the outset, which enabled me to work on site design, development and production.',
 	PETSHINE:

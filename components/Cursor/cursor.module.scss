@@ -8,10 +8,15 @@
 	margin-left: -20px;
 	margin-top: -20px;
 	border-radius: 50%;
-	transition: transform 0.3s ease;
+	transition: transform 0.3s ease-out;
 	transform-origin: center center;
 	pointer-events: none;
 	z-index: 10000000;
+	@include flex;
+	font-family: 'JosefinS';
+	font-weight: 400;
+	font-size: 0em;
+	// color: white;
 }
 
 .grow,
@@ -20,6 +25,10 @@
 	background: white;
 	mix-blend-mode: difference;
 	border: none;
+}
+
+.link {
+	font-size: 1em;
 }
 
 .growSmall {

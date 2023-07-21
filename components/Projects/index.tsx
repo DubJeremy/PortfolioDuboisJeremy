@@ -267,6 +267,8 @@ const Projects = () => {
 								endAnimation={endAnim}
 								mobileApp={contentProjects[hoveredIndex - 1].mobileApp}
 								id={contentProjects[hoveredIndex - 1].id}
+								done={contentProjects[hoveredIndex - 1].done}
+								link={contentProjects[hoveredIndex - 1].link}
 							/>
 							{/* </Link> */}
 							<div

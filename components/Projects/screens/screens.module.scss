@@ -421,6 +421,7 @@
 			transform: translate(-18vw, 0) rotate(-10deg) scale(1);
 			&:hover {
 				transform: translate(-18vw, 0) rotate(-10deg) scale(1);
+				cursor: none;
 			}
 		}
 		@keyframes kbdevHomeAnim {
@@ -435,6 +436,7 @@
 			transform: translate(10vw, 20%) rotate(12deg) scale(1);
 			&:hover {
 				transform: translate(10vw, 20%) rotate(12deg) scale(1);
+				cursor: none;
 			}
 		}
 		@keyframes kbdevHomeMobileAnim {
@@ -511,6 +513,7 @@
 			transform: translate(0, 10%) rotate(7deg) scale(1);
 			&:hover {
 				transform: translate(0, 10%) rotate(7deg) scale(1);
+				cursor: none;
 			}
 		}
 		@keyframes petshineHomeAnim {
@@ -528,6 +531,7 @@
 			z-index: 5;
 			&:hover {
 				transform: translate(-20vw, -10%) rotate(-5deg) scale(1);
+				cursor: none;
 			}
 		}
 		@keyframes petshineHomeMobileAnim {
