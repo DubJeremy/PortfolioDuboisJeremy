@@ -121,10 +121,23 @@
 				}
 			}
 		}
+		.inDevelopment {
+			width: 50%;
+			@include flex($dir: row);
+			> p {
+				width: 60%;
+				text-align: center;
+				margin-right: 15px;
+			}
+			.loader {
+				transform: scale(1.8);
+			}
+		}
 		.logoStriped {
 			position: relative;
 			z-index: -2;
-			width: calc(60% - 2px);
+			// width: calc(60% - 2px);
+			flex: 1;
 			height: 100%;
 			transition: all 0.5s ease-in-out;
 			opacity: 1;

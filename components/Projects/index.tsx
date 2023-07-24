@@ -100,7 +100,7 @@ const Projects = () => {
 		const section = document.getElementById(sectionId);
 
 		if (section) {
-			const sectionTop = section.offsetTop - window.innerHeight * 0.1;
+			const sectionTop = section.offsetTop - parseInt('80px');
 			window.scrollTo({ top: sectionTop, behavior: 'smooth' });
 		}
 		setEndAnim(true);
@@ -261,7 +261,6 @@ const Projects = () => {
 						style={{ borderBottom: `3px solid ${c('MAIN')}` }}
 					>
 						<div className={styles.screens}>
-							{/* <Link href={`${contentProjects[hoveredIndex - 1].link}`}> */}
 							<Screens
 								paths={contentProjects[hoveredIndex - 1].screens}
 								endAnimation={endAnim}
@@ -270,7 +269,6 @@ const Projects = () => {
 								done={contentProjects[hoveredIndex - 1].done}
 								link={contentProjects[hoveredIndex - 1].link}
 							/>
-							{/* </Link> */}
 							<div
 								className={`${styles.showProject} ${
 									show ? styles.visible : ''
@@ -357,20 +355,30 @@ const Projects = () => {
 								: { borderBottom: `2px solid ${c('MAIN')}` }
 						}
 					>
-						<a href={project.link} className={styles.viewProject}>
-							<p>{t('VIEW_PROJECT')}</p>
-							<div
-								className={`${styles.arrowD} ${
-									transition ? styles.transition : ''
-								}`}
-							>
-								<Image
-									src={`/img/icon/arrowD${imgTheme}.webp`}
-									alt='arrow'
-									fill
-								/>
+						{project.done ? (
+							<a href={project.link} className={styles.viewProject}>
+								<p>{t('VIEW_PROJECT')}</p>
+								<div
+									className={`${styles.arrowD} ${
+										transition ? styles.transition : ''
+									}`}
+								>
+									<Image
+										src={`/img/icon/arrowD${imgTheme}.webp`}
+										alt='arrow'
+										fill
+									/>
+								</div>
+							</a>
+						) : (
+							<div className={styles.inDevelopment}>
+								<p>{t('IN_DEVELOPMENT')}</p>
+								<div className={styles.loader}>
+									<Loader />
+								</div>
 							</div>
-						</a>
+						)}
+
 						<div
 							className={`${styles.logoStriped} ${
 								transition ? styles.transition : ''

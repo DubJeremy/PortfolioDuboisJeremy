@@ -72,7 +72,9 @@ const Screens = ({
 		const section = document.getElementById(sectionId);
 
 		if (section) {
-			const sectionTop = section.offsetTop - window.innerHeight * 0.16;
+			const sectionTop = targetReached
+				? section.offsetTop - parseInt('100px')
+				: section.offsetTop - parseInt('80px');
 			window.scrollTo({ top: sectionTop, behavior: 'smooth' });
 		}
 	};
@@ -124,7 +126,7 @@ const Screens = ({
 
 			<div
 				className={`${styles.screen} ${
-					(!targetReached && !isInLandscape) || hovered ? styles[paths[2]] : ''
+					(!targetReachedL && !isInLandscape) || hovered ? styles[paths[2]] : ''
 				} ${endAnimation ? styles.endAnimT : ''} ${
 					mobileApp ? styles.mobile : styles.desk
 				} ${
@@ -145,7 +147,7 @@ const Screens = ({
 			</div>
 			<div
 				className={`${styles.screen} ${
-					(!targetReached && !isInLandscape) || hovered ? styles[paths[3]] : ''
+					(!targetReachedL && !isInLandscape) || hovered ? styles[paths[3]] : ''
 				} ${endAnimation ? styles.endAnimFo : ''} ${styles.mobile} ${
 					targetReached && isInLandscape && hovered ? styles[paths[3]] : ''
 				} ${
@@ -166,7 +168,7 @@ const Screens = ({
 			</div>
 			<div
 				className={`${styles.screen} ${
-					(!targetReached && !isInLandscape) || hovered ? styles[paths[4]] : ''
+					(!targetReachedL && !isInLandscape) || hovered ? styles[paths[4]] : ''
 				} ${endAnimation ? styles.endAnimFif : ''} ${
 					mobileApp ? styles.mobile : styles.desk
 				} ${
