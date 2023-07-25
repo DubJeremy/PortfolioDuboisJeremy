@@ -106,7 +106,9 @@ const Screens = ({
 			</Link>
 			<Link
 				href={link ? link : '/#projects'}
-				onClick={(e) => handleClick(e, 'projects')}
+				onClick={(e) => {
+					if (!link) handleClick(e, 'projects');
+				}}
 				className={`${styles.screen} ${styles[paths[1]]} ${
 					endAnimation ? styles.endAnimS : ''
 				} ${styles.mobile} cursorScale small ${done ? 'link' : ''}`}
@@ -126,7 +128,7 @@ const Screens = ({
 
 			<div
 				className={`${styles.screen} ${
-					(!targetReachedL && !isInLandscape) || hovered ? styles[paths[2]] : ''
+					!targetReachedL || !isInLandscape || hovered ? styles[paths[2]] : ''
 				} ${endAnimation ? styles.endAnimT : ''} ${
 					mobileApp ? styles.mobile : styles.desk
 				} ${
@@ -147,7 +149,7 @@ const Screens = ({
 			</div>
 			<div
 				className={`${styles.screen} ${
-					(!targetReachedL && !isInLandscape) || hovered ? styles[paths[3]] : ''
+					!targetReachedL || !isInLandscape || hovered ? styles[paths[3]] : ''
 				} ${endAnimation ? styles.endAnimFo : ''} ${styles.mobile} ${
 					targetReached && isInLandscape && hovered ? styles[paths[3]] : ''
 				} ${
@@ -168,7 +170,7 @@ const Screens = ({
 			</div>
 			<div
 				className={`${styles.screen} ${
-					(!targetReachedL && !isInLandscape) || hovered ? styles[paths[4]] : ''
+					!targetReachedL || !isInLandscape || hovered ? styles[paths[4]] : ''
 				} ${endAnimation ? styles.endAnimFif : ''} ${
 					mobileApp ? styles.mobile : styles.desk
 				} ${

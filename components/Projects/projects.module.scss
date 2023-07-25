@@ -61,6 +61,7 @@
 			opacity: 0;
 		}
 		.techs {
+			transition: all 0.5s ease-in-out;
 			padding: 30px 40px 40px 40px;
 			@include flex($dir: row);
 			.logoTech {
@@ -332,6 +333,15 @@
 				}
 			}
 		}
+		.btns {
+			.inDevelopment {
+				width: 40%;
+				> p {
+					width: 50%;
+					margin-right: 20px;
+				}
+			}
+		}
 	}
 }
 @media screen and (min-width: $medium) {
@@ -375,6 +385,9 @@
 					bottom: 7px;
 				}
 			}
+			.inDevelopment {
+				width: 35%;
+			}
 			.logoStriped {
 				width: calc(75% - 2px);
 			}
@@ -409,6 +422,9 @@
 			height: 35vh;
 		}
 		.btns {
+			.inDevelopment {
+				width: 30%;
+			}
 			.logoStriped {
 				width: calc(75% - 4px);
 			}
@@ -432,7 +448,7 @@
 			}
 		}
 		.projectContainer {
-			height: calc(100vh - 220px);
+			height: calc(100vh - 223px);
 			width: 100%;
 			@include flex($dir: row, $wrap: nowrap);
 			.descContainer {
@@ -656,6 +672,16 @@
 			}
 			.patternContainer {
 				width: calc(85% - 2px);
+			}
+		}
+		.projectContainer {
+			.descContainer {
+				.desc {
+					.showLoader {
+						bottom: 10px;
+						right: 25px;
+					}
+				}
 			}
 		}
 		.content {
