@@ -8,6 +8,7 @@ import Circle from './circle';
 import useMediaQuery from '@/tools/useMediaQuery';
 import Lines from './lines';
 import useTheme from '../Theme/hooks';
+import { useRouter } from 'next/router';
 
 import styles from './profil.module.scss';
 
@@ -67,6 +68,11 @@ const Profil = ({ isSafari }: { isSafari: boolean }) => {
 				setIsInLandscape(false);
 			}
 		}
+	};
+
+	const router = useRouter();
+	const handleDownload = () => {
+		router.push('/img/DuboisJeremyCV.pdf');
 	};
 
 	return (
@@ -160,6 +166,7 @@ const Profil = ({ isSafari }: { isSafari: boolean }) => {
 					</div>
 					<div className={styles.btns}>
 						<button
+							onClick={handleDownload}
 							style={
 								c('MAIN') === '#ffffff'
 									? {
