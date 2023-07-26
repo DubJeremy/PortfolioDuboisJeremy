@@ -52,7 +52,6 @@ const Navbar = ({ isSafari }: { isSafari: boolean }) => {
 			setTransition(false);
 		}, 500);
 	}, [theme]);
-	console.log('isSafari', isSafari);
 
 	const toggleMenu = () => {
 		setToggle(!isToggled);

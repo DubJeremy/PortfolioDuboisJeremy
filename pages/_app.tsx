@@ -19,8 +19,6 @@ export default function App({ Component, pageProps }: AppProps) {
 		);
 	}, []);
 
-	console.log('isSafarioriginal', isSafari);
-
 	return (
 		<TranslatorProvider>
 			<ThemeProvider>
