@@ -12,6 +12,7 @@ import useMediaQuery from '@/tools/useMediaQuery';
 import TurnMobile from '@/components/TurnMobile';
 import Cursor from '@/components/Cursor';
 import Theme from '@/components/Theme';
+import useTheme from '@/components/Theme/hooks';
 
 export default function Home() {
 	const [targetReachedH] = useMediaQuery(`(max-height: 500px)`);
@@ -19,11 +20,14 @@ export default function Home() {
 	const [targetReachedL] = useMediaQuery(`(min-width: 992px)`);
 	const [targetReachedXL] = useMediaQuery(`(min-width: 1140px)`);
 	const [isInLandscape, setIsInLandscape] = useState<boolean | null>(null);
+	const { theme } = useTheme();
+	const [icoTheme, setIcoTheme] = useState('');
 
 	useEffect(() => {
 		heightFunction();
 		window.addEventListener('resize', heightFunction, false);
 	}, []);
+	console.log(theme);
 
 	const heightFunction = () => {
 		if (typeof window !== 'undefined') {
@@ -34,6 +38,35 @@ export default function Home() {
 			}
 		}
 	};
+
+	useEffect(() => {
+		switch (theme) {
+			case 'blue': {
+				setIcoTheme('');
+				break;
+			}
+			case 'green': {
+				setIcoTheme('G');
+				break;
+			}
+			case 'yellow': {
+				setIcoTheme('Y');
+				break;
+			}
+			case 'purple': {
+				setIcoTheme('Pu');
+				break;
+			}
+			case 'pink': {
+				setIcoTheme('Pi');
+				break;
+			}
+			case 'white': {
+				setIcoTheme('W');
+				break;
+			}
+		}
+	}, [theme]);
 
 	return (
 		<>
@@ -50,7 +83,7 @@ export default function Home() {
 					property='og:image'
 					content='https://www.portfolio.dubj/images/og-image.jpg'
 				/>
-				<link rel='icon' href='/favicon.ico' />
+				<link rel='icon' href={`/favicon${icoTheme}.ico`} />
 			</Head>
 			<main>
 				{isInLandscape && targetReachedH && targetReached ? (
