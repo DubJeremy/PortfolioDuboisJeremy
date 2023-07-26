@@ -10,7 +10,7 @@ import useMediaQuery from '@/tools/useMediaQuery';
 
 import styles from './footer.module.scss';
 
-const Footer = () => {
+const Footer = ({ isSafari }: { isSafari: boolean }) => {
 	const { c } = useTheme();
 	const [targetReached] = useMediaQuery(`(min-width: 992px)`);
 	const { t } = useTranslation();

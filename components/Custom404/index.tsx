@@ -5,7 +5,7 @@ import useTheme from '../Theme/hooks';
 
 import styles from './custom404.module.scss';
 
-function Custom404() {
+function Custom404({ isSafari }: { isSafari: boolean }) {
 	const { c } = useTheme();
 	return (
 		<div className={styles.custom404}>

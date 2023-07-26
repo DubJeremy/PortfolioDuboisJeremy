@@ -14,7 +14,7 @@ import Cursor from '@/components/Cursor';
 import Theme from '@/components/Theme';
 import useTheme from '@/components/Theme/hooks';
 
-export default function Home() {
+export default function Home({ isSafari }: { isSafari: boolean }) {
 	const [targetReachedH] = useMediaQuery(`(max-height: 500px)`);
 	const [targetReached] = useMediaQuery(`(max-width: 992px)`);
 	const [targetReachedL] = useMediaQuery(`(min-width: 992px)`);
@@ -27,7 +27,6 @@ export default function Home() {
 		heightFunction();
 		window.addEventListener('resize', heightFunction, false);
 	}, []);
-	console.log(theme);
 
 	const heightFunction = () => {
 		if (typeof window !== 'undefined') {
@@ -87,18 +86,18 @@ export default function Home() {
 			</Head>
 			<main>
 				{isInLandscape && targetReachedH && targetReached ? (
-					<TurnMobile />
+					<TurnMobile isSafari={isSafari} />
 				) : (
 					<>
 						{targetReachedXL && <Cursor />}
 						{targetReachedL && <Theme />}
 
-						<ScreenFrame />
-						<Navbar />
-						<Header />
-						<Profil />
-						<Projects />
-						<Contact />
+						<ScreenFrame isSafari={isSafari} />
+						<Navbar isSafari={isSafari} />
+						<Header isSafari={isSafari} />
+						<Profil isSafari={isSafari} />
+						<Projects isSafari={isSafari} />
+						<Contact isSafari={isSafari} />
 						<Footer />
 					</>
 				)}

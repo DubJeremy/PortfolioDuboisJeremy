@@ -6,7 +6,7 @@ import useTranslation from '@/components/Translator/hooks';
 
 import styles from './circle.module.scss';
 
-const Circle = () => {
+const Circle = ({ isSafari }: { isSafari: boolean }) => {
 	const { t } = useTranslation();
 
 	useEffect(() => {

@@ -9,7 +9,7 @@ import Theme from '../Theme';
 
 import styles from './navbar.module.scss';
 
-const Navbar = () => {
+const Navbar = ({ isSafari }: { isSafari: boolean }) => {
 	const { c, theme } = useTheme();
 	const [targetReached] = useMediaQuery(`(min-width: 992px)`);
 	const [isToggled, setToggle] = useState(false);
@@ -52,6 +52,7 @@ const Navbar = () => {
 			setTransition(false);
 		}, 500);
 	}, [theme]);
+	console.log('isSafari', isSafari);
 
 	const toggleMenu = () => {
 		setToggle(!isToggled);

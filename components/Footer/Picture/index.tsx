@@ -3,7 +3,7 @@ import { useFrame, useLoader } from '@react-three/fiber';
 import { TextureLoader, Mesh, DoubleSide, BufferGeometry, Color } from 'three';
 
 const Picture = () => {
-	const texture = useLoader(TextureLoader, '/img/kazukiNoda.webp');
+	const texture = useLoader(TextureLoader, '/img/safari/kazukiNoda.png');
 	const flagRef = useRef<Mesh>();
 
 	useFrame((state, delta) => {

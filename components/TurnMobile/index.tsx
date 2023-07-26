@@ -5,7 +5,7 @@ import useTranslation from '@/components/Translator/hooks';
 
 import styles from './turnMobile.module.scss';
 
-const TurnMobile = () => {
+const TurnMobile = ({ isSafari }: { isSafari: boolean }) => {
 	const { t } = useTranslation();
 	return (
 		<div className={styles.turnMobile}>

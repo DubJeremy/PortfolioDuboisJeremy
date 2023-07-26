@@ -6,7 +6,13 @@ import useTheme from '@/components/Theme/hooks';
 
 import styles from './modal.module.scss';
 
-const Modal = ({ success }: { success: boolean | null }) => {
+const Modal = ({
+	success,
+	isSafari,
+}: {
+	success: boolean | null;
+	isSafari: boolean;
+}) => {
 	const { t } = useTranslation();
 	const { c } = useTheme();
 	const [targetReached] = useMediaQuery(`(min-width: 992px)`);

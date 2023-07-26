@@ -9,7 +9,7 @@ import useTheme from '../Theme/hooks';
 
 import styles from './contact.module.scss';
 
-const Contact = () => {
+const Contact = ({ isSafari }: { isSafari: boolean }) => {
 	const { c, theme } = useTheme();
 	const { t } = useTranslation();
 	const [targetReached] = useMediaQuery(`(min-width: 768px)`);
@@ -223,7 +223,7 @@ const Contact = () => {
 					showConfirmModal ? styles.showContainer : ''
 				}`}
 			>
-				<Modal success={submittedSuccess} />
+				<Modal success={submittedSuccess} isSafari={isSafari} />
 			</div>
 		</section>
 	);

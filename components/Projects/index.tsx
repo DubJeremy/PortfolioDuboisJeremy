@@ -13,7 +13,7 @@ import useTheme from '../Theme/hooks';
 
 import styles from './projects.module.scss';
 
-const Projects = () => {
+const Projects = ({ isSafari }: { isSafari: boolean }) => {
 	const { c, theme } = useTheme();
 	const { t } = useTranslation();
 	const [targetReached] = useMediaQuery(`(min-width: 768px)`);
@@ -268,6 +268,7 @@ const Projects = () => {
 								id={contentProjects[hoveredIndex - 1].id}
 								done={contentProjects[hoveredIndex - 1].done}
 								link={contentProjects[hoveredIndex - 1].link}
+								isSafari={isSafari}
 							/>
 							<div
 								className={`${styles.showProject} ${
@@ -310,7 +311,7 @@ const Projects = () => {
 						<Screens
 							paths={project.screens}
 							endAnimation={endAnim}
-							mobileApp={project.mobileApp}
+							mobileApp={project.mobileApp} isSafari={isSafari}
 						/>
 					</div>
 					<div

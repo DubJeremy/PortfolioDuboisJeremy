@@ -5,7 +5,7 @@ import useMediaQuery from '@/tools/useMediaQuery';
 
 import styles from './screenFrame.module.scss';
 
-const ScreenFrame = () => {
+const ScreenFrame = ({ isSafari }: { isSafari: boolean }) => {
 	const { c } = useTheme();
 	const [targetReached] = useMediaQuery(`(min-width: 992px)`);
 

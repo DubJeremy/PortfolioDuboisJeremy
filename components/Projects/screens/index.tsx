@@ -14,6 +14,7 @@ const Screens = ({
 	id,
 	done,
 	link,
+	isSafari,
 }: {
 	paths: string[];
 	endAnimation: boolean;
@@ -21,6 +22,7 @@ const Screens = ({
 	id?: number;
 	done?: boolean;
 	link?: string;
+	isSafari: boolean;
 }) => {
 	const [targetReached] = useMediaQuery(`(max-width: 992px)`);
 	const [targetReachedL] = useMediaQuery(`(min-width: 992px)`);
