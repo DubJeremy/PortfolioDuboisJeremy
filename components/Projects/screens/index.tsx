@@ -101,7 +101,11 @@ const Screens = ({
 				}}
 			>
 				<Image
-					src={`/img/screen/${paths[0]}.webp`}
+					src={
+						isSafari
+							? `/img/safari/screen/${paths[0]}.svg`
+							: `/img/screen/${paths[0]}.webp`
+					}
 					alt={`${paths[0]} screenshot`}
 					fill
 				/>
@@ -122,7 +126,11 @@ const Screens = ({
 				}}
 			>
 				<Image
-					src={`/img/screen/${paths[1]}.webp`}
+					src={
+						isSafari
+							? `/img/safari/screen/${paths[1]}.svg`
+							: `/img/screen/${paths[1]}.webp`
+					}
 					alt={`${paths[1]} screenshot`}
 					fill
 				/>
@@ -144,7 +152,11 @@ const Screens = ({
 				}`}
 			>
 				<Image
-					src={`/img/screen/${paths[2]}.webp`}
+					src={
+						isSafari
+							? `/img/safari/screen/${paths[2]}.svg`
+							: `/img/screen/${paths[2]}.webp`
+					}
 					alt={`${paths[2]} screenshot`}
 					fill
 				/>
@@ -165,7 +177,11 @@ const Screens = ({
 				}`}
 			>
 				<Image
-					src={`/img/screen/${paths[3]}.webp`}
+					src={
+						isSafari
+							? `/img/safari/screen/${paths[3]}.svg`
+							: `/img/screen/${paths[3]}.webp`
+					}
 					alt={`${paths[3]} screenshot`}
 					fill
 				/>
@@ -186,7 +202,11 @@ const Screens = ({
 				}`}
 			>
 				<Image
-					src={`/img/screen/${paths[4]}.webp`}
+					src={
+						isSafari
+							? `/img/safari/screen/${paths[4]}.svg`
+							: `/img/screen/${paths[4]}.webp`
+					}
 					alt={`${paths[4]} screenshot`}
 					fill
 				/>

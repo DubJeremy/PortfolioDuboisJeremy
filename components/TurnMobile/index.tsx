@@ -15,7 +15,11 @@ const TurnMobile = ({ isSafari }: { isSafari: boolean }) => {
 			</p>
 			<div className={styles.imgContainer}>
 				<Image
-					src='/img/icon/turnmobile.webp'
+					src={
+						isSafari
+							? '/img/safari/icon/turnmobile.svg'
+							: '/img/icon/turnmobile.webp'
+					}
 					alt='Tournez le portable'
 					fill
 					className={styles.imgTurnMobile}

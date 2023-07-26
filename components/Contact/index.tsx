@@ -134,7 +134,11 @@ const Contact = ({ isSafari }: { isSafari: boolean }) => {
 				>
 					<Image
 						src={
-							targetReached
+							isSafari
+								? targetReached
+									? `/img/safari/patternShurikenXL${imgTheme}.svg`
+									: `/img/safari/patternShurikenS${imgTheme}.svg`
+								: targetReached
 								? `/img/patternShurikenXL${imgTheme}.webp`
 								: `/img/patternShurikenS${imgTheme}.webp`
 						}

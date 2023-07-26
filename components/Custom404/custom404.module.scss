@@ -78,7 +78,7 @@
 			z-index: 2;
 			left: 0;
 			&:before {
-				background: url(/img/background.webp) 0 0;
+				background: url(/img/background.svg) 0 0;
 				background-size: 500px 500px;
 				width: 100%;
 				height: 80px;
@@ -114,7 +114,7 @@
 			transform: translateX(0);
 			animation: coverAnim 0.2s ease-out 0.9s forwards;
 			&:before {
-				background: url(/img/background.webp) 0 0;
+				background: url(/img/background.svg) 0 0;
 				background-size: 500px 500px;
 				width: 100%;
 				height: 80px;

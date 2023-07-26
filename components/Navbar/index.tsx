@@ -156,7 +156,15 @@ const Navbar = ({ isSafari }: { isSafari: boolean }) => {
 								  }
 						}
 					>
-						<Image src={`/img/logo/logo${imgTheme}.webp`} alt='logo D' fill />
+						<Image
+							src={
+								isSafari
+									? `/img/safari/logo/logo${imgTheme}.svg`
+									: `/img/logo/logo${imgTheme}.webp`
+							}
+							alt='logo D'
+							fill
+						/>
 					</p>
 
 					<div
@@ -165,7 +173,11 @@ const Navbar = ({ isSafari }: { isSafari: boolean }) => {
 						}`}
 					>
 						<Image
-							src={`/img/logoStriped${imgTheme}.webp`}
+							src={
+								isSafari
+									? `/img/safari/logoStriped${imgTheme}.svg`
+									: `/img/logoStriped${imgTheme}.webp`
+							}
 							alt='stripes'
 							fill
 							className={styles.imgLogoStriped}

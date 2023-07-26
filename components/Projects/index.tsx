@@ -169,7 +169,11 @@ const Projects = ({ isSafari }: { isSafari: boolean }) => {
 				>
 					<Image
 						src={
-							targetReached
+							isSafari
+								? targetReached
+									? `/img/safari/patternShurikenXL${imgTheme}.svg`
+									: `/img/safari/patternShurikenS${imgTheme}.svg`
+								: targetReached
 								? `/img/patternShurikenXL${imgTheme}.webp`
 								: `/img/patternShurikenS${imgTheme}.webp`
 						}
@@ -236,7 +240,11 @@ const Projects = ({ isSafari }: { isSafari: boolean }) => {
 										}`}
 									>
 										<Image
-											src={`/img/icon/arrowD${imgTheme}.webp`}
+											src={
+												isSafari
+													? `/img/safari/icon/arrowD${imgTheme}.svg`
+													: `/img/icon/arrowD${imgTheme}.webp`
+											}
 											alt='arrow'
 											fill
 										/>
@@ -292,7 +300,11 @@ const Projects = ({ isSafari }: { isSafari: boolean }) => {
 											(tech, index) => (
 												<div key={index} className={styles.logoTech}>
 													<Image
-														src={`/img/logo/${tech}.webp`}
+														src={
+															isSafari
+																? `/img/safari/logo/${tech}.svg`
+																: `/img/logo/${tech}.webp`
+														}
 														alt={`${tech} logo`}
 														fill
 													/>
@@ -311,7 +323,8 @@ const Projects = ({ isSafari }: { isSafari: boolean }) => {
 						<Screens
 							paths={project.screens}
 							endAnimation={endAnim}
-							mobileApp={project.mobileApp} isSafari={isSafari}
+							mobileApp={project.mobileApp}
+							isSafari={isSafari}
 						/>
 					</div>
 					<div
@@ -340,7 +353,11 @@ const Projects = ({ isSafari }: { isSafari: boolean }) => {
 									}`}
 								>
 									<Image
-										src={`/img/logo/${tech}.webp`}
+										src={
+											isSafari
+												? `/img/safari/logo/${tech}.svg`
+												: `/img/logo/${tech}.webp`
+										}
 										alt={`${tech} logo`}
 										fill
 									/>
@@ -365,7 +382,11 @@ const Projects = ({ isSafari }: { isSafari: boolean }) => {
 									}`}
 								>
 									<Image
-										src={`/img/icon/arrowD${imgTheme}.webp`}
+										src={
+											isSafari
+												? `/img/safari/icon/arrowD${imgTheme}.svg`
+												: `/img/icon/arrowD${imgTheme}.webp`
+										}
 										alt='arrow'
 										fill
 									/>
@@ -398,7 +419,11 @@ const Projects = ({ isSafari }: { isSafari: boolean }) => {
 						>
 							<Image
 								src={
-									targetReached
+									isSafari
+										? targetReached
+											? `/img/safari/patternStripedS${imgTheme}.svg`
+											: `/img/safari/patternStripedXL${imgTheme}.svg`
+										: targetReached
 										? `/img/patternStripedS${imgTheme}.webp`
 										: `/img/patternStripedXL${imgTheme}.webp`
 								}
@@ -428,7 +453,11 @@ const Projects = ({ isSafari }: { isSafari: boolean }) => {
 								}`}
 							>
 								<Image
-									src={`/img/icon/arrow${imgTheme}.webp`}
+									src={
+										isSafari
+											? `/img/safari/icon/arrow${imgTheme}.svg`
+											: `/img/icon/arrow${imgTheme}.webp`
+									}
 									alt='arrow'
 									fill
 								/>

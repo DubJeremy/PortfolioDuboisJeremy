@@ -141,7 +141,11 @@ const Profil = ({ isSafari }: { isSafari: boolean }) => {
 							}`}
 						>
 							<Image
-								src={`/img/icon/location${imgTheme}.webp`}
+								src={
+									isSafari
+										? `/img/safari/icon/location${imgTheme}.svg`
+										: `/img/icon/location${imgTheme}.webp`
+								}
 								alt='logo location'
 								fill
 							/>{' '}
@@ -175,7 +179,11 @@ const Profil = ({ isSafari }: { isSafari: boolean }) => {
 							}`}
 						>
 							<Image
-								src={`/img/logo/linkedin${imgTheme}.webp`}
+								src={
+									isSafari
+										? `/img/safari/logo/linkedin${imgTheme}.svg`
+										: `/img/logo/linkedin${imgTheme}.webp`
+								}
 								alt='logo Linkedin'
 								fill
 							/>
@@ -196,7 +204,11 @@ const Profil = ({ isSafari }: { isSafari: boolean }) => {
 			>
 				<Image
 					src={
-						targetReached
+						isSafari
+							? targetReached
+								? `/img/safari/patternStripedS${imgTheme}.svg`
+								: `/img/safari/patternStripedXL${imgTheme}.svg`
+							: targetReached
 							? `/img/patternStripedS${imgTheme}.webp`
 							: `/img/patternStripedXL${imgTheme}.webp`
 					}
@@ -213,44 +225,122 @@ const Profil = ({ isSafari }: { isSafari: boolean }) => {
 				}
 			>
 				<div className={styles.logoTech}>
-					<Image src={'/img/logo/next.webp'} alt='next.js logo' fill />
-				</div>
-				<div className={styles.logoTech}>
-					<Image src={'/img/logo/react.webp'} alt='react logo' fill />
+					<Image
+						src={isSafari ? '/img/safari/logo/next.svg' : '/img/logo/next.webp'}
+						alt='next.js logo'
+						fill
+					/>
 				</div>
 				<div className={styles.logoTech}>
 					<Image
-						src={'/img/logo/reactNative.webp'}
+						src={
+							isSafari ? '/img/safari/logo/react.svg' : '/img/logo/react.webp'
+						}
+						alt='react logo'
+						fill
+					/>
+				</div>
+				<div className={styles.logoTech}>
+					<Image
+						src={
+							isSafari
+								? '/img/safari/logo/reactNative.svg'
+								: '/img/logo/reactNative.webp'
+						}
 						alt='React Native logo'
 						fill
 					/>
 				</div>
 				<div className={styles.logoTech}>
-					<Image src={'/img/logo/typeOrm.webp'} alt='typeOrm logo' fill />
+					<Image
+						src={
+							isSafari
+								? '/img/safari/logo/typeOrm.svg'
+								: '/img/logo/typeOrm.webp'
+						}
+						alt='typeOrm logo'
+						fill
+					/>
 				</div>
 				<div className={styles.logoTech}>
-					<Image src={'/img/logo/postgreSql.webp'} alt='postgreSql logo' fill />
+					<Image
+						src={
+							isSafari
+								? '/img/safari/logo/postgreSql.svg'
+								: '/img/logo/postgreSql.webp'
+						}
+						alt='postgreSql logo'
+						fill
+					/>
 				</div>
 				<div className={styles.logoTech}>
-					<Image src={'/img/logo/express.webp'} alt='express logo' fill />
+					<Image
+						src={
+							isSafari
+								? '/img/safari/logo/express.svg'
+								: '/img/logo/express.webp'
+						}
+						alt='express logo'
+						fill
+					/>
 				</div>
 				<div className={styles.logoTech}>
-					<Image src={'/img/logo/mongoose.webp'} alt='mongoose logo' fill />
+					<Image
+						src={
+							isSafari
+								? '/img/safari/logo/mongoose.svg'
+								: '/img/logo/mongoose.webp'
+						}
+						alt='mongoose logo'
+						fill
+					/>
 				</div>
 				<div className={styles.logoTech}>
-					<Image src={'/img/logo/mongoDb.webp'} alt='mongoDb logo' fill />
+					<Image
+						src={
+							isSafari
+								? '/img/safari/logo/mongoDb.svg'
+								: '/img/logo/mongoDb.webp'
+						}
+						alt='mongoDb logo'
+						fill
+					/>
 				</div>
 				<div className={styles.logoTech}>
-					<Image src={'/img/logo/typescript.webp'} alt='typescript logo' fill />
+					<Image
+						src={
+							isSafari
+								? '/img/safari/logo/typescript.svg'
+								: '/img/logo/typescript.webp'
+						}
+						alt='typescript logo'
+						fill
+					/>
 				</div>
 				<div className={styles.logoTech}>
-					<Image src={'/img/logo/sass.webp'} alt='sass logo' fill />
+					<Image
+						src={isSafari ? '/img/safari/logo/sass.svg' : '/img/logo/sass.webp'}
+						alt='sass logo'
+						fill
+					/>
 				</div>
 				<div className={styles.logoTech}>
-					<Image src={'/img/logo/docker.webp'} alt='Docker logo' fill />
+					<Image
+						src={
+							isSafari ? '/img/safari/logo/docker.svg' : '/img/logo/docker.webp'
+						}
+						alt='Docker logo'
+						fill
+					/>
 				</div>
 				<div className={styles.logoTech}>
-					<Image src={'/img/logo/figma.webp'} alt='figma logo' fill />
+					<Image
+						src={
+							isSafari ? '/img/safari/logo/figma.svg' : '/img/logo/figma.webp'
+						}
+						alt='figma logo'
+						fill
+					/>
 				</div>
 			</div>
 		</section>
