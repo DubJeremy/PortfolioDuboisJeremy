@@ -38,7 +38,7 @@
 	.inputs {
 		background: url(/img/background.svg) 0 0;
 		width: 70%;
-		@include flex;
+		@include flex($wrap: nowrap);
 		position: relative;
 		z-index: 5;
 		> a {
@@ -401,21 +401,28 @@
 			> a {
 				font-weight: 400;
 			}
-			label:nth-child(2) {
+			.name {
 				width: calc(45% - 10px);
 				margin-right: 10px;
 			}
-			label:nth-child(3) {
+			.mail {
 				width: 55%;
 			}
 			.input {
 				input {
 					padding: 10px 5px;
+					&:focus {
+						font-size: 1.1em;
+						padding: 8px 5px;
+					}
 				}
 			}
 			.message {
 				> textarea {
 					height: 20vh;
+					&:focus {
+						font-size: 1.1em;
+					}
 				}
 			}
 			.btnContainer {

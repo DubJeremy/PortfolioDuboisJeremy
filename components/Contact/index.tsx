@@ -150,7 +150,7 @@ const Contact = ({ isSafari }: { isSafari: boolean }) => {
 			<form className={styles.inputs} method='post' onSubmit={handleSubmit}>
 				<a href='mailto:dubois.jeremy33@gmail.com'>dubois.jeremy33@gmail.com</a>
 				<label
-					className={styles.input}
+					className={`${styles.input} ${styles.name}`}
 					htmlFor='name'
 					style={{ color: `${c('MAIN')}` }}
 				>
@@ -169,7 +169,7 @@ const Contact = ({ isSafari }: { isSafari: boolean }) => {
 						}}
 					/>
 				</label>
-				<label className={styles.input} htmlFor='mail'>
+				<label className={`${styles.input} ${styles.mail}`} htmlFor='mail'>
 					<input
 						type='email'
 						name='mail'
