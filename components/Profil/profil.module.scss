@@ -87,6 +87,7 @@
 					color: white;
 					font-weight: 300;
 					height: 30px;
+					max-height: 30px;
 					padding: 0 25px;
 					border-radius: 2px;
 					margin-left: -1px;
@@ -94,8 +95,8 @@
 				}
 				.logoLinkedin {
 					position: relative;
-					height: 30px;
-					width: 30px;
+					height: 35px;
+					width: 35px;
 					transition: all 0.5s ease-in-out;
 					opacity: 1;
 				}
@@ -127,12 +128,12 @@
 		.logoTech {
 			position: relative;
 			background-color: transparent;
-			transition: all 0.2s ease-in-out;
-			width: calc(calc(100% - 60px) / 4);
-			height: calc(calc(80vw - 60px) / 4);
-			margin: 10px calc(calc(calc(100% - 60px) / 4) / 6);
+			transition: all 0.3s ease-in-out;
+			width: calc(25% - 10px);
+			margin: 0 0 10px 10px;
+			aspect-ratio: 3/2;
 			&:hover {
-				transform: scale(1.1);
+				transform: scale(1.2);
 			}
 			img {
 				object-fit: contain;
@@ -171,11 +172,7 @@
 			width: calc(100% - 100px);
 			padding: 27.5px 50px;
 			.logoTech {
-				position: relative;
-				background-color: transparent;
-				width: calc(calc(100% - 100px) / 4);
-				height: calc(calc(80vw - 100px) / 4);
-				margin: 10px calc(calc(calc(100% - 100px) / 4) / 6);
+				margin: 0 0 15px 10px;
 			}
 		}
 	}
@@ -235,14 +232,6 @@
 		.techs {
 			width: calc(100% - 200px);
 			padding: 50px 100px;
-
-			.logoTech {
-				position: relative;
-				background-color: transparent;
-				width: calc(calc(100% - 200px) / 4);
-				height: calc(calc(70vw - 200px) / 4);
-				margin: 10px calc(calc(calc(100% - 200px) / 4) / 6);
-			}
 		}
 	}
 }

@@ -140,11 +140,13 @@
 		.logoStriped {
 			position: relative;
 			z-index: -2;
-			// width: calc(60% - 2px);
 			flex: 1;
 			height: 100%;
 			transition: all 0.5s ease-in-out;
 			opacity: 1;
+			img {
+				object-fit: cover;
+			}
 		}
 		.transition {
 			opacity: 0;

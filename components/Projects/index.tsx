@@ -420,10 +420,10 @@ const Projects = ({ isSafari }: { isSafari: boolean }) => {
 							<Image
 								src={
 									isSafari
-										? targetReached
+										? targetReachedL
 											? `/img/safari/patternStripedS${imgTheme}.svg`
 											: `/img/safari/patternStripedXL${imgTheme}.svg`
-										: targetReached
+										: targetReachedL
 										? `/img/patternStripedS${imgTheme}.webp`
 										: `/img/patternStripedXL${imgTheme}.webp`
 								}

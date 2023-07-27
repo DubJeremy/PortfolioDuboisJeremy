@@ -1,12 +1,11 @@
 import type { AppProps } from 'next/app';
+import { useEffect, useState } from 'react';
 import ProgressBar from 'nextjs-progressbar';
 
 import { TranslatorProvider } from '@/components/Translator/context';
 import { ThemeProvider } from '@/components/Theme/context';
 
 import '@/styles/globals.scss';
-import { useRouter } from 'next/router';
-import { useEffect, useState } from 'react';
 
 export default function App({ Component, pageProps }: AppProps) {
 	const [isSafari, setIsSafari] = useState(false);
