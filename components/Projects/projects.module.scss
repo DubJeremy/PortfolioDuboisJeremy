@@ -565,7 +565,7 @@
 						z-index: -1;
 						transform: translateX(-100%);
 						overflow: hidden;
-						transition: all 1.5s ease-in-out;
+						transition: all 1s ease-in-out;
 						> h4 {
 							min-width: 100%;
 							font-family: 'Flaviotte';
@@ -574,7 +574,7 @@
 							color: transparent;
 							-webkit-text-stroke: 2px white;
 							white-space: nowrap;
-							transition: all 1.5s ease-in-out;
+							transition: all 1s ease-in-out;
 							transform: translateX(100%);
 							opacity: 0.7;
 							font-weight: 400;

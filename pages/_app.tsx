@@ -9,7 +9,6 @@ import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 
 export default function App({ Component, pageProps }: AppProps) {
-	const router = useRouter();
 	const [isSafari, setIsSafari] = useState(false);
 
 	useEffect(() => {

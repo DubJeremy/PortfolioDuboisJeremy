@@ -20,20 +20,12 @@
 		height: 40%;
 		top: 30%;
 		left: calc(50% - 32.5vw);
-		&:hover {
-			transform: translate(0, 0) rotate(0deg) scale(1.4);
-			z-index: 5;
-		}
 	}
 	.mobile {
 		width: 18vw;
 		height: 45%;
 		top: 27.5%;
 		left: calc(50% - 9vw);
-		&:hover {
-			transform: translate(0, 0) rotate(0deg) scale(2);
-			z-index: 5;
-		}
 	}
 	.kbdevHome {
 		transform: translate(-8vw, -70%) rotate(-10deg);
@@ -477,14 +469,14 @@
 			}
 		}
 		.kbdevHomeMobile {
-			transform: translate(27vw, -60%) rotate(10deg);
+			transform: translate(10vw, -60%) rotate(10deg);
 		}
 		@keyframes kbdevHomeMobileAnim {
 			0% {
 				transform: translate(60vw, -40vh) rotate(0deg);
 			}
 			100% {
-				transform: translate(27vw, -60%) rotate(10deg);
+				transform: translate(10vw, -60%) rotate(10deg);
 			}
 		}
 		.kbdevDigitalSupport {
@@ -511,14 +503,14 @@
 			}
 		}
 		.petshineHomeMobile {
-			transform: translate(28vw, 30%) rotate(15deg);
+			transform: translate(15vw, 30%) rotate(15deg);
 		}
 		@keyframes petshineHomeMobileAnim {
 			0% {
 				transform: translate(80vw, 0vh) rotate(0deg);
 			}
 			100% {
-				transform: translate(28vw, 30%) rotate(15deg);
+				transform: translate(15vw, 30%) rotate(15deg);
 			}
 		}
 		.petshineWelness {
@@ -550,20 +542,10 @@
 		}
 	}
 }
-@media screen and (max-width: $large) {
-	.screens {
-		.screen {
-			&:hover {
-				transform: translate(auto, auto) rotate(0deg) scale(1.3);
-				z-index: 5;
-			}
-		}
-	}
-}
 @media screen and (min-width: $large) and (orientation: landscape) {
 	.screens {
 		.screen {
-			transition: all 0.8s ease-in-out;
+			animation: all 0.8 ease-out;
 		}
 		.desk {
 			width: 35vw;
@@ -579,28 +561,20 @@
 			top: 30%;
 			left: calc(50% - 15vw);
 			transform: translate(-18vw, 0) rotate(-10deg) scale(0);
-			&:hover {
-				transform: translate(-18vw, 0) rotate(-10deg) scale(0);
-				z-index: -1;
-			}
 		}
 		.KBDevPositionM {
 			transform: translate(10vw, 20%) rotate(12deg) scale(0);
-			&:hover {
-				transform: translate(10vw, 20%) rotate(12deg) scale(0);
-				z-index: -1;
-			}
 		}
 		.kbdevHome {
 			transform: translate(-18vw, 0) rotate(-10deg) scale(1);
+			transition: all 0.8s ease-in-out;
 			&:hover {
-				transform: translate(-18vw, 0) rotate(-10deg) scale(1);
 				cursor: none;
 			}
 		}
 		@keyframes kbdevHomeAnim {
 			0% {
-				transform: translate(-100vw, -40vh) rotate(0deg) scale(0);
+				transform: translate(100vw, -40vh) rotate(0deg) scale(0);
 			}
 			100% {
 				transform: translate(-18vw, 0) rotate(-10deg) scale(1);
@@ -608,8 +582,9 @@
 		}
 		.kbdevHomeMobile {
 			transform: translate(10vw, 20%) rotate(12deg) scale(1);
+			transition: all 0.8s ease-in-out;
+
 			&:hover {
-				transform: translate(10vw, 20%) rotate(12deg) scale(1);
 				cursor: none;
 			}
 		}
@@ -671,28 +646,22 @@
 		// -----------------
 		.PetPositionD {
 			transform: translate(0, 10%) rotate(7deg) scale(0);
-			&:hover {
-				transform: translate(0, 10%) rotate(7deg) scale(0);
-			}
 		}
 		.PetPositionM {
 			top: 30%;
 			left: calc(50% - 4vw);
 			transform: translate(-22vw, -10%) rotate(-5deg) scale(0);
-			&:hover {
-				transform: translate(-22vw, -10%) rotate(-5deg) scale(0);
-			}
 		}
 		.petshineHome {
 			transform: translate(0, 10%) rotate(7deg) scale(1);
+			transition: all 0.8s ease-in-out;
 			&:hover {
-				transform: translate(0, 10%) rotate(7deg) scale(1);
 				cursor: none;
 			}
 		}
 		@keyframes petshineHomeAnim {
 			0% {
-				transform: translate(-80vw, -40vh) rotate(0deg) scale(0);
+				transform: translate(100vw, -40vh) rotate(0deg) scale(0);
 			}
 			100% {
 				transform: translate(0, 10%) rotate(7deg) scale(1);
@@ -703,14 +672,14 @@
 			left: calc(50% - 4vw);
 			transform: translate(-20vw, -10%) rotate(-5deg) scale(1);
 			z-index: 5;
+			transition: all 0.8s ease-in-out;
 			&:hover {
-				transform: translate(-20vw, -10%) rotate(-5deg) scale(1);
 				cursor: none;
 			}
 		}
 		@keyframes petshineHomeMobileAnim {
 			0% {
-				transform: translate(-100vw, -40vh) rotate(0deg) scale(0);
+				transform: translate(100vw, 40vh) rotate(0deg) scale(0);
 			}
 			100% {
 				transform: translate(-20vw, -10%) rotate(-5deg) scale(1);
@@ -780,9 +749,6 @@
 			top: 30%;
 			left: calc(50% - 4vw);
 			transform: translate(-5vw, 0%) rotate(-10deg) scale(0);
-			&:hover {
-				transform: translate(-5vw, 0%) rotate(-10deg) scale(0);
-			}
 		}
 		.tcgBackCard {
 			width: 14vw;
@@ -790,14 +756,11 @@
 			top: 27.5%;
 			left: calc(50% - 7.5vw);
 			transform: translate(-15vw, -40%) rotate(15deg) scale(1);
-			&:hover {
-				transform: translate(-15vw, -40%) rotate(15deg) scale(1);
-				z-index: 2;
-			}
+			transition: all 0.8s ease-in-out;
 		}
 		@keyframes tcgBackCardAnim {
 			0% {
-				transform: translate(-80vw, -40vh) rotate(0deg) scale(0);
+				transform: translate(100vw, -40vh) rotate(0deg) scale(0);
 			}
 			100% {
 				transform: translate(-15vw, -40%) rotate(15deg) scale(1);
@@ -809,14 +772,11 @@
 			top: 30%;
 			left: calc(50% - 4vw);
 			transform: translate(-5vw, 0%) rotate(-10deg) scale(1);
-			&:hover {
-				transform: translate(-5vw, 0%) rotate(-10deg) scale(1);
-				z-index: 3;
-			}
+			transition: all 0.8s ease-in-out;
 		}
 		@keyframes tcgCardsAnim {
 			0% {
-				transform: translate(-100vw, 40vh) rotate(0deg) scale(0);
+				transform: translate(100vw, 40vh) rotate(0deg) scale(0);
 			}
 			100% {
 				transform: translate(-5vw, 0%) rotate(-10deg) scale(1);
@@ -869,34 +829,19 @@
 		}
 		//------------
 		.endAnimFi {
-			transform: translate(-100vw, -40vh) rotate(0deg) scale(0);
-			&:hover {
-				transform: translate(-100vw, -40vh) rotate(0deg) scale(0);
-			}
+			transform: translate(100vw, -40vh) rotate(0deg) scale(0);
 		}
 		.endAnimS {
 			transform: translate(60vw, -40vh) rotate(0deg) scale(0);
-			&:hover {
-				transform: translate(60vw, -40vh) rotate(0deg) scale(0);
-			}
 		}
 		.endAnimT {
 			transform: translate(90vw, 0vh) rotate(0deg) scale(0);
-			&:hover {
-				transform: translate(90vw, 0vh) rotate(0deg) scale(0);
-			}
 		}
 		.endAnimFo {
 			transform: translate(-80vw, 0vh) rotate(0deg) scale(0);
-			&:hover {
-				transform: translate(-80vw, 0vh) rotate(0deg) scale(0);
-			}
 		}
 		.endAnimFif {
 			transform: translate(-90vw, 40vh) rotate(0deg) scale(0);
-			&:hover {
-				transform: translate(-90vw, 40vh) rotate(0deg) scale(0);
-			}
 		}
 	}
 	@keyframes screensExitAnimation {
@@ -912,9 +857,6 @@
 }
 @media screen and (min-width: $extra-large) and (orientation: landscape) {
 	.screens {
-		.screen {
-			transition: all 0.8s ease-in-out;
-		}
 		.desk {
 			width: 30vw;
 			height: 45%;
@@ -929,27 +871,15 @@
 			top: 30%;
 			left: calc(50% - 15vw);
 			transform: translate(-18vw, 0) rotate(-10deg) scale(0);
-			&:hover {
-				transform: translate(-18vw, 0) rotate(-10deg) scale(0);
-				z-index: -1;
-			}
 		}
 		.KBDevPositionM {
 			transform: translate(10vw, 20%) rotate(12deg) scale(0);
-			&:hover {
-				transform: translate(10vw, 20%) rotate(12deg) scale(0);
-				z-index: -1;
-			}
 		}
 		.kbdevHome {
 			width: 35vw;
 		}
 		.kbdevHomeMobile {
 			transform: translate(10vw, 10%) rotate(12deg) scale(1);
-			&:hover {
-				transform: translate(10vw, 10%) rotate(12deg) scale(1);
-				cursor: none;
-			}
 		}
 		@keyframes kbdevHomeMobileAnim {
 			0% {
@@ -1005,26 +935,16 @@
 		// -----------------
 		.PetPositionD {
 			transform: translate(0, 10%) rotate(7deg) scale(0);
-			&:hover {
-				transform: translate(0, 10%) rotate(7deg) scale(0);
-			}
 		}
 		.PetPositionM {
 			top: 30%;
 			left: calc(50% - 4vw);
 			transform: translate(-22vw, -10%) rotate(-5deg) scale(0);
-			&:hover {
-				transform: translate(-22vw, -10%) rotate(-5deg) scale(0);
-			}
 		}
 		.petshineHome {
 			width: 35vw;
 			transform: translate(0, 0) rotate(7deg) scale(1);
 			z-index: 3;
-			&:hover {
-				transform: translate(0, 0) rotate(7deg) scale(1);
-				cursor: none;
-			}
 		}
 		@keyframes petshineHomeAnim {
 			0% {
@@ -1085,9 +1005,6 @@
 			top: 30%;
 			left: calc(50% - 4vw);
 			transform: translate(-5vw, 0%) rotate(-10deg) scale(0);
-			&:hover {
-				transform: translate(-5vw, 0%) rotate(-10deg) scale(0);
-			}
 		}
 		.tcgBackCard {
 			width: 14vw;
@@ -1095,10 +1012,6 @@
 			top: 27.5%;
 			left: calc(50% - 7.5vw);
 			transform: translate(-15vw, -40%) rotate(15deg) scale(1);
-			&:hover {
-				transform: translate(-15vw, -40%) rotate(15deg) scale(1);
-				z-index: 2;
-			}
 		}
 		@keyframes tcgBackCardAnim {
 			0% {
@@ -1114,10 +1027,6 @@
 			top: 30%;
 			left: calc(50% - 4vw);
 			transform: translate(-5vw, 0%) rotate(-10deg) scale(1);
-			&:hover {
-				transform: translate(-5vw, 0%) rotate(-10deg) scale(1);
-				z-index: 3;
-			}
 		}
 		@keyframes tcgCardsAnim {
 			0% {
@@ -1174,34 +1083,19 @@
 		}
 		//------------
 		.endAnimFi {
-			transform: translate(-100vw, -40vh) rotate(0deg) scale(0);
-			&:hover {
-				transform: translate(-100vw, -40vh) rotate(0deg) scale(0);
-			}
+			transform: translate(100vw, -40vh) rotate(0deg) scale(0);
 		}
 		.endAnimS {
 			transform: translate(60vw, -40vh) rotate(0deg) scale(0);
-			&:hover {
-				transform: translate(60vw, -40vh) rotate(0deg) scale(0);
-			}
 		}
 		.endAnimT {
 			transform: translate(90vw, 0vh) rotate(0deg) scale(0);
-			&:hover {
-				transform: translate(90vw, 0vh) rotate(0deg) scale(0);
-			}
 		}
 		.endAnimFo {
 			transform: translate(-80vw, 0vh) rotate(0deg) scale(0);
-			&:hover {
-				transform: translate(-80vw, 0vh) rotate(0deg) scale(0);
-			}
 		}
 		.endAnimFif {
 			transform: translate(-90vw, 40vh) rotate(0deg) scale(0);
-			&:hover {
-				transform: translate(-90vw, 40vh) rotate(0deg) scale(0);
-			}
 		}
 	}
 }
@@ -1221,24 +1115,15 @@
 			top: 30%;
 			left: calc(50% - 15vw);
 			transform: translate(-18vw, 0) rotate(-10deg) scale(0);
-			&:hover {
-				transform: translate(-18vw, 0) rotate(-10deg) scale(0);
-				z-index: -1;
-			}
 		}
 		.KBDevPositionM {
 			transform: translate(10vw, 20%) rotate(12deg) scale(0);
-			&:hover {
-				transform: translate(10vw, 20%) rotate(12deg) scale(0);
-				z-index: -1;
-			}
 		}
 		.kbdevHome {
 			width: 50vw;
 			left: calc(50% - 25vw);
 			transform: translate(-12vw, 0) rotate(-10deg) scale(1);
 			&:hover {
-				transform: translate(-12vw, 0) rotate(-10deg) scale(1);
 				cursor: none;
 			}
 		}
@@ -1255,7 +1140,6 @@
 			height: 55%;
 			transform: translate(20vw, 10%) rotate(12deg) scale(1);
 			&:hover {
-				transform: translate(20vw, 10%) rotate(12deg) scale(1);
 				cursor: none;
 			}
 		}
@@ -1313,24 +1197,17 @@
 		// -----------------
 		.PetPositionD {
 			transform: translate(0, 10%) rotate(7deg) scale(0);
-			&:hover {
-				transform: translate(0, 10%) rotate(7deg) scale(0);
-			}
 		}
 		.PetPositionM {
 			top: 30%;
 			left: calc(50% - 4vw);
 			transform: translate(-22vw, -10%) rotate(-5deg) scale(0);
-			&:hover {
-				transform: translate(-22vw, -10%) rotate(-5deg) scale(0);
-			}
 		}
 		.petshineHome {
 			width: 50vw;
 			left: calc(50% - 25vw);
 			transform: translate(5vw, 0) rotate(7deg) scale(1);
 			&:hover {
-				transform: translate(5vw, 0) rotate(7deg) scale(1);
 				cursor: none;
 			}
 		}
@@ -1348,7 +1225,6 @@
 			transform: translate(-29vw, -20%) rotate(-5deg) scale(1);
 			z-index: 5;
 			&:hover {
-				transform: translate(-29vw, -20%) rotate(-5deg) scale(1);
 				cursor: none;
 			}
 		}
@@ -1410,9 +1286,6 @@
 			height: 55%;
 			top: 22.5%;
 			transform: translate(-5vw, 0%) rotate(-10deg) scale(0);
-			&:hover {
-				transform: translate(-5vw, 0%) rotate(-10deg) scale(0);
-			}
 		}
 		.tcgBackCard {
 			width: 20vw;
@@ -1420,10 +1293,6 @@
 			top: 27.5%;
 			left: calc(50% - 10vw);
 			transform: translate(-17vw, -50%) rotate(15deg) scale(1);
-			&:hover {
-				transform: translate(-17vw, -50%) rotate(15deg) scale(1);
-				z-index: 2;
-			}
 		}
 		@keyframes tcgBackCardAnim {
 			0% {
@@ -1439,10 +1308,6 @@
 			top: 27.5%;
 			left: calc(50% - 10vw);
 			transform: translate(-5vw, 0%) rotate(-10deg) scale(1);
-			&:hover {
-				transform: translate(-5vw, 0%) rotate(-10deg) scale(1);
-				z-index: 3;
-			}
 		}
 		@keyframes tcgCardsAnim {
 			0% {
@@ -1499,34 +1364,19 @@
 		}
 		//------------
 		.endAnimFi {
-			transform: translate(-100vw, -40vh) rotate(0deg) scale(0);
-			&:hover {
-				transform: translate(-100vw, -40vh) rotate(0deg) scale(0);
-			}
+			transform: translate(100vw, -40vh) rotate(0deg) scale(0);
 		}
 		.endAnimS {
 			transform: translate(60vw, -40vh) rotate(0deg) scale(0);
-			&:hover {
-				transform: translate(60vw, -40vh) rotate(0deg) scale(0);
-			}
 		}
 		.endAnimT {
 			transform: translate(90vw, 0vh) rotate(0deg) scale(0);
-			&:hover {
-				transform: translate(90vw, 0vh) rotate(0deg) scale(0);
-			}
 		}
 		.endAnimFo {
 			transform: translate(-80vw, 0vh) rotate(0deg) scale(0);
-			&:hover {
-				transform: translate(-80vw, 0vh) rotate(0deg) scale(0);
-			}
 		}
 		.endAnimFif {
 			transform: translate(-90vw, 40vh) rotate(0deg) scale(0);
-			&:hover {
-				transform: translate(-90vw, 40vh) rotate(0deg) scale(0);
-			}
 		}
 	}
 }
@@ -1546,17 +1396,9 @@
 			top: 30%;
 			left: calc(50% - 15vw);
 			transform: translate(-18vw, 0) rotate(-10deg) scale(0);
-			&:hover {
-				transform: translate(-18vw, 0) rotate(-10deg) scale(0);
-				z-index: -1;
-			}
 		}
 		.KBDevPositionM {
 			transform: translate(10vw, 20%) rotate(12deg) scale(0);
-			&:hover {
-				transform: translate(10vw, 20%) rotate(12deg) scale(0);
-				z-index: -1;
-			}
 		}
 		.kbdevHome {
 			height: 50%;
@@ -1564,10 +1406,6 @@
 			width: 50vw;
 			left: calc(50% - 25vw);
 			transform: translate(-12vw, 0) rotate(-10deg) scale(1);
-			&:hover {
-				transform: translate(-12vw, 0) rotate(-10deg) scale(1);
-				cursor: none;
-			}
 		}
 		@keyframes kbdevHomeAnim {
 			0% {
@@ -1582,10 +1420,6 @@
 			height: 60%;
 			top: 20%;
 			transform: translate(15vw, 10%) rotate(12deg) scale(1);
-			&:hover {
-				transform: translate(15vw, 10%) rotate(12deg) scale(1);
-				cursor: none;
-			}
 		}
 		@keyframes kbdevHomeMobileAnim {
 			0% {
@@ -1641,17 +1475,11 @@
 		// -----------------
 		.PetPositionD {
 			transform: translate(0, 10%) rotate(7deg) scale(0);
-			&:hover {
-				transform: translate(0, 10%) rotate(7deg) scale(0);
-			}
 		}
 		.PetPositionM {
 			top: 30%;
 			left: calc(50% - 4vw);
 			transform: translate(-22vw, -10%) rotate(-5deg) scale(0);
-			&:hover {
-				transform: translate(-22vw, -10%) rotate(-5deg) scale(0);
-			}
 		}
 		.petshineHome {
 			height: 50%;
@@ -1660,7 +1488,6 @@
 			left: calc(50% - 25vw);
 			transform: translate(5vw, 0) rotate(7deg) scale(1);
 			&:hover {
-				transform: translate(5vw, 0) rotate(7deg) scale(1);
 				cursor: none;
 			}
 		}
@@ -1679,7 +1506,6 @@
 			transform: translate(-25vw, -10%) rotate(-5deg) scale(1);
 			z-index: 5;
 			&:hover {
-				transform: translate(-25vw, -10%) rotate(-5deg) scale(1);
 				cursor: none;
 			}
 		}
@@ -1742,9 +1568,6 @@
 			top: 20%;
 			left: calc(50% - 10vw);
 			transform: translate(-5vw, 0%) rotate(-10deg) scale(0);
-			&:hover {
-				transform: translate(-5vw, 0%) rotate(-10deg) scale(0);
-			}
 		}
 		.tcgBackCard {
 			width: 20vw;
@@ -1752,10 +1575,6 @@
 			top: 27.5%;
 			left: calc(50% - 10vw);
 			transform: translate(-17vw, -50%) rotate(15deg) scale(1);
-			&:hover {
-				transform: translate(-17vw, -50%) rotate(15deg) scale(1);
-				z-index: 2;
-			}
 		}
 		@keyframes tcgBackCardAnim {
 			0% {
@@ -1771,10 +1590,6 @@
 			top: 20%;
 			left: calc(50% - 10vw);
 			transform: translate(-5vw, 0%) rotate(-10deg) scale(1);
-			&:hover {
-				transform: translate(-5vw, 0%) rotate(-10deg) scale(1);
-				z-index: 3;
-			}
 		}
 		@keyframes tcgCardsAnim {
 			0% {
@@ -1831,34 +1646,19 @@
 		}
 		//------------
 		.endAnimFi {
-			transform: translate(-100vw, -50vh) rotate(0deg) scale(0);
-			&:hover {
-				transform: translate(-100vw, -50vh) rotate(0deg) scale(0);
-			}
+			transform: translate(100vw, -50vh) rotate(0deg) scale(0);
 		}
 		.endAnimS {
 			transform: translate(60vw, -50vh) rotate(0deg) scale(0);
-			&:hover {
-				transform: translate(60vw, -40vh) rotate(0deg) scale(0);
-			}
 		}
 		.endAnimT {
 			transform: translate(90vw, 0vh) rotate(0deg) scale(0);
-			&:hover {
-				transform: translate(90vw, 0vh) rotate(0deg) scale(0);
-			}
 		}
 		.endAnimFo {
 			transform: translate(-80vw, 0vh) rotate(0deg) scale(0);
-			&:hover {
-				transform: translate(-80vw, 0vh) rotate(0deg) scale(0);
-			}
 		}
 		.endAnimFif {
 			transform: translate(-90vw, 40vh) rotate(0deg) scale(0);
-			&:hover {
-				transform: translate(-90vw, 40vh) rotate(0deg) scale(0);
-			}
 		}
 	}
 }
