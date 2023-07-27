@@ -132,9 +132,7 @@
 			width: calc(25% - 10px);
 			margin: 0 0 10px 10px;
 			aspect-ratio: 3/2;
-			&:hover {
-				transform: scale(1.2);
-			}
+
 			img {
 				object-fit: contain;
 			}

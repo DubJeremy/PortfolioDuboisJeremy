@@ -79,14 +79,14 @@ const Profil = ({ isSafari }: { isSafari: boolean }) => {
 		<section
 			className={styles.profil}
 			id='profil'
-			style={
-				targetReached
-					? {
-							borderTop: `3px solid ${c('MAIN')}`,
-							borderBottom: `3px solid ${c('MAIN')}`,
-					  }
-					: { borderTop: `2px solid ${c('MAIN')}` }
-			}
+			// style={
+			// 	targetReached
+			// 		? {
+			// 				borderTop: `3px solid ${c('MAIN')}`,
+			// 				borderBottom: `3px solid ${c('MAIN')}`,
+			// 		  }
+			// 		: { borderTop: `2px solid ${c('MAIN')}` }
+			// }
 		>
 			<div
 				className={styles.desc}
@@ -126,7 +126,7 @@ const Profil = ({ isSafari }: { isSafari: boolean }) => {
 			<div
 				className={`${styles.info} cursorScale small`}
 				style={
-					targetReached && isInLandscape
+					targetReachedL && isInLandscape
 						? {
 								borderBottom: `3px solid ${c('MAIN')}`,
 								color: `${c('MAIN')}`,

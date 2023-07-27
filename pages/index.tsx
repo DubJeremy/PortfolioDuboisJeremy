@@ -14,6 +14,8 @@ import Cursor from '@/components/Cursor';
 import Theme from '@/components/Theme';
 import useTheme from '@/components/Theme/hooks';
 
+import styles from '../styles/app.module.scss';
+
 export default function Home({ isSafari }: { isSafari: boolean }) {
 	const [targetReachedH] = useMediaQuery(`(max-height: 500px)`);
 	const [targetReached] = useMediaQuery(`(max-width: 992px)`);
@@ -67,6 +69,16 @@ export default function Home({ isSafari }: { isSafari: boolean }) {
 		}
 	}, [theme]);
 
+	const [showComponents, setShowComponents] = useState(false);
+
+	useEffect(() => {
+		const timer = setTimeout(() => {
+			setShowComponents(true);
+		}, 3000);
+
+		return () => clearTimeout(timer);
+	}, []);
+
 	return (
 		<>
 			<Head>
@@ -93,12 +105,16 @@ export default function Home({ isSafari }: { isSafari: boolean }) {
 						{targetReachedL && <Theme />}
 
 						<ScreenFrame isSafari={isSafari} />
-						<Navbar isSafari={isSafari} />
-						<Header isSafari={isSafari} />
-						<Profil isSafari={isSafari} />
-						<Projects isSafari={isSafari} />
-						<Contact isSafari={isSafari} />
-						<Footer />
+						{showComponents && (
+							<div className={styles.components}>
+								<Navbar isSafari={isSafari} />
+								<Header isSafari={isSafari} />
+								<Profil isSafari={isSafari} />
+								<Projects isSafari={isSafari} />
+								<Contact isSafari={isSafari} />
+								<Footer />
+							</div>
+						)}
 					</>
 				)}
 			</main>

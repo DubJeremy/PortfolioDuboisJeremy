@@ -6,9 +6,8 @@
 	top: 80px;
 	width: 198px;
 	height: calc(100vh - 110px);
-	background-color: transparent;
 	@include flex($just: flex-start, $wrap: nowrap);
-	animation: circleAppear 1s ease-in-out 1s;
+	animation: circleAppear 1s ease-in-out 1.3s;
 	transform: translateY(-100%);
 	animation-fill-mode: forwards;
 	.background {
@@ -28,25 +27,6 @@
 		width: 200px;
 		height: calc(calc(calc(100vh - 110px) / 2) + 100px);
 		z-index: 1;
-	}
-	.background:after {
-		position: fixed;
-		left: calc(50% - 100px);
-		top: 0;
-		background-image: url(/img/noise.png);
-		pointer-events: none !important;
-		background-size: 250px 250px;
-		-webkit-animation: noiseTextureAnim 0.55s steps(1) infinite;
-		animation: noiseTextureAnim 0.55s steps(1) infinite;
-		will-change: background-position;
-		-webkit-backface-visibility: hidden;
-		backface-visibility: hidden;
-		-webkit-transform: translateZ(0);
-		transform: translateZ(0);
-		content: '';
-		width: 200px;
-		height: calc(calc(calc(100vh - 110px) / 2) + 100px);
-		z-index: 2;
 	}
 	.img {
 		background-color: transparent;
@@ -139,11 +119,6 @@
 			width: 170px;
 			left: calc(50% - 85px);
 		}
-		.background:after {
-			height: calc(calc(calc(100vh - 90px) / 2) + 100px);
-			width: 170px;
-			left: calc(50% - 85px);
-		}
 		.img {
 			width: 174px;
 			height: 174px;
@@ -161,10 +136,6 @@
 			width: 246px;
 		}
 		.background:before {
-			width: 250px;
-			left: calc(50% - 125px);
-		}
-		.background:after {
 			width: 250px;
 			left: calc(50% - 125px);
 		}
@@ -190,11 +161,6 @@
 			left: calc(50% - 104px);
 			height: calc(calc(calc(100vh - 130px) / 2) + 94px);
 		}
-		.background:after {
-			width: 188px;
-			left: calc(50% - 104px);
-			height: calc(calc(calc(100vh - 130px) / 2) + 100px);
-		}
 		.img {
 			width: 198px;
 			height: 198px;
@@ -210,10 +176,6 @@
 			width: 346px;
 		}
 		.background:before {
-			width: 350px;
-			left: calc(50% - 175px);
-		}
-		.background:after {
 			width: 350px;
 			left: calc(50% - 175px);
 		}
@@ -240,16 +202,17 @@
 			left: calc(50% - 104px);
 			height: calc(calc(calc(100vh - 130px) / 2) + 100px);
 		}
-		.background:after {
-			width: 208px;
-			left: calc(50% - 104px);
-			height: calc(calc(calc(100vh - 130px) / 2) + 100px);
-		}
 		.img {
 			width: 218px;
 			height: 218px;
 			margin-top: -118px;
 			margin-left: -6px;
+			> p {
+				right: 7.5%;
+				width: 85%;
+				font-size: 1.8em;
+				bottom: 15%;
+			}
 		}
 	}
 }
@@ -262,11 +225,6 @@
 			height: calc(50% + 150px);
 		}
 		.background:before {
-			width: 348px;
-			left: calc(50% - 175px);
-			height: calc(calc(calc(100vh - 130px) / 2) + 150px);
-		}
-		.background:after {
 			width: 348px;
 			left: calc(50% - 175px);
 			height: calc(calc(calc(100vh - 130px) / 2) + 150px);
