@@ -201,11 +201,6 @@
 				position: absolute;
 				z-index: 0;
 			}
-			&:hover {
-				.arrowH {
-					transform: scale(1.1);
-				}
-			}
 			&:active {
 				.arrowH {
 					transform: scale(0.95);
@@ -397,7 +392,7 @@
 				width: calc(75% - 2px);
 			}
 			.next {
-				width: 20%;
+				width: 25%;
 				> p {
 					font-size: 0.9em;
 				}
@@ -516,11 +511,6 @@
 						right: 20px;
 						bottom: 5px;
 						opacity: 1;
-					}
-					&:hover {
-						.showArrow {
-							transform: scale(1.2);
-						}
 					}
 				}
 				.selected {
@@ -720,15 +710,6 @@
 					}
 				}
 			}
-			// .screensContainer {
-			// 	.screens {
-			// 		.showProject {
-			// 			// @include flex();
-			// 			> h4 {
-			// 			}
-			// 		}
-			// 	}
-			// }
 		}
 	}
 }

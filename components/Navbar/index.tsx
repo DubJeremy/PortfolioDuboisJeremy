@@ -186,7 +186,6 @@ const Navbar = ({ isSafari }: { isSafari: boolean }) => {
 				{targetReached ? (
 					<div
 						className={`${styles.nav}  cursorScale small`}
-						// style={{ color: ` ${c('MAIN')}` }}
 					>
 						<ul>
 							<li

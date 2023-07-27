@@ -545,7 +545,7 @@
 @media screen and (min-width: $large) and (orientation: landscape) {
 	.screens {
 		.screen {
-			animation: all 0.8 ease-out;
+			animation: all 0.5 ease-out;
 		}
 		.desk {
 			width: 35vw;
@@ -655,6 +655,7 @@
 		.petshineHome {
 			transform: translate(0, 10%) rotate(7deg) scale(1);
 			transition: all 0.8s ease-in-out;
+			z-index: 3;
 			&:hover {
 				cursor: none;
 			}
@@ -827,6 +828,136 @@
 				transform: translate(1vw, 0%) rotate(10deg) scale(1);
 			}
 		}
+		//------------
+		.endAnimFi {
+			transform: translate(100vw, -40vh) rotate(0deg) scale(0);
+		}
+		.endAnimS {
+			transform: translate(60vw, -40vh) rotate(0deg) scale(0);
+		}
+		.endAnimT {
+			transform: translate(90vw, 0vh) rotate(0deg) scale(0);
+		}
+		.endAnimFo {
+			transform: translate(-80vw, 0vh) rotate(0deg) scale(0);
+		}
+		.endAnimFif {
+			transform: translate(-90vw, 40vh) rotate(0deg) scale(0);
+		}
+	}
+	@keyframes screensExitAnimation {
+		0% {
+			opacity: 1;
+			transform: translateY(0);
+		}
+		100% {
+			opacity: 0;
+			transform: translateY(-100vw);
+		}
+	}
+}
+@media screen and (min-width: $large) and (orientation: landscape) and (min-height: $medium) {
+	.screens {
+		.desk {
+			width: 45vw;
+		}
+		.mobile {
+			width: 15vw;
+		}
+		.kbdevHomeMobile {
+			transform: translate(20vw, 20%) rotate(12deg);
+		}
+		@keyframes kbdevHomeMobileAnim {
+			0% {
+				transform: translate(60vw, -40vh) rotate(0deg) scale(0);
+			}
+			100% {
+				transform: translate(20vw, 20%) rotate(12deg) scale(1);
+			}
+		}
+
+		.kbdevAuliaMobile {
+			transform: translate(10vw, -70%) rotate(-5deg) scale(1);
+		}
+		@keyframes kbdevAuliaMobileAnim {
+			0% {
+				transform: translate(10vw, 20%) rotate(12deg) scale(0);
+			}
+			25% {
+				transform: translate(10vw, 20%) rotate(12deg) scale(1);
+			}
+			100% {
+				transform: translate(10vw, -70%) rotate(-5deg) scale(1);
+			}
+		}
+		// -----------------
+		.petshineFav {
+			transform: translate(10vw, -50%) rotate(10deg) scale(1);
+		}
+		@keyframes petshineFavAnim {
+			0% {
+				transform: translate(0, 10%) rotate(7deg) scale(0);
+			}
+			25% {
+				transform: translate(0, 10%) rotate(7deg) scale(1);
+			}
+			100% {
+				transform: translate(10vw, -50%) rotate(10deg) scale(1);
+			}
+		}
+		.petshineCarousel {
+			transform: translate(-15vw, -70%) rotate(-10deg) scale(1);
+		}
+		@keyframes petshineCarouselAnim {
+			0% {
+				transform: translate(-22vw, -10%) rotate(-5deg) scale(0);
+			}
+			25% {
+				transform: translate(-22vw, -10%) rotate(-5deg) scale(1);
+			}
+			100% {
+				transform: translate(-15vw, -70%) rotate(-10deg) scale(1);
+			}
+		}
+		.petshineWelness {
+			transform: translate(-5vw, 80%) rotate(-5deg) scale(1);
+		}
+		@keyframes petshineWelnessAnim {
+			0% {
+				transform: translate(0, 10%) rotate(7deg) scale(0);
+			}
+			25% {
+				transform: translate(0, 10%) rotate(7deg) scale(1);
+			}
+			100% {
+				transform: translate(-5vw, 80%) rotate(-5deg) scale(1);
+			}
+		}
+		//--------------------------
+		.tcgBackCard {
+			width: 20vw;
+			transform: translate(-17vw, -40%) rotate(15deg) scale(1);
+		}
+		@keyframes tcgBackCardAnim {
+			0% {
+				transform: translate(100vw, -40vh) rotate(0deg) scale(0);
+			}
+			100% {
+				transform: translate(-17vw, -40%) rotate(15deg) scale(1);
+			}
+		}
+		.tcgCards {
+			transform: translate(-7vw, 0%) rotate(-10deg) scale(1);
+		}
+		@keyframes tcgCardsAnim {
+			0% {
+				transform: translate(100vw, 40vh) rotate(0deg) scale(0);
+			}
+			100% {
+				transform: translate(-7vw, 0%) rotate(-10deg) scale(1);
+			}
+		}
+
 		//------------
 		.endAnimFi {
 			transform: translate(100vw, -40vh) rotate(0deg) scale(0);
