@@ -5,7 +5,7 @@ export const en: { [key: string]: string } = {
 	DESC_TITLE_F: 'Hello,',
 	DESC_TITLE_S: 'my name is Jérémy Dubois,',
 	DESC_F:
-		'I’m a junior FullStack web developer. I use JavaScript technologies such as React and Node.js to create powerful and elegant user interfaces.',
+		'I’m a junior FullStack web developer. I use JavaScript technologies such as React and Node.js to create powerful and elegant user interfaces and applications.',
 	DESC_S:
 		'At the beginning of 2023, I obtained the title of Application Developer Designer, which is a diploma equivalent to a BAC +3/4, following 1 year of work-study with WildCodeSchool and above all with the KBDev company, which enabled me to considerably increase my technical skills as a developer, but also to learn to collaborate in this environment via an Agile organization, notably with the SCRUM method.',
 	DESC_T:

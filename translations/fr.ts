@@ -5,7 +5,7 @@ export const fr: { [key: string]: string } = {
 	DESC_TITLE_F: 'Bonjour,',
 	DESC_TITLE_S: 'je m’appel Jérémy Dubois,',
 	DESC_F:
-		'Je suis un Développeur web FullStack junior. J’utilise des technologies JavaScript tel que React et Node.js pour créer des interfaces utilisateur performantes et élégantes.',
+		'Je suis un Développeur web FullStack junior. J’utilise des technologies JavaScript tel que React et Node.js pour créer des interfaces utilisateur et des applications performantes et élégantes.',
 	DESC_S:
 		'Début 2023, j’ai obtenu le titre de Concepteur Développeur d’Application qui est un diplôme équivalent à un BAC +3/4, suite à 1 an d’alternance avec la WildCodeSchool et surtout avec l’entreprise KBDev qui m’a permis d’accroître considérablement mes compétences techniques de développeur mais aussi d’apprendre à collaborer dans ce milieu via une organisation Agile notamment avec la méthode SCRUM.',
 	DESC_T:
