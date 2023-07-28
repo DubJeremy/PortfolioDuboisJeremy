@@ -84,15 +84,21 @@ export default function Home({ isSafari }: { isSafari: boolean }) {
 			<Head>
 				<title>Portfolio | Dubois Jérémy</title>
 				<meta charSet='UTF-8' />
-				<meta name='description' content='' />
+				<meta
+					name='description'
+					content='Développeur Web FullStack Javascript | React, Node js | Passionné par les projets innovants et stimulants | Prêt à contribuer à des projets techniques et collaboratifs.'
+				/>
 				<meta name='viewport' content='width=device-width, initial-scale=1' />
-				<meta property='og:title' content='' />
-				<meta property='og:description' content='' />
-				<meta property='og:type' content='website' />
-				<meta property='og:url' content='https://www.portfolio.dubj.com' />
+				<meta property='og:title' content='Portfolio Dubois Jeremy' />
+				<meta
+					property='og:description'
+					content='Développeur Web FullStack Javascript | React, Node js | Passionné par les projets innovants et stimulants | Prêt à contribuer à des projets techniques et collaboratifs.'
+				/>
+				<meta property='og:type' content='website portfolio' />
+				<meta property='og:url' content='https://www.portfolio.dubj.fr' />
 				<meta
 					property='og:image'
-					content='https://www.portfolio.dubj/images/og-image.jpg'
+					content='https://www.portfolio.dubj.fr/public/img/safari/logo/logo.svg'
 				/>
 				<link rel='icon' href={`/favicon${icoTheme}.ico`} />
 			</Head>

@@ -1,4 +1,7 @@
 export const fr: { [key: string]: string } = {
+	// META -------------------------------
+	META_DESC:
+		'Développeur Web FullStack Javascript | React, Node js | Passionné par les projets innovants et stimulants | Prêt à contribuer à des projets techniques et collaboratifs.',
 	// NAV --------------------------------
 	PROJECT: 'Projets',
 	// PROFIL --------------------------------
