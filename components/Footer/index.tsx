@@ -28,7 +28,7 @@ const Footer = () => {
 					x: 0,
 				},
 				{
-					x: -100,
+					x: -150,
 					scrollTrigger: {
 						trigger: element.querySelector(
 							'#scrollTextContainer2'
