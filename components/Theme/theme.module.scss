@@ -53,11 +53,12 @@
 		left: 6.5px;
 		bottom: 29px;
 		z-index: 1005;
-		width: 15px;
+		width: 0;
 		@include flex($align: flex-end);
+		animation: themeAnim 0.3s ease-in-out forwards 3s;
 		.theme {
 			height: 15px;
-			width: 8px;
+			width: 50%;
 			margin-top: 8px;
 			cursor: pointer;
 			transition: all 0.3s ease-in-out;
@@ -85,6 +86,15 @@
 			width: 100%;
 			cursor: none;
 			opacity: 1;
+		}
+	}
+
+	@keyframes themeAnim {
+		0% {
+			width: 0;
+		}
+		100% {
+			width: 15px;
 		}
 	}
 }

@@ -102,7 +102,7 @@ export default function Home({ isSafari }: { isSafari: boolean }) {
 				) : (
 					<>
 						{targetReachedXL && <Cursor />}
-						{targetReachedL && <Theme />}
+						{targetReachedL && showComponents && <Theme />}
 
 						<ScreenFrame isSafari={isSafari} />
 						{showComponents && (
