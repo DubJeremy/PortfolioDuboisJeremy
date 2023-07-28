@@ -6,9 +6,8 @@
 	top: 80px;
 	width: 198px;
 	height: calc(100vh - 110px);
-	background-color: transparent;
-	@include flex($just: flex-start);
-	animation: circleAppear 1s ease-in-out 1s;
+	@include flex($just: flex-start, $wrap: nowrap);
+	animation: circleAppear 1s ease-in-out 1.3s;
 	transform: translateY(-100%);
 	animation-fill-mode: forwards;
 	.background {
@@ -22,31 +21,12 @@
 		position: fixed;
 		left: calc(50% - 100px);
 		top: 0;
-		background: url(/img/background.webp) 0 0;
+		background: url(/img/background.svg) 0 0;
 		background-size: 500px 500px;
 		content: '';
 		width: 200px;
 		height: calc(calc(calc(100vh - 110px) / 2) + 100px);
 		z-index: 1;
-	}
-	.background:after {
-		position: fixed;
-		left: calc(50% - 100px);
-		top: 0;
-		background-image: url(/img/noise.png);
-		pointer-events: none !important;
-		background-size: 250px 250px;
-		-webkit-animation: noiseTextureAnim 0.55s steps(1) infinite;
-		animation: noiseTextureAnim 0.55s steps(1) infinite;
-		will-change: background-position;
-		-webkit-backface-visibility: hidden;
-		backface-visibility: hidden;
-		-webkit-transform: translateZ(0);
-		transform: translateZ(0);
-		content: '';
-		width: 200px;
-		height: calc(calc(calc(100vh - 110px) / 2) + 100px);
-		z-index: 2;
 	}
 	.img {
 		background-color: transparent;
@@ -58,6 +38,19 @@
 		height: 204px;
 		border-radius: 50%;
 		box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+		> p {
+			@include flex;
+			width: 90%;
+			height: 20%;
+			position: absolute;
+			bottom: 25%;
+			right: 5%;
+			text-align: center;
+			font-family: 'Flaviotte';
+			font-size: 1.4em;
+			text-shadow: 0px 0px 15px rgba(0, 0, 0, 0.6);
+			color: #ede5dd;
+		}
 	}
 }
 
@@ -126,14 +119,12 @@
 			width: 170px;
 			left: calc(50% - 85px);
 		}
-		.background:after {
-			height: calc(calc(calc(100vh - 90px) / 2) + 100px);
-			width: 170px;
-			left: calc(50% - 85px);
-		}
 		.img {
 			width: 174px;
 			height: 174px;
+			> p {
+				font-size: 1.2em;
+			}
 		}
 	}
 }
@@ -148,13 +139,13 @@
 			width: 250px;
 			left: calc(50% - 125px);
 		}
-		.background:after {
-			width: 250px;
-			left: calc(50% - 125px);
-		}
 		.img {
 			width: 254px;
 			height: 254px;
+			> p {
+				font-size: 1.7em;
+				bottom: 20%;
+			}
 		}
 	}
 }
@@ -169,11 +160,6 @@
 			width: 188px;
 			left: calc(50% - 104px);
 			height: calc(calc(calc(100vh - 130px) / 2) + 94px);
-		}
-		.background:after {
-			width: 188px;
-			left: calc(50% - 104px);
-			height: calc(calc(calc(100vh - 130px) / 2) + 100px);
 		}
 		.img {
 			width: 198px;
@@ -193,14 +179,14 @@
 			width: 350px;
 			left: calc(50% - 175px);
 		}
-		.background:after {
-			width: 350px;
-			left: calc(50% - 175px);
-		}
 		.img {
 			width: 354px;
 			height: 354px;
 			margin-top: -120px;
+			> p {
+				font-size: 2.3em;
+				bottom: 25%;
+			}
 		}
 	}
 }
@@ -216,16 +202,17 @@
 			left: calc(50% - 104px);
 			height: calc(calc(calc(100vh - 130px) / 2) + 100px);
 		}
-		.background:after {
-			width: 208px;
-			left: calc(50% - 104px);
-			height: calc(calc(calc(100vh - 130px) / 2) + 100px);
-		}
 		.img {
 			width: 218px;
 			height: 218px;
 			margin-top: -118px;
 			margin-left: -6px;
+			> p {
+				right: 7.5%;
+				width: 85%;
+				font-size: 1.8em;
+				bottom: 15%;
+			}
 		}
 	}
 }
@@ -238,11 +225,6 @@
 			height: calc(50% + 150px);
 		}
 		.background:before {
-			width: 348px;
-			left: calc(50% - 175px);
-			height: calc(calc(calc(100vh - 130px) / 2) + 150px);
-		}
-		.background:after {
 			width: 348px;
 			left: calc(50% - 175px);
 			height: calc(calc(calc(100vh - 130px) / 2) + 150px);
@@ -260,6 +242,10 @@
 		top: 100px;
 		.img {
 			margin-top: -128px;
+			> p {
+				font-size: 1.8em;
+				bottom: 20%;
+			}
 		}
 	}
 }
@@ -289,6 +275,27 @@
 	}
 }
 @media screen and (min-width: $extra-large) and (orientation: landscape) {
+	.circle {
+		.img {
+			> p {
+				bottom: 10%;
+				width: 70%;
+				right: 15%;
+				font-size: 1.5em;
+				font-weight: 100;
+			}
+		}
+	}
 }
 @media screen and (min-width: $ultra-large) {
+	.circle {
+		.img {
+			> p {
+				bottom: 5%;
+				width: 60%;
+				right: 20%;
+				font-size: 1.5em;
+			}
+		}
+	}
 }

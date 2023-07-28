@@ -3,11 +3,12 @@
 
 .projects {
 	width: 100%;
-	color: $blue;
+	transition: all 0.5s ease-in-out;
+	overflow: hidden;
 	.title {
 		width: 100%;
 		height: 70px;
-		border-bottom: 2px solid $blue;
+		transition: all 0.5s ease-in-out;
 		@include flex($dir: row);
 		> h3 {
 			width: 40%;
@@ -18,42 +19,61 @@
 		}
 		.patternContainer {
 			position: relative;
-			border-left: 2px solid $blue;
+			transition: all 0.5s ease-in-out;
 			width: calc(60% - 2px);
 			height: 100%;
+			transition: all 0.5s ease-in-out;
+			opacity: 1;
+			> img {
+				object-fit: cover;
+			}
+		}
+		.transition {
+			opacity: 0;
 		}
 	}
-	.screens {
+	.screensContainer {
 		width: 100%;
 		height: 40vh;
 	}
 	.descProject {
 		width: 100%;
-		border-bottom: 2px solid $blue;
+		transition: all 0.5s ease-in-out;
 		h4 {
 			font-family: 'Flaviotte';
 			font-size: 2em;
-			-webkit-text-stroke: 0.85px $blue;
 			color: transparent;
 			width: 100%;
 			text-align: center;
 			margin-bottom: 15px;
+			transition: all 0.5s ease-in-out;
+		}
+		.titleEndAnim {
+			transform: scale(0);
+			opacity: 0;
 		}
 		> p {
 			padding: 0 25px;
 			font-family: 'JosefinS';
 			font-weight: 350;
 			text-align: justify;
+			transition: all 0.5s ease-in-out;
+		}
+		.descEndAnim {
+			transform: scale(0);
+			opacity: 0;
 		}
 		.techs {
+			transition: all 0.5s ease-in-out;
 			padding: 30px 40px 40px 40px;
 			@include flex($dir: row);
 			.logoTech {
 				position: relative;
-				transition: all 0.2s ease-in-out;
+				transition: all 0.5s ease-in-out;
 				width: calc(calc(100vw - 110px) / 6);
 				height: calc(calc(100vw - 110px) / 6);
 				margin: 10px calc(calc(calc(100vw - 110px) / 6) / 4);
+				transform: scale(1);
 				&:hover {
 					transform: scale(1.1);
 				}
@@ -61,11 +81,14 @@
 					object-fit: contain;
 				}
 			}
+			.techAnim {
+				transform: scale(0);
+			}
 		}
 	}
 	.btns {
 		height: 50px;
-		border-bottom: 2px solid $blue;
+		transition: all 0.5s ease-in-out;
 		position: relative;
 		@include flex($dir: row);
 		font-family: 'JosefinS';
@@ -85,7 +108,11 @@
 				width: 20px;
 				right: 5px;
 				bottom: 5px;
-				transition: all 0.2s ease-in-out;
+				transition: all 0.5s ease-in-out;
+				opacity: 1;
+			}
+			.transition {
+				opacity: 0;
 			}
 			&:hover {
 				.arrowD {
@@ -98,12 +125,31 @@
 				}
 			}
 		}
+		.inDevelopment {
+			width: 50%;
+			@include flex($dir: row);
+			> p {
+				width: 60%;
+				text-align: center;
+				margin-right: 15px;
+			}
+			.loader {
+				transform: scale(1.8);
+			}
+		}
 		.logoStriped {
 			position: relative;
 			z-index: -2;
-			width: calc(60% - 2px);
+			flex: 1;
 			height: 100%;
-			border-left: 2px solid $blue;
+			transition: all 0.5s ease-in-out;
+			opacity: 1;
+			img {
+				object-fit: cover;
+			}
+		}
+		.transition {
+			opacity: 0;
 		}
 		.next {
 			position: absolute;
@@ -112,8 +158,7 @@
 			top: 0;
 			width: 35%;
 			height: 50%;
-			border-left: 2px solid $blue;
-			border-bottom: 2px solid $blue;
+			transition: all 0.5s ease-in-out;
 			@include flex($just: space-around, $dir: row);
 			padding: 0 2px;
 			cursor: pointer;
@@ -124,38 +169,20 @@
 				position: relative;
 				width: 20px;
 				height: 10px;
-				transition: all 0.2s ease-in-out;
+				transition: all 0.5s ease-in-out;
+				opacity: 1;
+			}
+			.transition {
+				opacity: 0;
 			}
 			&:before {
-				background: url(/img/background.webp) 0 0;
+				background: url(/img/background.svg) 0 0;
 				background-size: 500px 500px;
 				width: 100%;
 				height: 100%;
 				content: '';
 				position: absolute;
 				z-index: -1;
-			}
-			&:after {
-				background-image: url(/img/noise.png);
-				pointer-events: none !important;
-				background-size: 250px 250px;
-				-webkit-animation: noiseTextureAnim 0.55s steps(1) infinite;
-				animation: noiseTextureAnim 0.55s steps(1) infinite;
-				will-change: background-position;
-				-webkit-backface-visibility: hidden;
-				backface-visibility: hidden;
-				-webkit-transform: translateZ(0);
-				transform: translateZ(0);
-				content: '';
-				width: 100%;
-				height: 100%;
-				position: absolute;
-				z-index: 0;
-			}
-			&:hover {
-				.arrowH {
-					transform: scale(1.1);
-				}
 			}
 			&:active {
 				.arrowH {
@@ -166,15 +193,15 @@
 	}
 	.scrollText {
 		height: 140px;
-		border-bottom: 2px solid $blue;
+		transition: all 0.5s ease-in-out;
 		position: relative;
 		overflow: hidden;
-		> p {
+		> div {
 			font-family: 'Flaviotte';
 			font-size: 190px;
 			line-height: 175px;
 			color: transparent;
-			-webkit-text-stroke: 4px $blue;
+			transition: all 0.5s ease-in-out;
 			white-space: nowrap;
 		}
 	}
@@ -227,6 +254,9 @@
 				width: calc(55% - 2px);
 			}
 		}
+		.screensContainer {
+			height: 50vh;
+		}
 		.descProject {
 			> p {
 				font-size: 0.9em;
@@ -259,13 +289,40 @@
 				width: calc(45% - 2px);
 			}
 		}
+		.screensContainer {
+			height: 40vh;
+		}
+		.descProject {
+			.techs {
+				padding: 15px 40px 20px 40px;
+			}
+		}
 	}
 }
 @media screen and (min-width: $small) {
 	.projects {
+		.screensContainer {
+			height: 50vh;
+		}
 		.descProject {
 			> p {
 				font-size: 1.1em;
+			}
+			.techs {
+				.logoTech {
+					width: calc(calc(100vw - 110px) / 10);
+					height: calc(calc(100vw - 110px) / 10);
+					margin: 10px calc(calc(calc(100vw - 110px) / 7) / 4);
+				}
+			}
+		}
+		.btns {
+			.inDevelopment {
+				width: 40%;
+				> p {
+					width: 50%;
+					margin-right: 20px;
+				}
 			}
 		}
 	}
@@ -311,11 +368,14 @@
 					bottom: 7px;
 				}
 			}
+			.inDevelopment {
+				width: 35%;
+			}
 			.logoStriped {
 				width: calc(75% - 2px);
 			}
 			.next {
-				width: 20%;
+				width: 25%;
 				> p {
 					font-size: 0.9em;
 				}
@@ -330,31 +390,12 @@
 @media screen and (min-width: $large) {
 	.projects {
 		.title {
-			border-bottom: 4px solid $blue;
 			> h3 {
 				width: 30%;
 			}
 			.patternContainer {
-				border-left: 4px solid $blue;
 				width: calc(70% - 4px);
 			}
-		}
-		.descProject {
-			border-bottom: 4px solid $blue;
-		}
-		.btns {
-			border-bottom: 4px solid $blue;
-
-			.logoStriped {
-				border-left: 4px solid $blue;
-			}
-			.next {
-				border-left: 4px solid $blue;
-				border-bottom: 4px solid $blue;
-			}
-		}
-		.scrollText {
-			border-bottom: 4px solid $blue;
 		}
 	}
 }
@@ -364,8 +405,10 @@
 			height: 35vh;
 		}
 		.btns {
+			.inDevelopment {
+				width: 30%;
+			}
 			.logoStriped {
-				border-left: 4px solid $blue;
 				width: calc(75% - 4px);
 			}
 		}
@@ -378,7 +421,6 @@
 			@include flex($dir: row, $wrap: nowrap);
 			> h3 {
 				width: 20%;
-				border-right: 4px solid $blue;
 				box-sizing: border-box;
 				height: 100%;
 				@include flex;
@@ -388,74 +430,99 @@
 				border-left: 0;
 			}
 		}
-		.content {
-			border-bottom: 4px solid $blue;
+		.projectContainer {
+			height: calc(100vh - 223px);
 			width: 100%;
-			display: grid;
-			grid-template-columns: 30% 70%;
-			grid-template-rows: 65vh 60px;
-			.descProject {
-				grid-column: 1/2;
-				grid-row: 1/2;
+			@include flex($dir: row, $wrap: nowrap);
+			.descContainer {
+				width: 30%;
 				height: 100%;
-				width: 100%;
-				border-bottom: 0;
-				border-right: 4px solid $blue;
-				box-sizing: border-box;
-				@include flex($just: flex-end, $align: flex-start);
-				padding: 25px;
-				> p {
-					padding: 0;
-					text-align: left;
-					margin-bottom: 5px;
-				}
-				.techs {
-					width: 50%;
-					padding: 0;
-					justify-content: flex-start;
-					.logoTech {
-						margin: 10px calc(calc(100% / 5) / 8) 0 calc(calc(100% / 5) / 8);
-						width: calc(100% / 5);
-						height: calc(15vw / 5);
+				transition: all 0.5s ease-in-out;
+				@include flex($wrap: nowrap);
+				background: url(/img/background.svg) 0 0;
+				.desc {
+					transition: all 0.5s ease-in-out;
+					box-sizing: border-box;
+					width: 100%;
+					flex: 1;
+					@include flex($align: flex-start);
+					cursor: pointer;
+					position: relative;
+					.title {
+						padding: 15px;
+						width: auto;
+						text-align: left;
+						font-family: 'Flaviotte';
+						font-size: 2.5vw;
+						font-weight: 100;
+						transition: all 0.5s ease-in-out;
 					}
+					.arrowD {
+						position: absolute;
+						height: 20px;
+						width: 20px;
+						right: 20px;
+						bottom: 20px;
+						transition: all 0.3s ease-in-out 0.2s;
+						opacity: 0;
+					}
+					.showArrow {
+						right: 10px;
+						bottom: 10px;
+						opacity: 1;
+					}
+					.inDevelopment {
+						position: absolute;
+						height: 20px;
+						bottom: 15px;
+						right: 60px;
+						@include flex($align: flex-end);
+						opacity: 0;
+						transition: all 0.5s ease-in-out;
+						> p {
+							line-height: 1em;
+							text-align: right;
+							font-family: 'JosefinS';
+							font-size: 0.9em;
+							margin-right: 15px;
+						}
+						.loader {
+							transform: scale(1.5);
+						}
+					}
+					.showLoader {
+						right: 20px;
+						bottom: 5px;
+						opacity: 1;
+					}
+				}
+				.selected {
+					.title {
+						animation: titleAnimation 0.5s ease-in-out;
+						animation: forwards;
+					}
+				}
+				@keyframes titleAnim {
+					0% {
+						scale: 0;
+					}
+					100% {
+						scale: 1;
+					}
+				}
+				.notSelected {
+					flex: 1;
 				}
 			}
 			.screensContainer {
-				grid-column: 2/3;
-				grid-row: 1/2;
-				.showProject {
-					background-color: $blueLight;
-					height: 100%;
-					@include flex($align: flex-start, $just: flex-end);
-					position: relative;
-					overflow: hidden;
-					> h4 {
-						background-color: transparent;
-						font-family: 'Flaviotte';
-						font-size: 40vh;
-						line-height: 25vh;
-						color: transparent;
-						-webkit-text-stroke: 0.01px white;
-						white-space: nowrap;
-					}
-					.screens {
-						background-color: transparent;
-						position: absolute;
-					}
-				}
-				.project {
-					@include flex($align: flex-start);
+				transition: all 0.5s ease-in-out;
+				width: 70%;
+				height: 100%;
+				box-sizing: border-box;
+				.screens {
 					position: relative;
 					width: 100%;
 					height: 100%;
-					> h4 {
-						padding-left: 10%;
-						font-family: 'Flaviotte';
-						font-size: 5.5vw;
-						color: transparent;
-						-webkit-text-stroke: 0.01px $blue;
-						white-space: nowrap;
-					}
 					.linesContainer {
 						width: 25%;
 						height: 100%;
@@ -464,45 +531,80 @@
 						right: 0;
 						z-index: -1;
 					}
-				}
-			}
-			.btns {
-				grid-column: 1/3;
-				grid-row: 2/3;
-				border-top: 4px solid $blue;
-				border-bottom: 0;
-				@include flex($align: flex-start);
-				.viewProject {
-					border-right: 4px solid $blue;
-					box-sizing: border-box;
-					height: 100%;
-					width: 30%;
-					.arrowD {
-						bottom: 11px;
-					}
-				}
-				.inDevelopment {
-					border-right: 4px solid $blue;
-					box-sizing: border-box;
-					height: 100%;
-					width: 30%;
-					@include flex($dir: row);
-					> p {
-						width: 50%;
-						text-align: center;
-					}
-					.loader {
-						width: 20%;
+					.showProject {
 						height: 100%;
-						@include flex;
-						transform: scale(2);
+						width: 100%;
+						@include flex($align: flex-start, $just: flex-end);
+						position: absolute;
+						top: 0;
+						z-index: -1;
+						transform: translateX(-100%);
+						overflow: hidden;
+						transition: all 1s ease-in-out;
+						> h4 {
+							min-width: 100%;
+							font-family: 'Flaviotte';
+							font-size: 15vw;
+							line-height: 9vw;
+							color: transparent;
+							-webkit-text-stroke: 2px white;
+							white-space: nowrap;
+							transition: all 1s ease-in-out;
+							transform: translateX(100%);
+							opacity: 0.7;
+							font-weight: 400;
+							background-color: transparent;
+						}
+						.showTitle {
+							transform: translateX(0);
+						}
+						.contentProject {
+							position: absolute;
+							top: 15px;
+							right: 15px;
+							width: 35%;
+							@include flex($align: flex-end);
+							transition: all 0.5s ease-out;
+							transform: translateY(15%);
+							opacity: 0;
+							background-color: transparent;
+							.desc {
+								line-height: 1em;
+								font-family: 'JosefinS';
+								font-size: 0.9em;
+								color: black;
+								margin-bottom: 10px;
+								opacity: 0.5;
+								text-align: right;
+							}
+							.techs {
+								opacity: 0.7;
+								width: 70%;
+								@include flex($dir: row, $just: flex-end);
+								.logoTech {
+									position: relative;
+									width: calc(25% - 10px);
+									margin: 0 0 10px 10px;
+									aspect-ratio: 3/2;
+									transition: all 0.5s ease-in-out;
+									img {
+										object-fit: contain;
+									}
+
+									&:hover {
+										transform: scale(1.3);
+									}
+								}
+							}
+						}
+						.showContentProject {
+							transform: translateY(0);
+							opacity: 1;
+						}
 					}
-				}
-				.pattern {
-					width: 70%;
-					height: 100%;
-					border: 0;
-					position: relative;
+					.visible {
+						transform: translateX(0);
+					}
 				}
 			}
 		}
@@ -510,12 +612,33 @@
 }
 @media screen and (min-width: $large) and (orientation: landscape) and (min-height: $medium) {
 	.projects {
+		.projectContainer {
+			height: calc(100vh - 220px);
+		}
 		.content {
 			grid-template-rows: 50vh 60px;
+			.descProject {
+				&:before {
+					height: 50vh;
+				}
+			}
 		}
 	}
 }
-@media screen and (min-width: $extra-large) and (orientation: landscape) {
+@media screen and (min-width: $extra-large) and (orientation: landscape) and (max-height: $medium) {
+	.projects {
+		.content {
+			.screensContainer {
+				.showProject {
+					> h4 {
+						font-size: 15vw;
+					}
+				}
+			}
+		}
+	}
+}
+@media screen and (min-width: $extra-large) and (orientation: landscape) and (min-height: $medium) {
 	.projects {
 		.title {
 			> h3 {
@@ -526,10 +649,20 @@
 				width: calc(85% - 2px);
 			}
 		}
+		.projectContainer {
+			.descContainer {
+				.desc {
+					.showLoader {
+						bottom: 10px;
+						right: 25px;
+					}
+				}
+			}
+		}
 		.content {
 			.descProject {
 				> p {
-					font-size: 1.3em;
+					font-size: 1.4em;
 				}
 			}
 		}
@@ -537,41 +670,24 @@
 }
 @media screen and (min-width: $ultra-large) {
 	.projects {
-		.content {
-			grid-template-columns: 20% 80%;
-			grid-template-rows: 45vh 60px;
-			.descProject {
-				.techs {
-					.logoTech {
-						height: calc(10vw / 5);
+		.projectContainer {
+			.descContainer {
+				.desc {
+					.title {
+						padding: 25px;
 					}
-				}
-			}
-			.screensContainer {
-				.showProject {
-					> h4 {
-						background-color: transparent;
-						font-family: 'Flaviotte';
-						font-size: 40vh;
-						line-height: 25vh;
-						color: transparent;
-						-webkit-text-stroke: 0.01px white;
-						white-space: nowrap;
+					.content {
+						.text {
+							padding: 0 50px 10px 25px;
+						}
+						.techs {
+							width: 50%;
+							margin: 0 25px 20px 25px;
+							.logoTech {
+								width: 15%;
+							}
+						}
 					}
-				}
-			}
-			.btns {
-				.viewProject {
-					width: 20%;
-				}
-				.inDevelopment {
-					width: 20%;
-					.loader {
-						width: 15%;
-					}
-				}
-				.pattern {
-					width: 80%;
 				}
 			}
 		}

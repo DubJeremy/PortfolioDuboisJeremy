@@ -4,15 +4,54 @@ import Image from 'next/image';
 import useMediaQuery from '@/tools/useMediaQuery';
 import useTranslation from '@/components/Translator/hooks';
 import Translator from '../Translator';
+import useTheme from '../Theme/hooks';
+import Theme from '../Theme';
 
 import styles from './navbar.module.scss';
 
-const Navbar = () => {
+const Navbar = ({ isSafari }: { isSafari: boolean }) => {
+	const { c, theme } = useTheme();
 	const [targetReached] = useMediaQuery(`(min-width: 992px)`);
 	const [isToggled, setToggle] = useState(false);
 	const [activeSection, setActiveSection] = useState('profil');
 	const { t } = useTranslation();
-	const [scrollTarget, setScrollTaget] = useState(false);
+	const [scrollTarget, setScrollTarget] = useState(false);
+
+	const [imgTheme, setImgTheme] = useState('');
+	const [transition, setTransition] = useState(false);
+
+	useEffect(() => {
+		setTransition(true);
+		setTimeout(() => {
+			switch (theme) {
+				case 'blue': {
+					setImgTheme('');
+					break;
+				}
+				case 'green': {
+					setImgTheme('G');
+					break;
+				}
+				case 'yellow': {
+					setImgTheme('Y');
+					break;
+				}
+				case 'purple': {
+					setImgTheme('Pu');
+					break;
+				}
+				case 'pink': {
+					setImgTheme('Pi');
+					break;
+				}
+				case 'white': {
+					setImgTheme('W');
+					break;
+				}
+			}
+			setTransition(false);
+		}, 500);
+	}, [theme]);
 
 	const toggleMenu = () => {
 		setToggle(!isToggled);
@@ -26,7 +65,9 @@ const Navbar = () => {
 		const section = document.getElementById(sectionId);
 
 		if (section) {
-			const sectionTop = section.offsetTop - window.innerHeight * 0.16;
+			const sectionTop = targetReached
+				? section.offsetTop - parseInt('100px')
+				: section.offsetTop - parseInt('80px');
 			window.scrollTo({ top: sectionTop, behavior: 'smooth' });
 		}
 		setActiveSection(sectionId);
@@ -42,6 +83,12 @@ const Navbar = () => {
 			document.body.style.overflow = 'visible';
 		}
 	}, [isToggled]);
+
+	useEffect(() => {
+		if (targetReached) {
+			setToggle(false);
+		}
+	}, [targetReached]);
 
 	useEffect(() => {
 		const handleScroll = () => {
@@ -63,12 +110,13 @@ const Navbar = () => {
 					setActiveSection(sectionId);
 				}
 				if (scrollPosition >= sectionHeight) {
-					setScrollTaget(true);
+					setScrollTarget(true);
 				} else {
-					setScrollTaget(false);
+					setScrollTarget(false);
 				}
 			});
 		};
+
 		window.addEventListener('scroll', handleScroll);
 		return () => {
 			window.removeEventListener('scroll', handleScroll);
@@ -77,15 +125,58 @@ const Navbar = () => {
 
 	return (
 		<>
-			<div className={`${styles.navbar} ${isToggled ? styles.navToggled : ''}`}>
-				<div className={styles.logo}>
-					<p className={scrollTarget ? styles.showLogo : ''}>
-						<Image src={'/img/logo/logo.webp'} alt='logo D' fill />
+			<div
+				className={`${styles.navbar} ${isToggled ? styles.navToggled : ''}`}
+				style={
+					targetReached
+						? { borderBottom: `3px solid ${c('MAIN')}` }
+						: { borderBottom: `2px solid ${c('MAIN')}` }
+				}
+			>
+				<div
+					className={styles.logo}
+					style={
+						targetReached
+							? { borderRight: `3px solid ${c('MAIN')}` }
+							: { borderRight: `2px solid ${c('MAIN')}` }
+					}
+				>
+					<p
+						className={`${scrollTarget ? styles.showLogo : ''} ${
+							transition ? styles.transition : ''
+						}`}
+						style={
+							targetReached
+								? {
+										borderRight: `3px solid ${c('MAIN')}`,
+								  }
+								: {
+										borderRight: `2px solid ${c('MAIN')}`,
+								  }
+						}
+					>
+						<Image
+							src={
+								isSafari
+									? `/img/safari/logo/logo${imgTheme}.svg`
+									: `/img/logo/logo${imgTheme}.webp`
+							}
+							alt='logo D'
+							fill
+						/>
 					</p>
 
-					<div className={styles.logoStriped}>
+					<div
+						className={`${styles.logoStriped} ${
+							transition ? styles.transition : ''
+						}`}
+					>
 						<Image
-							src={'/img/logoStriped.webp'}
+							src={
+								isSafari
+									? `/img/safari/logoStriped${imgTheme}.svg`
+									: `/img/logoStriped${imgTheme}.webp`
+							}
 							alt='stripes'
 							fill
 							className={styles.imgLogoStriped}
@@ -93,24 +184,40 @@ const Navbar = () => {
 					</div>
 				</div>
 				{targetReached ? (
-					<div className={styles.nav}>
+					<div
+						className={`${styles.nav}  cursorScale small`}
+					>
 						<ul>
-							<li className={activeSection === 'profil' ? styles.activeLi : ''}>
+							<li
+								className={activeSection === 'profil' ? styles.activeLi : ''}
+								style={{ borderRight: `3px solid ${c('MAIN')}` }}
+							>
 								<a
 									href='#profil'
 									className={activeSection === 'profil' ? styles.active : ''}
 									onClick={(e) => handleClick(e, 'profil')}
+									style={
+										activeSection === 'profil'
+											? { color: ` ${c('MAIN')}` }
+											: { color: '#5b5b5b' }
+									}
 								>
 									Profil
 								</a>
 							</li>
 							<li
 								className={activeSection === 'projects' ? styles.activeLi : ''}
+								style={{ borderRight: `3px solid ${c('MAIN')}` }}
 							>
 								<a
 									href='#projects'
 									className={activeSection === 'projects' ? styles.active : ''}
 									onClick={(e) => handleClick(e, 'projects')}
+									style={
+										activeSection === 'projects'
+											? { color: ` ${c('MAIN')}` }
+											: { color: '#5b5b5b' }
+									}
 								>
 									{t('PROJECT')}
 								</a>
@@ -122,6 +229,11 @@ const Navbar = () => {
 									href='#contact'
 									className={activeSection === 'contact' ? styles.active : ''}
 									onClick={(e) => handleClick(e, 'contact')}
+									style={
+										activeSection === 'contact'
+											? { color: ` ${c('MAIN')}` }
+											: { color: '#5b5b5b' }
+									}
 								>
 									Contact
 								</a>
@@ -140,14 +252,17 @@ const Navbar = () => {
 						<svg width='50' height='50' viewBox='0 0 100 100'>
 							<path
 								className={`${styles.line} ${styles.line1}`}
+								style={{ stroke: ` ${c('MAIN')}` }}
 								d='M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058'
 							/>
 							<path
 								className={`${styles.line} ${styles.line2}`}
+								style={{ stroke: ` ${c('MAIN')}` }}
 								d='M 20,50 H 80'
 							/>
 							<path
 								className={`${styles.line} ${styles.line3}`}
+								style={{ stroke: ` ${c('MAIN')}` }}
 								d='M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942'
 							/>
 						</svg>
@@ -160,8 +275,9 @@ const Navbar = () => {
 						? `${styles.expanded} ${styles['fade-out']}`
 						: `${styles.expanded} ${styles['slide-down']}`
 				}`}
+				style={{ borderBottom: ` 2px solid  ${c('MAIN')}` }}
 			>
-				<div className={styles.navContainer}>
+				<div className={styles.navContainer} style={{ color: ` ${c('MAIN')}` }}>
 					<ul>
 						<li>
 							<a
@@ -195,6 +311,9 @@ const Navbar = () => {
 					</ul>
 					<div className={styles.languageToggle} onClick={() => toggleMenu()}>
 						<Translator />
+					</div>
+					<div className={styles.themesContainer}>
+						<Theme />
 					</div>
 				</div>
 			</div>

@@ -3,40 +3,41 @@
 
 .sideFrame {
 	position: fixed;
+	transition: all 0.5s ease-in-out;
 }
 .top {
-	width: calc(100% - 30px);
+	width: 0;
 	height: 14px;
 	top: 0;
 	left: 15px;
 	z-index: 1003;
-	border-bottom: 2px solid $blue;
+	animation: topAnim 1s linear 2s forwards;
 }
 .right {
 	width: 15px;
-	height: calc(100vh - 27px);
-	top: 14px;
+	height: 0;
+	bottom: 13px;
 	right: 0;
-	border-left: 2px solid $blue;
 	box-sizing: border-box;
 	z-index: 1002;
+	animation: sideAnim 1s linear 1s forwards;
 }
 .bottom {
 	width: calc(100% - 30px);
 	height: 13px;
 	bottom: 0;
-	left: 15px;
+	left: 0;
 	z-index: 1003;
-	border-top: 2px solid $blue;
+	animation: bottomAnim 1s linear forwards;
 }
 .left {
 	width: 15px;
-	height: calc(100vh - 27px);
-	top: 14px;
+	height: 0;
+	bottom: 13px;
 	left: 0;
-	border-right: 2px solid $blue;
 	box-sizing: border-box;
 	z-index: 1002;
+	animation: sideAnim 1s linear 1s forwards;
 }
 .corner {
 	width: 15px;
@@ -52,7 +53,7 @@
 	left: 0;
 }
 .sideFrame:before {
-	background: url(/img/background.webp) 0 0;
+	background: url(/img/background.svg) 0 0;
 	background-size: 500px 500px;
 	width: 100%;
 	height: 100%;
@@ -76,6 +77,32 @@
 	height: 100%;
 	position: absolute;
 	z-index: -1;
+}
+@keyframes bottomAnim {
+	0% {
+		width: 0;
+		left: 50%;
+	}
+	100% {
+		width: calc(100% - 30px);
+		left: 15px;
+	}
+}
+@keyframes sideAnim {
+	0% {
+		height: 0;
+	}
+	100% {
+		height: calc(100vh - 27px);
+	}
+}
+@keyframes topAnim {
+	0% {
+		width: 0;
+	}
+	100% {
+		width: calc(100% - 30px);
+	}
 }
 
 @keyframes noiseTextureAnim {
@@ -117,37 +144,53 @@
 @media screen and (min-width: $large) {
 	.top {
 		height: 25px;
-		width: calc(100% - 42px);
-		border-bottom: 4px solid $blue;
-		left: 21px;
+		width: 0;
+		left: 22px;
 	}
 	.right {
 		width: 25px;
-		height: calc(100vh - 50px);
-		border-left: 4px solid $blue;
-		top: 25px;
+		height: 0;
+		bottom: 25px;
 	}
 	.bottom {
 		height: 25px;
-		width: calc(100% - 42px);
-		border-top: 4px solid $blue;
-		left: 21px;
+		width: 0;
+		left: 50%;
 	}
 	.left {
 		width: 25px;
-		height: calc(100vh - 50px);
-		top: 25px;
-		border-right: 4px solid $blue;
+		height: 0;
+		bottom: 25px;
 	}
 	.corner {
 		width: 21px;
 		height: 26px;
 		z-index: 1004;
 	}
-}
-@media screen and (min-width: $large) and (orientation: landscape) {
-}
-@media screen and (min-width: $extra-large) and (orientation: landscape) {
-}
-@media screen and (min-width: $ultra-large) {
+	@keyframes bottomAnim {
+		0% {
+			width: 0;
+			left: 50%;
+		}
+		100% {
+			width: calc(100% - 44px);
+			left: 22px;
+		}
+	}
+	@keyframes sideAnim {
+		0% {
+			height: 0;
+		}
+		100% {
+			height: calc(100vh - 50px);
+		}
+	}
+	@keyframes topAnim {
+		0% {
+			width: 0;
+		}
+		100% {
+			width: calc(100% - 44px);
+		}
+	}
 }

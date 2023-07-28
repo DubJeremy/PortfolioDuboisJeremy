@@ -14,6 +14,7 @@ export const fr: { [key: string]: string } = {
 	CV: 'Telecharger le CV en pdf',
 	// PROJECTS --------------------------------
 	VIEW_PROJECT: 'Voir le Projet',
+	VIEW: 'Voir',
 	KBDEV:
 		'Site internet du cabinet de développement web KBDev. Mon travail sur ce projet à était fait dans le cadre de mon apprentissage en alternance dans cette même entreprise. J’ai intégré le projet dés le début, ce qui m’a permis de travailler sur la conception du site, le développement jusqu’à la production.',
 	PETSHINE:

@@ -4,15 +4,14 @@
 .contact {
 	position: relative;
 	overflow: hidden;
-	color: $blue;
-	border-bottom: 2px solid $blue;
 	@include flex($just: flex-start);
 	padding-bottom: 25vh;
+	transition: all 0.5s ease-in-out;
 	.title {
 		background-color: transparent;
 		width: 100%;
 		height: 70px;
-		border-bottom: 2px solid $blue;
+		transition: all 0.5s ease-in-out;
 		@include flex($dir: row);
 		> h3 {
 			width: 40%;
@@ -23,15 +22,23 @@
 		}
 		.patternContainer {
 			position: relative;
-			border-left: 2px solid $blue;
+			transition: all 0.5s ease-in-out;
 			width: calc(60% - 2px);
 			height: 100%;
+			transition: all 0.5s ease-in-out;
+			opacity: 1;
+			> img {
+				object-fit: cover;
+			}
+		}
+		.transition {
+			opacity: 0;
 		}
 	}
 	.inputs {
-		background: url(/img/background.webp) 0 0;
+		background: url(/img/background.svg) 0 0;
 		width: 70%;
-		@include flex;
+		@include flex($wrap: nowrap);
 		position: relative;
 		z-index: 5;
 		> a {
@@ -46,23 +53,15 @@
 		.input {
 			width: 100%;
 			margin: 2.5px 0;
-			color: $blue;
+			transition: all 0.5s ease-in-out;
 			input {
 				width: calc(100% - 11px);
-				border: 1px solid $blue;
+				transition: all 0.5s ease-in-out;
 				border-radius: 2px;
 				font-family: 'JosefinS';
 				padding: 15px 5px;
-				color: $blue;
 				&::placeholder {
-					color: $blue;
 					font-size: 1.1em;
-				}
-				&:-webkit-autofill,
-				&:-webkit-autofill:hover,
-				&:-webkit-autofill:focus,
-				&:-webkit-autofill:active {
-					-webkit-text-fill-color: $blue !important;
 				}
 				&:focus {
 					outline: none;
@@ -72,22 +71,15 @@
 		.message {
 			margin-bottom: -2.5px;
 			> textarea {
+				transition: all 0.5s ease-in-out;
 				width: calc(100% - 11px);
-				border: 1px solid $blue;
 				border-radius: 2px;
 				font-family: 'JosefinS';
 				height: 20vh;
 				padding: 15px 5px;
 				resize: none;
 				&::placeholder {
-					color: $blue;
 					font-size: 1.1em;
-				}
-				&:-webkit-autofill,
-				&:-webkit-autofill:hover,
-				&:-webkit-autofill:focus,
-				&:-webkit-autofill:active {
-					-webkit-text-fill-color: $blue !important;
 				}
 				&:focus {
 					outline: none;
@@ -103,7 +95,7 @@
 			@include flex($just: flex-end);
 			.btn {
 				font-family: 'JosefinS';
-				background-color: $blue;
+				transition: all 0.5s ease-in-out;
 				height: 30px;
 				width: 100%;
 				border-radius: 2px;
@@ -112,7 +104,7 @@
 				}
 			}
 			&:before {
-				background: url(/img/background.webp) 0 0;
+				background: url(/img/background.svg) 0 0;
 				background-size: 500px 500px;
 				width: 100%;
 				height: 100%;
@@ -120,51 +112,15 @@
 				position: absolute;
 				z-index: -1;
 			}
-			&:after {
-				background-image: url(/img/noise.png);
-				pointer-events: none !important;
-				background-size: 250px 250px;
-				-webkit-animation: noiseTextureAnim 0.55s steps(1) infinite;
-				animation: noiseTextureAnim 0.55s steps(1) infinite;
-				will-change: background-position;
-				-webkit-backface-visibility: hidden;
-				backface-visibility: hidden;
-				-webkit-transform: translateZ(0);
-				transform: translateZ(0);
-				content: '';
-				width: 100%;
-				height: 100%;
-				position: absolute;
-				top: 0;
-				z-index: 0;
-			}
 		}
 		&:before {
-			background: url(/img/background.webp) 0 0;
+			background: url(/img/background.svg) 0 0;
 			background-size: 500px 500px;
 			width: 100%;
 			height: 100%;
 			content: '';
 			position: absolute;
 			z-index: -1;
-		}
-		&:after {
-			background-image: url(/img/noise.png);
-			pointer-events: none !important;
-			background-size: 250px 250px;
-			-webkit-animation: noiseTextureAnim 0.55s steps(1) infinite;
-			animation: noiseTextureAnim 0.55s steps(1) infinite;
-			will-change: background-position;
-			-webkit-backface-visibility: hidden;
-			backface-visibility: hidden;
-			-webkit-transform: translateZ(0);
-			transform: translateZ(0);
-			content: '';
-			width: 100%;
-			height: 100%;
-			position: absolute;
-			top: 0;
-			z-index: 0;
 		}
 	}
 	.modalContainer {
@@ -303,14 +259,11 @@
 }
 @media screen and (min-width: $large) {
 	.contact {
-		border-bottom: 4px solid $blue;
 		.title {
-			border-bottom: 4px solid $blue;
 			> h3 {
 				width: 30%;
 			}
 			.patternContainer {
-				border-left: 4px solid $blue;
 				width: calc(70% - 4px);
 			}
 		}
@@ -377,6 +330,24 @@
 		}
 	}
 }
+@media screen and (min-width: $extra-large) and (max-height: $medium) {
+	.contact {
+		.inputs {
+			> a {
+				font-size: 2.3em;
+			}
+		}
+	}
+}
+@media screen and (min-width: $extra-large) and (min-height: $medium) {
+	.contact {
+		.inputs {
+			> a {
+				font-size: 2.6em;
+			}
+		}
+	}
+}
 @media screen and (min-width: $extra-large) and (orientation: landscape) {
 	.contact {
 		padding-bottom: 20vh;
@@ -392,24 +363,30 @@
 		.inputs {
 			@include flex($dir: row);
 			> a {
-				font-size: 2.6em;
 				font-weight: 400;
 			}
-			label:nth-child(2) {
+			.name {
 				width: calc(45% - 10px);
 				margin-right: 10px;
 			}
-			label:nth-child(3) {
+			.mail {
 				width: 55%;
 			}
 			.input {
 				input {
 					padding: 10px 5px;
+					&:focus {
+						font-size: 1.1em;
+						padding: 8px 5px;
+					}
 				}
 			}
 			.message {
 				> textarea {
 					height: 20vh;
+					&:focus {
+						font-size: 1.1em;
+					}
 				}
 			}
 			.btnContainer {

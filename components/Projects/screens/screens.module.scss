@@ -1,0 +1,1795 @@
+@import '../../../styles/variables.scss';
+@import 'styles/mixins.scss';
+
+.screens {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	.screen {
+		position: absolute;
+		background-color: transparent;
+		transition: all 0.3s ease-in-out;
+		@include flex($just: flex-end, $align: flex-end);
+		img {
+			object-fit: contain;
+			filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.279));
+		}
+	}
+	.desk {
+		width: 65vw;
+		height: 40%;
+		top: 30%;
+		left: calc(50% - 32.5vw);
+	}
+	.mobile {
+		width: 18vw;
+		height: 45%;
+		top: 27.5%;
+		left: calc(50% - 9vw);
+	}
+	.kbdevHome {
+		transform: translate(-8vw, -70%) rotate(-10deg);
+		z-index: 3;
+		animation: 0.8s ease-in-out kbdevHomeAnim;
+	}
+	@keyframes kbdevHomeAnim {
+		0% {
+			transform: translate(-100vw, -40vh) rotate(0deg);
+		}
+		100% {
+			transform: translate(-8vw, -70%) rotate(-10deg);
+		}
+	}
+	.kbdevHomeMobile {
+		transform: translate(30vw, -70%) rotate(10deg);
+		z-index: 4;
+		animation: 0.8s ease-in-out kbdevHomeMobileAnim;
+	}
+	@keyframes kbdevHomeMobileAnim {
+		0% {
+			transform: translate(60vw, -40vh) rotate(0deg);
+		}
+		100% {
+			transform: translate(30vw, -70%) rotate(10deg);
+		}
+	}
+	.kbdevAulia {
+		transform: translate(8vw, 15%) rotate(-7deg);
+		z-index: 2;
+		animation: 0.8s ease-in-out kbdevAuliaAnim;
+	}
+	@keyframes kbdevAuliaAnim {
+		0% {
+			transform: translate(80vw, 0vh) rotate(0deg);
+		}
+		100% {
+			transform: translate(8vw, 15%) rotate(-7deg);
+		}
+	}
+	.kbdevAuliaMobile {
+		transform: translate(-22vw, -10%) rotate(-6deg);
+		z-index: 4;
+		animation: 0.8s ease-in-out kbdevAuliaMobileAnim;
+	}
+	@keyframes kbdevAuliaMobileAnim {
+		0% {
+			transform: translate(-80vw, 0vh) rotate(0deg);
+		}
+		100% {
+			transform: translate(-22vw, -10%) rotate(-6deg);
+		}
+	}
+	.kbdevDigitalSupport {
+		transform: translate(-5vw, 60%) rotate(5deg);
+		z-index: 1;
+		animation: 0.8s ease-in-out kbdevDigitalSupportAnim;
+	}
+	@keyframes kbdevDigitalSupportAnim {
+		0% {
+			transform: translate(-90vw, 40vh) rotate(0deg);
+		}
+		100% {
+			transform: translate(-5vw, 60%) rotate(5deg);
+		}
+	}
+	// -----------------
+	.petshineCarousel {
+		transform: translate(-25vw, -50%) rotate(-15deg);
+		z-index: 3;
+		animation: 0.8s ease-in-out petshineCarouselAnim;
+	}
+	@keyframes petshineCarouselAnim {
+		0% {
+			transform: translate(-100vw, -40vh) rotate(0deg);
+		}
+		100% {
+			transform: translate(-25vw, -50%) rotate(-15deg);
+		}
+	}
+	.petshineFav {
+		transform: translate(12vw, -70%) rotate(7deg);
+		z-index: 1;
+		animation: 0.8s ease-in-out petshineFavAnim;
+	}
+	@keyframes petshineFavAnim {
+		0% {
+			transform: translate(60vw, -40vh) rotate(0deg);
+		}
+		100% {
+			transform: translate(12vw, -70%) rotate(7deg);
+		}
+	}
+	.petshineHome {
+		transform: translate(5vw, 15%) rotate(-7deg);
+		z-index: 2;
+		animation: 0.8s ease-in-out petshineHomeAnim;
+	}
+	@keyframes petshineHomeAnim {
+		0% {
+			transform: translate(-100vw, 0vh) rotate(0deg);
+		}
+		100% {
+			transform: translate(5vw, 15%) rotate(-7deg);
+		}
+	}
+	.petshineHomeMobile {
+		transform: translate(28vw, 45%) rotate(15deg);
+		z-index: 3;
+		animation: 0.8s ease-in-out petshineHomeMobileAnim;
+	}
+	@keyframes petshineHomeMobileAnim {
+		0% {
+			transform: translate(80vw, 0vh) rotate(0deg);
+		}
+		100% {
+			transform: translate(28vw, 45%) rotate(15deg);
+		}
+	}
+	.petshineWelness {
+		transform: translate(-5vw, 50%) rotate(5deg);
+		z-index: 1;
+		animation: 0.8s ease-in-out petshineWelnessAnim;
+	}
+	@keyframes petshineWelnessAnim {
+		0% {
+			transform: translate(-90vw, 40vh) rotate(0deg);
+		}
+		100% {
+			transform: translate(-5vw, 50%) rotate(5deg);
+		}
+	}
+	//--------------------------
+	.tcgBackCard {
+		z-index: 1;
+		animation: 0.8s ease-in-out tcgBackCardAnim;
+		transform: translate(20vw, -50%) rotate(-25deg) scale(1.3);
+	}
+	@keyframes tcgBackCardAnim {
+		0% {
+			transform: translate(60vw, -40vh) rotate(0deg) scale(1.3);
+		}
+		100% {
+			transform: translate(20vw, -50%) rotate(-25deg) scale(1.3);
+		}
+	}
+	.tcgCards {
+		transform: translate(-25vw, -35%) rotate(20deg) scale(1.3);
+		z-index: 3;
+		animation: 0.8s ease-in-out tcgCardsAnim;
+	}
+	@keyframes tcgCardsAnim {
+		0% {
+			transform: translate(-100vw, -40vh) rotate(0deg) scale(1.3);
+		}
+		100% {
+			transform: translate(-25vw, -35%) rotate(20deg) scale(1.3);
+		}
+	}
+	.tcgFilters {
+		z-index: 2;
+		animation: 0.8s ease-in-out tcgFiltersAnim;
+		transform: translate(0, 0) scale(1.3);
+	}
+	@keyframes tcgFiltersAnim {
+		0% {
+			transform: translate(0vw, 100vh) scale(1.3);
+		}
+		100% {
+			transform: translate(0, 0) scale(1.3);
+		}
+	}
+	.tcgProfil {
+		transform: translate(22vw, 25%) rotate(12deg) scale(1.3);
+		z-index: 2;
+		animation: 0.8s ease-in-out tcgProfilAnim;
+	}
+	@keyframes tcgProfilAnim {
+		0% {
+			transform: translate(80vw, 0vh) rotate(0deg) scale(1.3);
+		}
+		100% {
+			transform: translate(22vw, 25%) rotate(12deg) scale(1.3);
+		}
+	}
+	.tcgSeries {
+		transform: translate(-20vw, 25%) rotate(-18deg) scale(1.3);
+		z-index: 1;
+		animation: 0.8s ease-in-out tcgSeriesAnim;
+	}
+	@keyframes tcgSeriesAnim {
+		0% {
+			transform: translate(-90vw, 40vh) rotate(0deg) scale(1.3);
+		}
+		100% {
+			transform: translate(-20vw, 25%) rotate(-18deg) scale(1.3);
+		}
+	}
+	//------------
+	.endAnimFi {
+		transform: translate(-100vw, -40vh) rotate(0deg);
+	}
+	.endAnimS {
+		transform: translate(60vw, -40vh) rotate(0deg);
+	}
+	.endAnimT {
+		transform: translate(90vw, 0vh) rotate(0deg);
+	}
+	.endAnimFo {
+		transform: translate(-80vw, 0vh) rotate(0deg);
+	}
+	.endAnimFif {
+		transform: translate(-90vw, 40vh) rotate(0deg);
+	}
+}
+@keyframes screensExitAnimation {
+	0% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+	100% {
+		opacity: 0;
+		transform: translateY(-100vw);
+	}
+}
+
+@media screen and (min-width: $small) {
+	.screens {
+		.kbdevHomeMobile {
+			transform: translate(25vw, -70%) rotate(10deg);
+		}
+		@keyframes kbdevHomeMobileAnim {
+			0% {
+				transform: translate(60vw, -40vh) rotate(0deg);
+			}
+			100% {
+				transform: translate(25vw, -70%) rotate(10deg);
+			}
+		}
+		.endAnimS {
+			transform: translate(60vw, -40vh) rotate(0deg);
+		}
+	}
+}
+@media screen and (min-width: $small) and (orientation: landscape) {
+	.screens {
+		.desk {
+			height: 45%;
+			top: 32.5%;
+		}
+		.mobile {
+			height: 50%;
+			top: 25%;
+		}
+		.kbdevHome {
+			transform: translate(-10vw, -70%) rotate(-10deg);
+		}
+		@keyframes kbdevHomeAnim {
+			0% {
+				transform: translate(-100vw, -40vh) rotate(0deg);
+			}
+			100% {
+				transform: translate(-10vw, -70%) rotate(-10deg);
+			}
+		}
+		.kbdevHomeMobile {
+			transform: translate(12vw, -65%) rotate(10deg);
+		}
+		@keyframes kbdevHomeMobileAnim {
+			0% {
+				transform: translate(60vw, -40vh) rotate(0deg);
+			}
+			100% {
+				transform: translate(12vw, -65%) rotate(10deg);
+			}
+		}
+		.kbdevAulia {
+			transform: translate(8vw, 10%) rotate(-7deg);
+		}
+		@keyframes kbdevAuliaAnim {
+			0% {
+				transform: translate(80vw, 0vh) rotate(0deg);
+			}
+			100% {
+				transform: translate(8vw, 10%) rotate(-7deg);
+			}
+		}
+		.kbdevAuliaMobile {
+			transform: translate(-22vw, -10%) rotate(-10deg);
+		}
+		@keyframes kbdevAuliaMobileAnim {
+			0% {
+				transform: translate(-80vw, 0vh) rotate(0deg);
+			}
+			100% {
+				transform: translate(-22vw, -10%) rotate(-10deg);
+			}
+		}
+		.kbdevDigitalSupport {
+			transform: translate(-10vw, 30%) rotate(5deg);
+		}
+		@keyframes kbdevDigitalSupportAnim {
+			0% {
+				transform: translate(-90vw, 40vh) rotate(0deg);
+			}
+			100% {
+				transform: translate(-10vw, 30%) rotate(5deg);
+			}
+		}
+		// -----------------
+		.petshineCarousel {
+			transform: translate(-10vw, -50%) rotate(-15deg);
+		}
+		@keyframes petshineCarouselAnim {
+			0% {
+				transform: translate(-100vw, -40vh) rotate(0deg);
+			}
+			100% {
+				transform: translate(-10vw, -50%) rotate(-15deg);
+			}
+		}
+		.petshineHome {
+			transform: translate(5vw, 5%) rotate(-7deg);
+		}
+		@keyframes petshineHomeAnim {
+			0% {
+				transform: translate(-100vw, 0vh) rotate(0deg);
+			}
+			100% {
+				transform: translate(5vw, 5%) rotate(-7deg);
+			}
+		}
+		.petshineHomeMobile {
+			transform: translate(25vw, 25%) rotate(15deg);
+		}
+		@keyframes petshineHomeMobileAnim {
+			0% {
+				transform: translate(80vw, 0vh) rotate(0deg);
+			}
+			100% {
+				transform: translate(25vw, 25%) rotate(15deg);
+			}
+		}
+		.petshineWelness {
+			transform: translate(0, 30%) rotate(5deg);
+			z-index: 1;
+			animation: 0.8s ease-in-out petshineWelnessAnim;
+		}
+		@keyframes petshineWelnessAnim {
+			0% {
+				transform: translate(-90vw, 40vh) rotate(0deg);
+			}
+			100% {
+				transform: translate(0, 30%) rotate(5deg);
+			}
+		}
+		//--------------------------
+		.tcgBackCard {
+			transform: translate(15vw, -50%) rotate(-25deg) scale(1.3);
+		}
+		@keyframes tcgBackCardAnim {
+			0% {
+				transform: translate(60vw, -40vh) rotate(0deg) scale(1.3);
+			}
+			100% {
+				transform: translate(15vw, -50%) rotate(-25deg) scale(1.3);
+			}
+		}
+		.tcgCards {
+			transform: translate(-10vw, -35%) rotate(20deg) scale(1.3);
+		}
+		@keyframes tcgCardsAnim {
+			0% {
+				transform: translate(-100vw, -40vh) rotate(0deg) scale(1.3);
+			}
+			100% {
+				transform: translate(-10vw, -35%) rotate(20deg) scale(1.3);
+			}
+		}
+		.tcgProfil {
+			transform: translate(13vw, 30%) rotate(12deg) scale(1.3);
+		}
+		@keyframes tcgProfilAnim {
+			0% {
+				transform: translate(80vw, 0vh) rotate(0deg) scale(1.3);
+			}
+			100% {
+				transform: translate(13vw, 30%) rotate(12deg) scale(1.3);
+			}
+		}
+		.tcgSeries {
+			transform: translate(-15vw, 25%) rotate(-18deg) scale(1.3);
+		}
+		@keyframes tcgSeriesAnim {
+			0% {
+				transform: translate(-90vw, 40vh) rotate(0deg) scale(1.3);
+			}
+			100% {
+				transform: translate(-15vw, 25%) rotate(-18deg) scale(1.3);
+			}
+		}
+		//------------
+		.endAnimFi {
+			transform: translate(-100vw, -40vh) rotate(0deg);
+		}
+		.endAnimS {
+			transform: translate(60vw, -40vh) rotate(0deg);
+		}
+		.endAnimT {
+			transform: translate(90vw, 0vh) rotate(0deg);
+		}
+		.endAnimFo {
+			transform: translate(-80vw, 0vh) rotate(0deg);
+		}
+		.endAnimFif {
+			transform: translate(-90vw, 40vh) rotate(0deg);
+		}
+	}
+}
+@media screen and (min-width: $medium) {
+	.screens {
+		.desk {
+			height: 45%;
+			top: 32.5%;
+		}
+		.mobile {
+			width: 20vw;
+			height: 50%;
+			top: 25%;
+			left: calc(50% - 10vw);
+		}
+		.kbdevHome {
+			transform: translate(-10vw, -70%) rotate(-10deg);
+		}
+		@keyframes kbdevHomeAnim {
+			0% {
+				transform: translate(-100vw, -40vh) rotate(0deg);
+			}
+			100% {
+				transform: translate(-10vw, -70%) rotate(-10deg);
+			}
+		}
+		.kbdevHomeMobile {
+			transform: translate(10vw, -60%) rotate(10deg);
+		}
+		@keyframes kbdevHomeMobileAnim {
+			0% {
+				transform: translate(60vw, -40vh) rotate(0deg);
+			}
+			100% {
+				transform: translate(10vw, -60%) rotate(10deg);
+			}
+		}
+		.kbdevDigitalSupport {
+			transform: translate(-7vw, 35%) rotate(5deg);
+		}
+		@keyframes kbdevDigitalSupportAnim {
+			0% {
+				transform: translate(-90vw, 40vh) rotate(0deg);
+			}
+			100% {
+				transform: translate(-7vw, 35%) rotate(5deg);
+			}
+		}
+		//---------------
+		.petshineHome {
+			transform: translate(0, 0) rotate(-7deg);
+		}
+		@keyframes petshineHomeAnim {
+			0% {
+				transform: translate(-100vw, 0vh) rotate(0deg);
+			}
+			100% {
+				transform: translate(0, 0) rotate(-7deg);
+			}
+		}
+		.petshineHomeMobile {
+			transform: translate(15vw, 30%) rotate(15deg);
+		}
+		@keyframes petshineHomeMobileAnim {
+			0% {
+				transform: translate(80vw, 0vh) rotate(0deg);
+			}
+			100% {
+				transform: translate(15vw, 30%) rotate(15deg);
+			}
+		}
+		.petshineWelness {
+			transform: translate(-10vw, 30%) rotate(5deg);
+		}
+		@keyframes petshineWelnessAnim {
+			0% {
+				transform: translate(-90vw, 40vh) rotate(0deg);
+			}
+			100% {
+				transform: translate(-10vw, 30%) rotate(5deg);
+			}
+		}
+		//---------------
+		.endAnimFi {
+			transform: translate(-100vw, -40vh) rotate(0deg);
+		}
+		.endAnimS {
+			transform: translate(60vw, -40vh) rotate(0deg);
+		}
+		.endAnimT {
+			transform: translate(90vw, 0vh) rotate(0deg);
+		}
+		.endAnimFo {
+			transform: translate(-80vw, 0vh) rotate(0deg);
+		}
+		.endAnimFif {
+			transform: translate(-90vw, 40vh) rotate(0deg);
+		}
+	}
+}
+@media screen and (min-width: $large) and (orientation: landscape) {
+	.screens {
+		.screen {
+			animation: all 0.5 ease-out;
+		}
+		.desk {
+			width: 35vw;
+			height: 45%;
+			top: 30%;
+			left: calc(50% - 15vw);
+		}
+		.mobile {
+			width: 10vw;
+			height: 55%;
+		}
+		.KBDevPositionD {
+			top: 30%;
+			left: calc(50% - 15vw);
+			transform: translate(-18vw, 0) rotate(-10deg) scale(0);
+		}
+		.KBDevPositionM {
+			transform: translate(10vw, 20%) rotate(12deg) scale(0);
+		}
+		.kbdevHome {
+			transform: translate(-18vw, 0) rotate(-10deg) scale(1);
+			transition: all 0.8s ease-in-out;
+			&:hover {
+				cursor: none;
+			}
+		}
+		@keyframes kbdevHomeAnim {
+			0% {
+				transform: translate(100vw, -40vh) rotate(0deg) scale(0);
+			}
+			100% {
+				transform: translate(-18vw, 0) rotate(-10deg) scale(1);
+			}
+		}
+		.kbdevHomeMobile {
+			transform: translate(10vw, 20%) rotate(12deg) scale(1);
+			transition: all 0.8s ease-in-out;
+
+			&:hover {
+				cursor: none;
+			}
+		}
+		@keyframes kbdevHomeMobileAnim {
+			0% {
+				transform: translate(60vw, -40vh) rotate(0deg) scale(0);
+			}
+			100% {
+				transform: translate(10vw, 20%) rotate(12deg) scale(1);
+			}
+		}
+		.kbdevAulia {
+			transform: translate(-20vw, -80%) rotate(10deg) scale(1);
+			z-index: 2;
+		}
+		@keyframes kbdevAuliaAnim {
+			0% {
+				transform: translate(-18vw, 0) rotate(-10deg) scale(0);
+			}
+			25% {
+				transform: translate(-18vw, 0) rotate(-10deg) scale(1);
+			}
+			100% {
+				transform: translate(-20vw, -80%) rotate(10deg) scale(1);
+			}
+		}
+		.kbdevAuliaMobile {
+			top: 30%;
+			left: calc(50% - 4vw);
+			transform: translate(-2vw, -70%) rotate(-5deg) scale(1);
+			z-index: 2;
+		}
+		@keyframes kbdevAuliaMobileAnim {
+			0% {
+				transform: translate(10vw, 20%) rotate(12deg) scale(0);
+			}
+			25% {
+				transform: translate(10vw, 20%) rotate(12deg) scale(1);
+			}
+			100% {
+				transform: translate(-2vw, -70%) rotate(-5deg) scale(1);
+			}
+		}
+		.kbdevDigitalSupport {
+			transform: translate(-20vw, 60%) rotate(10deg) scale(1);
+			z-index: 2;
+		}
+		@keyframes kbdevDigitalSupportAnim {
+			0% {
+				transform: translate(-18vw, 0) rotate(-10deg) scale(0);
+			}
+			25% {
+				transform: translate(-18vw, 0) rotate(-10deg) scale(1);
+			}
+			100% {
+				transform: translate(-20vw, 60%) rotate(10deg) scale(1);
+			}
+		}
+		// -----------------
+		.PetPositionD {
+			transform: translate(0, 10%) rotate(7deg) scale(0);
+		}
+		.PetPositionM {
+			top: 30%;
+			left: calc(50% - 4vw);
+			transform: translate(-22vw, -10%) rotate(-5deg) scale(0);
+		}
+		.petshineHome {
+			transform: translate(0, 10%) rotate(7deg) scale(1);
+			transition: all 0.8s ease-in-out;
+			z-index: 3;
+			&:hover {
+				cursor: none;
+			}
+		}
+		@keyframes petshineHomeAnim {
+			0% {
+				transform: translate(100vw, -40vh) rotate(0deg) scale(0);
+			}
+			100% {
+				transform: translate(0, 10%) rotate(7deg) scale(1);
+			}
+		}
+		.petshineHomeMobile {
+			top: 30%;
+			left: calc(50% - 4vw);
+			transform: translate(-20vw, -10%) rotate(-5deg) scale(1);
+			z-index: 5;
+			transition: all 0.8s ease-in-out;
+			&:hover {
+				cursor: none;
+			}
+		}
+		@keyframes petshineHomeMobileAnim {
+			0% {
+				transform: translate(100vw, 40vh) rotate(0deg) scale(0);
+			}
+			100% {
+				transform: translate(-20vw, -10%) rotate(-5deg) scale(1);
+			}
+		}
+
+		.petshineFav {
+			width: 35vw;
+			height: 40%;
+			top: 30%;
+			left: calc(50% - 15vw);
+			transform: translate(5vw, -80%) rotate(10deg) scale(1);
+			z-index: 1;
+		}
+		@keyframes petshineFavAnim {
+			0% {
+				transform: translate(0, 10%) rotate(7deg) scale(0);
+			}
+			25% {
+				transform: translate(0, 10%) rotate(7deg) scale(1);
+			}
+			100% {
+				transform: translate(5vw, -80%) rotate(10deg) scale(1);
+			}
+		}
+		.petshineCarousel {
+			width: 10vw;
+			height: 45%;
+			top: 30%;
+			left: calc(50% - 4vw);
+			transform: translate(-12vw, -80%) rotate(-15deg) scale(1);
+			z-index: 2;
+		}
+		@keyframes petshineCarouselAnim {
+			0% {
+				transform: translate(-22vw, -10%) rotate(-5deg) scale(0);
+			}
+			25% {
+				transform: translate(-22vw, -10%) rotate(-5deg) scale(1);
+			}
+			100% {
+				transform: translate(-12vw, -80%) rotate(-15deg) scale(1);
+			}
+		}
+		.petshineWelness {
+			width: 35vw;
+			height: 40%;
+			top: 30%;
+			left: calc(50% - 15vw);
+			transform: translate(-15vw, 60%) rotate(5deg) scale(1);
+		}
+		@keyframes petshineWelnessAnim {
+			0% {
+				transform: translate(0, 10%) rotate(7deg) scale(0);
+			}
+			25% {
+				transform: translate(0, 10%) rotate(7deg) scale(1);
+			}
+			100% {
+				transform: translate(-15vw, 60%) rotate(5deg) scale(1);
+			}
+		}
+		//--------------------------
+		.TCGPositionM {
+			width: 12vw;
+			height: 60%;
+			top: 30%;
+			left: calc(50% - 4vw);
+			transform: translate(-5vw, 0%) rotate(-10deg) scale(0);
+		}
+		.tcgBackCard {
+			width: 14vw;
+			height: 55%;
+			top: 27.5%;
+			left: calc(50% - 7.5vw);
+			transform: translate(-15vw, -40%) rotate(15deg) scale(1);
+			transition: all 0.8s ease-in-out;
+		}
+		@keyframes tcgBackCardAnim {
+			0% {
+				transform: translate(100vw, -40vh) rotate(0deg) scale(0);
+			}
+			100% {
+				transform: translate(-15vw, -40%) rotate(15deg) scale(1);
+			}
+		}
+		.tcgCards {
+			width: 12vw;
+			height: 60%;
+			top: 30%;
+			left: calc(50% - 4vw);
+			transform: translate(-5vw, 0%) rotate(-10deg) scale(1);
+			transition: all 0.8s ease-in-out;
+		}
+		@keyframes tcgCardsAnim {
+			0% {
+				transform: translate(100vw, 40vh) rotate(0deg) scale(0);
+			}
+			100% {
+				transform: translate(-5vw, 0%) rotate(-10deg) scale(1);
+			}
+		}
+		.tcgFilters {
+			transform: translate(14vw, 25%) rotate(40deg) scale(1);
+			z-index: 0;
+		}
+		@keyframes tcgFiltersAnim {
+			0% {
+				transform: translate(-5vw, 0%) rotate(-10deg) scale(0);
+			}
+			25% {
+				transform: translate(-5vw, 0%) rotate(-10deg) scale(1);
+			}
+			100% {
+				transform: translate(14vw, 25%) rotate(40deg) scale(1);
+			}
+		}
+		.tcgProfil {
+			transform: translate(8vw, 10%) rotate(25deg) scale(1);
+			z-index: 1;
+		}
+		@keyframes tcgProfilAnim {
+			0% {
+				transform: translate(-5vw, 0%) rotate(-10deg) scale(0);
+			}
+			25% {
+				transform: translate(-5vw, 0%) rotate(-10deg) scale(1);
+			}
+			100% {
+				transform: translate(8vw, 10%) rotate(25deg) scale(1);
+			}
+		}
+		.tcgSeries {
+			transform: translate(1vw, 0%) rotate(10deg) scale(1);
+			z-index: 2;
+		}
+		@keyframes tcgSeriesAnim {
+			0% {
+				transform: translate(-5vw, 0%) rotate(-10deg) scale(0);
+			}
+			25% {
+				transform: translate(-5vw, 0%) rotate(-10deg) scale(1);
+			}
+			100% {
+				transform: translate(1vw, 0%) rotate(10deg) scale(1);
+			}
+		}
+		//------------
+		.endAnimFi {
+			transform: translate(100vw, -40vh) rotate(0deg) scale(0);
+		}
+		.endAnimS {
+			transform: translate(60vw, -40vh) rotate(0deg) scale(0);
+		}
+		.endAnimT {
+			transform: translate(90vw, 0vh) rotate(0deg) scale(0);
+		}
+		.endAnimFo {
+			transform: translate(-80vw, 0vh) rotate(0deg) scale(0);
+		}
+		.endAnimFif {
+			transform: translate(-90vw, 40vh) rotate(0deg) scale(0);
+		}
+	}
+	@keyframes screensExitAnimation {
+		0% {
+			opacity: 1;
+			transform: translateY(0);
+		}
+		100% {
+			opacity: 0;
+			transform: translateY(-100vw);
+		}
+	}
+}
+@media screen and (min-width: $large) and (orientation: landscape) and (min-height: $medium) {
+	.screens {
+		.desk {
+			width: 45vw;
+		}
+		.mobile {
+			width: 15vw;
+		}
+		.kbdevHomeMobile {
+			transform: translate(20vw, 20%) rotate(12deg);
+		}
+		@keyframes kbdevHomeMobileAnim {
+			0% {
+				transform: translate(60vw, -40vh) rotate(0deg) scale(0);
+			}
+			100% {
+				transform: translate(20vw, 20%) rotate(12deg) scale(1);
+			}
+		}
+
+		.kbdevAuliaMobile {
+			transform: translate(10vw, -70%) rotate(-5deg) scale(1);
+		}
+		@keyframes kbdevAuliaMobileAnim {
+			0% {
+				transform: translate(10vw, 20%) rotate(12deg) scale(0);
+			}
+			25% {
+				transform: translate(10vw, 20%) rotate(12deg) scale(1);
+			}
+			100% {
+				transform: translate(10vw, -70%) rotate(-5deg) scale(1);
+			}
+		}
+		// -----------------
+		.petshineFav {
+			transform: translate(10vw, -50%) rotate(10deg) scale(1);
+		}
+		@keyframes petshineFavAnim {
+			0% {
+				transform: translate(0, 10%) rotate(7deg) scale(0);
+			}
+			25% {
+				transform: translate(0, 10%) rotate(7deg) scale(1);
+			}
+			100% {
+				transform: translate(10vw, -50%) rotate(10deg) scale(1);
+			}
+		}
+		.petshineCarousel {
+			transform: translate(-15vw, -70%) rotate(-10deg) scale(1);
+		}
+		@keyframes petshineCarouselAnim {
+			0% {
+				transform: translate(-22vw, -10%) rotate(-5deg) scale(0);
+			}
+			25% {
+				transform: translate(-22vw, -10%) rotate(-5deg) scale(1);
+			}
+			100% {
+				transform: translate(-15vw, -70%) rotate(-10deg) scale(1);
+			}
+		}
+		.petshineWelness {
+			transform: translate(-5vw, 80%) rotate(-5deg) scale(1);
+		}
+		@keyframes petshineWelnessAnim {
+			0% {
+				transform: translate(0, 10%) rotate(7deg) scale(0);
+			}
+			25% {
+				transform: translate(0, 10%) rotate(7deg) scale(1);
+			}
+			100% {
+				transform: translate(-5vw, 80%) rotate(-5deg) scale(1);
+			}
+		}
+		//--------------------------
+		.tcgBackCard {
+			width: 20vw;
+			transform: translate(-17vw, -40%) rotate(15deg) scale(1);
+		}
+		@keyframes tcgBackCardAnim {
+			0% {
+				transform: translate(100vw, -40vh) rotate(0deg) scale(0);
+			}
+			100% {
+				transform: translate(-17vw, -40%) rotate(15deg) scale(1);
+			}
+		}
+		.tcgCards {
+			transform: translate(-7vw, 0%) rotate(-10deg) scale(1);
+		}
+		@keyframes tcgCardsAnim {
+			0% {
+				transform: translate(100vw, 40vh) rotate(0deg) scale(0);
+			}
+			100% {
+				transform: translate(-7vw, 0%) rotate(-10deg) scale(1);
+			}
+		}
+
+		//------------
+		.endAnimFi {
+			transform: translate(100vw, -40vh) rotate(0deg) scale(0);
+		}
+		.endAnimS {
+			transform: translate(60vw, -40vh) rotate(0deg) scale(0);
+		}
+		.endAnimT {
+			transform: translate(90vw, 0vh) rotate(0deg) scale(0);
+		}
+		.endAnimFo {
+			transform: translate(-80vw, 0vh) rotate(0deg) scale(0);
+		}
+		.endAnimFif {
+			transform: translate(-90vw, 40vh) rotate(0deg) scale(0);
+		}
+	}
+	@keyframes screensExitAnimation {
+		0% {
+			opacity: 1;
+			transform: translateY(0);
+		}
+		100% {
+			opacity: 0;
+			transform: translateY(-100vw);
+		}
+	}
+}
+@media screen and (min-width: $extra-large) and (orientation: landscape) {
+	.screens {
+		.desk {
+			width: 30vw;
+			height: 45%;
+			top: 27.5%;
+			left: calc(50% - 15vw);
+		}
+		.mobile {
+			width: 10vw;
+			height: 55%;
+		}
+		.KBDevPositionD {
+			top: 30%;
+			left: calc(50% - 15vw);
+			transform: translate(-18vw, 0) rotate(-10deg) scale(0);
+		}
+		.KBDevPositionM {
+			transform: translate(10vw, 20%) rotate(12deg) scale(0);
+		}
+		.kbdevHome {
+			width: 35vw;
+		}
+		.kbdevHomeMobile {
+			transform: translate(10vw, 10%) rotate(12deg) scale(1);
+		}
+		@keyframes kbdevHomeMobileAnim {
+			0% {
+				transform: translate(60vw, -40vh) rotate(0deg) scale(0);
+			}
+			100% {
+				transform: translate(10vw, 10%) rotate(12deg) scale(1);
+			}
+		}
+		.kbdevAulia {
+			transform: translate(-20vw, -80%) rotate(10deg) scale(1);
+			z-index: 2;
+		}
+		@keyframes kbdevAuliaAnim {
+			0% {
+				transform: translate(-18vw, 0) rotate(-10deg) scale(0);
+			}
+			25% {
+				transform: translate(-18vw, 0) rotate(-10deg) scale(1);
+			}
+			100% {
+				transform: translate(-20vw, -80%) rotate(10deg) scale(1);
+			}
+		}
+		.kbdevAuliaMobile {
+			transform: translate(0, -70%) rotate(-5deg) scale(1);
+		}
+		@keyframes kbdevAuliaMobileAnim {
+			0% {
+				transform: translate(10vw, 20%) rotate(12deg) scale(0);
+			}
+			25% {
+				transform: translate(10vw, 20%) rotate(12deg) scale(1);
+			}
+			100% {
+				transform: translate(0, -70%) rotate(-5deg) scale(1);
+			}
+		}
+		.kbdevDigitalSupport {
+			transform: translate(-15vw, 60%) rotate(10deg) scale(1);
+		}
+		@keyframes kbdevDigitalSupportAnim {
+			0% {
+				transform: translate(-18vw, 0) rotate(-10deg) scale(0);
+			}
+			25% {
+				transform: translate(-18vw, 0) rotate(-10deg) scale(1);
+			}
+			100% {
+				transform: translate(-15vw, 60%) rotate(10deg) scale(1);
+			}
+		}
+		// -----------------
+		.PetPositionD {
+			transform: translate(0, 10%) rotate(7deg) scale(0);
+		}
+		.PetPositionM {
+			top: 30%;
+			left: calc(50% - 4vw);
+			transform: translate(-22vw, -10%) rotate(-5deg) scale(0);
+		}
+		.petshineHome {
+			width: 35vw;
+			transform: translate(0, 0) rotate(7deg) scale(1);
+			z-index: 3;
+		}
+		@keyframes petshineHomeAnim {
+			0% {
+				transform: translate(-80vw, -40vh) rotate(0deg) scale(0);
+			}
+			100% {
+				transform: translate(0, 0) rotate(7deg) scale(1);
+			}
+		}
+
+		.petshineFav {
+			transform: translate(10vw, -60%) rotate(7deg) scale(1);
+			z-index: 1;
+		}
+		@keyframes petshineFavAnim {
+			0% {
+				transform: translate(0, 10%) rotate(7deg) scale(0);
+			}
+			25% {
+				transform: translate(0, 10%) rotate(7deg) scale(1);
+			}
+			100% {
+				transform: translate(10vw, -60%) rotate(7deg) scale(1);
+			}
+		}
+		.petshineCarousel {
+			transform: translate(-12vw, -70%) rotate(-10deg) scale(1);
+		}
+		@keyframes petshineCarouselAnim {
+			0% {
+				transform: translate(-22vw, -10%) rotate(-5deg) scale(0);
+			}
+			25% {
+				transform: translate(-22vw, -10%) rotate(-5deg) scale(1);
+			}
+			100% {
+				transform: translate(-12vw, -70%) rotate(-10deg) scale(1);
+			}
+		}
+		.petshineWelness {
+			transform: translate(-15vw, 60%) rotate(5deg) scale(1);
+		}
+		@keyframes petshineWelnessAnim {
+			0% {
+				transform: translate(0, 10%) rotate(7deg) scale(0);
+			}
+			25% {
+				transform: translate(0, 10%) rotate(7deg) scale(1);
+			}
+			100% {
+				transform: translate(-15vw, 60%) rotate(5deg) scale(1);
+			}
+		}
+		//--------------------------
+		.TCGPositionM {
+			width: 12vw;
+			height: 60%;
+			top: 30%;
+			left: calc(50% - 4vw);
+			transform: translate(-5vw, 0%) rotate(-10deg) scale(0);
+		}
+		.tcgBackCard {
+			width: 14vw;
+			height: 55%;
+			top: 27.5%;
+			left: calc(50% - 7.5vw);
+			transform: translate(-15vw, -40%) rotate(15deg) scale(1);
+		}
+		@keyframes tcgBackCardAnim {
+			0% {
+				transform: translate(-80vw, -40vh) rotate(0deg) scale(0);
+			}
+			100% {
+				transform: translate(-15vw, -40%) rotate(15deg) scale(1);
+			}
+		}
+		.tcgCards {
+			width: 12vw;
+			height: 60%;
+			top: 30%;
+			left: calc(50% - 4vw);
+			transform: translate(-5vw, 0%) rotate(-10deg) scale(1);
+		}
+		@keyframes tcgCardsAnim {
+			0% {
+				transform: translate(-100vw, 40vh) rotate(0deg) scale(0);
+			}
+			100% {
+				transform: translate(-5vw, 0%) rotate(-10deg) scale(1);
+			}
+		}
+		.tcgFilters {
+			transform: translate(14vw, 25%) rotate(40deg) scale(1);
+			z-index: 0;
+		}
+		@keyframes tcgFiltersAnim {
+			0% {
+				transform: translate(-5vw, 0%) rotate(-10deg) scale(0);
+			}
+			25% {
+				transform: translate(-5vw, 0%) rotate(-10deg) scale(1);
+			}
+			100% {
+				transform: translate(14vw, 25%) rotate(40deg) scale(1);
+			}
+		}
+		.tcgProfil {
+			transform: translate(8vw, 10%) rotate(25deg) scale(1);
+			z-index: 1;
+		}
+		@keyframes tcgProfilAnim {
+			0% {
+				transform: translate(-5vw, 0%) rotate(-10deg) scale(0);
+			}
+			25% {
+				transform: translate(-5vw, 0%) rotate(-10deg) scale(1);
+			}
+			100% {
+				transform: translate(8vw, 10%) rotate(25deg) scale(1);
+			}
+		}
+		.tcgSeries {
+			transform: translate(1vw, 0%) rotate(10deg) scale(1);
+			z-index: 2;
+		}
+		@keyframes tcgSeriesAnim {
+			0% {
+				transform: translate(-5vw, 0%) rotate(-10deg) scale(0);
+			}
+			25% {
+				transform: translate(-5vw, 0%) rotate(-10deg) scale(1);
+			}
+			100% {
+				transform: translate(1vw, 0%) rotate(10deg) scale(1);
+			}
+		}
+		//------------
+		.endAnimFi {
+			transform: translate(100vw, -40vh) rotate(0deg) scale(0);
+		}
+		.endAnimS {
+			transform: translate(60vw, -40vh) rotate(0deg) scale(0);
+		}
+		.endAnimT {
+			transform: translate(90vw, 0vh) rotate(0deg) scale(0);
+		}
+		.endAnimFo {
+			transform: translate(-80vw, 0vh) rotate(0deg) scale(0);
+		}
+		.endAnimFif {
+			transform: translate(-90vw, 40vh) rotate(0deg) scale(0);
+		}
+	}
+}
+@media screen and (min-width: $extra-large) and (min-height: $large) and (orientation: landscape) {
+	.screens {
+		.desk {
+			width: 30vw;
+			height: 45%;
+			top: 27.5%;
+			left: calc(50% - 15vw);
+		}
+		.mobile {
+			width: 10vw;
+			height: 55%;
+		}
+		.KBDevPositionD {
+			top: 30%;
+			left: calc(50% - 15vw);
+			transform: translate(-18vw, 0) rotate(-10deg) scale(0);
+		}
+		.KBDevPositionM {
+			transform: translate(10vw, 20%) rotate(12deg) scale(0);
+		}
+		.kbdevHome {
+			width: 50vw;
+			left: calc(50% - 25vw);
+			transform: translate(-12vw, 0) rotate(-10deg) scale(1);
+			&:hover {
+				cursor: none;
+			}
+		}
+		@keyframes kbdevHomeAnim {
+			0% {
+				transform: translate(-100vw, -40vh) rotate(0deg) scale(0);
+			}
+			100% {
+				transform: translate(-12vw, 0) rotate(-10deg) scale(1);
+			}
+		}
+		.kbdevHomeMobile {
+			width: 15vw;
+			height: 55%;
+			transform: translate(20vw, 10%) rotate(12deg) scale(1);
+			&:hover {
+				cursor: none;
+			}
+		}
+		@keyframes kbdevHomeMobileAnim {
+			0% {
+				transform: translate(60vw, -40vh) rotate(0deg) scale(0);
+			}
+			100% {
+				transform: translate(20vw, 10%) rotate(12deg) scale(1);
+			}
+		}
+		.kbdevAulia {
+			transform: translate(-17vw, -80%) rotate(5deg) scale(1);
+			z-index: 2;
+		}
+		@keyframes kbdevAuliaAnim {
+			0% {
+				transform: translate(-18vw, 0) rotate(-10deg) scale(0);
+			}
+			25% {
+				transform: translate(-18vw, 0) rotate(-10deg) scale(1);
+			}
+			100% {
+				transform: translate(-17vw, -80%) rotate(5deg) scale(1);
+			}
+		}
+		.kbdevAuliaMobile {
+			transform: translate(2vw, -75%) rotate(-5deg) scale(1);
+		}
+		@keyframes kbdevAuliaMobileAnim {
+			0% {
+				transform: translate(10vw, 20%) rotate(12deg) scale(0);
+			}
+			25% {
+				transform: translate(10vw, 20%) rotate(12deg) scale(1);
+			}
+			100% {
+				transform: translate(2vw, -75%) rotate(-5deg) scale(1);
+			}
+		}
+		.kbdevDigitalSupport {
+			transform: translate(-5vw, 60%) rotate(7deg) scale(1);
+		}
+		@keyframes kbdevDigitalSupportAnim {
+			0% {
+				transform: translate(-18vw, 0) rotate(0deg) scale(0);
+			}
+			25% {
+				transform: translate(-18vw, 0) rotate(0deg) scale(1);
+			}
+			100% {
+				transform: translate(-5vw, 60%) rotate(7deg) scale(1);
+			}
+		}
+		// -----------------
+		.PetPositionD {
+			transform: translate(0, 10%) rotate(7deg) scale(0);
+		}
+		.PetPositionM {
+			top: 30%;
+			left: calc(50% - 4vw);
+			transform: translate(-22vw, -10%) rotate(-5deg) scale(0);
+		}
+		.petshineHome {
+			width: 50vw;
+			left: calc(50% - 25vw);
+			transform: translate(5vw, 0) rotate(7deg) scale(1);
+			&:hover {
+				cursor: none;
+			}
+		}
+		@keyframes petshineHomeAnim {
+			0% {
+				transform: translate(-80vw, -40vh) rotate(0deg) scale(0);
+			}
+			100% {
+				transform: translate(5vw, 0) rotate(7deg) scale(1);
+			}
+		}
+		.petshineHomeMobile {
+			width: 15vw;
+			height: 55%;
+			transform: translate(-29vw, -20%) rotate(-5deg) scale(1);
+			z-index: 5;
+			&:hover {
+				cursor: none;
+			}
+		}
+		@keyframes petshineHomeMobileAnim {
+			0% {
+				transform: translate(-100vw, -40vh) rotate(0deg) scale(0);
+			}
+			100% {
+				transform: translate(-29vw, -20%) rotate(-5deg) scale(1);
+			}
+		}
+
+		.petshineFav {
+			transform: translate(10vw, -70%) rotate(10deg) scale(1);
+			z-index: 1;
+		}
+		@keyframes petshineFavAnim {
+			0% {
+				transform: translate(0, 10%) rotate(7deg) scale(0);
+			}
+			25% {
+				transform: translate(0, 10%) rotate(7deg) scale(1);
+			}
+			100% {
+				transform: translate(10vw, -70%) rotate(10deg) scale(1);
+			}
+		}
+		.petshineCarousel {
+			transform: translate(-12vw, -80%) rotate(-10deg) scale(1);
+		}
+		@keyframes petshineCarouselAnim {
+			0% {
+				transform: translate(-22vw, -10%) rotate(-5deg) scale(0);
+			}
+			25% {
+				transform: translate(-22vw, -10%) rotate(-5deg) scale(1);
+			}
+			100% {
+				transform: translate(-12vw, -80%) rotate(-10deg) scale(1);
+			}
+		}
+		.petshineWelness {
+			transform: translate(5vw, 65%) rotate(-5deg) scale(1);
+		}
+		@keyframes petshineWelnessAnim {
+			0% {
+				transform: translate(0, 10%) rotate(7deg) scale(0);
+			}
+			25% {
+				transform: translate(0, 10%) rotate(7deg) scale(1);
+			}
+			100% {
+				transform: translate(5vw, 65%) rotate(-5deg) scale(1);
+			}
+		}
+		//--------------------------
+		.TCGPositionM {
+			width: 15vw;
+			height: 55%;
+			top: 22.5%;
+			transform: translate(-5vw, 0%) rotate(-10deg) scale(0);
+		}
+		.tcgBackCard {
+			width: 20vw;
+			height: 55%;
+			top: 27.5%;
+			left: calc(50% - 10vw);
+			transform: translate(-17vw, -50%) rotate(15deg) scale(1);
+		}
+		@keyframes tcgBackCardAnim {
+			0% {
+				transform: translate(-80vw, -40vh) rotate(0deg) scale(0);
+			}
+			100% {
+				transform: translate(-17vw, -50%) rotate(15deg) scale(1);
+			}
+		}
+		.tcgCards {
+			width: 20vw;
+			height: 55%;
+			top: 27.5%;
+			left: calc(50% - 10vw);
+			transform: translate(-5vw, 0%) rotate(-10deg) scale(1);
+		}
+		@keyframes tcgCardsAnim {
+			0% {
+				transform: translate(-100vw, 40vh) rotate(0deg) scale(0);
+			}
+			100% {
+				transform: translate(-5vw, 0%) rotate(-10deg) scale(1);
+			}
+		}
+		.tcgFilters {
+			transform: translate(14vw, 25%) rotate(40deg) scale(1);
+			z-index: 0;
+		}
+		@keyframes tcgFiltersAnim {
+			0% {
+				transform: translate(-5vw, 0%) rotate(-10deg) scale(0);
+			}
+			25% {
+				transform: translate(-5vw, 0%) rotate(-10deg) scale(1);
+			}
+			100% {
+				transform: translate(14vw, 25%) rotate(40deg) scale(1);
+			}
+		}
+		.tcgProfil {
+			transform: translate(8vw, 15%) rotate(25deg) scale(1);
+			z-index: 1;
+		}
+		@keyframes tcgProfilAnim {
+			0% {
+				transform: translate(-5vw, 0%) rotate(-10deg) scale(0);
+			}
+			25% {
+				transform: translate(-5vw, 0%) rotate(-10deg) scale(1);
+			}
+			100% {
+				transform: translate(8vw, 15%) rotate(25deg) scale(1);
+			}
+		}
+		.tcgSeries {
+			transform: translate(1vw, 10%) rotate(10deg) scale(1);
+			z-index: 2;
+		}
+		@keyframes tcgSeriesAnim {
+			0% {
+				transform: translate(-5vw, 0%) rotate(-10deg) scale(0);
+			}
+			25% {
+				transform: translate(-5vw, 0%) rotate(-10deg) scale(1);
+			}
+			100% {
+				transform: translate(1vw, 10%) rotate(10deg) scale(1);
+			}
+		}
+		//------------
+		.endAnimFi {
+			transform: translate(100vw, -40vh) rotate(0deg) scale(0);
+		}
+		.endAnimS {
+			transform: translate(60vw, -40vh) rotate(0deg) scale(0);
+		}
+		.endAnimT {
+			transform: translate(90vw, 0vh) rotate(0deg) scale(0);
+		}
+		.endAnimFo {
+			transform: translate(-80vw, 0vh) rotate(0deg) scale(0);
+		}
+		.endAnimFif {
+			transform: translate(-90vw, 40vh) rotate(0deg) scale(0);
+		}
+	}
+}
+@media screen and (min-width: $ultra-large) {
+	.screens {
+		.desk {
+			width: 30vw;
+			height: 45%;
+			top: 27.5%;
+			left: calc(50% - 15vw);
+		}
+		.mobile {
+			width: 10vw;
+			height: 55%;
+		}
+		.KBDevPositionD {
+			top: 30%;
+			left: calc(50% - 15vw);
+			transform: translate(-18vw, 0) rotate(-10deg) scale(0);
+		}
+		.KBDevPositionM {
+			transform: translate(10vw, 20%) rotate(12deg) scale(0);
+		}
+		.kbdevHome {
+			height: 50%;
+			top: 25%;
+			width: 50vw;
+			left: calc(50% - 25vw);
+			transform: translate(-12vw, 0) rotate(-10deg) scale(1);
+		}
+		@keyframes kbdevHomeAnim {
+			0% {
+				transform: translate(-100vw, -40vh) rotate(0deg) scale(0);
+			}
+			100% {
+				transform: translate(-12vw, 0) rotate(-10deg) scale(1);
+			}
+		}
+		.kbdevHomeMobile {
+			width: 15vw;
+			height: 60%;
+			top: 20%;
+			transform: translate(15vw, 10%) rotate(12deg) scale(1);
+		}
+		@keyframes kbdevHomeMobileAnim {
+			0% {
+				transform: translate(60vw, -40vh) rotate(0deg) scale(0);
+			}
+			100% {
+				transform: translate(15vw, 10%) rotate(12deg) scale(1);
+			}
+		}
+		.kbdevAulia {
+			transform: translate(-17vw, -80%) rotate(5deg) scale(1);
+			z-index: 2;
+		}
+		@keyframes kbdevAuliaAnim {
+			0% {
+				transform: translate(-18vw, 0) rotate(-10deg) scale(0);
+			}
+			25% {
+				transform: translate(-18vw, 0) rotate(-10deg) scale(1);
+			}
+			100% {
+				transform: translate(-17vw, -80%) rotate(5deg) scale(1);
+			}
+		}
+		.kbdevAuliaMobile {
+			transform: translate(2vw, -75%) rotate(-5deg) scale(1);
+		}
+		@keyframes kbdevAuliaMobileAnim {
+			0% {
+				transform: translate(10vw, 20%) rotate(12deg) scale(0);
+			}
+			25% {
+				transform: translate(10vw, 20%) rotate(12deg) scale(1);
+			}
+			100% {
+				transform: translate(2vw, -75%) rotate(-5deg) scale(1);
+			}
+		}
+		.kbdevDigitalSupport {
+			transform: translate(-5vw, 60%) rotate(7deg) scale(1);
+		}
+		@keyframes kbdevDigitalSupportAnim {
+			0% {
+				transform: translate(-18vw, 0) rotate(0deg) scale(0);
+			}
+			25% {
+				transform: translate(-18vw, 0) rotate(0deg) scale(1);
+			}
+			100% {
+				transform: translate(-5vw, 60%) rotate(7deg) scale(1);
+			}
+		}
+		// -----------------
+		.PetPositionD {
+			transform: translate(0, 10%) rotate(7deg) scale(0);
+		}
+		.PetPositionM {
+			top: 30%;
+			left: calc(50% - 4vw);
+			transform: translate(-22vw, -10%) rotate(-5deg) scale(0);
+		}
+		.petshineHome {
+			height: 50%;
+			top: 25%;
+			width: 50vw;
+			left: calc(50% - 25vw);
+			transform: translate(5vw, 0) rotate(7deg) scale(1);
+			&:hover {
+				cursor: none;
+			}
+		}
+		@keyframes petshineHomeAnim {
+			0% {
+				transform: translate(-80vw, -40vh) rotate(0deg) scale(0);
+			}
+			100% {
+				transform: translate(5vw, 0) rotate(7deg) scale(1);
+			}
+		}
+		.petshineHomeMobile {
+			width: 15vw;
+			height: 60%;
+			top: 20%;
+			transform: translate(-25vw, -10%) rotate(-5deg) scale(1);
+			z-index: 5;
+			&:hover {
+				cursor: none;
+			}
+		}
+		@keyframes petshineHomeMobileAnim {
+			0% {
+				transform: translate(-100vw, -40vh) rotate(0deg) scale(0);
+			}
+			100% {
+				transform: translate(-25vw, -10%) rotate(-5deg) scale(1);
+			}
+		}
+
+		.petshineFav {
+			transform: translate(10vw, -70%) rotate(10deg) scale(1);
+			z-index: 1;
+		}
+		@keyframes petshineFavAnim {
+			0% {
+				transform: translate(0, 10%) rotate(7deg) scale(0);
+			}
+			25% {
+				transform: translate(0, 10%) rotate(7deg) scale(1);
+			}
+			100% {
+				transform: translate(10vw, -70%) rotate(10deg) scale(1);
+			}
+		}
+		.petshineCarousel {
+			transform: translate(-13vw, -75%) rotate(-10deg) scale(1);
+		}
+		@keyframes petshineCarouselAnim {
+			0% {
+				transform: translate(-22vw, -10%) rotate(-5deg) scale(0);
+			}
+			25% {
+				transform: translate(-22vw, -10%) rotate(-5deg) scale(1);
+			}
+			100% {
+				transform: translate(-13vw, -75%) rotate(-10deg) scale(1);
+			}
+		}
+		.petshineWelness {
+			transform: translate(5vw, 65%) rotate(-5deg) scale(1);
+		}
+		@keyframes petshineWelnessAnim {
+			0% {
+				transform: translate(0, 10%) rotate(7deg) scale(0);
+			}
+			25% {
+				transform: translate(0, 10%) rotate(7deg) scale(1);
+			}
+			100% {
+				transform: translate(5vw, 65%) rotate(-5deg) scale(1);
+			}
+		}
+		//--------------------------
+		.TCGPositionM {
+			width: 20vw;
+			height: 60%;
+			top: 20%;
+			left: calc(50% - 10vw);
+			transform: translate(-5vw, 0%) rotate(-10deg) scale(0);
+		}
+		.tcgBackCard {
+			width: 20vw;
+			height: 55%;
+			top: 27.5%;
+			left: calc(50% - 10vw);
+			transform: translate(-17vw, -50%) rotate(15deg) scale(1);
+		}
+		@keyframes tcgBackCardAnim {
+			0% {
+				transform: translate(-80vw, -40vh) rotate(0deg) scale(0);
+			}
+			100% {
+				transform: translate(-17vw, -50%) rotate(15deg) scale(1);
+			}
+		}
+		.tcgCards {
+			width: 20vw;
+			height: 60%;
+			top: 20%;
+			left: calc(50% - 10vw);
+			transform: translate(-5vw, 0%) rotate(-10deg) scale(1);
+		}
+		@keyframes tcgCardsAnim {
+			0% {
+				transform: translate(-100vw, 40vh) rotate(0deg) scale(0);
+			}
+			100% {
+				transform: translate(-5vw, 0%) rotate(-10deg) scale(1);
+			}
+		}
+		.tcgFilters {
+			transform: translate(14vw, 35%) rotate(40deg) scale(1);
+			z-index: 0;
+		}
+		@keyframes tcgFiltersAnim {
+			0% {
+				transform: translate(-5vw, 0%) rotate(-10deg) scale(0);
+			}
+			25% {
+				transform: translate(-5vw, 0%) rotate(-10deg) scale(1);
+			}
+			100% {
+				transform: translate(14vw, 35%) rotate(40deg) scale(1);
+			}
+		}
+		.tcgProfil {
+			transform: translate(8vw, 15%) rotate(25deg) scale(1);
+			z-index: 1;
+		}
+		@keyframes tcgProfilAnim {
+			0% {
+				transform: translate(-5vw, 0%) rotate(-10deg) scale(0);
+			}
+			25% {
+				transform: translate(-5vw, 0%) rotate(-10deg) scale(1);
+			}
+			100% {
+				transform: translate(8vw, 15%) rotate(25deg) scale(1);
+			}
+		}
+		.tcgSeries {
+			transform: translate(2vw, 5%) rotate(10deg) scale(1);
+			z-index: 2;
+		}
+		@keyframes tcgSeriesAnim {
+			0% {
+				transform: translate(-5vw, 0%) rotate(-10deg) scale(0);
+			}
+			25% {
+				transform: translate(-5vw, 0%) rotate(-10deg) scale(1);
+			}
+			100% {
+				transform: translate(2vw, 5%) rotate(10deg) scale(1);
+			}
+		}
+		//------------
+		.endAnimFi {
+			transform: translate(100vw, -50vh) rotate(0deg) scale(0);
+		}
+		.endAnimS {
+			transform: translate(60vw, -50vh) rotate(0deg) scale(0);
+		}
+		.endAnimT {
+			transform: translate(90vw, 0vh) rotate(0deg) scale(0);
+		}
+		.endAnimFo {
+			transform: translate(-80vw, 0vh) rotate(0deg) scale(0);
+		}
+		.endAnimFif {
+			transform: translate(-90vw, 40vh) rotate(0deg) scale(0);
+		}
+	}
+}

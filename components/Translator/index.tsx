@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/router';
 import useTranslation from './hooks';
 
@@ -8,6 +8,7 @@ export default function Translator() {
 	const [language, setLanguage] = useState('fr');
 	const { setLocale } = useTranslation();
 	const { pathname, push } = useRouter();
+	const scrollPosition = useRef(0);
 
 	useEffect(() => {
 		const currentLanguage = localStorage.getItem('lang') || 'fr';
@@ -16,9 +17,13 @@ export default function Translator() {
 		const options = {
 			locale: currentLanguage,
 		};
-		push(pathname, pathname, options);
+		push({ pathname, query: options });
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
+
+	useEffect(() => {
+		window.scrollTo(0, scrollPosition.current);
+	}, [language]);
 
 	function handleLocaleChange(
 		targetLocale: string,
@@ -33,13 +38,13 @@ export default function Translator() {
 		if (setLocale === undefined) {
 			return;
 		}
-		setLocale(targetLocale);
 
 		if (targetLocale === 'en') {
 			setLanguage('en');
 		} else {
 			setLanguage('fr');
 		}
+		setLocale(targetLocale);
 
 		const options = {
 			locale: targetLocale,

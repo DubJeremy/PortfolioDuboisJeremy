@@ -10,11 +10,20 @@ import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import useMediaQuery from '@/tools/useMediaQuery';
 import TurnMobile from '@/components/TurnMobile';
+import Cursor from '@/components/Cursor';
+import Theme from '@/components/Theme';
+import useTheme from '@/components/Theme/hooks';
 
-export default function Home() {
+import styles from '../styles/app.module.scss';
+
+export default function Home({ isSafari }: { isSafari: boolean }) {
 	const [targetReachedH] = useMediaQuery(`(max-height: 500px)`);
 	const [targetReached] = useMediaQuery(`(max-width: 992px)`);
+	const [targetReachedL] = useMediaQuery(`(min-width: 992px)`);
+	const [targetReachedXL] = useMediaQuery(`(min-width: 1140px)`);
 	const [isInLandscape, setIsInLandscape] = useState<boolean | null>(null);
+	const { theme } = useTheme();
+	const [icoTheme, setIcoTheme] = useState('');
 
 	useEffect(() => {
 		heightFunction();
@@ -31,6 +40,45 @@ export default function Home() {
 		}
 	};
 
+	useEffect(() => {
+		switch (theme) {
+			case 'blue': {
+				setIcoTheme('');
+				break;
+			}
+			case 'green': {
+				setIcoTheme('G');
+				break;
+			}
+			case 'yellow': {
+				setIcoTheme('Y');
+				break;
+			}
+			case 'purple': {
+				setIcoTheme('Pu');
+				break;
+			}
+			case 'pink': {
+				setIcoTheme('Pi');
+				break;
+			}
+			case 'white': {
+				setIcoTheme('W');
+				break;
+			}
+		}
+	}, [theme]);
+
+	const [showComponents, setShowComponents] = useState(false);
+
+	useEffect(() => {
+		const timer = setTimeout(() => {
+			setShowComponents(true);
+		}, 3000);
+
+		return () => clearTimeout(timer);
+	}, []);
+
 	return (
 		<>
 			<Head>
@@ -46,20 +94,27 @@ export default function Home() {
 					property='og:image'
 					content='https://www.portfolio.dubj/images/og-image.jpg'
 				/>
-				<link rel='icon' href='/favicon.ico' />
+				<link rel='icon' href={`/favicon${icoTheme}.ico`} />
 			</Head>
 			<main>
 				{isInLandscape && targetReachedH && targetReached ? (
-					<TurnMobile />
+					<TurnMobile isSafari={isSafari} />
 				) : (
 					<>
-						<ScreenFrame />
-						<Navbar />
-						<Header />
-						<Profil />
-						<Projects />
-						<Contact />
-						<Footer />
+						{targetReachedXL && <Cursor />}
+						{targetReachedL && showComponents && <Theme />}
+
+						<ScreenFrame isSafari={isSafari} />
+						{showComponents && (
+							<div className={styles.components}>
+								<Navbar isSafari={isSafari} />
+								<Header isSafari={isSafari} />
+								<Profil isSafari={isSafari} />
+								<Projects isSafari={isSafari} />
+								<Contact isSafari={isSafari} />
+								<Footer />
+							</div>
+						)}
 					</>
 				)}
 			</main>

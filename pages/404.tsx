@@ -1,9 +1,9 @@
 import C404 from '@/components/Custom404';
 
-const Custom404 = () => {
+const Custom404 = ({ isSafari }: { isSafari: boolean }) => {
 	return (
 		<>
-			<C404 />
+			<C404 isSafari={isSafari} />
 		</>
 	);
 };

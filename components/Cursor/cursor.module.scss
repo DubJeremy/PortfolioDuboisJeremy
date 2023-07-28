@@ -1,0 +1,54 @@
+@import '../../styles/variables.scss';
+@import 'styles/mixins.scss';
+
+.cursor {
+	position: fixed;
+	width: 40px;
+	height: 40px;
+	margin-left: -20px;
+	margin-top: -20px;
+	border-radius: 50%;
+	transition: transform 0.3s ease-out;
+	transform-origin: center center;
+	pointer-events: none;
+	z-index: 10000000;
+	@include flex;
+	font-family: 'JosefinS';
+	font-weight: 400;
+	font-size: 0em;
+}
+
+.grow,
+.growSmall {
+	transform: scale(4);
+	background: white;
+	mix-blend-mode: difference;
+	border: none;
+}
+
+.link {
+	font-size: 0.8em;
+	mix-blend-mode: normal;
+	background-color: $whiteLight;
+	opacity: 0.8;
+}
+
+.growSmall {
+	transform: scale(2);
+}
+@media screen and (max-width: $extra-small) {
+}
+@media screen and (max-width: $extra-small) and (min-height: $small) {
+}
+@media screen and (min-width: $small) {
+}
+@media screen and (min-width: $medium) {
+}
+@media screen and (min-width: $large) and (orientation: portrait) {
+}
+@media screen and (min-width: $large) and (orientation: landscape) {
+}
+@media screen and (min-width: $extra-large) and (orientation: landscape) {
+}
+@media screen and (min-width: $ultra-large) {
+}

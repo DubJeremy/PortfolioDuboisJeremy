@@ -1,14 +1,16 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import useTranslation from '@/components/Translator/hooks';
 
 import Lines from './lines';
 import useMediaQuery from '@/tools/useMediaQuery';
 import Modal from './Modal';
+import useTheme from '../Theme/hooks';
 
 import styles from './contact.module.scss';
 
-const Contact = () => {
+const Contact = ({ isSafari }: { isSafari: boolean }) => {
+	const { c, theme } = useTheme();
 	const { t } = useTranslation();
 	const [targetReached] = useMediaQuery(`(min-width: 768px)`);
 	const [showConfirmModal, setShowConfirmModal] = useState(false);
@@ -65,16 +67,80 @@ const Contact = () => {
 		});
 	}
 
+	const [imgTheme, setImgTheme] = useState('');
+	const [transition, setTransition] = useState(false);
+
+	useEffect(() => {
+		setTransition(true);
+		setTimeout(() => {
+			switch (theme) {
+				case 'blue': {
+					setImgTheme('');
+					break;
+				}
+				case 'green': {
+					setImgTheme('G');
+					break;
+				}
+				case 'yellow': {
+					setImgTheme('Y');
+					break;
+				}
+				case 'purple': {
+					setImgTheme('Pu');
+					break;
+				}
+				case 'pink': {
+					setImgTheme('Pi');
+					break;
+				}
+				case 'white': {
+					setImgTheme('W');
+					break;
+				}
+			}
+			setTransition(false);
+		}, 500);
+	}, [theme]);
+
 	return (
-		<section className={styles.contact} id='contact'>
-			<div className={styles.title}>
+		<section
+			className={styles.contact}
+			id='contact'
+			style={
+				targetReached
+					? { borderBottom: `3px solid ${c('MAIN')}`, color: `${c('MAIN')}` }
+					: { borderBottom: `2px solid ${c('MAIN')}`, color: `${c('MAIN')}` }
+			}
+		>
+			<div
+				className={styles.title}
+				style={
+					targetReached
+						? { borderBottom: `3px solid ${c('MAIN')}` }
+						: { borderBottom: `2px solid ${c('MAIN')}` }
+				}
+			>
 				<h3>Contact</h3>
-				<div className={styles.patternContainer}>
+				<div
+					className={`${styles.patternContainer} ${
+						transition ? styles.transition : ''
+					}`}
+					style={
+						targetReached
+							? { borderLeft: `3px solid ${c('MAIN')}` }
+							: { borderLeft: `2px solid ${c('MAIN')}` }
+					}
+				>
 					<Image
 						src={
-							targetReached
-								? '/img/patternShurikenXL.webp'
-								: '/img/patternShurikenS.webp'
+							isSafari
+								? targetReached
+									? `/img/safari/patternShurikenXL${imgTheme}.svg`
+									: `/img/safari/patternShurikenS${imgTheme}.svg`
+								: targetReached
+								? `/img/patternShurikenXL${imgTheme}.webp`
+								: `/img/patternShurikenS${imgTheme}.webp`
 						}
 						alt='pattern'
 						fill
@@ -83,7 +149,11 @@ const Contact = () => {
 			</div>
 			<form className={styles.inputs} method='post' onSubmit={handleSubmit}>
 				<a href='mailto:dubois.jeremy33@gmail.com'>dubois.jeremy33@gmail.com</a>
-				<label className={styles.input} htmlFor='name'>
+				<label
+					className={`${styles.input} ${styles.name}`}
+					htmlFor='name'
+					style={{ color: `${c('MAIN')}` }}
+				>
 					<input
 						type='text'
 						name='name'
@@ -93,9 +163,13 @@ const Contact = () => {
 							setFormValues({ ...formValues, name: e.target.value })
 						}
 						required
+						style={{
+							border: `1px solid ${c('MAIN')}`,
+							color: `${c('MAIN')}`,
+						}}
 					/>
 				</label>
-				<label className={styles.input} htmlFor='mail'>
+				<label className={`${styles.input} ${styles.mail}`} htmlFor='mail'>
 					<input
 						type='email'
 						name='mail'
@@ -105,6 +179,10 @@ const Contact = () => {
 							setFormValues({ ...formValues, mail: e.target.value })
 						}
 						required
+						style={{
+							border: `1px solid ${c('MAIN')}`,
+							color: `${c('MAIN')}`,
+						}}
 					/>
 				</label>
 				<label
@@ -119,12 +197,24 @@ const Contact = () => {
 							setFormValues({ ...formValues, message: e.target.value })
 						}
 						required
+						style={{
+							border: `1px solid ${c('MAIN')}`,
+							color: `${c('MAIN')}`,
+						}}
 					/>
 				</label>
 				<div className={styles.btnContainer}>
 					<button
 						className={styles.btn}
 						onSubmit={() => setShowConfirmModal(true)}
+						style={
+							c('MAIN') === '#ffffff'
+								? {
+										border: `2px solid ${c('MAIN')}`,
+										boxSizing: 'border-box',
+								  }
+								: { backgroundColor: `${c('MAIN')}` }
+						}
 					>
 						{t('SEND')}
 						<span>▶</span>
@@ -137,7 +227,7 @@ const Contact = () => {
 					showConfirmModal ? styles.showContainer : ''
 				}`}
 			>
-				<Modal success={submittedSuccess} />
+				<Modal success={submittedSuccess} isSafari={isSafari} />
 			</div>
 		</section>
 	);

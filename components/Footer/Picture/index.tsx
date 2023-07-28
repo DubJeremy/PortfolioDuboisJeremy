@@ -1,11 +1,9 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useFrame, useLoader } from '@react-three/fiber';
 import { TextureLoader, Mesh, DoubleSide, BufferGeometry, Color } from 'three';
 
-import styles from './profilPicture.module.scss';
-
-const ProfilPicture = () => {
-	const texture = useLoader(TextureLoader, '/img/pp.png');
+const Picture = () => {
+	const texture = useLoader(TextureLoader, '/img/safari/kazukiNoda.png');
 	const flagRef = useRef<Mesh>();
 
 	useFrame((state, delta) => {
@@ -29,10 +27,10 @@ const ProfilPicture = () => {
 
 	return (
 		<mesh ref={flagRef}>
-			<planeGeometry args={[6, 7, 30, 20]} />
+			<planeGeometry args={[4, 5, 30, 20]} />
 			<meshBasicMaterial map={texture} side={DoubleSide} />
 		</mesh>
 	);
 };
 
-export default ProfilPicture;
+export default Picture;

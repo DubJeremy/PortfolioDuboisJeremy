@@ -7,10 +7,6 @@ declare namespace ProjectTypes {
 		link?: string;
 		techs: string[];
 		screens: string[];
+		mobileApp: boolean;
 	}
-	// interface ... {
-	// 	id: number;
-	// 	...: ...;
-	// 	...: ...;
-	// }
 }

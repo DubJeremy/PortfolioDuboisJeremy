@@ -1,31 +1,18 @@
-@import '../../../styles/variables.scss';
-@import 'styles/mixins.scss';
+@import './styles/variables.scss';
+@import './styles/mixins.scss';
 
-.lines {
-	opacity: 0.8;
-	width: 100%;
-	height: 0%;
-	@include flex($dir: row, $just: space-around, $align: flex-end);
-	.line {
-		width: 1px;
-		background-color: white;
-		height: 100%;
-	}
+.components {
+	opacity: 0;
+	animation: appAnim 0.8s ease-out forwards;
 }
-.linesAnimate {
-	animation: linesAppear 1.5s ease-in-out;
-	animation-fill-mode: forwards;
-}
-
-@keyframes linesAppear {
+@keyframes appAnim {
 	0% {
-		height: 0;
+		opacity: 0;
 	}
 	100% {
-		height: 100%;
+		opacity: 1;
 	}
 }
-
 @media screen and (max-width: $extra-small) {
 }
 @media screen and (max-width: $extra-small) and (min-height: $small) {
