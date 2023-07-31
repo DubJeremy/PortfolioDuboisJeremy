@@ -51,6 +51,12 @@ const ScreenFrame = ({ isSafari }: { isSafari: boolean }) => {
 			<div
 				className={` ${styles.sideFrame} ${styles.corner} ${styles.leftBottom}`}
 			/>
+			<div
+				className={` ${styles.sideFrame} ${styles.corner} ${styles.leftTop}`}
+			/>
+			<div
+				className={` ${styles.sideFrame} ${styles.corner} ${styles.rightTop}`}
+			/>
 		</>
 	);
 };

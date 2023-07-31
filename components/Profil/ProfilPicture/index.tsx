@@ -1,8 +1,6 @@
 import React, { useRef } from 'react';
 import { useFrame, useLoader } from '@react-three/fiber';
-import { TextureLoader, Mesh, DoubleSide, BufferGeometry, Color } from 'three';
-
-import styles from './profilPicture.module.scss';
+import { TextureLoader, Mesh, DoubleSide, BufferGeometry } from 'three';
 
 const ProfilPicture = () => {
 	const texture = useLoader(TextureLoader, '/img/pp.png');

@@ -1,6 +1,6 @@
 export function getDocHeight(): string {
-    if (typeof window !== "undefined") {
-        return ` calc(${window.innerHeight}px - 55px)`;
-    }
-    return " 100%";
+	if (typeof window !== 'undefined') {
+		return ` calc(${window.innerHeight}px - 95px)`;
+	}
+	return ' 100%';
 }

@@ -52,6 +52,16 @@
 	bottom: 0;
 	left: 0;
 }
+.leftTop {
+	top: 0;
+	left: 0;
+	height: 14px;
+}
+.rightTop {
+	top: 0;
+	right: 0;
+	height: 14px;
+}
 .sideFrame:before {
 	background: url(/img/background.svg) 0 0;
 	background-size: 500px 500px;

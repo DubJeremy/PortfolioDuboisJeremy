@@ -125,7 +125,7 @@
 		}
 		.languageToggle {
 			position: absolute;
-			bottom: 10px;
+			bottom: 20px;
 			right: 15px;
 			font-family: 'JosefinS';
 			font-size: 4vh;
@@ -135,8 +135,7 @@
 .expanded {
 	transition: all 0.3s ease, box-shadow 0.3s ease;
 	transform: translateY(100%);
-	height: calc(100vh - 110px);
-
+	// height: calc(100vh - 110px);
 	width: calc(100% - 30px);
 	max-width: 100%;
 	z-index: 1000;

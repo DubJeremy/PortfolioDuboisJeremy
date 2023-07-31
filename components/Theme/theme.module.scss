@@ -3,8 +3,8 @@
 @media screen and (max-width: $large) {
 	.themes {
 		position: absolute;
-		left: 6px;
-		bottom: 15px;
+		left: 15px;
+		bottom: 25px;
 		z-index: 1005;
 		@include flex($align: flex-end, $dir: row);
 		.theme {
