@@ -143,7 +143,7 @@ const Projects = ({ isSafari }: { isSafari: boolean }) => {
 
 	return (
 		<section
-			className={styles.projects}
+			className={`${styles.projects} ${styles.component}`}
 			id='projects'
 			ref={ref}
 			style={{ color: ` ${c('MAIN')}` }}

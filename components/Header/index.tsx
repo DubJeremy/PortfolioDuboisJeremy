@@ -7,7 +7,7 @@ import Circle from './circle';
 
 const Header = ({ isSafari }: { isSafari: boolean }) => {
 	return (
-		<section className={styles.header} id='profil'>
+		<section className={`${styles.header} ${styles.component}`} id='profil'>
 			<div className={styles.name}>
 				<p className={`${styles.lastName}  cursorScale`}>Dubois</p>
 				<p className={`${styles.firstName}  cursorScale`}>Jérémy</p>

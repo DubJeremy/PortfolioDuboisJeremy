@@ -143,7 +143,9 @@ const Navbar = ({ isSafari }: { isSafari: boolean }) => {
 	return (
 		<>
 			<div
-				className={`${styles.navbar} ${isToggled ? styles.navToggled : ''}`}
+				className={`${styles.navbar} ${isToggled ? styles.navToggled : ''} ${
+					styles.component
+				}`}
 				style={
 					targetReached
 						? { borderBottom: `3px solid ${c('MAIN')}` }

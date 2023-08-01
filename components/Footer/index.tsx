@@ -47,7 +47,7 @@ const Footer = () => {
 	}, []);
 
 	return (
-		<footer className={styles.footer} ref={ref}>
+		<footer className={`${styles.footer} ${styles.component}`} ref={ref}>
 			<div
 				id='scrollTextContainer2'
 				className={styles.scrollText}

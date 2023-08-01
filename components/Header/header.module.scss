@@ -20,13 +20,13 @@
 
 		.lastName {
 			text-align: start;
-			animation: lastNAppear 1s ease-in-out 2.8s;
+			animation: lastNAppear 1s ease-in-out 4.4s;
 			transform: translateX(-120%);
 			animation-fill-mode: forwards;
 		}
 		.firstName {
 			text-align: end;
-			animation: firstNAppear 1s ease-in-out 2.8s;
+			animation: firstNAppear 1s ease-in-out 4.4s;
 			transform: translateX(120%);
 			animation-fill-mode: forwards;
 		}
@@ -37,6 +37,19 @@
 		position: absolute;
 		top: 0;
 		@include flex;
+	}
+}
+
+.component {
+	opacity: 0;
+	animation: appAnim 0.8s ease-out 3s forwards;
+}
+@keyframes appAnim {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
 	}
 }
 

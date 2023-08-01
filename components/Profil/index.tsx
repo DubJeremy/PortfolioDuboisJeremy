@@ -77,7 +77,7 @@ const Profil = ({ isSafari }: { isSafari: boolean }) => {
 
 	return (
 		<section
-			className={styles.profil}
+			className={`${styles.profil} ${styles.component}`}
 			id='profil'
 			style={
 				targetReached
