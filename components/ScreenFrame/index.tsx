@@ -1,13 +1,32 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import useTheme from '../Theme/hooks';
 import useMediaQuery from '@/tools/useMediaQuery';
+import { contentProjects } from '@/constants/contentProjects';
 
 import styles from './screenFrame.module.scss';
+import Image from 'next/image';
 
 const ScreenFrame = ({ isSafari }: { isSafari: boolean }) => {
 	const { c } = useTheme();
 	const [targetReached] = useMediaQuery(`(min-width: 992px)`);
+
+	const [imageUrls, setImageUrls] = useState<string[]>([]);
+
+	useEffect(() => {
+		const urls: string[] = [];
+		for (const project of contentProjects) {
+			for (const screen of project.screens) {
+				const imageUrl = isSafari
+					? `/img/safari/screen/${screen}.svg`
+					: `/img/screen/${screen}.webp`;
+				urls.push(imageUrl);
+			}
+		}
+		setImageUrls(urls);
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [isSafari]);
+	console.log(imageUrls);
 
 	return (
 		<>
@@ -57,6 +76,11 @@ const ScreenFrame = ({ isSafari }: { isSafari: boolean }) => {
 			<div
 				className={` ${styles.sideFrame} ${styles.corner} ${styles.rightTop}`}
 			/>
+			{imageUrls.map((url, index) => (
+				<div key={index} className={styles.screenLoader}>
+					<Image src={url} fill alt={url} />
+				</div>
+			))}
 		</>
 	);
 };

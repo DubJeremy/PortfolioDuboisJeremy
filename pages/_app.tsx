@@ -1,6 +1,5 @@
 import type { AppProps } from 'next/app';
 import { useEffect, useState } from 'react';
-import ProgressBar from 'nextjs-progressbar';
 
 import { TranslatorProvider } from '@/components/Translator/context';
 import { ThemeProvider } from '@/components/Theme/context';
@@ -20,12 +19,6 @@ export default function App({ Component, pageProps }: AppProps) {
 	return (
 		<TranslatorProvider>
 			<ThemeProvider>
-				<ProgressBar
-					color='#ffffff'
-					startPosition={0.3}
-					stopDelayMs={400}
-					height={5}
-				/>
 				<Component {...pageProps} isSafari={isSafari} />
 			</ThemeProvider>
 		</TranslatorProvider>

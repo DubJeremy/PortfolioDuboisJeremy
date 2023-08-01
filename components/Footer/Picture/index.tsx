@@ -4,7 +4,7 @@ import { TextureLoader, Mesh, DoubleSide, BufferGeometry, Color } from 'three';
 
 const Picture = () => {
 	const texture = useLoader(TextureLoader, '/img/safari/kazukiNoda.png');
-	const flagRef = useRef<Mesh>();
+	const flagRef = useRef<Mesh>(null);
 
 	useFrame((state, delta) => {
 		const flag = flagRef.current;

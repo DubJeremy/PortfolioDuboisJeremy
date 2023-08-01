@@ -151,6 +151,10 @@
 	}
 }
 
+.screenLoader {
+	display: none;
+}
+
 @media screen and (min-width: $large) {
 	.top {
 		height: 25px;

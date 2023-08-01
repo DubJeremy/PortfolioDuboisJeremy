@@ -4,7 +4,7 @@ import { TextureLoader, Mesh, DoubleSide, BufferGeometry } from 'three';
 
 const ProfilPicture = () => {
 	const texture = useLoader(TextureLoader, '/img/pp.png');
-	const flagRef = useRef<Mesh>();
+	const flagRef = useRef<Mesh>(null);
 
 	useFrame((state, delta) => {
 		const flag = flagRef.current;
