@@ -4,7 +4,7 @@
 .lines {
 	opacity: 0.8;
 	position: absolute;
-	z-index: -1;
+	z-index: -3;
 	width: 100%;
 	height: calc(100vh - 30px);
 	max-width: 100%;
@@ -13,15 +13,13 @@
 		width: 1px;
 		background-color: white;
 		height: 0%;
-		animation: linesAppear 1s ease-in-out 2s;
-		animation-fill-mode: forwards;
+		animation: linesAppear 1s ease-in-out 3.6s forwards;
 	}
 	.lineXL {
 		width: 1px;
 		background-color: white;
 		height: 0%;
-		animation: linesAppear 1s ease-in-out 2s;
-		animation-fill-mode: forwards;
+		animation: linesAppear 1s ease-in-out 3.6s forwards;
 	}
 }
 
@@ -34,24 +32,8 @@
 	}
 }
 
-@media screen and (max-width: $extra-small) {
-}
-@media screen and (max-width: $extra-small) and (min-height: $small) {
-}
-@media screen and (min-width: $small) {
-}
 @media screen and (min-width: $medium) and (orientation: landscape) {
 	.lines {
 		clip-path: polygon(30% 0, 70% 0, 100% 70%, 100% 100%, 0 100%, 0 70%);
 	}
-}
-@media screen and (min-width: $large) {
-	.lines {
-	}
-}
-@media screen and (min-width: $large) and (orientation: landscape) {
-}
-@media screen and (min-width: $extra-large) and (orientation: landscape) {
-}
-@media screen and (min-width: $ultra-large) {
 }

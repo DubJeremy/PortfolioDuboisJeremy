@@ -140,6 +140,18 @@
 		}
 	}
 }
+.component {
+	opacity: 0;
+	animation: appAnim 0.8s ease-out 1.6s forwards;
+}
+@keyframes appAnim {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
 
 @media screen and (max-width: $extra-small) {
 	.profil {

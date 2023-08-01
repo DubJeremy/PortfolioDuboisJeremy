@@ -19,7 +19,6 @@
 		"eslint-config-next": "13.3.0",
 		"gsap": "^3.11.5",
 		"next": "13.3.0",
-		"nextjs-progressbar": "^0.0.16",
 		"nodemailer": "^6.9.3",
 		"react": "18.2.0",
 		"react-dom": "18.2.0",
@@ -27,6 +26,7 @@
 		"typescript": "5.0.4"
 	},
 	"devDependencies": {
-		"@types/three": "^0.152.1"
+		"@types/three": "^0.152.1",
+		"webpack-bundle-analyzer": "^4.9.0"
 	}
 }

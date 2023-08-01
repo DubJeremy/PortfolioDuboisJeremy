@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 
 import useMediaQuery from '@/tools/useMediaQuery';
@@ -8,6 +8,7 @@ import useTheme from '../Theme/hooks';
 import Theme from '../Theme';
 
 import styles from './navbar.module.scss';
+import { getDocHeight } from '@/tools/docSize';
 
 const Navbar = ({ isSafari }: { isSafari: boolean }) => {
 	const { c, theme } = useTheme();
@@ -122,11 +123,29 @@ const Navbar = ({ isSafari }: { isSafari: boolean }) => {
 			window.removeEventListener('scroll', handleScroll);
 		};
 	}, []);
+	//----------------------------------------------------------------
+	const ref = useRef<HTMLDivElement | null>(null);
+
+	useEffect(() => {
+		heightFunction();
+		window.addEventListener('resize', heightFunction, false);
+		return () => {
+			window.removeEventListener('resize', heightFunction, true);
+		};
+	}, []);
+
+	const heightFunction = () => {
+		if (ref.current) {
+			ref.current.style.height = getDocHeight();
+		}
+	};
 
 	return (
 		<>
 			<div
-				className={`${styles.navbar} ${isToggled ? styles.navToggled : ''}`}
+				className={`${styles.navbar} ${isToggled ? styles.navToggled : ''} ${
+					styles.component
+				}`}
 				style={
 					targetReached
 						? { borderBottom: `3px solid ${c('MAIN')}` }
@@ -184,9 +203,7 @@ const Navbar = ({ isSafari }: { isSafari: boolean }) => {
 					</div>
 				</div>
 				{targetReached ? (
-					<div
-						className={`${styles.nav}  cursorScale small`}
-					>
+					<div className={`${styles.nav}  cursorScale small`}>
 						<ul>
 							<li
 								className={activeSection === 'profil' ? styles.activeLi : ''}
@@ -270,6 +287,7 @@ const Navbar = ({ isSafari }: { isSafari: boolean }) => {
 				)}
 			</div>
 			<div
+				ref={ref}
 				className={`${styles.menuToggled} ${
 					isToggled
 						? `${styles.expanded} ${styles['fade-out']}`

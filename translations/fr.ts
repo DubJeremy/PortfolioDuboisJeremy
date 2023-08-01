@@ -1,15 +1,20 @@
 export const fr: { [key: string]: string } = {
+	// META -------------------------------
+	META_DESC:
+		'Développeur Web FullStack Javascript | React, Node js | Passionné par les projets innovants et stimulants | Prêt à contribuer à des projets techniques et collaboratifs.',
 	// NAV --------------------------------
 	PROJECT: 'Projets',
 	// PROFIL --------------------------------
 	DESC_TITLE_F: 'Bonjour,',
 	DESC_TITLE_S: 'je m’appel Jérémy Dubois,',
 	DESC_F:
-		'Je suis un Développeur web FullStack junior. J’utilise des technologies JavaScript tel que React et Node.js pour créer des interfaces utilisateur et des applications performantes et élégantes.',
+		'Je suis Concepteur Développeur d’Application travaillant avec des technologies JavaScript, telles que React et Node.js. Je crée des interfaces et applications adaptées à votre projet.',
 	DESC_S:
-		'Début 2023, j’ai obtenu le titre de Concepteur Développeur d’Application qui est un diplôme équivalent à un BAC +3/4, suite à 1 an d’alternance avec la WildCodeSchool et surtout avec l’entreprise KBDev qui m’a permis d’accroître considérablement mes compétences techniques de développeur mais aussi d’apprendre à collaborer dans ce milieu via une organisation Agile notamment avec la méthode SCRUM.',
+		'Mon ambition est de m’investir pleinement en collaboration avec des individus passionnés, afin de concevoir et développer des projets pour des entreprises inspirantes, qui œuvrent pour des causes qui leur tiennent à cœur.',
 	DESC_T:
-		'Cette année a renforcé ma passion de l’apprentissage et du développement, et je suis à présent à la recherche d’opportunités stimulantes pour renforcer mon expertise technique et contribuer à des projets innovants.',
+		'De la conception à la réalisation, je développe des sites web sur mesure pour les petites entreprises et des applications répondant à leurs besoins spécifiques. Flexible, je suis ouvert aux missions à temps plein ou mi-temps, en freelance ou en CDD, pour des entreprises de toutes tailles.',
+	DESC_FO:
+		'N’hésitez pas à me contacter pour discuter de votre projet ou obtenir des renseignements complémentaires. J’ai hâte de contribuer à sa réalisation en apportant mon expertise technique pour en faire une réussite.',
 	WEB_DEV: 'Développeur Web ',
 	CV: 'Telecharger le CV en pdf',
 	// PROJECTS --------------------------------

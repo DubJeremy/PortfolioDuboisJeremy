@@ -1,10 +1,11 @@
 @import '../../styles/variables.scss';
 @import 'styles/mixins.scss';
+
 @media screen and (max-width: $large) {
 	.themes {
 		position: absolute;
-		left: 6px;
-		bottom: 15px;
+		left: 15px;
+		bottom: 25px;
 		z-index: 1005;
 		@include flex($align: flex-end, $dir: row);
 		.theme {
@@ -55,7 +56,7 @@
 		z-index: 1005;
 		width: 0;
 		@include flex($align: flex-end);
-		animation: themeAnim 0.3s ease-in-out forwards 3s;
+		animation: themeAnim 0.3s ease-in-out forwards 1.6s;
 		.theme {
 			height: 15px;
 			width: 50%;
@@ -88,7 +89,6 @@
 			opacity: 1;
 		}
 	}
-
 	@keyframes themeAnim {
 		0% {
 			width: 0;

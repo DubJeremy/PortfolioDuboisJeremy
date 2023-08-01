@@ -11,7 +11,7 @@
 	top: 0;
 	left: 15px;
 	z-index: 1003;
-	animation: topAnim 1s linear 2s forwards;
+	animation: topAnim 0.8s linear 0.8s forwards;
 }
 .right {
 	width: 15px;
@@ -20,7 +20,7 @@
 	right: 0;
 	box-sizing: border-box;
 	z-index: 1002;
-	animation: sideAnim 1s linear 1s forwards;
+	animation: sideAnim 0.8s linear 0.8s forwards;
 }
 .bottom {
 	width: calc(100% - 30px);
@@ -28,7 +28,7 @@
 	bottom: 0;
 	left: 0;
 	z-index: 1003;
-	animation: bottomAnim 1s linear forwards;
+	animation: bottomAnim 0.8s linear forwards;
 }
 .left {
 	width: 15px;
@@ -37,7 +37,7 @@
 	left: 0;
 	box-sizing: border-box;
 	z-index: 1002;
-	animation: sideAnim 1s linear 1s forwards;
+	animation: sideAnim 0.8s linear 0.8s forwards;
 }
 .corner {
 	width: 15px;
@@ -51,6 +51,16 @@
 .leftBottom {
 	bottom: 0;
 	left: 0;
+}
+.leftTop {
+	top: 0;
+	left: 0;
+	height: 14px;
+}
+.rightTop {
+	top: 0;
+	right: 0;
+	height: 14px;
 }
 .sideFrame:before {
 	background: url(/img/background.svg) 0 0;
@@ -139,6 +149,10 @@
 	to {
 		background-position: 0 250px;
 	}
+}
+
+.screenLoader {
+	display: none;
 }
 
 @media screen and (min-width: $large) {

@@ -25,7 +25,7 @@ const Lines = ({ idName }: { idName: string }) => {
 		return () => {
 			window.removeEventListener('scroll', handleScroll);
 		};
-	}, []);
+	}, [idName]);
 
 	return (
 		<div id={idName} className={styles.lines}>

@@ -5,11 +5,13 @@ export const en: { [key: string]: string } = {
 	DESC_TITLE_F: 'Hello,',
 	DESC_TITLE_S: 'my name is Jérémy Dubois,',
 	DESC_F:
-		'I’m a junior FullStack web developer. I use JavaScript technologies such as React and Node.js to create powerful and elegant user interfaces and applications.',
+		'I’m an application designer and developer working with JavaScript technologies such as React and Node.js. I create interfaces and applications adapted to your project.',
 	DESC_S:
-		'At the beginning of 2023, I obtained the title of Application Developer Designer, which is a diploma equivalent to a BAC +3/4, following 1 year of work-study with WildCodeSchool and above all with the KBDev company, which enabled me to considerably increase my technical skills as a developer, but also to learn to collaborate in this environment via an Agile organization, notably with the SCRUM method.',
+		'My ambition is to work with passionate individuals to design and develop projects for inspiring companies that work for causes close to their hearts.',
 	DESC_T:
-		'This year has reinforced my passion for learning and development, and I’m now looking for challenging opportunities to strengthen my technical expertise and contribute to innovative projects.',
+		'From concept to completion, I develop customized websites for small businesses and applications to meet their specific needs. Flexible, I’m open to full- or part-time assignments, freelance or fixed-term, for companies of all sizes.',
+	DESC_FO:
+		'Please do not hesitate to contact me to discuss your project or to obtain further information. I look forward to contributing my technical expertise to make it a success.',
 	WEB_DEV: 'Web Developer',
 	CV: 'Download the CV in pdf',
 	// PROJECTS --------------------------------

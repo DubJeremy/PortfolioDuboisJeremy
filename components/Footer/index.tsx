@@ -47,7 +47,7 @@ const Footer = () => {
 	}, []);
 
 	return (
-		<footer className={styles.footer} ref={ref}>
+		<footer className={`${styles.footer} ${styles.component}`} ref={ref}>
 			<div
 				id='scrollTextContainer2'
 				className={styles.scrollText}
@@ -69,13 +69,13 @@ const Footer = () => {
 				</p>
 			</div>
 			<div className={styles.container} style={{ color: `${c('MAIN')}` }}>
-				<a
+				<div
 					className={`${styles.credit} cursorScale`}
 					onMouseEnter={() => setHovered(true)}
 					onMouseLeave={() => setHovered(false)}
 				>
 					{t('INSPIRED_BY')} Kazuki Noda Portfolio
-				</a>
+				</div>
 				<p>©Dubois Jérémy</p>
 				<div
 					className={`${styles.photoContainer} ${

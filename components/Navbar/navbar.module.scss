@@ -95,6 +95,19 @@
 		}
 	}
 }
+
+.component {
+	opacity: 0;
+	animation: appAnim 0.8s ease-out 1.6s forwards;
+}
+@keyframes appAnim {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
 .menuToggled {
 	width: 0%;
 	height: 0vh;
@@ -125,7 +138,7 @@
 		}
 		.languageToggle {
 			position: absolute;
-			bottom: 10px;
+			bottom: 20px;
 			right: 15px;
 			font-family: 'JosefinS';
 			font-size: 4vh;
@@ -135,8 +148,7 @@
 .expanded {
 	transition: all 0.3s ease, box-shadow 0.3s ease;
 	transform: translateY(100%);
-	height: calc(100vh - 110px);
-
+	// height: calc(100vh - 110px);
 	width: calc(100% - 30px);
 	max-width: 100%;
 	z-index: 1000;

@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import gsap from 'gsap/dist/gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
-import Link from 'next/link';
 
 import useTranslation from '@/components/Translator/hooks';
 import useMediaQuery from '@/tools/useMediaQuery';
@@ -143,7 +142,7 @@ const Projects = ({ isSafari }: { isSafari: boolean }) => {
 
 	return (
 		<section
-			className={styles.projects}
+			className={`${styles.projects} ${styles.component}`}
 			id='projects'
 			ref={ref}
 			style={{ color: ` ${c('MAIN')}` }}

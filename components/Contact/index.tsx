@@ -105,7 +105,7 @@ const Contact = ({ isSafari }: { isSafari: boolean }) => {
 
 	return (
 		<section
-			className={styles.contact}
+			className={`${styles.contact} ${styles.component}`}
 			id='contact'
 			style={
 				targetReached

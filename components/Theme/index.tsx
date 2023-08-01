@@ -73,36 +73,42 @@ export default function Theme() {
 	return (
 		<div className={styles.themes}>
 			<button
+				aria-label='theme blue'
 				className={`${styles.theme} ${styles.blue} ${
 					theme === 'blue' ? styles.selected : ''
 				}`}
 				onClick={(event) => handleLocaleChange('blue', event)}
 			/>
 			<button
+				aria-label='theme green'
 				className={`${styles.theme} ${styles.green} ${
 					theme === 'green' ? styles.selected : ''
 				}`}
 				onClick={(event) => handleLocaleChange('green', event)}
 			/>
 			<button
+				aria-label='theme yellow'
 				className={`${styles.theme} ${styles.yellow} ${
 					theme === 'yellow' ? styles.selected : ''
 				}`}
 				onClick={(event) => handleLocaleChange('yellow', event)}
 			/>
 			<button
+				aria-label='theme purple'
 				className={`${styles.theme} ${styles.purple} ${
 					theme === 'purple' ? styles.selected : ''
 				}`}
 				onClick={(event) => handleLocaleChange('purple', event)}
 			/>
 			<button
+				aria-label='theme pink'
 				className={`${styles.theme} ${styles.pink} ${
 					theme === 'pink' ? styles.selected : ''
 				}`}
 				onClick={(event) => handleLocaleChange('pink', event)}
 			/>
 			<button
+				aria-label='theme white'
 				className={`${styles.theme} ${styles.white} ${
 					theme === 'white' ? styles.selected : ''
 				}`}

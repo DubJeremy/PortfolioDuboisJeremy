@@ -7,6 +7,7 @@
 	@include flex($just: flex-start);
 	padding-bottom: 25vh;
 	transition: all 0.5s ease-in-out;
+	z-index: 6;
 	.title {
 		background-color: transparent;
 		width: 100%;
@@ -134,6 +135,18 @@
 	}
 	.showContainer {
 		transform: translateX(0);
+	}
+}
+.component {
+	opacity: 0;
+	animation: appAnim 0.8s ease-out 1.6s forwards;
+}
+@keyframes appAnim {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
 	}
 }
 
