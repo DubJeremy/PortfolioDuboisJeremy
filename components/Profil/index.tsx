@@ -102,6 +102,7 @@ const Profil = ({ isSafari }: { isSafari: boolean }) => {
 					<p>{t('DESC_F')}</p>
 					<p>{t('DESC_S')}</p>
 					<p>{t('DESC_T')}</p>
+					<p>{t('DESC_FO')}</p>
 				</div>
 
 				{targetReachedL && isInLandscape ? (
