@@ -14,7 +14,7 @@ export const fr: { [key: string]: string } = {
 	DESC_T:
 		'De la conception à la réalisation, je développe des sites web sur mesure pour les petites entreprises et des applications répondant à leurs besoins spécifiques. Flexible, je suis ouvert aux missions à temps plein ou mi-temps, en freelance ou en CDD, pour des entreprises de toutes tailles.',
 	DESC_FO:
-		'N’hésitez pas à me contacter pour discuter de votre projet ou obtenir des renseignements complémentaires. J’ai hâte de contribuer à sa réalisation en apportant mon expertise technique pour en faire une réussite.',
+		'N’hésitez pas à me contacter pour discuter de votre projet ou obtenir plus de renseignements. J’ai hâte de contribuer à sa réalisation en apportant mon expertise technique pour en faire une réussite.',
 	WEB_DEV: 'Développeur Web ',
 	CV: 'Telecharger le CV en pdf',
 	// PROJECTS --------------------------------

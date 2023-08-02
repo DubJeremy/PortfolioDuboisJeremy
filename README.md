@@ -14,7 +14,7 @@ yarn dev
 
 ##
 
-Je suis Concepteur Développeur d’Application travaillant avec des technologies JavaScript telles que React et Node.js. Mon objectif est de créer des interfaces utilisateur et des applications performantes et élégantes pour répondre aux besoins de votre project.
+Je suis Concepteur Développeur d’Application travaillant avec des technologies JavaScript telles que React et Node.js. Mon objectif est de crée des interfaces utilisateur et des applications performantes et élégantes pour répondre aux besoins de votre project.
 
 Aujourd'hui, je suis à la recherche d'opportunités stimulantes au sein d'entreprises à taille humaine, où je pourrais intégrer ou initier des projets innovants. Passionné par mon travail, je souhaite travailler aux côtés de personnes tout aussi passionnées, car c'est dans cette dynamique que je m'épanouis pleinement.
 
