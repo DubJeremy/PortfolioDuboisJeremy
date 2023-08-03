@@ -28,4 +28,12 @@ Je suis un Développeur web FullStack junior. J’utilise des technologies JavaS
 
 Début 2023, j’ai obtenu le titre de Concepteur Développeur d’Application qui est un diplôme équivalent à un BAC +3/4, suite à 1 an d’alternance avec la WildCodeSchool et surtout avec l’entreprise KBDev qui m’a permis d’accroître considérablement mes compétences techniques de développeur mais aussi d’apprendre à collaborer dans ce milieu via une organisation Agile notamment avec la méthode SCRUM.
 
-Cette année a renforcé ma passion de l’apprentissage et du développement, et je suis à présent à la recherche d’opportunités stimulantes pour renforcer mon expertise technique et contribuer à des projets innovants.
+## Cette année a renforcé ma passion de l’apprentissage et du développement, et je suis à présent à la recherche d’opportunités stimulantes pour renforcer mon expertise technique et contribuer à des projets innovants.
+
+Salut !
+Je suis un développeur fullstack avec une passion pour le développement front-end.
+J'utilise des technologies JavaScript telles que React et Node.js pour créer des interfaces utilisateur performantes et élégantes.
+J'utilise également TypeScript pour améliorer la qualité du code.
+Pour gérer les interactions avec les bases de données, j'utilise TypeORM pour les bases de données relationnelles MySQL et Postgres, ainsi que Mongoose pour MongoDB.
+Je m'amuse à utiliser Framer Motion pour ajouter des animations fluides à mes projets, et je suis en train d'apprendre GSAP et Three.js pour élargir mes compétences en matière d'animation.
+Je suis actuellement en fin de formation Concepteur Développeur d'Application (Bac +3) à la Wild Code School, où j'ai acquis les compétences nécessaires pour devenir un développeur expérimenté.

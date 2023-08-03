@@ -1,74 +1,15 @@
 import React, { useEffect, useRef } from 'react';
-import { useRouter } from 'next/router';
-
 import useTheme from './hooks';
 
 import styles from './theme.module.scss';
 
 export default function Theme() {
-	const { theme, setTheme } = useTheme();
-	const { pathname, push } = useRouter();
 	const scrollPosition = useRef(0);
-
-	useEffect(() => {
-		const currentTheme = localStorage.getItem('thm') || 'blue';
-
-		setTheme(currentTheme);
-		const options = {
-			locale: currentTheme,
-		};
-		push({ pathname, query: options });
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, []);
+	const { theme, handleThemeChange } = useTheme();
 
 	useEffect(() => {
 		window.scrollTo(0, scrollPosition.current);
 	}, [theme]);
-
-	function handleLocaleChange(
-		targetTheme: string,
-		event: React.MouseEvent<HTMLButtonElement>
-	) {
-		event.preventDefault();
-		if (!window) {
-			return;
-		}
-
-		localStorage.setItem('thm', targetTheme);
-
-		switch (targetTheme) {
-			case 'blue': {
-				setTheme('blue');
-				break;
-			}
-			case 'green': {
-				setTheme('green');
-				break;
-			}
-			case 'yellow': {
-				setTheme('yellow');
-				break;
-			}
-			case 'purple': {
-				setTheme('purple');
-				break;
-			}
-			case 'pink': {
-				setTheme('pink');
-				break;
-			}
-			case 'white': {
-				setTheme('white');
-				break;
-			}
-		}
-
-		const options = {
-			locale: targetTheme,
-		};
-		push({ pathname, query: options });
-		scrollPosition.current = window.scrollY;
-	}
 
 	return (
 		<div className={styles.themes}>
@@ -77,42 +18,42 @@ export default function Theme() {
 				className={`${styles.theme} ${styles.blue} ${
 					theme === 'blue' ? styles.selected : ''
 				}`}
-				onClick={(event) => handleLocaleChange('blue', event)}
+				onClick={() => handleThemeChange('blue')}
 			/>
 			<button
 				aria-label='theme green'
 				className={`${styles.theme} ${styles.green} ${
 					theme === 'green' ? styles.selected : ''
 				}`}
-				onClick={(event) => handleLocaleChange('green', event)}
+				onClick={() => handleThemeChange('green')}
 			/>
 			<button
 				aria-label='theme yellow'
 				className={`${styles.theme} ${styles.yellow} ${
 					theme === 'yellow' ? styles.selected : ''
 				}`}
-				onClick={(event) => handleLocaleChange('yellow', event)}
+				onClick={() => handleThemeChange('yellow')}
 			/>
 			<button
 				aria-label='theme purple'
 				className={`${styles.theme} ${styles.purple} ${
 					theme === 'purple' ? styles.selected : ''
 				}`}
-				onClick={(event) => handleLocaleChange('purple', event)}
+				onClick={() => handleThemeChange('purple')}
 			/>
 			<button
 				aria-label='theme pink'
 				className={`${styles.theme} ${styles.pink} ${
 					theme === 'pink' ? styles.selected : ''
 				}`}
-				onClick={(event) => handleLocaleChange('pink', event)}
+				onClick={() => handleThemeChange('pink')}
 			/>
 			<button
 				aria-label='theme white'
 				className={`${styles.theme} ${styles.white} ${
 					theme === 'white' ? styles.selected : ''
 				}`}
-				onClick={(event) => handleLocaleChange('white', event)}
+				onClick={() => handleThemeChange('white')}
 			/>
 		</div>
 	);

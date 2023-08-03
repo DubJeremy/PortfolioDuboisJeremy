@@ -26,7 +26,6 @@ const ScreenFrame = ({ isSafari }: { isSafari: boolean }) => {
 		setImageUrls(urls);
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [isSafari]);
-	console.log(imageUrls);
 
 	return (
 		<>

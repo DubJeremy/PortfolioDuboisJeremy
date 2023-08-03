@@ -1,9 +1,6 @@
 import type { AppProps } from 'next/app';
 import { useEffect, useState } from 'react';
 
-import { TranslatorProvider } from '@/components/Translator/context';
-import { ThemeProvider } from '@/components/Theme/context';
-
 import '@/styles/globals.scss';
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -16,11 +13,5 @@ export default function App({ Component, pageProps }: AppProps) {
 		);
 	}, []);
 
-	return (
-		<TranslatorProvider>
-			<ThemeProvider>
-				<Component {...pageProps} isSafari={isSafari} />
-			</ThemeProvider>
-		</TranslatorProvider>
-	);
+	return <Component {...pageProps} isSafari={isSafari} />;
 }

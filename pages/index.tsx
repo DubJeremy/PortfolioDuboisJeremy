@@ -26,7 +26,7 @@ export default function Home({ isSafari }: { isSafari: boolean }) {
 	useEffect(() => {
 		heightFunction();
 		window.addEventListener('resize', heightFunction, false);
-	}, []);
+	}, [targetReachedH, targetReached]);
 
 	const heightFunction = () => {
 		if (typeof window !== 'undefined') {
@@ -78,21 +78,18 @@ export default function Home({ isSafari }: { isSafari: boolean }) {
 		return () => clearTimeout(timer);
 	}, []);
 
+	const metaDescription =
+		'Développeur Web FullStack Javascript | React, Node js | Passionné par les projets innovants et stimulants | Prêt à contribuer à des projets techniques et collaboratifs.';
+
 	return (
 		<>
 			<Head>
 				<title>Portfolio | Dubois Jérémy</title>
 				<meta charSet='UTF-8' />
-				<meta
-					name='description'
-					content='Développeur Web FullStack Javascript | React, Node js | Passionné par les projets innovants et stimulants | Prêt à contribuer à des projets techniques et collaboratifs.'
-				/>
+				<meta name='description' content={metaDescription} />
 				<meta name='viewport' content='width=device-width, initial-scale=1' />
 				<meta property='og:title' content='Portfolio Dubois Jeremy' />
-				<meta
-					property='og:description'
-					content='Développeur Web FullStack Javascript | React, Node js | Passionné par les projets innovants et stimulants | Prêt à contribuer à des projets techniques et collaboratifs.'
-				/>
+				<meta property='og:description' content={metaDescription} />
 				<meta property='og:type' content='website portfolio' />
 				<meta property='og:url' content='https://www.portfolio.dubj.fr' />
 				<meta

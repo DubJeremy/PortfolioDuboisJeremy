@@ -1,22 +1,31 @@
-import { useContext } from 'react';
-import { TranslatorContext } from './context';
+import { useState, useEffect, useContext } from 'react';
+import { useRouter } from 'next/router';
 import { en } from '../../translations/en';
 import { fr } from '../../translations/fr';
 
 export default function useTranslation() {
-	const context = useContext(TranslatorContext);
+	const router = useRouter();
+	const [locale, setLocale] = useState('fr');
 
-	const { locale, setLocale } = context;
+	useEffect(() => {
+		const language = localStorage.getItem('lang') || 'fr';
+		setLocale(language);
+		const options = { locale: language };
+		router.push({ pathname: router.pathname, query: options }, undefined, {
+			shallow: true,
+		});
+	}, [router]);
 
-	function t(key: string) {
-		if (locale === 'en') {
-			return en[key];
-		} else if (locale === 'fr') {
-			return fr[key];
-		} else {
-			return;
-		}
+	function handleLocaleChange(targetLocale: string) {
+		localStorage.setItem('lang', targetLocale);
+		setLocale(targetLocale);
+		const options = { locale: targetLocale };
+		router.push({ pathname: router.pathname, query: options });
 	}
 
-	return { t, locale, setLocale };
+	function t(key: string) {
+		return locale === 'en' ? en[key] : fr[key];
+	}
+
+	return { t, locale, handleLocaleChange };
 }
