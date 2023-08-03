@@ -1,6 +1,5 @@
-import { useContext } from 'react';
-
-import { ThemeContext } from './context';
+import { useState, useEffect, useContext } from 'react';
+import { useRouter } from 'next/router';
 import {
 	blue,
 	green,
@@ -10,33 +9,44 @@ import {
 	white,
 } from '@/styles/colorsThemes';
 
+type ThemeKey = 'blue' | 'green' | 'yellow' | 'purple' | 'pink' | 'white';
+
+const themes: { [key in ThemeKey]: { [key: string]: string } } = {
+	blue,
+	green,
+	yellow,
+	purple,
+	pink,
+	white,
+};
+
 export default function useTheme() {
-	const context = useContext(ThemeContext);
+	const router = useRouter();
+	const [theme, setTheme] = useState<ThemeKey>('blue');
 
-	const { theme, setTheme } = context;
-
-	function c(key: string) {
-		switch (theme) {
-			case 'blue': {
-				return blue[key];
-			}
-			case 'green': {
-				return green[key];
-			}
-			case 'yellow': {
-				return yellow[key];
-			}
-			case 'purple': {
-				return purple[key];
-			}
-			case 'pink': {
-				return pink[key];
-			}
-			case 'white': {
-				return white[key];
-			}
+	useEffect(() => {
+		const selectTheme = localStorage.getItem('thm') as ThemeKey | null;
+		if (selectTheme && themes.hasOwnProperty(selectTheme)) {
+			setTheme(selectTheme);
+		} else {
+			setTheme('blue');
 		}
+		const options = { locale: selectTheme };
+		router.push({ pathname: router.pathname, query: options }, undefined, {
+			shallow: true,
+		});
+	}, [router]);
+
+	function handleThemeChange(targetTheme: ThemeKey) {
+		localStorage.setItem('thm', targetTheme);
+		setTheme(targetTheme);
+		const options = { locale: targetTheme };
+		router.push({ pathname: router.pathname, query: options });
 	}
 
-	return { c, theme, setTheme };
+	function c(key: string) {
+		return themes[theme][key];
+	}
+
+	return { c, theme, handleThemeChange };
 }

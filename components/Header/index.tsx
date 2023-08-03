@@ -5,14 +5,14 @@ import Lines from './lines';
 import styles from './header.module.scss';
 import Circle from './circle';
 
-const Header = ({ isSafari }: { isSafari: boolean }) => {
+const Header = () => {
 	return (
 		<section className={`${styles.header} ${styles.component}`} id='profil'>
 			<div className={styles.name}>
 				<p className={`${styles.lastName}  cursorScale`}>Dubois</p>
 				<p className={`${styles.firstName}  cursorScale`}>Jérémy</p>
 			</div>
-			<Circle isSafari={isSafari} />
+			<Circle />
 			<Lines />
 		</section>
 	);
