@@ -6,12 +6,14 @@ import useTranslation from '@/components/Translator/hooks';
 import Translator from '../Translator';
 import useTheme from '../Theme/hooks';
 import Theme from '../Theme';
+import { getDocHeight } from '@/tools/docSize';
+import { useIsSafari } from '../IsSafariContext';
 
 import styles from './navbar.module.scss';
-import { getDocHeight } from '@/tools/docSize';
 
-const Navbar = ({ isSafari }: { isSafari: boolean }) => {
+const Navbar = () => {
 	const { c, theme } = useTheme();
+	const isSafari = useIsSafari();
 	const [targetReached] = useMediaQuery(`(min-width: 992px)`);
 	const [isToggled, setToggle] = useState(false);
 	const [activeSection, setActiveSection] = useState('profil');

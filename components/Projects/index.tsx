@@ -9,12 +9,14 @@ import { contentProjects } from '@/constants/contentProjects';
 import Loader from './loader';
 import Screens from './screens';
 import useTheme from '../Theme/hooks';
+import { useIsSafari } from '../IsSafariContext';
 
 import styles from './projects.module.scss';
 
-const Projects = ({ isSafari }: { isSafari: boolean }) => {
+const Projects = () => {
 	const { c, theme } = useTheme();
 	const { t } = useTranslation();
+	const isSafari = useIsSafari();
 	const [targetReached] = useMediaQuery(`(min-width: 768px)`);
 	const [targetReachedL] = useMediaQuery(`(min-width: 992px)`);
 	const [isInLandscape, setIsInLandscape] = useState<boolean | null>(null);
@@ -275,7 +277,6 @@ const Projects = ({ isSafari }: { isSafari: boolean }) => {
 								id={contentProjects[hoveredIndex - 1].id}
 								done={contentProjects[hoveredIndex - 1].done}
 								link={contentProjects[hoveredIndex - 1].link}
-								isSafari={isSafari}
 							/>
 							<div
 								className={`${styles.showProject} ${
@@ -323,7 +324,6 @@ const Projects = ({ isSafari }: { isSafari: boolean }) => {
 							paths={project.screens}
 							endAnimation={endAnim}
 							mobileApp={project.mobileApp}
-							isSafari={isSafari}
 						/>
 					</div>
 					<div

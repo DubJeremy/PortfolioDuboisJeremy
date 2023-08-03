@@ -9,11 +9,13 @@ import useMediaQuery from '@/tools/useMediaQuery';
 import Lines from './lines';
 import useTheme from '../Theme/hooks';
 import { useRouter } from 'next/router';
+import { useIsSafari } from '../IsSafariContext';
 
 import styles from './profil.module.scss';
 
-const Profil = ({ isSafari }: { isSafari: boolean }) => {
+const Profil = () => {
 	const { c, theme } = useTheme();
+	const isSafari = useIsSafari();
 	const { t } = useTranslation();
 	const [targetReached] = useMediaQuery(`(min-width: 768px)`);
 	const [targetReachedL] = useMediaQuery(`(min-width: 992px)`);

@@ -2,11 +2,14 @@ import React from 'react';
 import Image from 'next/image';
 
 import useTranslation from '@/components/Translator/hooks';
+import { useIsSafari } from '../IsSafariContext';
 
 import styles from './turnMobile.module.scss';
 
-const TurnMobile = ({ isSafari }: { isSafari: boolean }) => {
+const TurnMobile = () => {
 	const { t } = useTranslation();
+	const isSafari = useIsSafari();
+
 	return (
 		<div className={styles.turnMobile}>
 			<p>

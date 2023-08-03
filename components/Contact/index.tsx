@@ -6,12 +6,14 @@ import Lines from './lines';
 import useMediaQuery from '@/tools/useMediaQuery';
 import Modal from './Modal';
 import useTheme from '../Theme/hooks';
+import { useIsSafari } from '../IsSafariContext';
 
 import styles from './contact.module.scss';
 
-const Contact = ({ isSafari }: { isSafari: boolean }) => {
+const Contact = () => {
 	const { c, theme } = useTheme();
 	const { t } = useTranslation();
+	const isSafari = useIsSafari();
 	const [targetReached] = useMediaQuery(`(min-width: 768px)`);
 	const [showConfirmModal, setShowConfirmModal] = useState(false);
 	const [submittedSuccess, setSubmittedSuccess] = useState<boolean | null>(
@@ -227,7 +229,7 @@ const Contact = ({ isSafari }: { isSafari: boolean }) => {
 					showConfirmModal ? styles.showContainer : ''
 				}`}
 			>
-				<Modal success={submittedSuccess} isSafari={isSafari} />
+				<Modal success={submittedSuccess} />
 			</div>
 		</section>
 	);

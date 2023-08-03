@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { gsap } from 'gsap';
 import Image from 'next/image';
+import Link from 'next/link';
 
 import useMediaQuery from '@/tools/useMediaQuery';
+import { useIsSafari } from '@/components/IsSafariContext';
 
 import styles from './screens.module.scss';
-import Link from 'next/link';
 
 const Screens = ({
 	paths,
@@ -14,7 +15,6 @@ const Screens = ({
 	id,
 	done,
 	link,
-	isSafari,
 }: {
 	paths: string[];
 	endAnimation: boolean;
@@ -22,8 +22,8 @@ const Screens = ({
 	id?: number;
 	done?: boolean;
 	link?: string;
-	isSafari: boolean;
 }) => {
+	const isSafari = useIsSafari();
 	const [targetReached] = useMediaQuery(`(max-width: 992px)`);
 	const [targetReachedL] = useMediaQuery(`(min-width: 992px)`);
 	const [isInLandscape, setIsInLandscape] = useState<boolean | null>(null);
