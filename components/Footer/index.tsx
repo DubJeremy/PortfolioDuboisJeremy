@@ -1,9 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Canvas } from '@react-three/fiber';
 import gsap from 'gsap/dist/gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 
-import Picture from './Picture';
 import useTranslation from '@/components/Translator/hooks';
 import useTheme from '../Theme/hooks';
 import useMediaQuery from '@/tools/useMediaQuery';
@@ -14,7 +12,6 @@ const Footer = () => {
 	const { c } = useTheme();
 	const [targetReached] = useMediaQuery(`(min-width: 992px)`);
 	const { t } = useTranslation();
-	const [hovered, setHovered] = useState(false);
 
 	const ref = useRef<HTMLDivElement>(null);
 	gsap.registerPlugin(ScrollTrigger);
@@ -69,23 +66,10 @@ const Footer = () => {
 				</p>
 			</div>
 			<div className={styles.container} style={{ color: `${c('MAIN')}` }}>
-				<div
-					className={`${styles.credit} cursorScale`}
-					onMouseEnter={() => setHovered(true)}
-					onMouseLeave={() => setHovered(false)}
-				>
+				<div className={`${styles.credit} cursorScale`}>
 					{t('INSPIRED_BY')} Kazuki Noda Portfolio
 				</div>
 				<p>©Dubois Jérémy</p>
-				<div
-					className={`${styles.photoContainer} ${
-						hovered ? styles.showPhoto : ''
-					}`}
-				>
-					<Canvas>
-						<Picture />
-					</Canvas>
-				</div>
 			</div>
 		</footer>
 	);

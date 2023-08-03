@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
-import { Canvas } from '@react-three/fiber';
 
 import useTranslation from '@/components/Translator/hooks';
 import ProfilPicture from './ProfilPicture';
-import Circle from './circle';
 import useMediaQuery from '@/tools/useMediaQuery';
 import Lines from './lines';
 import useTheme from '../Theme/hooks';
@@ -110,9 +108,9 @@ const Profil = () => {
 				{targetReachedL && isInLandscape ? (
 					<div className={styles.container}>
 						<div className={styles.photoContainer}>
-							<Canvas>
-								<ProfilPicture />
-							</Canvas>
+							{/* <Canvas> */}
+							<ProfilPicture />
+							{/* </Canvas> */}
 						</div>
 						<div className={styles.linesContainer}>
 							<Lines />
@@ -120,9 +118,7 @@ const Profil = () => {
 					</div>
 				) : (
 					<div className={`${styles.photoContainer}  cursorScale`}>
-						<Canvas>
-							<ProfilPicture />
-						</Canvas>
+						<ProfilPicture />
 					</div>
 				)}
 			</div>
@@ -200,7 +196,6 @@ const Profil = () => {
 						</a>
 					</div>
 				</div>
-				<Circle />
 			</div>
 			<div
 				className={`${styles.stripes} ${transition ? styles.transition : ''}`}
