@@ -108,6 +108,7 @@ const Screens = ({
 					}
 					alt={`${paths[0]} screenshot`}
 					fill
+					sizes='100%, 100%'
 				/>
 			</Link>
 			<Link
@@ -133,6 +134,7 @@ const Screens = ({
 					}
 					alt={`${paths[1]} screenshot`}
 					fill
+					sizes='100%, 100%'
 				/>
 			</Link>
 
@@ -159,6 +161,7 @@ const Screens = ({
 					}
 					alt={`${paths[2]} screenshot`}
 					fill
+					sizes='100%, 100%'
 				/>
 			</div>
 			<div
@@ -184,6 +187,7 @@ const Screens = ({
 					}
 					alt={`${paths[3]} screenshot`}
 					fill
+					sizes='100%, 100%'
 				/>
 			</div>
 			<div
@@ -209,6 +213,7 @@ const Screens = ({
 					}
 					alt={`${paths[4]} screenshot`}
 					fill
+					sizes='100%, 100%'
 				/>
 			</div>
 		</div>

@@ -114,8 +114,6 @@ export default function Home() {
 						<Projects />
 						<Contact />
 						<Footer />
-
-						<Theme />
 					</>
 				)}
 			</main>

@@ -79,7 +79,7 @@ const ScreenFrame = () => {
 			/>
 			{imageUrls.map((url, index) => (
 				<div key={index} className={styles.screenLoader}>
-					<Image src={url} fill alt={url} />
+					<Image src={url} fill sizes='1vw, 1vw' alt={url} />
 				</div>
 			))}
 		</>
