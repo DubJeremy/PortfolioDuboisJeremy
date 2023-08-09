@@ -67,7 +67,8 @@ const Footer = () => {
 			</div>
 			<div className={styles.container} style={{ color: `${c('MAIN')}` }}>
 				<div className={`${styles.credit} cursorScale`}>
-					{t('INSPIRED_BY')} Kazuki Noda Portfolio
+					{t('INSPIRED_BY')}
+					Kazuki Noda Portfolio
 				</div>
 				<p>©Dubois Jérémy</p>
 			</div>

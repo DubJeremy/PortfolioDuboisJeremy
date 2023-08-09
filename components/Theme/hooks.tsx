@@ -1,5 +1,6 @@
-import { useState, useEffect, useContext } from 'react';
-import { useRouter } from 'next/router';
+import { useContext } from 'react';
+
+import { ThemeContext } from './context';
 import {
 	blue,
 	green,
@@ -21,32 +22,36 @@ const themes: { [key in ThemeKey]: { [key: string]: string } } = {
 };
 
 export default function useTheme() {
-	const router = useRouter();
-	const [theme, setTheme] = useState<ThemeKey>('blue');
-
-	useEffect(() => {
-		const selectTheme = localStorage.getItem('thm') as ThemeKey | null;
-		if (selectTheme && themes.hasOwnProperty(selectTheme)) {
-			setTheme(selectTheme);
-		} else {
-			setTheme('blue');
-		}
-		const options = { locale: selectTheme };
-		router.push({ pathname: router.pathname, query: options }, undefined, {
-			shallow: true,
-		});
-	}, [router]);
-
-	function handleThemeChange(targetTheme: ThemeKey) {
-		localStorage.setItem('thm', targetTheme);
-		setTheme(targetTheme);
-		const options = { locale: targetTheme };
-		router.push({ pathname: router.pathname, query: options });
-	}
+	const context = useContext(ThemeContext);
+	const { theme, setTheme } = context;
 
 	function c(key: string) {
-		return themes[theme][key];
+		switch (theme) {
+			case 'blue': {
+				return blue[key];
+				break;
+			}
+			case 'green': {
+				return green[key];
+				break;
+			}
+			case 'yellow': {
+				return yellow[key];
+				break;
+			}
+			case 'purple': {
+				return purple[key];
+				break;
+			}
+			case 'pink': {
+				return pink[key];
+				break;
+			}
+			case 'white': {
+				return white[key];
+				break;
+			}
+		}
 	}
-
-	return { c, theme, handleThemeChange };
+	return { c, theme, setTheme };
 }
