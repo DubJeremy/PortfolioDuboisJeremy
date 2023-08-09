@@ -142,6 +142,8 @@ const Projects = () => {
 		}
 	}, []);
 
+	const nbProject = contentProjects.length;
+
 	return (
 		<section
 			className={`${styles.projects} ${styles.component}`}
@@ -319,6 +321,19 @@ const Projects = () => {
 				</div>
 			) : (
 				<>
+					{targetReached && (
+						<div className={styles.projectCounter}>
+							<p
+								className={`${styles.projectId}  ${
+									endAnim ? styles.idAnim : ''
+								}`}
+							>
+								{project.id}
+							</p>
+							<p>/</p>
+							<p>{nbProject}</p>
+						</div>
+					)}
 					<div className={styles.screensContainer}>
 						<Screens
 							paths={project.screens}
@@ -331,7 +346,9 @@ const Projects = () => {
 						style={
 							targetReachedL
 								? { borderBottom: `3px solid ${c('MAIN')}` }
-								: { borderBottom: `2px solid ${c('MAIN')}` }
+								: targetReached
+								? { borderBottom: `2px solid ${c('MAIN')}` }
+								: { borderBottom: `none` }
 						}
 					>
 						<h4
@@ -364,6 +381,22 @@ const Projects = () => {
 							))}
 						</div>
 					</div>
+					{!targetReached && (
+						<div
+							className={styles.projectCounter}
+							style={{ borderBottom: `2px solid ${c('MAIN')}` }}
+						>
+							<p
+								className={`${styles.projectId}  ${
+									endAnim ? styles.idAnim : ''
+								}`}
+							>
+								{project.id}
+							</p>
+							<p>/</p>
+							<p>{nbProject}</p>
+						</div>
+					)}
 					<div
 						className={styles.btns}
 						style={
