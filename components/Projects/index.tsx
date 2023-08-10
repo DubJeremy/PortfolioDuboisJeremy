@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import gsap from 'gsap/dist/gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
@@ -12,6 +12,8 @@ import useTheme from '../Theme/hooks';
 import { useIsSafari } from '../IsSafariContext';
 
 import styles from './projects.module.scss';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Projects = () => {
 	const { c, theme } = useTheme();
@@ -113,33 +115,25 @@ const Projects = () => {
 	};
 
 	const ref = useRef<HTMLDivElement>(null);
-	gsap.registerPlugin(ScrollTrigger);
 
-	useEffect(() => {
-		const element = ref.current;
-		if (element) {
-			gsap.fromTo(
-				element.querySelector('#scrollText') as HTMLElement,
-				{
-					x: 0,
-				},
-				{
-					x: -150,
-					scrollTrigger: {
-						trigger: element.querySelector(
-							'#scrollTextContainer'
-						) as HTMLElement,
-						start: 'top bottom',
-						end: 'bottom top',
-						scrub: true,
-						onUpdate: (self) => {
-							gsap.ticker.fps(120);
-							self.scroll();
+	useLayoutEffect(() => {
+		const ctx = gsap.context((self) => {
+			if (self.selector) {
+				const scrollText = self.selector('#scrollText');
+				scrollText.forEach((text: HTMLParagraphElement | null) => {
+					gsap.to(text, {
+						x: -250,
+						scrollTrigger: {
+							trigger: text,
+							start: 'bottom bottom',
+							end: 'top 20%',
+							scrub: true,
 						},
-					},
-				}
-			);
-		}
+					});
+				});
+			}
+		}, ref);
+		return () => ctx.revert();
 	}, []);
 
 	const nbProject = contentProjects.length;
@@ -148,7 +142,6 @@ const Projects = () => {
 		<section
 			className={`${styles.projects} ${styles.component}`}
 			id='projects'
-			ref={ref}
 			style={{ color: ` ${c('MAIN')}` }}
 		>
 			<div
@@ -504,6 +497,7 @@ const Projects = () => {
 								? { borderBottom: `3px solid ${c('MAIN')}` }
 								: { borderBottom: `2px solid ${c('MAIN')}` }
 						}
+						ref={ref}
 					>
 						<div
 							id='scrollText'
