@@ -1,10 +1,12 @@
-import React, { useLayoutEffect, useRef } from 'react';
+import React, { useLayoutEffect, useRef, useState } from 'react';
 import gsap from 'gsap/dist/gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 
 import useTranslation from '@/components/Translator/hooks';
 import useTheme from '../Theme/hooks';
 import useMediaQuery from '@/tools/useMediaQuery';
+import TermsComponent from '../Terms';
+import Portal from '../Portal';
 
 import styles from './footer.module.scss';
 
@@ -16,32 +18,6 @@ const Footer = () => {
 	const { t } = useTranslation();
 
 	const ref = useRef<HTMLDivElement>(null);
-
-	// 	const element = ref.current;
-	// 	if (element) {
-	// 		gsap.fromTo(
-	// 			element.querySelector('#scrollText2') as HTMLElement,
-	// 			{
-	// 				x: 0,
-	// 			},
-	// 			{
-	// 				x: -150,
-	// 				scrollTrigger: {
-	// 					trigger: element.querySelector(
-	// 						'#scrollTextContainer2'
-	// 					) as HTMLElement,
-	// 					start: 'top bottom',
-	// 					end: 'bottom top',
-	// 					scrub: true,
-	// 					onUpdate: (self) => {
-	// 						gsap.ticker.fps(120);
-	// 						self.scroll();
-	// 					},
-	// 				},
-	// 			}
-	// 		);
-	// 	}
-	// }, []);
 
 	useLayoutEffect(() => {
 		const ctx = gsap.context((self) => {
@@ -62,6 +38,13 @@ const Footer = () => {
 		}, ref);
 		return () => ctx.revert();
 	}, []);
+
+	const currentYear = new Date().getFullYear();
+	const [isToggled, setToggle] = useState(false);
+
+	const showModal = () => {
+		setToggle(!isToggled);
+	};
 
 	return (
 		<footer className={`${styles.footer} ${styles.component}`}>
@@ -87,12 +70,21 @@ const Footer = () => {
 				</p>
 			</div>
 			<div className={styles.container} style={{ color: `${c('MAIN')}` }}>
+				<h5
+					className={`${styles.terms}  cursorScale small`}
+					onClick={() => showModal()}
+				>
+					{t('TERMS')}
+				</h5>
 				<div className={`${styles.credit} cursorScale`}>
 					{t('INSPIRED_BY')}
 					Kazuki Noda Portfolio
 				</div>
-				<p>©Dubois Jérémy</p>
+				<p>©Dubois Jérémy {currentYear}</p>
 			</div>
+			<Portal selector='termsportal'>
+				<TermsComponent showModal={() => showModal()} isToggled={isToggled} />
+			</Portal>
 		</footer>
 	);
 };

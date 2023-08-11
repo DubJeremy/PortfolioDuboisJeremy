@@ -26,6 +26,12 @@
 		@include flex($just: flex-end);
 		transition: all 0.5s ease-in-out;
 		font-family: 'JosefinS';
+		.terms {
+			opacity: 0.4;
+			position: absolute;
+			top: 15px;
+			cursor: pointer;
+		}
 		.credit {
 			margin-bottom: 10px;
 		}
