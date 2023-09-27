@@ -136,12 +136,18 @@
 }
 @media screen and (min-width: $large) {
 }
-@media screen and (min-width: $large) and (orientation: portrait) {
+@media screen and (min-width: $large) and (orientation: landscape) {
+	.header {
+		.name {
+			margin-top: 80px;
+		}
+	}
 }
 @media screen and (min-width: $large) and (orientation: landscape) and (min-height: $medium) {
 	.header {
 		.name {
 			font-size: 10vw;
+			// margin-top: 10px;
 			.lastName {
 				margin-right: 15vw;
 			}
@@ -152,6 +158,11 @@
 	}
 }
 @media screen and (min-width: $extra-large) and (orientation: landscape) {
+	.header {
+		.name {
+			margin-top: 50px;
+		}
+	}
 }
 @media screen and (min-width: $ultra-large) {
 }

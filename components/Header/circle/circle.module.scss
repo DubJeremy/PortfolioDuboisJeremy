@@ -274,8 +274,23 @@
 		}
 	}
 }
-@media screen and (min-width: $extra-large) and (orientation: landscape) {
+@media screen and (min-width: $extra-large) and (orientation: landscape) and (max-height: $medium) {
 	.circle {
+		height: 85%;
+		.img {
+			> p {
+				bottom: 10%;
+				width: 70%;
+				right: 15%;
+				font-size: 1.5em;
+				font-weight: 100;
+			}
+		}
+	}
+}
+@media screen and (min-width: $extra-large) and (orientation: landscape) and (min-height: $medium) {
+	.circle {
+		height: 100%;
 		.img {
 			> p {
 				bottom: 10%;
@@ -295,6 +310,35 @@
 				width: 60%;
 				right: 20%;
 				font-size: 1.5em;
+			}
+		}
+	}
+}
+@media screen and (min-width: $giga-large) {
+	.circle {
+		height: 90%;
+		width: 400px;
+		.background {
+			width: 400px;
+		}
+		.background:before {
+			width: 400px;
+			left: calc(50% - 200px);
+		}
+		.background:after {
+			width: 400px;
+			left: calc(50% - 200px);
+		}
+		.img {
+			width: 400px;
+			height: 400px;
+			margin-top: -188px;
+			margin-left: -9px;
+			> p {
+				bottom: 5%;
+				width: 50%;
+				right: 25%;
+				font-size: 2em;
 			}
 		}
 	}
