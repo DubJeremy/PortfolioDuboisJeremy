@@ -5,7 +5,7 @@
 	position: absolute;
 	top: 80px;
 	width: 198px;
-	height: calc(100vh - 110px);
+	height: calc(100% - 70px);
 	@include flex($just: flex-start, $wrap: nowrap);
 	animation: circleAppear 1s ease-in-out 2.9s;
 	transform: translateY(-100%);

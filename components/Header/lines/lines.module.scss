@@ -6,7 +6,8 @@
 	position: absolute;
 	z-index: -3;
 	width: 100%;
-	height: calc(100vh - 30px);
+	// height: calc(100vh - 30px);
+	height: 100%;
 	max-width: 100%;
 	@include flex($dir: row, $just: space-around, $align: flex-end);
 	.line {
