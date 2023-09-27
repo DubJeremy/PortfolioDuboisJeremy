@@ -36,7 +36,7 @@ export const fr: { [key: string]: string } = {
 		'Veuillez réessayer ou nous contacter directement à cette adresse :',
 	MESSAGE_SENDED: 'Votre message a été envoyé !',
 	// FOOTER --------------------------------
-	INSPIRED_BY: 'Inspiré par',
+	INSPIRED_BY: 'Inspiré par ',
 	// noLANDSCAPE --------------------------------
 	LANDSCAPE:
 		'Pour une meilleure expérience veillée a ce que votre appareil reste en mode portrait',

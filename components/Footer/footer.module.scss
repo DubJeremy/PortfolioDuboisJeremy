@@ -10,13 +10,18 @@
 		transition: all 0.5s ease-in-out;
 		position: relative;
 		overflow: hidden;
-		> p {
+		.marquee {
+			overflow: hidden;
+			height: 100%;
 			font-family: 'Flaviotte';
 			font-size: 190px;
 			line-height: 175px;
 			color: transparent;
 			transition: all 0.5s ease-in-out;
 			white-space: nowrap;
+			span {
+				-webkit-text-stroke: 0px white;
+			}
 		}
 	}
 	.container {
@@ -34,6 +39,7 @@
 		}
 		.credit {
 			margin-bottom: 10px;
+			font-size: 0.8em;
 		}
 		> p {
 			font-size: 1.3em;
@@ -105,7 +111,7 @@
 		.container {
 			.credit {
 				margin-bottom: 15px;
-				font-size: 1.2em;
+				font-size: 1em;
 			}
 			> p {
 				font-size: 1.7em;
