@@ -32,7 +32,7 @@ export const en: { [key: string]: string } = {
 	MESSAGE_CONTACT: 'Please try again or contact us directly at this address :',
 	MESSAGE_SENDED: 'Your message has been sent !',
 	// FOOTER --------------------------------
-	INSPIRED_BY: 'Inspired by',
+	INSPIRED_BY: 'Inspired by ',
 	// noLANDSCAPE --------------------------------
 	LANDSCAPE:
 		'For the best experience, make sure your device remains in portrait mode.',
