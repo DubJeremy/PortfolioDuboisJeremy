@@ -27,6 +27,6 @@ export default function useMediaQuery(
 		updateTarget(media);
 
 		return () => media.removeEventListener('change', updateTarget);
-	}, [updateTarget]);
+	}, [mediaQuery, updateTarget]);
 	return [targetReached];
 }
