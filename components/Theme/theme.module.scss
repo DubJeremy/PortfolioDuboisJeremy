@@ -92,3 +92,48 @@
 		}
 	}
 }
+@media screen and (min-width: $extra-large) {
+	.themes {
+		left: 8px;
+		bottom: 29px;
+		.theme {
+			height: 15px;
+			width: 50%;
+			margin-top: 8px;
+			cursor: pointer;
+			transition: all 0.3s ease-in-out;
+			opacity: 0.5;
+		}
+		.blue {
+			background-color: $blueMain;
+		}
+		.green {
+			background-color: $greenMain;
+		}
+		.yellow {
+			background-color: $yellowMain;
+		}
+		.purple {
+			background-color: $purpleMain;
+		}
+		.pink {
+			background-color: $pinkMain;
+		}
+		.white {
+			background-color: $whiteMain;
+		}
+		.selected {
+			width: 100%;
+			cursor: none;
+			opacity: 1;
+		}
+	}
+	@keyframes themeAnim {
+		0% {
+			width: 0;
+		}
+		100% {
+			width: 15px;
+		}
+	}
+}

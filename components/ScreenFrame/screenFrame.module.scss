@@ -192,3 +192,56 @@
 		}
 	}
 }
+@media screen and (min-width: $extra-large) {
+	.top {
+		height: 25px;
+		width: 0;
+		left: 25px;
+	}
+	.right {
+		width: 25px;
+		height: 0;
+		bottom: 25px;
+	}
+	.bottom {
+		height: 25px;
+		width: 0;
+		left: 50%;
+	}
+	.left {
+		width: 25px;
+		height: 0;
+		bottom: 25px;
+	}
+	.corner {
+		width: 22px;
+		height: 26px;
+		z-index: 1004;
+	}
+	@keyframes bottomAnim {
+		0% {
+			width: 0;
+			left: 50%;
+		}
+		100% {
+			width: calc(100% - 50px);
+			left: 25px;
+		}
+	}
+	@keyframes sideAnim {
+		0% {
+			height: 0;
+		}
+		100% {
+			height: calc(100vh - 50px);
+		}
+	}
+	@keyframes topAnim {
+		0% {
+			width: 0;
+		}
+		100% {
+			width: calc(100% - 50px);
+		}
+	}
+}
